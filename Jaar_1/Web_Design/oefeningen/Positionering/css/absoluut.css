@@ -1,0 +1,21 @@
+
+#deel1{
+    width: 500px;
+    height: 400px;
+    background-color: aqua;
+    float: left;
+}
+
+#deel2 {
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+    float: right;
+
+}
+#deel3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}

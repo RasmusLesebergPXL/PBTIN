@@ -1,0 +1,27 @@
+* {
+    font-family: Verdana, sans-serif;
+}
+table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 800px;
+    table-layout: fixed;
+    caption-side: bottom;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 10px;
+}
+table thead, table tfoot {
+    background-color: yellow;
+    text-align: left;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #d1d1d1;
+}
+table tbody tr:nth-child(even) {
+    background-color: #696969;
+    color: #fff;
+}

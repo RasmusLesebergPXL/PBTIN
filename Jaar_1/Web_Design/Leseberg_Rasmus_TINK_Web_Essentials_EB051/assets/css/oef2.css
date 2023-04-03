@@ -1,0 +1,73 @@
+/* naam Rasmus Leseberg:               */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    margin: 20px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 900px;
+    font-size: 15px;
+}
+
+thead {
+    font-weight: bold;
+    padding: 5px;
+    font-style: italic;
+    font-family: Verdana, sans-serif;
+}
+
+thead th {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
+thead td {
+    text-align: left;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+thead td span {
+    margin-left: 20px;
+}
+tbody {
+    font-family: "Courier New", monospace;
+}
+
+tbody td {
+    border: 1px solid black;
+    padding-left: 20px;
+    padding-top: 5px;
+
+}
+
+tbody td span {
+    float: right;
+    padding: 2px;
+    margin-right: 20px;
+}
+
+tbody tr th {
+    background-color: #b2b8b4;
+    width: 1%;     /*wist niet hoe ik de span op de juiste breedte kon krijgen, dit was een poging */
+    padding: 5px;
+    border: 1px solid black;
+    color: white;
+    margin: 20px;
+    font-weight: unset;
+}
+
+/*tbody tr th span {*/
+/*    width: 50px;*/
+/*}*/
+
+
+

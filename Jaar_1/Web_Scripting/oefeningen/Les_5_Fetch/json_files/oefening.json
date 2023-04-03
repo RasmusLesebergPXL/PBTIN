@@ -1,0 +1,41 @@
+{
+  "persons": [
+    {
+      "name": "oli",
+      "id": 1
+    },
+    {
+      "name": "tim",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "geert",
+      "friends": []
+    },
+    {
+      "name": "sarah",
+      "id": 4
+    },
+    {
+      "name": "adam",
+      "id": 5
+    },
+    {
+      "name": "sofie",
+      "id": 6
+    },
+    {
+      "name": "paul",
+      "id": 7
+    },
+    {
+      "name": "zarah",
+      "id": 8
+    },
+    {
+      "name": "sofie",
+      "id": 9
+    }
+  ]
+}

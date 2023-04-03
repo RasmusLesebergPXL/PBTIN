@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Calibri, Arial, sans-serif;
+}
+body {
+    background-color: beige;
+}
+main {
+    width: 1200px;
+    margin: 20px auto;
+}
+main h1 {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    margin: 5px;
+    display: inline-block;
+}
+
+form div label {
+    font-weight: normal;
+    margin: 0 5px;
+}
+input{
+    display: inline-block;
+    margin: 2px 5px 15px 5px;
+}
+
+div {
+    float: left;
+    width: 33%;
+    margin-bottom: 15px;
+}
+textarea {
+    display: inline-block;
+    margin: 2px 5px 15px 5px;
+    height: 100px;
+    width: 90%
+}
+input[type="text"] {
+    width: 30%;
+}
+select {
+    margin: 2px 5px 15px 5px;
+    width: 20%;
+}
+input[type="submit"] {
+    padding: 5px;
+    font-size: 20px;
+}
+input[type="checkbox"] {
+    margin: 0 5px;
+}

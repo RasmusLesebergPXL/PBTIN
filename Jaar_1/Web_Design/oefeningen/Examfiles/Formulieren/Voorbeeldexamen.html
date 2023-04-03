@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Oef3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/Voorbeeldexamen.css" />
+</head>
+<body>
+<form action="mailto:examen@web.com" method="post" enctype="text/plain">
+  <fieldset>
+    <legend>Feedback lokalen</legend>
+
+    <label class="box-left" for="lokaal">Lokaal</label>
+    <select class="box-right" name="lokaal" id="lokaal">
+      <option value="B051">B051: leslokaal</option>
+      <option value="B052">B052: leslokaal</option>
+      <option value="B053">B053: leslokaal</option>
+      <option value="B343">B343: auditorium</option>
+    </select>
+
+    <label class="box-left" for="Datum">Datum</label>
+    <input class="box-right" name="wanneer" id="Datum" type="date">
+
+
+    <label class="box-left">Tevredenheid</label>
+    <span>
+            <label for="radio1">1</label>
+            <input type="radio" name="tevredenheid" id="radio1" value="1">
+            <label for="radio2">2</label>
+            <input type="radio" name="tevredenheid" id="radio2" value="2">
+            <label for="radio3">3</label>
+            <input type="radio" name="tevredenheid" id="radio3" value="3">
+            <label for="radio4">4</label>
+            <input type="radio" name="tevredenheid" id="radio4" value="4">
+        </span>
+
+
+    <label class="box-left" for="opmerking">Opmerking</label>
+    <textarea name="opmerking" id="opmerking" wrap="hard" rows="5em"></textarea>
+
+    <input id="verzenden" type="submit" value="Verzenden" class="button">
+
+
+  </fieldset>
+</form>
+</body>
+</html>
+

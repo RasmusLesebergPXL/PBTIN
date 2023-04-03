@@ -1,0 +1,61 @@
+.row, .element, .inline-element, input, select, button {
+    box-sizing: border-box;
+}
+
+form {
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+fieldset {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.row {
+    width:100%;
+    display:flex;
+    align-items:center;
+}
+
+.element {
+    margin: 5px;
+}
+
+.w1 { flex: 0 0 calc(100% / 12 - 10px); }
+.w2 { flex: 0 0 calc(100% / 6 - 10px); }
+.w3 { flex: 0 0 calc(25% - 10px); }
+.w4 { flex: 0 0 calc(100% / 3 - 10px); }
+.w5 { flex: 0 0 calc(100% * 5 / 12 - 10px); }
+.w6 { flex: 0 0 calc(50% - 10px); }
+.w7 { flex: 0 0 calc(100% * 7 / 12 - 10px); }
+.w8 { flex: 0 0 calc(100% * 2 / 3 - 10px); }
+.w9 { flex: 0 0 calc(75% - 10px); }
+.w10 { flex: 0 0 calc(100% * 5 / 6 - 10px); }
+.w11 { flex: 0 0 calc(100% * 11 / 12 - 10px); }
+.w12 { flex: 0 0 calc(100% - 10px); }
+
+
+img {
+    width: 100%;
+}
+
+body, select, input {
+    font: 14pt "Fira Sans", sans-serif;
+}
+
+select, button, input[type=submit]{
+    background-color: #3fb0e0;
+    border: none;
+}
+
+input[type=submit]{
+    height:3em;
+}
+
+input, select, button, label {
+    padding: 5px;
+    display: block;
+    width: 100%;
+}

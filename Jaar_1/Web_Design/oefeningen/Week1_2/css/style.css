@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Scheherazade New', serif;
+
+}
+p {
+    font-size: 18px;
+    line-height: 20px;
+    color: red;
+}
+p:hover{
+    text-decoration:underline;
+}
+
+#yellow{
+    color: yellow;
+}
+.green{
+    color: green;
+}
+h1.green{
+    font-style: italic;
+}
+
+img{
+    width:150px;
+}
+h2{
+    text-align:center;
+}
+#links{
+    float:right;
+}
+

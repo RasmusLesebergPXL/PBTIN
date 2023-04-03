@@ -1,0 +1,197 @@
+/* naam Rasmus Leseberg:       */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: black;
+}
+
+nav h1 {
+    color: white;
+    margin-left: 10%;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-left: 10%;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    margin-left: unset;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.border {
+    border-bottom: 10px solid white;
+}
+
+main {
+    width: 1000px;
+    height: auto;
+    margin: 100px auto;
+}
+
+main .figure-1 h2 {
+    position: absolute;
+    color: white;
+    padding: 30px;
+    bottom: 30px;
+    margin: 1%;
+}
+
+main .figure-1 span {
+    position: absolute;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 20%;
+    padding: 30px;
+    float: right;
+    right: 280px;
+    bottom: 50px;
+}
+
+img {
+    width: 100%;
+}
+
+hr {
+    margin: 15px;
+}
+
+main section {
+    width: 100%;
+    background-color: #ffffff;
+    float: left;
+    border: 1px grey;
+}
+
+main section article {
+    width: calc(100% / 3 - 2%);
+    margin: 1%;
+    float: left;
+    position: relative;
+}
+
+main section article img {
+    width: 100%;
+}
+
+main section article h2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.box-left {
+    float: left;
+    margin: 1%;
+    width: 64%;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.box-left img {
+    height: 280px;
+}
+
+.box-left h2, .box-right h2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.box-right {
+    width: 31%;
+    margin: 1%;
+    float: right;
+}
+
+.box-right img {
+    height: 140px;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    nav {
+        margin-bottom: 15px;
+    }
+
+    main {
+        width: 100%;
+        margin: unset;
+        padding: 0;
+    }
+
+    hr {
+        display: none;
+    }
+
+    main section article, main .box-right, .box-left {
+        padding-top: 20px;
+        width: 100%;
+        height: auto;
+        border-bottom: 4px solid lightgray;
+        margin: 10px 0;
+    }
+
+    main .box-left img, main .box-right img {
+        height: unset;
+    }
+
+    main .figure-1 h2 {
+        width: auto;
+        color: black;
+        position: unset;
+        padding: unset;
+        margin: unset;
+    }
+
+    main .figure-1 span {
+        color: black;
+        position: unset;
+        width: auto;
+        padding: 5px;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav h1, footer, p, main .figure-1 span {
+        display: none;
+    }
+
+    nav .border {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        float: none;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+
+}

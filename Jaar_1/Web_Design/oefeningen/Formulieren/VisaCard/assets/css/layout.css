@@ -1,0 +1,71 @@
+.row, .element, .inline-element, input, select, button {
+    box-sizing: border-box;
+}
+
+form {
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+fieldset {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.row {
+    clear: both;
+}
+
+.element {
+    float: left;
+    margin: 5px;
+}
+
+.inline-row {
+    clear: both;
+    font-size: 0;
+}
+
+.inline-element {
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+.w1 { width: calc(100% / 12 - 10px); }
+.w2 { width: calc(100% / 6 - 10px); }
+.w3 { width: calc(25% - 10px); }
+.w4 { width: calc(100% / 3 - 10px); }
+.w5 { width: calc(100% * 5 / 12 - 10px); }
+.w6 { width: calc(50% - 10px); }
+.w7 { width: calc(100% * 7 / 12 - 10px); }
+.w8 { width: calc(100% * 2 / 3 - 10px); }
+.w9 { width: calc(75% - 10px); }
+.w10 { width: calc(100% * 5 / 6 - 10px); }
+.w11 { width: calc(100% * 11 / 12 - 10px); }
+.w12 { width: calc(100% - 10px); }
+
+
+img {
+    width: 100%;
+}
+
+body, select, input {
+    font: 14pt "Fira Sans", sans-serif;
+}
+
+select, button, input[type=submit]{
+    background-color: #3fb0e0;
+    border: none;
+}
+
+input[type=submit]{
+    height:3em;
+}
+
+input, select, button, label {
+    padding: 5px;
+    display: block;
+    width: 100%;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oefening3</title>
+    <link rel="stylesheet" href="oefening3.css">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<body>
+<main>
+<form action="mailto:register@uni.be" method="post" enctype="text/plain">
+    <fieldset>
+        <legend>Registration Details</legend>
+        <label for="university">University:</label>
+        <input type="text" name="university" id="university"><br>
+        <label for="institute">Institute:</label>
+        <input type="text" name="institute" id="institute"><br>
+        <label for="degree">Degree:</label>
+
+        <select name="degree" id="degree">
+            <option value="">-- select --</option>
+            <option value="assosciate">Assosciate</option>
+            <option value="bachelor">Bachelor</option>
+            <option value="master">Master</option>
+            <option value="phd">PHD</option>
+        </select>
+        <input type="radio" name="Fulfilled" id="pursuing" value="pursuing">
+        <label for="pursuing">Pursuing</label>
+        <input type="radio" name="Fulfilled" id="completed" value="completed">
+        <label for="completed">Completed</label><br>
+
+        <label for="cpi">Average CPI:</label>
+        <input type="number" name="CPI" id="cpi" value="cpi" min="0">
+        <label for="semester">Upto</label>
+        <input type="number" name="semester" id="semester" value="semester" min="0">
+        <label class="tekst">Th Semester</label><br>
+
+        <label for="experience">Experience:</label>
+        <input type="number" name="experience" id="experience" value="cpi" min="0">
+        <label class="tekst">Years</label><br>
+
+        <label for="website">Your website or Blog</label>
+        <input type="url" name="website" id="website" value="http://" >
+    </fieldset>
+    <fieldset>
+        <legend>Send registration</legend>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+</main>
+</body>
+</html>

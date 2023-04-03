@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+body {
+    background-image: url(assets/bgimage.png);
+}
+header{
+    width: 980px;
+    background-color: #283e4a;
+    margin: 0 auto 10px auto;
+    padding: 30px;
+}
+header h3 {
+    color: white;
+    font-variant: small-caps;
+}
+main {
+    width: 980px;
+    margin: 10px auto 0 auto;
+}
+main nav {
+    width: 30%;
+    background-color: #ffffff;
+    margin-right: 2%;
+    border: 1px grey;
+    float: left;
+}
+main nav a{
+    display: block;
+    margin: 30px;
+    text-decoration: none
+}
+
+main section {
+    width: 68%;
+    padding: 30px;
+    background-color: #ffffff;
+    float: left;
+    border: 1px grey;
+}
+
+main section article {
+    width: calc(100%/3 - 2%);
+    margin: 1%;
+    float: left;
+    position: relative;
+    border-bottom: 8px solid #283e4a;
+    background-color: #d0cece;
+}
+
+main section article img {
+    width: 100%;
+}
+main section article span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+}
+
+main section article p {
+    padding: 15px;
+}
+
+main section hr {
+    width: 400px;
+    margin: 10px auto;
+}
+
+main section h1 {
+    margin: 20px 0;
+}
+main section p {
+    margin: 15px 0;
+}
+main section img#mezelf {
+    width: 160px;
+    float: left;
+    margin-right: 20px;
+}
+main section p span {
+    background-color: #eee;
+    font-style: italic;
+    font-weight: bold;
+}
+div#top {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    padding: 20px;
+    background-color: #3939af;
+}
+div#top a {
+    color: white;
+    text-decoration: none;
+}

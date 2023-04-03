@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    width: 320px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+fieldset {
+    padding: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: space-between;
+}
+
+.box-left {
+    font-weight: bold;
+    float: left;
+    width: 40%;
+    padding: 5px;
+}
+
+.box-right {
+    float: right;
+    position: relative;
+    width: 60%;
+}
+
+textarea, input[type=submit] {
+    width: 100%;
+    margin: 10px auto;
+}
+
+span {
+    font-weight: bold;
+    width: 60%;
+}
+span input {
+    margin-right: 11px;
+}

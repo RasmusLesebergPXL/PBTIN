@@ -1,0 +1,33 @@
+* {
+    color: #ffffff;
+    text-align: center;
+}
+
+table {
+    border: 1px solid #000;
+    width: 500px;
+    table-layout: auto;
+}
+
+th {
+    background-color: #5aa832;
+    border-top: 2px solid #ffffff;
+    font-weight: bold;
+    width: 170px;
+}
+td {
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+}
+
+table thead th {
+    border: none;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #3298a8;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #32a887;
+}

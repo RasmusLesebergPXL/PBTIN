@@ -1,0 +1,48 @@
+body {
+    background-color: #d9ddd7;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  Verdana, sans-serif;
+}
+
+.green {
+    color: #256E4B;
+}
+
+
+.grey {
+    color: #6a7689;
+}
+
+p {
+    color: #ffffff;
+    background-color: #6a7689;
+    padding: 20px;
+    margin: 20px 20px;
+    width: 800px;
+    border: 1px solid #070A0A;
+}
+.highlight {
+    background-color: #6a7689;
+    color: yellow;
+    border: 2px solid yellow;
+    padding: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 400px;
+    text-align: center;
+}
+
+.catering
+a { color:black}
+
+a:visited { text-decoration: none; color:black}
+a:hover { text-decoration: none; color:#6df469}
+
+
+

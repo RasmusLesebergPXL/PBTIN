@@ -1,0 +1,45 @@
+body{
+    background-image: url(../img/hout.jpg);
+}
+.chess-board {
+    border-spacing: 0;
+    border-top: 5px solid darkred;
+    margin-left: 400px;
+}
+.chess-board th {
+    padding: .5em;
+}
+.chess-board th + th {
+    border-bottom: 5px solid darkred;
+}
+
+.chess-board td:first-child {border-left: 5px solid darkred;}
+.chess-board tr:first-child {border-top: 5px solid darkred;}
+
+
+.chess-board td:last-child {border-right: 5px solid darkred;}
+.chess-board tr:last-child td {border-bottom: 5px solid darkred;}
+.chess-board th:empty {border: 1px solid darkred;}
+.chess-board td {width: 1.5em; height: 1.5em; text-align: center; font-size: 32px; line-height: 0;}
+
+
+
+.chess-board .light {
+    background-image: url(../img/witte-marmer.jpg);
+    border: 1px solid darkred;
+}
+
+.chess-board .dark {
+    background-image: url(../img/zwarte-marmer.jpg);
+    border: 1px solid darkred;
+}
+
+.info{
+    background-image: url(../img/witte-marmer.jpg);
+    border: 3px solid darkred;
+    float: right;
+    width: 220px;
+    margin-right: 300px;
+    padding: 10px
+
+}

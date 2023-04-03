@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oefening2</title>
+    <link rel="stylesheet" href="oefening2.css">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<body>
+<main>
+    <h1>Stel je eigen pizza samen en we mailen hem naar jou!</h1>
+    <form action="mailto:info@pizza.be" method="post" enctype="text/plain">
+        <!--Naam en Voornaam-->
+        <label for="naam">Naam *:</label><br>
+        <input type="text" name="Naam" id="naam" required><br>
+        <!--Korst-->
+        <label>Korst:</label><br>
+        <input type="radio" name="Korst" id="klassiek" value="klassiek">
+        <label for="klassiek">Klassiek</label>
+        <input type="radio" name="Korst" id="italiaans" value="Italiaans">
+        <label for="italiaans">Italiaans</label>
+        <input type="radio" name="Korst" id="amerikaans" value="Amerikaans">
+        <label for="amerikaans">Amerikaans</label><br>
+        <!--Toppings-->
+        <label>Toppings:</label>
+        <div id="deel1">
+            <input type="checkbox" name="hesp" id="hesp" value="Aangevinkt">
+            <label for="hesp">Hesp</label><br>
+            <input type="checkbox" name="champignons" id="champignons" value="Aangevinkt">
+            <label for="champignons">Champignons</label><br>
+            <input type="checkbox" name="Tomaat" id="tomaat" value="Aangevinkt">
+            <label for="tomaat">Tomaat</label><br>
+            <input type="checkbox" name="kaas" id="kaas" value="Aangevinkt">
+            <label for="kaas">Kaas</label><br>
+            <input type="checkbox" name="paprika" id="paprika" value="Aangevinkt">
+            <label for="paprika">Paprika</label><br>
+        </div>
+        <div id="deel2">
+            <input type="checkbox" name="scampi" id="scampi" value="Aangevinkt">
+            <label for="scampi">Scampi</label><br>
+            <input type="checkbox" name="tonijn" id="tonijn" value="Aangevinkt" disabled>
+            <label for="tonijn">Tonijn</label><br>
+            <input type="checkbox" name="salami" id="salami" value="Aangevinkt">
+            <label for="salami">Salami</label><br>
+            <input type="checkbox" name="kip" id="kip" value="Aangevinkt">
+            <label for="kip">Kip</label><br>
+            <input type="checkbox" name="shoarma" id="shoarma" value="Aangevinkt">
+            <label for="shoarma">Shoarma</label><br>
+        </div>
+        <div id="deel3">
+            <input type="checkbox" name="ajuin" id="ajuin" value="Aangevinkt">
+            <label for="ajuin">Ajuin</label><br>
+            <input type="checkbox" name="artisjok" id="artisjok" value="Aangevinkt">
+            <label for="artisjok">Artisjok</label><br>
+            <input type="checkbox" name="mais" id="mais" value="Aangevinkt">
+            <label for="mais">Mais</label><br>
+            <input type="checkbox" name="mozarella" id="mozarella" value="Aangevinkt">
+            <label for="mozarella">Mozarella</label><br>
+            <input type="checkbox" name="ananas" id="ananas" value="Aangevinkt" disabled>
+            <label for="ananas" >Ananas</label><br>
+        </div><br>
+        <!--Opmerkingen-->
+        <label for="opmerkingen">Opmerkingen:</label><br>
+        <textarea name="Opmerkingen" id="opmerkingen" wrap="hard"></textarea><br>
+        <!--Betaalwijze-->
+        <label for="betaal">Betaalwijze *:</label><br>
+        <select id="betaal" name="Betaalwijze" required>
+            <option value=""></option>
+            <option value="Bancontact">Bancontact</option>
+            <option value="Cash">Cash</option>
+            <option value="Bitcoin">Bitcoin</option>
+        </select><br>
+        <!--Knoppen-->
+        <input type="submit" value="Ziet er lekker uit, bestellen maar !">
+    </form>
+</main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oefening1</title>
+    <link rel="stylesheet" href="css/Nummer_Bus.css">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<body>
+<header>
+    <h1>Je hebt gewonnen!</h1>
+    <h2>Vul je gegevens in en we sturen de prijs naar jou!</h2>
+</header>
+<main>
+    <form action="mailto:info@gewonnen.be" method="post" enctype="text/plain">
+        <label for="achternaam">Achternaam: </label>
+        <input type="text" name="Achternaam" id="achternaam">
+        <label for="voornaam">Voornaam: </label>
+        <input type="text" name="Voornaam" id="voornaam">
+        <label for="straat">Straat: </label>
+        <input type="text" name="Straat" id="straat">
+        <label for="nummer">Nummer: </label>
+        <input type="text" name="Nummer" id="nummer" maxlength="4">
+        <label for="bus">Bus: </label>
+        <input type="text" name="Bus" id="bus">
+        <label for="postcode">Postcode: </label>
+        <input type="text" name="Postcode" id="postcode" maxlength="4">
+        <label for="gemeente">Gemeente: </label>
+        <input type="text" name="Gemeente" id="gemeente">
+        <input type="submit" value="Verzenden">
+        <input type="reset" value="Wissen">
+    </form>
+</main>
+</body>
+</html>

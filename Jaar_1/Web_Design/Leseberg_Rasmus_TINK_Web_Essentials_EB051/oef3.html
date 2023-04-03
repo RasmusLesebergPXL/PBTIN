@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- naam Rasmus Leseberg:             -->
+    <title>Oef3</title>
+    <link href="assets/css/oef3.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Bedankt voor de beoordeling van je verblijf</h1>
+<form action="oef3_review.html">
+    <div class="container">
+        <div class="box-1">
+            <label for="naam">Naam</label>
+            <input type="text" name="Naam" id="naam">
+            <label for="voornaam">Voornaam</label>
+            <input class=type="text" name="Voornaam" id="voornaam"><br>
+        </div>
+        <div class="box-3">
+            <label for="email">Email</label>
+            <input class="box" type="text" name="email" id="email"><br>
+        </div>
+    </div>
+    <label>Beoordeling</label>
+    <input type="radio" name="aantalsterren" id="radio1" value="1">
+    <label for="radio1">&#9733;</label>
+    <input type="radio" name="aantalsterren" id="radio2" value="2">
+    <label for="radio2">&#9733;&#9733;</label>
+    <input type="radio" name="aantalsterren" id="radio3" value="3">
+    <label for="radio3">&#9733;&#9733;&#9733;</label><br>
+
+    <label for="datum">Datum checkout</label>
+    <input type="date" name="Datum" id="datum"><br>
+
+    <label for="commentaar">Commentaar</label><br><br>
+    <textarea name="Commentaar" id="commentaar" wrap="hard"></textarea><br>
+
+    <input type="submit" value="Verzenden">
+
+</form>
+
+</body>
+</html>

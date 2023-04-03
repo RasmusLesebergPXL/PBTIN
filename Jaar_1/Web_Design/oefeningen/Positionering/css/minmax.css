@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#deel1{
+    min-width: 500px;
+    height: 400px;
+    background-color: #ccc;
+}
+
+#deel2 {
+    max-width: 500px;
+    height: 400px;
+    background-color: #ccc;
+    border: 50px solid #000;
+    padding: 50px;
+
+}

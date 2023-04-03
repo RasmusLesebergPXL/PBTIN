@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>velden van een formulier</title>
+</head>
+<body>
+<form action="mailto:mail@example.be?subject=Antwoord contactformulier" method="post" enctype="text/plain">
+    <label for="naam">Volleedige naam *</label>
+    <input type="text" name="Volleedige naam" id="naam" minlength="4" maxlength="50" required placeholder="Jane Doe"><br><br>
+
+    <label for="wachtwoord">Wachtwoord</label>
+    <input type="password" name="Wachtwoord" id="wachtwoord"><br><br>
+
+
+    <label for="nummerveld">Nummer</label>
+    <input type="number" name="Nummer" id="nummerveld" min="0" max="5"><br><br>
+
+    <label for="range">Range</label>
+    <input type="range" name="Range" id="range" min="0" max="100" step="10" ><br><br>
+
+    <input type="checkbox" name="Checkbox 1" id="check1" value="Aangevinkt">
+    <label for="check1">Check 1</label><br>
+    <input type="checkbox" name="Checkbox 1" id="check2" value="Aangevinkt" checked>
+    <label for="check2">Check 2</label><br>
+    <input type="checkbox" name="Checkbox 1" id="check3" value="Aangevinkt">
+    <label for="check3">Check 3</label><br><br>
+
+    <input type="radio" name="Radiobuttons" id="radio1" value="Radio 1">
+    <label for="radio1">Radio 1</label><br>
+    <input type="radio" name="Radiobuttons" id="radio2" value="Radio 2">
+    <label for="radio2">Radio 2</label><br>
+    <input type="radio" name="Radiobuttons" id="radio3" value="Radio 3">
+    <label for="radio3">Radio 3</label><br><br>
+
+    <label for="mailadres">E-mailadres</label>
+    <input type="email" id="mailadres" name="E-mailadres"><br><br>
+
+    <label for="datum">Datum</label>
+    <input type="date" name="Datum" id="datum" value="2018-07-22" min="2018-01-01" max="2018-12-31"><br><br>
+
+    <label for="tijdstip">Tijdstip</label>
+    <input type="time" name="Tijdstip" id="tijdstip"><br><br>
+
+    <label for="datumtijdstip">Datum en Tijdstip</label>
+    <input type="datetime-local" name="Datum en Tijdstip" id="datumtijdstip"><br><br>
+
+    <label for="keuzelijst">Keuzelijst</label>
+    <select name="Keuzelijst" id="keuzelijst">
+        <option value="Kies een optie" selected></option>
+        <option value="Keuze 1">Keuze 1</option>
+        <option value="Keuze 2">Keuze 2</option>
+        <option value="Keuze 3" disabled>Keuze 3</option>
+    </select><br><br>
+
+    <label for="opmerkingen">Opmerkingen</label>
+    <textarea name="Opemerkingen" id="opmerkingen" wrap="hard" cols="80" rows="6"></textarea><br><br>
+
+    <fieldset>
+    <legend>Knoppen</legend>
+    <input type="submit" value="Verzenden">
+    <input type="reset" value="Wissen">
+    </fieldset>
+</form>
+</body>
+</html>

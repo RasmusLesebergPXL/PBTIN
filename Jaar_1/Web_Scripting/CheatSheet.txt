@@ -1,0 +1,360 @@
+
+	Rightside triangle 	- Les1 1a
+	Leftside triangle 	- Les1 1b
+	Triangle 	 	- Les1 1c
+	Triangle with chars	- Les1 1d
+	Schaakbord		- Les1 3
+	Fibonacci		- Les2 3	
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++Basic Functions++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+
+												Random getal
+let value3 = Math.floor(Math.random() * 10);
+
+
+												Lambda operator
+
+let min = (number1, number2) => number1 < number2 ? number1 : number2;
+console.log(min(1, 4));
+
+
+												Min value function
+const min = function( ...numbers) {
+    let minvalue = numbers[0]
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < minvalue) {
+            minvalue = numbers[i];
+        }
+    }
+    return minvalue
+}
+
+												isEven bool
+function isEven(nummer) {
+    if (nummer == 0) {
+        return true;
+    } else if (nummer == 1) {
+        return false;
+    }
+    return isEven(nummer - 2);
+}
+
+												count char
+
+function telChar(tekst, symbool) {
+    let teller = 0;
+    for (let i = 0; i < tekst.length; i++) {
+        if (tekst[i] == symbool) {
+            teller += 1;
+        }
+    }
+    return teller;
+}
+
+												array push
+
+for (let i = min; i >= max; + tussenstap) {
+            nummerArray.push(i);
+            i += tussenstap;
+        }
+
+												reverseArray
+function reverseArray(array) {
+    let output = [];
+    while (array.length) {
+        output.push(array.pop());
+    }
+    return output;
+}
+
+												berekenAfstand
+function berekenAfstand(punt1, punt2) {
+    return Math.sqrt(Math.pow((punt1.x - punt2.x), 2) + (Math.pow((punt1.y - punt2.y), 2)));
+}
+let punt1 = {x:1, y:1};
+let punt2 = {x:2, y:3};
+console.log(berekenAfstand(punt1, punt2));
+												regex to test ingave
+if (!/^\d+$/.test(entry)) {
+        output.appendChild(document.createTextNode("misse ingave voor aantal"));
+    } 
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++OO programming++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+	Les 3 - Oef 1.2 CalcAgeClass				Birthday Calculator with "new Date" functionality 
+
+	Les 3 - Oef 5	Vec					Try-Catch blokken
+	
+	Les 3 - Oef 7 Date					static methods
+
+	Les 3 - Dobbelsteen					Frequency methode 
+	
+	function Frequency(array) {
+    	const s = {};
+    	array.map((x) => {
+        	s[x] = s[x] + 1 || 1;
+    	});
+    	let k = Object.keys(s);
+    	let v = Object.values(s);
+    	let max = Math.max(...v);
+    	let i = v.findIndex((x) => {
+        	return x === max;
+    	});
+    	return k[i]
+	}
+
+								isNan
+	if ( isNaN(getal1) || isNaN(getal2)){
+       		inputUitkomst.value = "oops";
+   	} else {
+       		inputUitkomst.value = getal1 * getal2 ;
+   	}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Event Handling ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	LES 4 - Oef 1.5						Bereken getal 1 * getal met button
+
+	Les 4 - Oef 1.6						Twee input velden, Genereer melding knop 
+	
+	Les 4 - Oef 1.7						Oneven getallen genereren met while loop voor ingave
+
+	Les 4 - Oef 1.11					'Change' event gekoppeld met listbox items
+
+	Les 4 - Oef 1.12					Switch CSS file with buttons
+
+	Les 4 - Oef 1.13					Reverse Sentence, filter out words that contain filtered word/char, and add red boxes, Inlcudes not contains!!!
+
+								Reverse letters
+var n, x, i, j;
+rev = "";
+n = window.prompt("enter any string");
+x = n.split(" ");
+for (i = 0; i < x.length; i++) {
+  for (j = x[i].length - 1; j >= 0; j--) {
+    document.writeln(x[i].charAt(j));
+  }
+  document.write("<br>")
+}
+
+	Les 4 - Oef 1.14					'Focus' & 'Blur' Event handler with simulatenous connections to same button: 
+
+function handleClick(event){
+    if (event.target.id === "wissen") {
+        let textInputs = document.querySelectorAll("input[type=text]");
+        for (let textInput of textInputs) {
+            textInput.value = "";
+            textInput.style.backgroundColor = "lightgray";
+        }
+        window.alert("Alles is gewist");
+    } else {
+        window.alert("Bedankt voor het verzenden");
+    }
+}
+
+	Les 4 - Oef 1.16					'DoubleClick' event handler changin size of Rhino
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  FETCH  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	npm install -g json-server 
+	json-server --watch festival.json 						Install on directory location
+	
+
+
+											GET
+
+function handleGetPersonByName() {
+    let name = document.getElementById("txt_name").value
+    let url = 'http://localhost:3000/persons/?name='+ name;
+    let output = document.getElementById("div_output");
+
+    makeElementEmpty(output);
+    fetch(url)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw `error with status ${response.status}`;
+            }
+        })
+        .then((persons) => {
+            let data = [];
+            for (let person of persons) {
+                data.push([person.id, person.name]);
+            }
+            let table = makeTable(data);
+            output.appendChild(table);
+        })
+        .catch((error) => {
+            output.appendChild(document.createTextNode(error));
+        });
+}
+
+											PUT
+function handlePutPerson() {
+    let url = 'http://localhost:3000/persons/';
+    let output = document.getElementById("div_output");
+    let name = document.getElementById("txt_name").value;
+    let id = document.getElementById("txt_id").value;
+    let person = {name: name};
+
+    makeElementEmpty(output);
+    fetch(`${url}/${id}`,
+        {
+            method: "PUT",
+            body: JSON.stringify(person),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw `error with status ${response.status}`;
+            }
+        })
+        .then((person) => {
+            let data = [];
+            data.push([person.id, person.name]);
+            let table = makeTable(data);
+            output.appendChild(table);
+        })
+        .catch((error) => {
+            output.appendChild(document.createTextNode(error));
+        });
+}
+
+											POST
+function handlePostPerson() {
+    let url = 'http://localhost:3000/persons/';
+    let output = document.getElementById("div_output");
+    let name = document.getElementById("txt_name").value;
+    let person = {name: name};
+
+    makeElementEmpty(output);
+    fetch(url,
+        {
+            method: "POST",
+            body: JSON.stringify(person),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw `error with status ${response.status}`;
+            }
+        })
+        .then((person) => {
+            let data = [];
+            data.push([person.id, person.name]);
+            let table = makeTable(data);
+            output.appendChild(table);
+        })
+        .catch((error) => {
+            output.appendChild(document.createTextNode(error));
+        });
+}
+
+											GetByDate
+function handleGetPerformancesByDate() {
+    let url = 'http://localhost:3000/performances/';
+    let date = document.getElementById("date_input").value;
+    let output = document.getElementById("div_output");
+    makeElementEmpty(output);
+
+    if (date.trim()!=''){
+        fetch(`${url}?play_date=${date}`)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw `error with status ${response.status}`;
+                }
+            })
+            .then((festivals) => {
+                let data = [];
+                for (let festival of festivals) {
+                    data.push([festival.id, festival.name, festival.play_date, festival.description]);
+                }
+                let table = makeTable(data);
+                output.appendChild(table);
+            })
+            .catch((error) => {
+                output.appendChild(document.createTextNode(error));
+            });
+    }
+}
+
+											MakeTable
+function makeTable(matrix) {
+    let table = document.createElement("table");
+    for (let i = 0; i < matrix.length; i++) {
+        let tr = document.createElement("tr");
+        for (let j = 0; j < matrix[i].length; j++) {
+            let td = document.createElement("td");
+            td.appendChild(document.createTextNode(matrix[i][j]));
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+    return table;
+}
+
+											MakeEmpty
+
+function makeElementEmpty(element) {
+    while (element.hasChildNodes()) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+											MakeSelect
+function makeSelect(persons) {
+    let select = document.createElement('select');
+    select.setAttribute('id', 'select_id');
+    for (let person of persons) {
+        let option = document.createElement("option");
+        let textnode = document.createTextNode(person.name);
+        option.appendChild(textnode);
+        option.value = person.id;
+        select.appendChild(option);
+    }
+    return select;
+}
+
+											MakeList
+function makeList(amountShips) {
+    let list = document.createElement("ul");
+    let fastestShip = amountShips[0].speed;
+    for (let i = 0; i < amountShips.length; i++) {
+        if (amountShips[i].speed > fastestShip) {
+            fastestShip = amountShips[i].speed;
+        }
+    }
+    
+    for (let i = 0; i < amountShips.length; i++) {
+        let listItem = document.createElement("li");
+        listItem.appendChild(document.createTextNode(amountShips[i].name));
+        if (amountShips[i].speed === fastestShip) {
+            listItem.style.color = "red";
+        }
+        list.appendChild(listItem);
+    }
+    return list;
+}
+											
+
+

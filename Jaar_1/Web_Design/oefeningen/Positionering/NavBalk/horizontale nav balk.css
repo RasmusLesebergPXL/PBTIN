@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Verdana, sans-serif;
+}
+body {
+    background-color: #672f07;
+}
+header {
+    padding: 30px;
+    color: white;
+}
+nav ul {
+    list-style-type: none;
+    width: 100%;
+    background-color: sandybrown;
+    overflow: hidden;
+}
+nav ul li {
+    float: left;
+}
+nav ul li a {
+    display: block;
+    padding: 30px;
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    background-color: saddlebrown;
+}
+nav ul li img {
+    width: 62px;
+    margin: 5px;
+}

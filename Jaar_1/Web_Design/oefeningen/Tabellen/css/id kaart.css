@@ -1,0 +1,18 @@
+table {
+    border: 1px solid #000
+}
+
+table th, table td {
+    padding: 5px;
+}
+
+table td {
+    border: 1px solid #000;
+}
+table img {
+    width: 200px;
+}
+
+tabnle tr:nth-child(3) th {
+    vertical-align: top;
+}

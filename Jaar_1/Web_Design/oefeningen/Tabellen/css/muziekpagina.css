@@ -1,0 +1,81 @@
+body {
+    background-color: #8198b5;
+}
+
+.highlight {
+    background-color: lightblue;
+    color: black;
+    border: 2px solid yellow;
+    padding: 20px;
+    width: 1000px;
+    text-align: left;
+}
+
+.twee {
+    background-color: lightcoral;
+    color: black;
+    border: 2px solid black;
+    padding: 20px;
+    width: 1000px;
+    text-align: left;
+}
+
+.drie {
+    background-color: mediumpurple;
+    color: black;
+    border: 2px solid green;
+    padding: 20px;
+    width: 1000px;
+    text-align: left;
+}
+
+.vier {
+    background-color: orange;
+    color: saddlebrown;
+    border: 2px solid darkred;
+    padding: 20px;
+    width: 1000px;
+    text-align: left;
+}
+
+.vijf {
+    background-color: beige;
+    color: blueviolet;
+    border: 2px solid yellow;
+    padding: 20px;
+    width: 1000px;
+    text-align: left;
+}
+
+.button1 {
+    background-color: lightgrey;
+    color: black;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px;
+    width: 1000px;
+    text-align: left;
+}
+table {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+    background-color: #49678c;
+    width: 600px;
+    table-layout: auto;
+}
+td {
+    border: 1px solid #fff;
+    padding: 5px;
+    color: #fff;
+    text-align: left;
+}
+
+
+th {
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+}
+* {
+    font-family: Roboto, sans-serif;
+}

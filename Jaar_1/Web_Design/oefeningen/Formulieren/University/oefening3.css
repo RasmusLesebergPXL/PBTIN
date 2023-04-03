@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #2c2cc0;
+}
+main {
+    width: 800px;
+    margin: 20px auto;
+}
+fieldset {
+    border: 1px solid white;
+    color: white;
+}
+label {
+    width: 250px;
+    display: inline-block;
+    text-align: right;
+    margin: 10px;
+}
+label.tekst {
+    width: 100px;
+    text-align: left;
+}
+label[for="pursuing"], label[for="completed"] {
+    width: 60px;
+    text-align: left;
+}
+label[for="semester"] {
+    width: 30px;
+    text-align: left;
+}
+input[type="number"] {
+    width: 50px;
+}
+input[type="text"], input[type="url"] {
+    width: 285px;
+    display: inline-block;
+}
+select {
+    width: 100px;
+    display: inline-block;
+    margin-right: 15px;
+}
+input[type="submit"] {
+    margin: 10px;
+    padding: 0 25px;
+}

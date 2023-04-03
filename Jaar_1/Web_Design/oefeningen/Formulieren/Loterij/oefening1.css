@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Calibri, Arial, sans-serif;
+}
+header, main {
+    width: 600px;
+    margin: 20px auto;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label {
+    width: 13%;
+    margin: 1%;
+}
+
+input {
+    width: 33%;
+    margin: 1%;
+}
+
+input#nummer, input#bus {
+    width: 11%;
+}
+label[for="bus"] {
+    width: 7%;
+}
+
+input[type=reset], input[type=submit] {
+    padding: 5px;
+}
+

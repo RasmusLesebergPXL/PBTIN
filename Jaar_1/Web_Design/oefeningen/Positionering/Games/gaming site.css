@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Arial, sans-serif;
+}
+main {
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid dodgerblue;
+    overflow: auto;
+}
+main header {
+    background-color: dodgerblue;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+main section {
+    padding: 20px;
+}
+main section p {
+    margin: 15px 0;
+}
+main section article {
+    width: calc(100%/3 - 2%);
+    margin: 1%;
+    float: left;
+    border: 1px solid grey;
+}
+main section article img {
+    width: 100%;
+}
+main section article p {
+    text-align: center;
+    color: dodgerblue;
+    font-weight: bold;
+}

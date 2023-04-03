@@ -1,0 +1,40 @@
+* {
+    margin: 0 auto;
+}
+
+table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 600px;
+    table-layout: fixed;
+    margin-top: 30px;
+}
+
+thead td {
+    text-decoration: underline;
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+
+
+table tbody th:nth-child(odd) {
+    background-color: cornflowerblue;
+    color: white;
+    width: auto;
+    font-weight: unset;
+}
+
+table tbody th:nth-child(even) {
+    background-color: cyan;
+    color: black;
+    width: auto;
+    font-weight: unset;
+}
+
+.Lunch {
+    background-color: grey;
+    color: black;
+    text-decoration: underline;
+    text-align: center;
+}

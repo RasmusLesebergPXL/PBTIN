@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+#page, #pageheader, #pagenav, #pagenavul, #articlecenter, #asideright{
+    margin:0;
+    padding:0;
+}
+
+#page{
+    width:1200px;
+    margin:auto;
+}
+
+#pagefooter{
+    margin-top: 2em;
+}
+
+#pageheader{
+    border-bottom:black 3px solid;
+    border-top: black 3px solid;
+}
+
+#pageheader,  #pagenav{
+    margin-top:1em;
+    margin-bottom:1em;
+    width: 100%;
+}
+
+#pageheader, #pagefooter{
+    text-align: center;
+}
+#pagefooter {
+    bottom: 0;
+    clear: both;
+}
+
+#pagenav li{
+    border:black solid thin;
+    vertical-align: middle;
+    padding:0.8em;
+    float: left;
+    margin: 3px;
+    list-style: none;
+    text-align: center;
+    width: calc(100% / 8 - 6px);
+    /*    uitleg width: 8 elementen - margin beide kanten*/
+}
+
+#pagenav a{
+    margin:0;
+    padding:0;
+    height:2em;
+    text-decoration:none;
+    text-align: center;
+    color:black;
+}
+#pagenav li:hover {
+    background-color: #32a887;
+}
+#articlecenter {
+    width: 70%;
+    float: left;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+#asideright {
+    width: 28%;
+    float: right;
+}
+
+@media screen and (max-width: 1200px) {
+    #pagenav li {
+        width: calc(100% / 4 - 6px);
+        float: left;
+    }
+    #page {
+        position: relative;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 900px) {
+    #pagenav li {
+        width: calc(100% / 2 - 6px);
+    }
+    #articlecenter, #asideright  {
+        float:none;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    footer, #asideright, figure {
+        display: none;
+    }
+    #pagenav li {
+        width: calc(100% / 1 - 6px);
+    }
+}
