@@ -1,0 +1,20 @@
+- hosts: webservers
+  become: true
+  become_user: root
+
+- name: Configure web server
+  hosts: all
+  become: true
+  become_user: root
+  tasks:
+    - name: install firewalld
+      yum:
+        name: firewalld
+        state: latest
+
+    - name: Set firewall rule for HTTP traffic
+      firewalld:
+        state: enabled
+        immediate: yes
+        port: "{{ port }}"
+        zone: public

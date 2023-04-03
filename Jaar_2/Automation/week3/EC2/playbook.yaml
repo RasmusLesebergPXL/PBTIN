@@ -1,0 +1,63 @@
+---
+- name: update and upgrade 
+  hosts: multi
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Update
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Upgrade 
+      apt: upgrade=dist force_apt_get=yes
+    
+    - name: Checking if reboot is needed
+      register: reboot_required_file
+      stat: path=/var/run/reboot-required get_md5=no
+
+    - name: Rebooting the system when needed
+      reboot: 
+        msg: "Rebooting"
+        connect_timeout: 5
+        reboot_timeout: 300
+        pre_reboot_delay: 0
+        post_reboot_delay: 30
+        test_command: uptime
+      when: reboot_required_file.stat.exists
+
+- name: deploy docker 
+  hosts: nodes
+  become: true
+  become_user: root
+
+  tasks:   
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: install docker-ce (Community Edition)
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+- name: Install and start nginx
+  hosts: all
+  become: true
+  become_user: root
+  tasks: 
+    - name: ensure nginx is at the latest version
+      apt:
+        name: nginx
+        state: latest
+    - name: start nginx
+      service: 
+        name: nginx
+        state: started
+        enabled: yes  

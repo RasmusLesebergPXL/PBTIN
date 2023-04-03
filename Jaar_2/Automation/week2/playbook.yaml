@@ -1,0 +1,61 @@
+---
+- name: update and upgrade 
+  hosts: multi
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Update
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Upgrade 
+      apt: upgrade=dist force_apt_get=yes
+    
+
+- name: deploy docker 
+  hosts: nodes
+  become: true
+  become_user: root
+
+  tasks:   
+      - name: Download get-docker.sh script
+        get_url:
+          url: https://get.docker.com
+          dest: ~/get-docker.sh
+          mode: '0755'
+          # validate_certs: no
+          force: yes
+      
+      - name: Execute docker shell
+        shell: ~/get-docker.sh
+      
+      - name: Add the user to docker group
+        user:
+          name: "{{ ansible_user }}"
+          append: yes
+          groups: docker
+      
+      - name: Rebooting the system 
+        reboot: 
+          msg: "Rebooting"
+          connect_timeout: 5
+          reboot_timeout: 300
+          pre_reboot_delay: 0
+          post_reboot_delay: 30
+          test_command: uptime
+
+
+- name: Install and start nginx
+  hosts: webservers
+  become: true
+  become_user: root
+  tasks: 
+    - name: ensure nginx is at the latest version
+      apt:
+        name: nginx
+        state: latest
+    - name: start nginx
+      service: 
+        name: nginx
+        state: started
+        enabled: yes  
