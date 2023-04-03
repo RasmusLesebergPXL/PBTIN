@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+    environment {
+        PRODUCTION_SERVER_USER = "student"
+        PRODUCTION_SERVER_IP = "192.168.221.1"
+    }
+    stages {
+        stage ('cleanup'){
+            steps{
+                cleanWs()
+                sshagent(['productionCredentials']) {
+                    sh 'ssh -o StrictHostKeyChecking=no ${PRODUCTION_SERVER_USER}@${PRODUCTION_SERVER_IP} rm -rf /opt/*'
+                }
+            }
+        }       
+        
+        stage('deploy production') {
+            steps {
+                copyArtifacts fingerprintArtifacts: true, projectName: 'Opdracht-6-Test', selector: lastSuccessful()
+                sshagent(['productionCredentials']) {
+                    sh 'scp bundle.zip ${PRODUCTION_SERVER_USER}@${PRODUCTION_SERVER_IP}:/opt'
+                    sh 'ssh ${PRODUCTION_SERVER_USER}@${PRODUCTION_SERVER_IP} unzip /opt/bundle.zip -d /opt/'
+                }
+            }
+        }
+
+        stage ('fetch css files') {
+            steps {
+                git branch: 'master', url: 'https://github.com/RasmusLesebergPXL/groepsnaam-configuratie-dtap.git'    
+            }
+        }
+
+        stage ("Config env") {
+            steps {
+                sshagent(['productionCredentials']) {
+                    sh 'ssh ${PRODUCTION_SERVER_USER}@${PRODUCTION_SERVER_IP} rm -rf /opt/bundle/public/assets/style.css'
+                    sh 'scp Prod.style.css ${PRODUCTION_SERVER_USER}@${PRODUCTION_SERVER_IP}:/opt/bundle/public/assets/style.css'
+                }
+            }
+        }
+
+        stage('start production'){
+            steps {
+                sshagent(['productionCredentials']) {
+                    sh 'ssh ${PRODUCTION_SERVER_USER}@${PRODUCTION_SERVER_IP} pm2 stop all || true'
+                    sh 'ssh ${PRODUCTION_SERVER_USER}@${PRODUCTION_SERVER_IP} pm2 start /opt/bundle/server.js'
+                }
+            }
+        }
+
+        stage('test production') {
+            steps {
+                sh 'curl -s -o /dev/null -w "%{http_code}" ${PRODUCTION_SERVER_IP}:3000'
+            }
+        }
+    }
+}

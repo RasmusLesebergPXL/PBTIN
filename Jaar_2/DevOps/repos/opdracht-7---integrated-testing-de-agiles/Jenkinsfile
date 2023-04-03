@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+    environment {
+        JENKINS_SERVER_IP = "192.168.221.133"
+        CREDENTIALSID = "91e75d1a-77c3-49bb-b205-c30514c91624" 
+    }
+    stages {
+        stage ('cleanup'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage ('fetch code') {
+            steps {
+                git branch: 'main', url: 'git@github.com:PXL-2TIN-DevOps-2223/opdracht-7---integrated-testing-de-agiles.git', credentialsId: "${CREDENTIALSID}"
+            }
+        }       
+        stage ('change ip for selenium tests') {
+            steps {
+                sh 'sed -i "s/{JenkinsServerIP}/${JENKINS_SERVER_IP}/g" SeleniumTests.side'
+            }
+        }
+        stage ('run e2e tests') {
+            steps {
+                nodejs('node-selenium') {
+                    sh 'mkdir testResults'
+                    sh 'npm -v'
+                    sh 'selenium-side-runner -c "goog:chromeOptions.args=[disable-infobars, headless, no-sandbox] browserName=chrome" --output-directory=testResults SeleniumTests.side'
+                    // De cmd die op een oudere versie van node en selnium side runner zou werken, met xml output format:
+                    // sh 'selenium-side-runner -c "goog:chromeOptions.args=[disable-infobars, headless] browserName=chrome" --output-directory=testResults --output-format=junit SeleniumTests.side'
+                    sh 'ls -lah'
+                }
+            }
+        }
+        stage ('Run integratie test') {
+            steps {
+                nodejs('newman') {
+                     sh 'newman run api-testcollection--de-agiles.postman_collection.json -r cli,junit --reporter-junit-export postman_result.xml'
+                     sh 'ls -lah ./testResults'
+                }
+            }
+        }
+        stage ('Create artifact') {
+            steps {
+                sh 'cp postman_result.xml testResults'
+                sh 'zip -r testResults.zip testResults/' 
+            }
+        }
+    }
+    post {
+          success {
+              archiveArtifacts 'testResults.zip'
+          }
+        
+          failure {
+                  sh 'touch /var/lib/jenkins/jenkinserrorlog'
+                  sh 'ls'
+                  sh 'echo "pipeline poging faalt op `date`" >> /var/lib/jenkins/jenkinserrorlog'
+          }
+      }
+}

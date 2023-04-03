@@ -1,0 +1,70 @@
+pipeline {
+    agent any
+    // opdracht d
+    triggers{
+        cron('0 14 * * 5')
+    }
+    stages {
+        stage('opdracht 5') {
+            steps {
+                echo "good luck..."
+            }
+        } 
+        
+        // clean up
+        stage('clean up') {
+            steps {
+                cleanWs()
+            }
+        }
+        
+        // Opdracht a
+        stage('checkout code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Vincevdb1/calculator-app-finished.git'
+            }
+        }
+        // Opdracht c
+        stage( 'install dependencies') {
+            steps {
+            nodejs('nodetin') {
+                sh 'npm install'               
+            }
+        }
+     }
+     
+     stage('unittest') {
+         steps {
+             nodejs('nodetin') {
+                 sh 'npm test'
+                 junit testResults: 'junit.xml'
+             }
+         }
+      }
+      
+      stage('create bundle') {
+          steps {
+              sh 'mkdir bundle'
+              sh 'cp -r public bundle'
+              sh 'cp server.js bundle'
+              sh 'cp routes.js bundle'
+              sh 'cp app.js bundle'
+              sh 'cp package.json bundle'
+              sh 'cp package-lock.json bundle'
+              sh 'cp -r node_modules bundle'
+              sh 'zip -r bundle.zip bundle/'     
+          }        
+      }     
+    }
+    post {
+          success {
+              archiveArtifacts 'bundle.zip'
+          }
+        
+          failure {
+                  sh 'touch /var/lib/jenkins/jenkinserrorlog'
+                  sh 'ls'
+                  sh 'echo "pipeline poging faalt op `date`" >> /var/lib/jenkins/jenkinserrorlog'
+          }
+      }
+}

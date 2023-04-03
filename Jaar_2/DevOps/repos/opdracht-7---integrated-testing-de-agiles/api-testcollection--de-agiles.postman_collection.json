@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "dcafbde6-e99d-4247-aec9-8a9aba1d7904",
+		"name": "api-testcollection-<de agiles>",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24901029"
+	},
+	"item": [
+		{
+			"name": "Geef een lijst weer van alle studenten in de API.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "devops.d-ries.be/api/students",
+					"host": [
+						"devops",
+						"d-ries",
+						"be"
+					],
+					"path": [
+						"api",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Geef de specifieke details weer van een lid van jullie groep weer.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"let expectedBody = {\r",
+							"    _id: \"639855be229c333bc01e9835\",\r",
+							"    name: \"Zidane Boutayniout\",\r",
+							"    age: 19,\r",
+							"    group: \"De Agiles\",\r",
+							"    __v: 0\r",
+							"} \r",
+							"pm.test(\"Check Body\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.log(jsonData)\r",
+							"    console.log(expectedBody)\r",
+							"    pm.expect(jsonData).to.eql(expectedBody);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "devops.d-ries.be/api/students/639855be229c333bc01e9835",
+					"host": [
+						"devops",
+						"d-ries",
+						"be"
+					],
+					"path": [
+						"api",
+						"students",
+						"639855be229c333bc01e9835"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "2TINDEVOPS",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

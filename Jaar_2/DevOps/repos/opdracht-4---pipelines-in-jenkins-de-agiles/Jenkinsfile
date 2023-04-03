@@ -1,0 +1,67 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        //showfolder stage
+        stage('show folders') {
+            steps {
+                sh '''
+                    mkdir .halloween
+                    ls -lah
+                    pwd
+                '''
+            }
+        }
+        //zipfile stage
+        stage('create zipfile') {
+            steps {
+                sh '''
+                    mkdir de-agiles
+                    cd de-agiles
+                    touch Vincent Zidane Rasmus Stijn
+                    cd ..; zip -r de-agiles.zip de-agiles/
+                    tree
+                '''
+            }
+        }
+        //schoonmaak stage
+        stage('schoonmaak') {
+            steps {
+                sh 'rm -rf de-agiles de-agiles.zip .halloween'
+            }
+        }
+        //github repo stage
+        stage('checkout code') {
+            steps {
+                sh '''
+                    git config --global user.name "jenkinsUser"
+                    git clone https://github.com/PXL-2TIN-DevOps-Resources/Calculator-app.git
+                    tree
+                '''
+            }
+        }
+        //tmp voor de repo die al lokaal bestaat
+//        stage('tweede schoonmaak') {
+//            steps {
+//                sh 'rm -rf Calculator-app'
+//            }
+//        }
+        //Pipeline success stage
+        stage('success-check') {
+            steps {
+                script {
+                    if ("SUCCESS".equals(currentBuild.previousBuild.result)) {
+                        echo "The pipeline build was a SUCCESS"
+                    } else {
+                        echo "The pipeline build FAILED"
+                    } 
+                }
+            }
+        }
+    }
+}

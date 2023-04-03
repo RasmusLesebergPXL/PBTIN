@@ -1,0 +1,87 @@
+pipeline {
+    agent any
+  
+    stages {
+        stage ('cleanup'){
+            steps{
+                cleanWs()
+                sh 'rm -rf /opt/*'
+            }
+        }
+
+        stage('fetch app code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/PXL-2TIN-DevOps-Resources/calculator-app-finished.git'
+            }
+        }
+
+        stage('install dependencies') {
+            steps {
+                nodejs('nodetin') {
+                    sh 'npm install'               
+                }
+            }
+        }
+
+        stage('unittest') {
+            steps {
+                 nodejs('nodetin') {
+                    sh 'npm test'
+                    junit testResults: 'junit.xml'
+                }
+            }
+        }
+
+        stage('create artifact') {
+            steps {
+                sh 'mkdir bundle'
+                sh 'cp -r public bundle'
+                sh 'cp server.js bundle'
+                sh 'cp routes.js bundle'
+                sh 'cp app.js bundle'
+                sh 'cp package.json bundle'
+                sh 'cp package-lock.json bundle'
+                sh 'cp -r node_modules bundle'
+                sh 'zip -r bundle.zip bundle/' 
+            }        
+        }
+        
+        stage ('fetch css files') {
+            steps {
+                git branch: 'master', url: 'https://github.com/RasmusLesebergPXL/groepsnaam-configuratie-dtap.git'    
+            }
+        }
+ 
+        stage("deployment") {
+            steps {
+                sh 'cp bundle.zip /opt/'
+                sh 'unzip /opt/bundle.zip -d /opt/'
+            }
+        }
+
+        stage ("Config env") {
+            steps {
+                sh 'rm -rf /opt/bundle/public/assets/style.css'
+                sh 'mv Test.style.css /opt/bundle/public/assets/style.css'
+            }
+        }
+        
+        stage("deploy") {
+            steps {
+                sh 'pm2 stop all || true'
+                sh 'pm2 start /opt/bundle/server.js'
+            }
+        }
+    }
+        post {
+          success {
+              archiveArtifacts 'bundle.zip'
+          }
+        
+          failure {
+                  sh 'touch /var/lib/jenkins/jenkinserrorlog'
+                  sh 'ls'
+                  sh 'echo "pipeline poging faalt op `date`" >> /var/lib/jenkins/jenkinserrorlog'
+          }
+      }
+}

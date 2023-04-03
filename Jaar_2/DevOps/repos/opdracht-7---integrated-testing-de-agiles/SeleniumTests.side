@@ -1,0 +1,223 @@
+{
+  "id": "bbd1fc2d-d3fc-4705-bfb6-c26ac76ecd37",
+  "version": "2.0",
+  "name": "Opdracht-7-DeAgiles",
+  "url": "http://{JenkinsServerIP}:3000",
+  "tests": [{
+    "id": "e3bfb9c8-7170-4e90-92be-3e31b7087c55",
+    "name": "AppHasAddButton",
+    "commands": [{
+      "id": "cb5c9d45-636d-46c5-8792-6487a660b1d6",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ecdfaf6-3b08-4ff9-9b36-04bf5072a04c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "801x510",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6eec1285-3fd7-429a-b317-66da7035ef53",
+      "comment": "",
+      "command": "click",
+      "target": "id=number1",
+      "targets": [
+        ["id=number1", "id"],
+        ["name=number1", "name"],
+        ["css=#number1", "css:finder"],
+        ["xpath=//input[@id='number1']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59705434-65a2-4bd3-a48f-f3604c171620",
+      "comment": "",
+      "command": "type",
+      "target": "id=number1",
+      "targets": [
+        ["id=number1", "id"],
+        ["name=number1", "name"],
+        ["css=#number1", "css:finder"],
+        ["xpath=//input[@id='number1']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "957b3cae-aa39-41e8-9336-d2dd4af905c9",
+      "comment": "",
+      "command": "click",
+      "target": "id=number2",
+      "targets": [
+        ["id=number2", "id"],
+        ["name=number2", "name"],
+        ["css=#number2", "css:finder"],
+        ["xpath=//input[@id='number2']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "419b2cf0-6716-43af-a7f4-0ec916ceb1b3",
+      "comment": "",
+      "command": "type",
+      "target": "id=number2",
+      "targets": [
+        ["id=number2", "id"],
+        ["name=number2", "name"],
+        ["css=#number2", "css:finder"],
+        ["xpath=//input[@id='number2']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "e4dc2277-2a51-43ba-8266-62b872d66fd6",
+      "comment": "",
+      "command": "click",
+      "target": "id=add",
+      "targets": [
+        ["id=add", "id"],
+        ["name=add", "name"],
+        ["css=#add", "css:finder"],
+        ["xpath=//button[@id='add']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "17488e87-271d-4d40-b2ea-7204bb6af140",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=add",
+      "targets": [
+        ["id=add", "id"],
+        ["name=add", "name"],
+        ["css=#add", "css:finder"],
+        ["xpath=//button[@id='add']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add')]", "xpath:innerText"]
+      ],
+      "value": "Add"
+    }]
+  }, {
+    "id": "786a6804-863b-4f4a-bdaa-4299e21b0a9b",
+    "name": "AppCanSubtract",
+    "commands": [{
+      "id": "b08a2d12-9157-4cb3-b2fe-df897824e1b4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42eee97f-0fc5-407b-8a42-d97755a37b98",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "803x513",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd13a53c-e84f-4b8c-9591-ceb0dbaae010",
+      "comment": "",
+      "command": "click",
+      "target": "id=number1",
+      "targets": [
+        ["id=number1", "id"],
+        ["name=number1", "name"],
+        ["css=#number1", "css:finder"],
+        ["xpath=//input[@id='number1']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d381ba39-4c49-4187-a9d2-b3b0108860d5",
+      "comment": "",
+      "command": "type",
+      "target": "id=number1",
+      "targets": [
+        ["id=number1", "id"],
+        ["name=number1", "name"],
+        ["css=#number1", "css:finder"],
+        ["xpath=//input[@id='number1']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "9"
+    }, {
+      "id": "0e6dd705-e9d1-4238-9b91-ab71a3430925",
+      "comment": "",
+      "command": "click",
+      "target": "id=number2",
+      "targets": [
+        ["id=number2", "id"],
+        ["name=number2", "name"],
+        ["css=#number2", "css:finder"],
+        ["xpath=//input[@id='number2']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb1ccd2d-1339-4152-8dff-8c491c4b093b",
+      "comment": "",
+      "command": "type",
+      "target": "id=number2",
+      "targets": [
+        ["id=number2", "id"],
+        ["name=number2", "name"],
+        ["css=#number2", "css:finder"],
+        ["xpath=//input[@id='number2']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "6"
+    }, {
+      "id": "4e135c1d-f652-48a5-9d9b-81f30d66203e",
+      "comment": "",
+      "command": "click",
+      "target": "id=subtract",
+      "targets": [
+        ["id=subtract", "id"],
+        ["name=subtract", "name"],
+        ["css=#subtract", "css:finder"],
+        ["xpath=//button[@id='subtract']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Subtract')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0bd955c-a749-4624-8bd4-75fd5b16d7d1",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=result",
+      "targets": [
+        ["id=result", "id"],
+        ["css=#result", "css:finder"],
+        ["xpath=//h2[@id='result']", "xpath:attributes"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'The result is: 3')]", "xpath:innerText"]
+      ],
+      "value": "The result is: 3"
+    }]
+  }],
+  "suites": [{
+    "id": "2f16a6ff-8921-464e-9b35-fabc99a7711c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e3bfb9c8-7170-4e90-92be-3e31b7087c55"]
+  }],
+  "urls": ["{JenkinsServerIP}:3000/"],
+  "plugins": []
+}
