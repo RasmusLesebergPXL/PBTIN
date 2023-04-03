@@ -1,0 +1,11 @@
+Province{name='Brussel-Hoofdstad', population=1222637, landArea=161, density=7594.018633540372}
+Province{name='Provincie Antwerpen', population=1886609, landArea=2867, density=658.0429019881409}
+Province{name='Provincie Henegouwen', population=1351127, landArea=3786, density=356.87453777073426}
+Province{name='Provincie Limburg', population=885951, landArea=2422, density=365.7931461601982}
+Province{name='Provincie Luik', population=1110989, landArea=3862, density=287.67193164163643}
+Province{name='Provincie Luxemburg', population=291143, landArea=4505, density=64.62663706992231}
+Province{name='Provincie Namen', population=499454, landArea=3600, density=138.73722222222221}
+Province{name='Provincie Oost-Vlaanderen', population=1543865, landArea=2982, density=517.7280348759222}
+Province{name='Provincie Vlaams-Brabant', population=1173440, landArea=2106, density=557.1889838556506}
+Province{name='Provincie Waals-Brabant', population=409782, landArea=1091, density=375.60219981668195}
+Province{name='Provincie West-Vlaanderen', population=1209011, landArea=3144, density=384.5454834605598}

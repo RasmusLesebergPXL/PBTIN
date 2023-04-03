@@ -1,0 +1,10 @@
+        Cash: 51288,60€
+        Totaal aantal bezoekers: 556
+        Aantal bezoekers vandaag: 273
+        Gemiddelde happiness: 60
+        Gelukkigste bezoeker: Numbers 130
+        Ongelukkigste bezoeker: Larry 40
+        Gemiddelde aantal ritjes/bezoeker: 2,00
+        Totaal bedrag uitgegeven vandaag: 2186,40€
+        Gemiddelde tijd: 6047,33
+        Langste bezoek: Dagmar 10667.0

@@ -1,0 +1,2 @@
+SpotifyRecord{ID=10, trackName='bad guy', artistName='Billie Eilish', popularity=95}
+SpotifyRecord{ID=25, trackName='bad guy (with Justin Bieber)', artistName='Billie Eilish', popularity=89}

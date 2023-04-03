@@ -1,0 +1,10 @@
+        Cash: 53567,10€
+        Totaal aantal bezoekers: 840
+        Aantal bezoekers vandaag: 284
+        Gemiddelde happiness: 66
+        Gelukkigste bezoeker: Arlie 130
+        Ongelukkigste bezoeker: Whitley 37
+        Gemiddelde aantal ritjes/bezoeker: 1,47
+        Totaal bedrag uitgegeven vandaag: 2281,00€
+        Gemiddelde tijd: 5741,65
+        Langste bezoek: Flavia 11340.0

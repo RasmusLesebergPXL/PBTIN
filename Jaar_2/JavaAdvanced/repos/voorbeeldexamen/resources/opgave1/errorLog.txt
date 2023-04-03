@@ -1,0 +1,2 @@
+2023-02-01T17:24:55.086271100 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T17:26:55.037348300 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-

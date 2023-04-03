@@ -1,0 +1,13 @@
+﻿id;name;genre;excitement;excitement_rating;nausea;nausea_rating;cost;passengers;ridetime
+1;Bobsleigh Coaster;roller coaster;5.49;High;4.86;Medium;2700;16;25
+2;Dinghy Slide;water ride;4.83;Medium;3.5;Medium;1200;2;20
+3;Wild Mouse;roller coaster;7.64;High;4.87;Medium;1640;4;25
+4;Junior Roller Coaster;roller coaster;5.17;High;3.81;Medium;1320;12;20
+5;Monorail;transport;1.2;Low;1.1;Low;1550;50;50
+6;Corkscrew Roller Coaster;roller coaster;6.21;High;3.43;Medium;3900;24;25
+7;Water Coaster;roller coaster;6.12;High;4.21;Medium;1640;6;35
+8;Giga Coaster;roller coaster;7.7;Very High;3.68;Medium;4950;36;25
+9;3D Cinema;thrill ride;4;Medium;1.25;Low;560;20;45
+10;Maze;gentle ride;4.09;Medium;0;Low;216;35;30
+11;Merry-Go-Round;gentle ride;2;Low;1.2;Low;460;25;20
+12;Bumper boats;water ride;2.74;Low;1;Low;850;8;25

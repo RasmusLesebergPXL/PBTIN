@@ -1,0 +1,212 @@
+2023-02-01T17:30:32.928249700 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T17:31:44.852519900 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T17:32:16.943847200 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T17:32:48.270876300 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T17:32:48.284874200 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T17:32:48.285875200 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T17:32:48.286875700 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:32:48.372874 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:32:48.374877100 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:32:48.383873900 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T17:32:48.385874400 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:32:48.387878 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T17:32:48.388874500 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T17:32:48.401872800 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T17:34:39.058836200 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T17:34:39.071836600 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T17:34:39.072837 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T17:34:39.073837700 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:34:39.174834500 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:34:39.176836 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:34:39.185837200 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T17:34:39.190836 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:34:39.191835800 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T17:34:39.192834200 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T17:34:39.199835 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T17:35:34.945799800 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T17:35:34.960795800 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T17:35:34.961796100 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T17:35:34.963801400 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:35:35.063797 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:35:35.065796500 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:35:35.069798400 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T17:35:35.070798600 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:35:35.073797200 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T17:35:35.074799500 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T17:35:35.088797200 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T17:36:38.376407900 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T17:36:38.391408400 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T17:36:38.392407900 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T17:36:38.393407700 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:36:38.477407200 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:36:38.491410700 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:36:38.495407100 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T17:36:38.497414800 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:36:38.499409400 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T17:36:38.500407200 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T17:36:38.508408100 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T17:36:55.948269900 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T17:36:55.971270100 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T17:36:55.973273900 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T17:36:55.974270900 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:36:56.062274600 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:36:56.063270700 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T17:36:56.068269900 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T17:36:56.069269500 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T17:36:56.070270300 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T17:36:56.071273 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T17:36:56.082271200 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:20:31.989881200 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:20:32.002879700 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:20:32.003881500 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:20:32.004881700 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:20:32.072881400 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:20:32.075881500 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:20:32.079880300 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:20:32.081884800 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:20:32.083880600 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:20:32.084880700 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:20:32.102881600 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:24:36.322090300 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:24:36.334092100 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:24:36.335091100 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:24:36.335091100 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:24:36.450096200 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:24:36.454091500 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:24:36.459091 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:24:36.460092300 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:24:36.462091100 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:24:36.463090400 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:24:36.471092600 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:32:17.539746900 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:32:17.554747600 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:32:17.554747600 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:32:17.555747500 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:32:17.634749800 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:32:17.656747300 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:32:17.660749100 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:32:17.661747100 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:32:17.662747700 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:32:17.663747800 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:32:17.673749 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:38:53.187634800 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:38:53.205632100 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:38:53.206635800 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:38:53.209631800 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:38:53.299630900 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:38:53.313630300 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:38:53.316629600 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:38:53.318629100 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:38:53.320632700 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:38:53.320632700 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:38:53.328632800 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:40:04.268684300 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:40:04.282689200 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:40:04.283685900 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:40:04.284684500 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:40:04.405686600 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:40:04.406684900 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:40:04.412687600 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:40:04.413687200 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:40:04.415687200 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:40:04.415687200 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:40:04.431691200 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:46:03.584957500 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:46:03.600959300 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:46:03.603957 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:46:03.604955600 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:46:03.696957900 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:46:03.698956200 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:46:03.704956 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:46:03.705955700 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:46:03.707955700 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:46:03.709955800 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:46:03.718957300 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:46:55.184376800 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:46:55.196375700 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:46:55.201376 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:46:55.202377800 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:46:55.296377700 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:46:55.298378800 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:46:55.301378200 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:46:55.302377800 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:46:55.304377 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:46:55.305379500 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:46:55.323377100 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:54:59.996328200 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:55:00.012331600 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:55:00.014327600 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:55:00.016330300 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:55:00.168329400 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:55:00.179328700 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:55:00.192329200 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:55:00.198327200 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:55:00.200328400 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:55:00.201329600 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:55:00.207337400 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:55:38.098207500 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:55:38.116207800 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:55:38.118206200 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:55:38.119211500 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:55:38.220219300 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:55:38.226206100 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:55:38.234204400 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:55:38.241206200 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:55:38.242205900 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:55:38.243206700 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:55:38.255205800 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:56:32.791785600 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:56:32.827795800 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:56:32.832786900 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:56:32.834786200 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:56:32.922784300 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:56:32.924782400 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:56:32.962786500 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:56:32.968784900 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:56:32.976786900 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:56:32.979787400 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:56:33.042782500 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:58:20.381089 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:58:20.397089400 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:58:20.398090 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:58:20.399088 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:58:20.464089900 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:58:20.471088200 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:58:20.474087800 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:58:20.479088200 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:58:20.485088500 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:58:20.486090200 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:58:20.495087100 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:59:20.355554200 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:59:20.368554100 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:59:20.369554700 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:59:20.370554100 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:59:20.451554400 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:59:20.472556400 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:59:20.477556100 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:59:20.478553500 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:59:20.479553700 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:59:20.482553900 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:59:20.494553500 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T18:59:41.011308700 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T18:59:41.026310 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T18:59:41.027310200 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T18:59:41.028310 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:59:41.134309900 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:59:41.137310800 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T18:59:41.145316800 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T18:59:41.146314800 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T18:59:41.148309900 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T18:59:41.149310700 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T18:59:41.154308900 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
+2023-02-01T19:00:42.559361900 - resources\opgave1\activities_from_strava.txt - Index 2 out of bounds for length 2-
+2023-02-01T19:00:42.578361300 - resources\opgave1\activities_from_strava.txt - Text '24122017' could not be parsed at index 2-
+2023-02-01T19:00:42.580361900 - resources\opgave1\activities_from_strava.txt - UNKNOWN CUSTOMER:-Curtis Farley 20067666;11/01/2018;running;24.1
+2023-02-01T19:00:42.581363300 - resources\opgave1\activities_from_strava.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T19:00:42.692360900 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T19:00:42.693360300 - resources\opgave1\endomodo_activities.txt - No enum constant be.pxl.ja.opgave1.ActivityType.TREADMILL-
+2023-02-01T19:00:42.696361300 - resources\opgave1\endomodo_activities.txt - UNKNOWN CUSTOMER:-20180101;20906825;running;25.7
+2023-02-01T19:00:42.697361100 - resources\opgave1\endomodo_activities.txt - Cannot invoke "be.pxl.ja.opgave1.Customer.addPoints(double)" because the return value of "be.pxl.ja.opgave1.CustomerRepository.getByCustomerNumber(String)" is null-
+2023-02-01T19:00:42.699360800 - resources\opgave1\endomodo_activities.txt - Text '20171316' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13-
+2023-02-01T19:00:42.699360800 - resources\opgave1\endomodo_activities.txt - Text '2017129' could not be parsed at index 6-
+2023-02-01T19:00:42.706361300 - resources\opgave1\runkeeper_activities.txt - INVALID FILENAME-
