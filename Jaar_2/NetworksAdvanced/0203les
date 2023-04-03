@@ -1,0 +1,65 @@
+
+192.168.1.0/24
+
+100 hosts  192.168.1.1 - 127 /25  
+
+20 hosts   192.168.1.128 - 159 /27
+
+20 hosts   192.168.1.160 - 191 /27
+
+20 hosts   192.168.1.192 - 223 /27 MGMT
+
+==============DOCUMENTATIE===========
+Switch access
+
+USB name via Device Management
+Putty --> Telnet --> Juiste naam ingeven
+Commands:
+		enable
+		conf t
+
+VLANs aanmaken 
+(in conf t)
+
+		vlan 10 
+		name student (voor iedere vlan herhalen met unieke ID)
+		exit
+
+Ranges toekennen
+(in conf t)
+		interface range fa0/1-9		(voor elke range)
+		switchport mode access
+		switchport access vlan <nummer>
+		end
+
+TRUNK connectie
+(in conf t)
+		interface g0/2
+		switchport mode trunk
+		switchport trunk native vlan 200 (op beide switches)
+		switchport trunk allowed vlan 10,20,30,99 (alle vlans)
+
+
+IP configuratie
+		int vlan 99
+		ip address 192.168.1.194 255.255.255.224  (voor SW1)
+		no shutdown
+
+		op SW2
+		ip address 192.168.1.195
+
+		Op Hosts: 
+		DHCP uitzetten
+		static IP toekennen aan Ethernet, niet Wifi!
+		zelfde Subnet Mask
+
+Show configuratie 
+(niet in conf t, alleen enable)
+		
+		show vlan
+		show ip int brief
+
+
+
+
+
