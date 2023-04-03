@@ -1,0 +1,49 @@
+VPN
+
+Theorie
+
+Virtuele verbinidng met router
+- Encapsualting van data
+- Authenticatie 
+- Packet wordt geencapsulate in nieuw packet
+- 'Doosje in doosje'
+- Traffic gaat door VPN tunnel
+- Router zal binnenkomend pakket decrypteren en op eigen LAN netwerk plaatsen
+
+Praktijk
+
+1.	Routing and Remote Access
+	RM klik op Server(local)
+	Disable Routing and Remote Access, OK
+
+2.	Opnieuw Enable, Next, ipv NAT optie 3, VPN en NAT samen
+
+3.	Next, Select Ethernet 2
+
+4.	Automatisch
+
+5.	Next, No, Next, Finish
+
+6. 	AD USers and COmputers
+	Bij bepaalde user
+	Properties, DIal-in tab
+
+7.	Allow access, OK
+
+
+Op Desktop
+
+1.	Settings, Network & Internet
+
+2.	VPN
+
+3.	Add VPN
+
+4.	Windows(builtin)
+	generic name
+	server extern ip adress pakken
+	Automatics
+	USername, Password
+	Connect
+	
+	

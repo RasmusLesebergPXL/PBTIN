@@ -1,0 +1,60 @@
+DHCP
+
+Theorie (en ADDC)
+
+- Automatisch uitdelen van IP adressen
+- Scope / Excluded meegeven
+- Default gateway en DNS meegeven
+- Server best geen DHCP adres geven
+- Scopes mogen mekeer niet overlappen
+
+Voordeel ADC
+Voordeel:
+- Redundancy
+- Verdelen van de load bij aanloggen
+- Creert cloned AD
+- Extra DNS server
+
+Config: Preferred DNS ip -> server 1 ip
+	Alternative DNS -> 127.0.0.1
+	Default Gateway -> server 1 ip
+
+DHCP Manager
+	Ipv4 -> Scope Options
+	Add IP server2 ip
+	
+
+Voordeel: 
+* makkelijk beheer van Ip adressen
+
+DHCP praktijk
+
+1. 	Open DHCP (zoek)
+
+2.	Op Ipv4: RM, New Scope, generic naam, Next
+
+3.	Start ip: bv 192.168.1.20
+	End ip :     192.168.1.50, Next
+
+4.	Enter exclusion: 
+	start	192.168.1.25
+	end	192.168.1.26, Add, Next
+
+5.	Lease time: hoe lang een client ip adres kan gebruiken, default 8d
+
+6.	Next, Add IP server: 192.168.1.1 bij Router, Add
+
+7.	Parent domain: PXLexamen.local
+	192.168.1.1 moet automatisch daar staan, anders voeg je het toe
+
+8.	Skip WinServer, next, Activate Yes, Finish
+
+10.	RM op scope, Deactivate, Activate
+
+11.	Server authorizen
+	RM op server, Authorize, Refresh Ipv4
+
+12. 	To view scope: klik op scope naam, Address pool
+
+
+

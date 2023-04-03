@@ -1,0 +1,80 @@
+Beste studenten,
+
+ 
+
+Op onze Teams site vind je beide images van de virtuele machine die je moet gebruiken voor je examen. Je moet er maar 1 downloaden afhankelijk van het virtualisatieplatform dat je wil gebruiken.
+
+ https://hogeschoolpxl.sharepoint.com/:f:/r/sites/22-23SystemsAdvWindows/Gedeelde%20documenten/General/Images%20Examen2022-23?csf=1&web=1&e=MFhSWN voor 2TIN
+
+ 
+
+ https://hogeschoolpxl.sharepoint.com/:f:/r/sites/2022-23SW2ITSystemsAdvWindows/Gedeelde%20documenten/General/Examenimages?csf=1&web=1&e=4yJ0dI voor 2TIW
+
+ 
+
+Nog geen toegang op Teams? Foei! 😊 De invite en de code kan je vinden op Blackboard. Lukt het niet? Stuur een Teams berichtje naar mij persoonlijk.
+
+ 
+
+Je moet slechts 1 image gebruiken. Er zijn 2 versies, eentje voor Hyper-V (die je moet importeren), eentje voor VmWare Workstation (Player) waarop je kan dubbelklikken en kan laten runnen.
+
+Download er eentje, en extract deze met Winzip, winrar of met de ingebouwde Windows Unzip.
+
+Voor Hyper-V: Ga naar Hyper-V Manager,  klik rechts op Import Virtual Machine (of Importeer virtuele machine), browse naar de folder waar je geunzipte Hyper-V files in zitten, en volg de stappen. Selecteer Restore the virtual machine (use existing unique ID) – Herstel de virtuele machine (gebruik bestaande ID. Na importeren start je de VM en controleer je of deze opstart. Het wachtwoord voor de administrator account is Pass1234!!
+
+ 
+
+Voor VmWare: extract de zipfile, dubbelklik op de vmx file, normaal wordt VmWare automatisch opgestart. Enkel VmWare 17 workstation (player) wordt ondersteund, test dit op voorhand!
+
+Werkt dubbelklik niet: Start VmWare workstation (player) en selecteer ‘Open a virtual machine’. Browse naar de geëxtracte map en dubbelklik op de vmx file.
+
+De VM zou automatisch moeten opstarten. Het wachtwoord voor de administrator account is Pass1234!!
+
+ 
+
+Let op dat je het virtualisatieplatform kent. Er kunnen vragen bij zitten om bv een vswitch, harddisk of netwerkkaart toe te voegen. Dit is voor beide platformen verschillend.
+
+ 
+
+Er is geen mogelijkheid om de VM’s nog te downloaden tijdens het examen, zorg dus dat je in orde bent. Ik zal geen vragen meer kunnen beantwoorden na vrijdagavond 17h, wees dus tijdig met al je vragen en test je gedownloade server!
+
+ 
+
+ 
+
+ 
+
+Hoe ziet er het examen uit?
+
+ 
+
+Theorie; het theorie examen bestaat uit 60 multiple choice vragen, waarbij duidelijk gespecifieerd wordt per vraag wanneer er meer dan 1 antwoord kan aangeduid worden.
+
+Het examen bevat vragen uit alle delen van de leerstof, en kan zowel praktisch als theoretisch gericht zijn. Er zal geen zeer specifieke praktijkvragen gesteld worden, maar IP instellingen, verwijzingen of duidelijke weetvragen kunnen wel gesteld worden. Alle vragen komen uit de powerpoints of uit de leerstof die duidelijk aangeduid is tijdens de lessen (bv VPN, routing, etc).
+
+ 
+
+Prakijk: het praktijk examen is een Word file die vanaf de ftp server kan gedownload worden. In het Word document staan een aantal opdrachten. Deze opdrachten bevatten instellingen. Deze instellingen moet je configureren in je vm en screenshotten, waarna je ze toevoegt in het Word document. Aparte screenshots worden NIET verbeterd, enkel het Word document. In het Word document staat specifiek over welke instellingen gescreenshot moeten worden. Je zorgt zelf voor correcte screenshot software. Windows heeft bv een knip tool (snipping tool) ter beschikking. Je bent zelf verantwoordelijk voor het maken van screenshots en het bezitten van goede software. Je Word file is een docx file, ook hier ben je verantwoordelijk dat je deze bestanden kan lezen en ook opslaan.
+
+ 
+
+Er is enkel een server ter beschikking, een client mag je (maar is zeker niet noodzakelijk) zelf installeren en toevoegen om instellingen te testen, maar dit is NIET noodzakelijk. Dat is volledig aan jou (ook toevoegen aan het domein is je eigen verantwoordelijkheid). Let op de ip instellingen op de server, deze kunnen verkeerd staan door import. Je mag het interne ipadres 192.168.1.1/24 gebruiken. Enkel de instellingen op de server (en dus de screenshot) worden verbeterd. Het toevoegen, installeren en/of aanpassen van de client zijn NIET nodig voor het afleggen van het examen.
+
+ 
+
+Je PE punten staan reeds verwerkt op Blackboard, deze kan je raadplegen.
+
+De puntenverdeling van het examen en PE kan je vinden in de studiegids op;
+
+https://ibamaflexweb.pxl.be/BMFUIDetailxOLOD.aspx?b=1&c=1&a=80842
+
+ 
+
+ 
+
+Ik wens je veel succes voor zaterdag!
+
+ 
+
+David Parren
+

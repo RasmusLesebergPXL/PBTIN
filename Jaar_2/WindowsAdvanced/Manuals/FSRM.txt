@@ -1,0 +1,68 @@
+File Server Resource Manager
+
+video vanaf 9:40
+
+Quota Management
+
+1.	RM Quotas, Create Quota
+
+2.	Browse To path
+
+3.	Take default quota, or custom
+
+4.	Custom: Limit 3GB voorbeeld
+	Hard quota/Soft quota
+	Notifications: Add
+	85
+	Send email/Event Log/COmmand/Report
+	OK
+	Evt. save as template
+
+File Screens
+
+1.	Bij File groups is het mogelijk om custom file groups aan te maken
+
+2.	Create FIle Screen (RM)
+
+3.	Define Path, en custom screens om aangemaakte file group te vinden
+
+4.	Passive/Active Screening (soft/hard quota principe)
+
+5.	Mail/Event Log/Command/Report
+
+6.	Evt. Save as Template w/ name
+
+7.	In case SMTP Server is needed: bij root FSRM(Local) RM klik, 
+	configure options
+	SMTP server toevoegen
+
+STorage Report Management
+
+1.	RM klik, Schedule a New Report Task
+
+2.	generic name, Review Selected Reports
+
+3.	Formaat kiezen
+
+4.	Scope
+	Iets van toepassing aanvinken
+
+5.	Delivery/Schedule
+
+6.	RM klik on report task, Run Report Task now
+
+7.	Event Viewer -> Windows Logs -> System toont evt logs
+
+
+
+File Management Task ook een optie bij FSRM
+
+	
+
+
+	
+
+
+	
+	
+

@@ -1,0 +1,54 @@
+Policies
+
+Theorie
+
+-	Tellen op OU's Users/Computers, maar geen groepen
+- 	Worden overgeerfd, geldt ook voor sub OU's
+-	Komen bij group Policy Objects te staan
+-	User policies:
+	-	Login/out to activate
+	-	Gelden niet na afloggen
+	-	Geldt op elk toestel van de user
+	-	Logon/off scripts op user niveau
+-	Computer policies
+	- 	Restart to activate
+	- 	Blijven bij elke user
+	-	Enkel op dat toestel
+
+	Policies.mp4 7:50 -> 27:00
+
+1.	Go to Active Directory om computer te verplaatsen naar OU 	(NOT DONE!)
+	Drag n Drop naar Computer OU van Domain
+
+2.	Open Group Policy Management, navigate to Domain.local
+
+3.	Op een user of computer
+	RM, Create a GPO of Link existing GPO, naam ingeven, OK
+
+4.	RM op GPO, Edit
+
+5.	Ga binnen user of computer config zoeken naar de juiste policy. 
+	(diable drive access: ATP, Windows Components, File Explorer, Prevent access
+
+6.	Filter gebruiken kan binnen All Settings. Filter en/disablen via View
+
+7. 	Dubbelklik op Policy, Enabled, OK, Evt. linken aan andere OU's
+	Om voor andere OU geen policies binnen te krijgen: 
+	RM OU, Block Inheritance
+
+8.	Logoff/ or restart to activate
+
+Noncached roaming profiles policy
+
+op Computer OU
+new GPO, name, OK
+computer config, policies, AT, All Settings, filter 'profile', 'Delete cached copies of roaming profiles'
+
+
+	
+
+
+	
+	
+
+	

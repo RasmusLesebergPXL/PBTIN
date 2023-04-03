@@ -1,0 +1,86 @@
+DNS
+
+Theorie
+
+- Omzetten van alfabetishce namen naar numerieke adressen (www.google.com -> IP)
+- Mapping based op hosts file C:\Windows\System32\drivers\etc\hosts
+- Systeem cached antwoorden van resolves tijdelijk
+- Active Directory kan niet zonder DNS, DNS zorgt voor koppeling tussen Objecten en    IP's
+
+2 belangrijke pricipes
+
+Authority:
+- Zone van invloed met volledige controle
+- Bijv. Zone en subzones van google.be met alle subdomeinen en hostnames
+
+Delegation:
+- Proces waarbij iemand autoriteit krijgt over hun zone 
+
+Opbouw: Richting publieke netwerk
+
+- Top level domeinen zijn gekoppeld aan rootserver
+- Rootserver is DB waar IP adressen instaan van de DNS servers van top level domein
+- www.pxl.be : Top level = .be, DNS server = pxl, host = www
+- Voorbeeld thirdlevel DNS server: iets.download.microsoft.com
+
+Lokale DNS server
+-Lost IP adressen op adhv FQDN's
+
+
+Forwarders: 
+	- DNS Server die aanvraag doet aan andere DNS server, meestal DNS server van 	  ISP
+
+Client -> Server -> DNS Server client1.pxldigital.local? -> check Forward lookup zones -> Haal IP adres uit de record, stuurt die naar server -> Terug naar client
+
+Reverse Lookup Zone
+
+IP -> Naam
+
+
+NSLookup
+
+set type= kan meegegeven worden
+check ipconfig /displaydns
+      ipconfig /flushdns
+
+Split DNS:2 DNS Servers, eentje voor binnen, eentje voor buitenaf te resolven
+
+Zones:
+	- Primary DNS zone: Read/Write
+	- Secondary DNS zone: Read (enkel resolving) voorbeeld publieke gedeeltes
+	- Active Directory Integrated Zone: zone waarbinnen alle records naar AD 	  worden geschreven
+	- Forward Lookup zone: naam -> IP
+	- Reverse Lookup zone: IP -> naam
+	- Stub zone: bevat enkel dns zone records zodat aangevraagde records kunnen 	  worden doorgestuurd naar master zone
+
+Soorten Records
+
+A	Host Record
+AAAA	IPv6 record
+CNAME	Alias
+MX	Mail exchange record
+NS	Name server record
+PTR	Pointer resource
+SOA 	Start of Authority
+SRV	Service locator record
+
+DNS Praktijk
+
+1. 	Open DNS Manager
+
+2. 	New Zone aanmaken, RM op Forward Lookup Zones, New Zone
+
+3.	Primary, Next, Next, naam.be, Next, Finish
+
+4.	Binnen de zone: RM, New Alias(CNAME)
+	www
+	www.naam.be
+	FQDN target: server, of andere record
+
+Let op: IP adres van server moet in orde zijn
+
+
+
+
+
+

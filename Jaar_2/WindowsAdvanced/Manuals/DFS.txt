@@ -1,0 +1,43 @@
+DFS
+
+Theorie
+
+Namespace
+	- FQDN gekoppeld aan shares: \\server.local\dfsnaam
+	- Koppelen van shares uit verschillende bronnen/locaties
+
+Folder replication
+	- Koppel 2 shares aan mekaar en laat gegevens continu synchroniseren
+	- redundancy voor roaming profiles, file servers, etc.
+	- redundancy op logins
+
+
+Praktijk
+
+1.	Folder aanmaken bij C Schijf, Profiles bijv.
+	Sharing, Everyone Full Control
+	zelfde instellen bij Server2
+	
+2.	DFS Management openen
+
+3.	bij Namespaces, RM, new Namespace
+
+4.	Servernaam, naam namespace ingeven (niet dezelfde naam als shares!)
+
+5.	Next, Stand alone Namespace only in case of one server
+
+6.	Otherwise, Domainbased aanvinken, Create
+
+7.	RM op namespace, New folder, naam, folder target \\server1\profiles$
+
+8.	OK, dan ook \\server2\profiles$ toevoegen, Ja op warning klikken
+
+9.	In AD moet de profile path gewijzigd worden, zodat die redundant wordt:
+	profile path: \\pxldomein.local\profielen\profielen\%username%
+
+10.	Als een namespace voor folderredirection bestaat: 
+	root bath binnen group policy moet worden aangepast naar:
+	\\pxldomein.local\profielen\folderredirection\<folder>
+
+
+	

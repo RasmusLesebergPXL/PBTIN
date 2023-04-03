@@ -1,0 +1,14 @@
+IIS
+
+Vereisden:
+DNS Forwarding Configuratie moet in orde zijn
+simpele index.html pagina in een dir zetten ergens
+
+Binnen IIS:
+
+1.	Add Website
+
+2.	Site name ingeven
+	Physical path is dir waar index.html in zit
+	Ip address ingeven: 192.168.1.1
+	dit werkt alleen als een CNAME  reeds bestaat in DNS Manager

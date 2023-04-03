@@ -1,0 +1,68 @@
+NAT routing
+
+Network Address Translation
+
+- Translate interne ip naar externe ip adressen
+- Portbase NAT: vertalen van interne sockets naar externe sockets
+- meerdere toestellen toegang verlenen tot 1 of meerder externe ip adressen via sockets
+
+
+Portbased NAT
+
+- PNAT routing dient om internettoegang te delen van een isp verbinding
+- Vertaalt intern socket (ip + port) naar extern socket (ip + port)
+
+- Client w home ip:p -> Router with PNAT -> New extern ip:p Server
+- PID is gekoppeld aan specifieke poort
+- Toestel kiest poort, gekoppeld aan PID gekoppeld aan proces, stuurt request naar buiten
+- kan zo meerdere toestellen dezelfde internet toegang laten delen door een NAT tabel de juiste interne socket matchen met juiste externe socket 
+
+
+Praktijk
+
+Voorwaarden:
+
+2 verschillende netwerk kaarten hebben
+
+
+1.	Examen VM, RM, Settings (moet uit zijn)
+
+2.	Add HArdware, Network Adapter, Add, OK
+
+3.	externe vswitch koppelen
+	Virtual Switch Manager
+	New VSwitch
+	Name: Extern
+	Internal Network, OK
+
+4.	Control Panel op desktop, niet server
+	Network and SHaring
+	Adpater Settings
+	Properties Wifi
+	Sharing
+	Share with EXTERN
+
+5.	HyperV
+	Settings Server
+	2de Netwerk kaart koppelen aan externe vswitch
+
+6.	Op Server
+	Routing and Remote Access
+	RM Server (local)
+	Configure and enable Routing and Remote Access
+
+7.	Next, NAT selecteren
+	bug!, Cancel, overniew naar stap 6
+
+8.	Select Ethernet 2 (DHCP)
+	Next, Finish
+	
+
+9.	DNS Forwarders moeten juist ingesteld zijn
+	DNS Manager, Forwarders, RM klik
+
+10.
+	
+	
+	
+		

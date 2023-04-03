@@ -1,0 +1,63 @@
+
+	Profielen
+
+Theorie:
+
+3 soorten:
+Local
+	- Standard, aangemakt bij eerste inlog
+	- Bij aflog blijft profiel lokaal staan
+	- Niet aan te raden
+	- Kan samenwerken met folder redirection
+Roaming
+	- Centraal op netwerk share opgeslagen
+	
+	Cached:
+		- profiel blijft behouden na afloggen. Bij anloggen
+		  worden wijzigingen van netwerk -> lokaal
+		- profiel blijft lokaal ter beschikking (thuis)
+		- Nadeel: alle bestanden blijven lokaal aanwezig, 			  			  admin kan aan alle bestanden van iedereen
+		- Veel schijfruimte in beslag
+		- niet aan te raden in domein met veel toestellen
+
+	Noncached:
+		- Wordt na afloggen gewist op elk toestel. Bij aanloggen wordt 		  		  profiel overgekopieerd van netwerkshare
+		- Enkel op systeem
+		- Nadeel: veel bandreedte in beslag bij overkopieren
+		- Niet aan te raden bij domeinen waar gebruikers op verschillende 		  	  locaties werken
+Mandatory
+	- Profiel zoals non-cached roaming, behalve dat lokaal profiel nooit 		  	  synced met netwerkprofiel
+	- Aan te raden bij publieke locaties		
+	- Met folder redirrection kunne gegevens toch opgeslagen worden
+
+
+
+profiles praktijk.mp4 00:00 -> 27:00
+
+
+1.	C Schijf, Nieuwe Folder profiles
+
+2.	Share, naam: profiles$ ($ = hidden share)
+	Everyone Full control
+
+3.	ADDS, Properties of User
+
+4.	Profile, Profile Path: \\servername\profiles$\%username%
+
+6.	Test: Login w client, Advanced System settings, User Profiles Settings
+	domain\user Roaming Roaming
+
+Mandatory: 36:00 ->
+
+1. 	Adv Sys Settings
+	Roaming profiles, select, Copy To: \\servername\profiles$\mandatory
+	Check 'mandatory profile' onderaan aangevinkt
+
+2.	In Server
+	ga naar de mandatory map
+	view hidden extensions
+	ntuser.dat -> ntuser.man
+
+3.	Specifieke user mandatory maken:
+	in ADDS
+	profile path naar \\servername\profile$\Mandatory

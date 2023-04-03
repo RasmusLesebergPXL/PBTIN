@@ -1,0 +1,26 @@
+Folder Redirection
+
+1.	User moet rechten hebben op die map om te kunnen schrijven
+	Server
+	C Schijf, folderredirection map aanmaken
+
+2.	Sharing, Adv Sharing, Share, Everyone Full Control
+
+3.	Security laten staan
+
+4.	Group Policy Management openen
+
+5.	Voor de OU in kwestie, RM, nieuwe GPO, Edit
+
+6.	User config, Policies, Windows Settings, Folderredirection
+
+7.	Select map, RM Properties, Basic, Root Path: \\servernaam\folderredirection
+
+8.	ipv Basic kan je ook Follow ... Folder doen, dan komt bijv. Music in Docs
+
+9.	Op Client: Logoff/on, check Properties van de geredirecte map
+	Op Server: map folderredirection, user heeft een map gekregen
+
+	
+	
+	

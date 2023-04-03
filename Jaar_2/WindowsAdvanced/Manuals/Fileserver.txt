@@ -1,0 +1,25 @@
+
+Algemene regel Security: meest beperkende instelling telt	
+	
+Fileserver: Les 3 26:00 - 41:00 Folder Permissions, Drive koppelen 1:06 - 1:10
+
+1. 	This PC, New Folder      			DONE
+
+2.	Make subfolders for groups in fileserver	DONE
+
+3.	RM, Properties, Sharing, Advanced Sharing -> Everyone Full Control	DONE
+	
+4.	Fileserver map, Security, Advanced Security, Disable Inheritance	
+
+5.	Add, select principal, adv. 	administrators  -> Full Control
+					domainusers -> disable leesmachtigingen (R 5)
+							L2, 3, 4, 5  checked
+					
+6.	Subfolders
+	Security, Advanced, Disable Inheritance
+	Add, select principal, adv. 	administrators  -> Full Control
+					subfolder_DL    -> FC except last 4 on right
+
+7.	Drive koppelen in ADDS
+	Property of User, Profile, Z: -> \\servername\fileserver, foutmelding negeren
+	
