@@ -1,0 +1,47 @@
+Chapter 23 - Standard File Permissions
+
+1.	ls /root
+	output: permission denied
+	ls -ld /root
+	sudo  usermod -a -G root  student
+	NEE
+	sudo chmod 755 /root
+
+
+2.	umask 0037	
+
+
+3.	mkdir testdir | touch testbestand.txt
+	cd testdir | ls -ld
+	drwxr-----
+	for bestand: cd
+	ls -l testbestand.txt
+	-rw-r-----
+
+
+4.	Nee die regel geldt niet (binnen leege dir bestand aangemaakt, dan
+	rights gechecked met ls -l bestand.txt
+
+
+5.	cp .bashrc /tmp
+
+
+6.	sudo chgrp users /tmp/.bashrc
+
+
+7.	sudo chown student /tmp/.bashrc
+
+
+8.	binnen /tmp
+	chmod u+x, g=r, o=0 .bashrc
+	
+
+9.	 	
+
+
+10.	cp -r dir1 dir2
+	rechten worden niet behouden
+
+
+11. 	cp -rp dir1 dir2
+	rechten worden behouden

@@ -1,0 +1,30 @@
+Chapter 18 - Basic Unix Tools oplossingen
+
+1.	prtscrn
+	apt install mlocate
+	updatedb | locate Screenshot
+
+2.	time find / > overzicht.txt     
+
+3.	ls -lh overzicht.txt
+
+4.	gzip overzicht.txt | ls -lh overzicht.txt.gz          
+	2.9M
+	gunzip overzicht.txt.gz | bzip2 overzicht.txt | ls -lh overzicht.txt.bz2
+	1.6M
+
+5.	nano overzicht.txt.bz2 | zmore ,zless, bzmore, bzless
+
+6.	bunzip overzicht.bz2
+
+7.	find / -name output.txt | 2> /dev/null
+
+8.	sudo tar -cvzf  /tmp/backuphomefolders.tar.gz  /home
+
+9.	mkdir /tmp/restorehomefolders
+	cd /tmp/restorehomefolders
+	sudo tar -xzvf /tmp/restorehomefolders.tar.gz
+
+10.	ls -l /dev 
+
+11.	cal 7 2022

@@ -1,0 +1,37 @@
+CHapter 9 - The Linux File Tree
+
+1.	su = siwtch user
+	bij su piet is er geen prompt meer, bij su student wel
+
+2.	alias rm='rm -i'
+	alias mv='rm -i'
+	alias cp='cp -i'
+	
+3. 	touch bestandje.txt
+	rm bestandje.txt
+	het werkt
+
+4.	Voeg aliases toe aan normale bashrc file:
+	sudo nano /etc/bash.bashrc
+	copy paste
+
+5.	Settings
+
+6.	Om alle files in /etc te zien zie eindigen op .conf
+	ls /etc/*.conf
+
+7.	cd /var/log
+	ls
+	less kern.log
+	G
+	g
+
+8.	cd /dev
+	ls
+	1 drive
+	4 partities
+	
+9.	cd /media
+	ls
+
+10.	De file is niet mer aanwezig

@@ -1,0 +1,54 @@
+Chapter 21 - Users
+
+1.	Veld 1 = Account username
+	Veld 2 = placeholder for password information (actual pass is in /etc/shadow)
+	Veld 3 = UserID
+	Veld 4 = GroupID
+	Veld 5 = Comment field, any type of info allowed here
+	Veld 6 = /home/student Home directory
+	Veld 7 = /bin/bash User shell
+
+
+2.	etc/shadow
+
+
+3.	-c comment
+	-d homedir
+	-g groupid
+	-s shell
+	-u userid
+	sudo useradd -u 1111 -g 100 -d /home/jan -c "Testuser Jan" -s /bin/bash jan
+	sudo passwd jan 
+	januari
+	
+
+4.	in /etc/passwd: jan is erbij gekomen en alle velden kloppen
+	in /etc/shadow: jan is erbij gekomen en passwd is geecrypteerd
+	in /home: jan is erbij gekomen
+
+
+5.	su jan
+	output:uid=1111(jan) gid=100(users) groups=100(users)
+
+
+6.	in /etc/passwd: jan is weg
+	in /etc/shadow: jan is weg
+	in /home: NEE
+
+
+7.	sudo useradd -d /home/jan  jan
+
+
+8.	in /etc/passwd: jan is toegevoegd, default pass, default, uid/gid = 1001, shell = /bin/sh
+	in /etc/shadow: !
+	in /etc/group: jan heeft zijn eigen group
+	in /home: Jan bestaat
+
+
+9.	sudo passwd jan 
+	pxl
+
+
+10.	done
+
+

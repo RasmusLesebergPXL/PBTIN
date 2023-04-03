@@ -1,0 +1,21 @@
+Chapter 11 - Control Operators oplossingen
+
+1.	sudo rm .bash_aliases
+	bash
+
+2.	sudo rm test.c 2> /dev/null && echo succesvol verwijderd! 
+	|| echo fout tijdens het verwijderen
+
+3.	sudo cp -r * backup | shutdown -P
+
+4.	sudo mkdir bron
+	sudo mkdir doel
+	cd bron
+	sudo touch belangrijk.txt
+	sudo mv belangrijk.txt /home/doel ; sudo rm -rf /home/bron4.	
+
+5.	echo Hello#world = Hello#world
+        echo Hello #world = Hello
+        echo \\\\\??\#\"\ \\ #\\= \\??#" \
+
+

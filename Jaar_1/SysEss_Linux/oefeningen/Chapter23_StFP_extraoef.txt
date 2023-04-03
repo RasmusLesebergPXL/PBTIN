@@ -1,0 +1,84 @@
+Chapter 23 - Extra Oefeningen
+
+1.	sudo useradd -d /home/peter peter
+	sudo passwd peter
+	zomer1
+	sudo useradd -d /home/patrick peter
+	sudo passwd peter
+	zomer2
+
+	sudo useradd -d /home/techniekers wim
+	sudo passwd wim
+	winter1
+	sudo useradd -d /home/techniekers ward
+	sudo passwd ward
+	winter2
+
+	sudo useradd -d /home/bert bert
+	sudo passwd bert
+	budget1
+	sudo useradd -d /home/ilse ilse
+	sudo passwd ilse
+	budget2
+
+	sudo groupadd ingenieurs
+	sudo usermod -aG ingenieurs peter
+	sudo usermod -aG ingenierus patrick
+
+	sudo groupadd techniekers
+	sudo usermod -aG techniekers wim
+	sudo usermod -aG techniekers ward
+
+	sudo groupadd verkopers
+	sudo usermod -aG verkopers bert
+	sudo usermod -aG verkopers ilse
+
+	sudo mkdir -p /home/shared/ontwerpen
+	sudo chgrp -R ingenieurs /home/shared/ontwerpen
+	sudo chmod 775 /home/shared/ontwerpen
+
+	sudo mkdir -p /home/shared/info
+	sudo chgrp -R techniekers /home/shared/info
+	sudo chmod 775 /home/shared/info
+
+	chown root /home/shared/ontwerpen
+	chown root /home/shared/info
+
+	
+2.	sudo useradd -g 100 walter
+	sudo useradd -g 100 karel
+	sudo useradd -g 100 dirk
+	sudo useradd -g 100 evert
+	sudo useradd -g 100 ine
+	sudo useradd -g 100 els
+	sudo useradd -g 100 tina
+
+	sudo groupadd verkoop
+	sudo groupadd planning
+
+	sudo usermod -aG verkoop els
+	sudo usermod -aG verkoop tina
+	sudo usermod -aG verkoop ine
+
+	sudo usermod -aG planning walter	
+	sudo usermod -aG planning karel
+
+	sudo mkdir -p /home/algemeen
+	sudo mkdir -p /home/verkoop
+	sudo mkdir -p /home/planning
+
+	sudo chgrp -R verkoop /home/verkoop
+	sudo chgrp -R planning /home/planning
+
+	sudo chmod 775 /home/verkoop
+	sudo chmod 775 /home/planning
+
+	sudo chown evert /home/algemeen
+	sudo chmod 775 /home/algemeen
+	
+
+3.	sudo useradd -g 1012 -d /home/itstudent -s /bin/bash itstudent
+
+
+4.	sudo usermod -aG sudo itstudent
+

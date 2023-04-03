@@ -1,0 +1,17 @@
+Chapter 13 - Shell embedding and options oplossingen
+
+1. 	man timedatectl
+	timedatectl list-timezones
+	timedatectl set-timezone Europe/Brussels
+	
+2.	sudo localectl set-locale LANG=en_US.utf8
+	sudo localectl set-locale LC_TIME=en_DK.UTF-8
+
+3.	echo Today it is $(date +%A), $(date +%d) $(date +%B) $(date +%Y). 
+	The time is $(date +%H):$(date +%M)
+
+4.	sudo locale-gen
+	
+
+5.	echo -e "=> Dit is een overzich van mijn home folder:\n$(ls)"
+

@@ -1,0 +1,23 @@
+Chapter 12 - Shell variables
+
+1.	PS1="\d \t - PTS4 \n \u@\h:~\$ "
+
+	default: PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+
+2.	printenv
+
+3.	bold=$(tput bold)
+	normal=$(tput sgr0)
+	echo Hello, I am ${bold} student${normal} and my homefolder is 
+	${bold}/home/student${normal} on the pc with name ${bold}ubdesk1804${normal}. 
+	You are now working in folder ${bold}/tmp.
+
+	echo Hello, I am $USER and my homfolder is $HOME on the pc with name 
+	$HOSTNAME, you are now working in folder $PWD
+
+4.	myvar=super
+	echo Dag ${myvar}vrouw, ik ben ${myvar}man
+
+5.	unset myvar
+	Dag vrouw, ik ben man
+

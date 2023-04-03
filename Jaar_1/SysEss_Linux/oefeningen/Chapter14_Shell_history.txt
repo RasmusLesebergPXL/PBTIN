@@ -1,0 +1,13 @@
+Chapter 14 - Shell history
+
+1.	touch script.sh | touch scrupt.sh | touch scrApt.sh
+
+2.	nog eens ctrl -R hitten
+
+3.	done
+
+4.	!247:s/i/u/
+
+5.	PS1='\u@\h \W\$\! '
+
+6.	bijv. !200

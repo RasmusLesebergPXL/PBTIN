@@ -1,0 +1,109 @@
+1.	Ontwikkeling van een op Unix gelijkend besturingssysteem onder de
+	Free-Software-vlag.
+
+2.	ls /etc/*
+	toont alle dirs en files, maar ook de inhoud van de dirs
+	ls /etc/*.*
+	toont alle files en dirs met een . in de naam, maar van de dirs ook alle
+	inhoud
+	ls /etc/*a.*
+	toont alle files en dirs met een a. in de naam, maar van de dirs ook alle
+	inhoud
+
+3.	Hier een foutmelding want Echo bestaat niet! ( met echo → \\??#" \ )
+
+4.	PS1
+
+5.	!<histnummer> of !<begin_van_commando> of ctrl+R en enkele letters typen
+
+6.	cut -d: -f1 /etc/passwd | tail -5 | tac
+
+7.	/
+
+8.	Veld1: Loginname
+	Veld2: x om aan te duiden dat het wachtwoord in /etc/shadow staat
+	Veld3: UserID
+	Veld4: GroupID
+	Veld5: Username en/of commentaar
+	Veld6: HomeDir
+	Veld7: Login-shell
+
+9.	De rechten van file worden aangepast naar: eigenaar: lees, schrijf en
+	uitvoer worden toegevoegd, groep: lees en schrijf, andere niets.
+
+Deel 2
+
+1.	mkdir -p /home/student/school/aca_2018_2019/trimesters/2/vakken/ubuntuserver/oefeningen/chapter5
+
+2.	touch Foto1.JPG foto2.JPG Foto3.jpg foto4.jpg
+
+3.	sudo cp -rp /home/ /backup/ ; shutdown now
+
+4.	echo Hello, I am $USER and my homefolder is $HOME on the pc with
+	name $HOSTNAME. I am now working in folder $PWD.
+
+5.	ls [0-9][0-9]*[0-9][0-9]
+
+6.	ls /* 2>&1 | grep root
+
+7.	ls -la ~ | sed 's/\.\.$/..(parent folder)/' | sed 's/\.$/.(this folder)/' | sed '/total/d'
+
+8.	sudo tar -cvzf  /tmp/backuphomefolders.tar.gz  /home
+
+9.	touch regtest.txt
+	grep -E 'a|s' regtest.txt		all files containing 'a' or 's'
+
+	grep -ie l regtest.txt			all files ending with 'l'
+	grep -i '^[0-9]\w*[a-z]\b' regtest.txt	file starting with number, endin with letter
+	grep -E '([a-z])\1' regtest.txt		double letter occurence
+	grep -E [0-9] regtest.txt		files with numbers 
+	grep -x '[a-z]\+' regtest.txt		files with letters no numbers
+	grep -E '([0-9])+([a-z])+' regtest.txt	files with 1 or more numbers, followed by 1 or more characters
+		
+10.	sudo useradd -u 1111 -g 100 -d /home/jan -c "Testuser Jan" -s /bin/bash jan
+
+11.	sudo groupadd -g 1200 ict
+	sudo usermod -a -G ict jan
+
+12.	sudo usermod -a -G root student
+
+
+13.	groupadd –g 401 ingenieur
+	groupadd –g 402 techniek
+	groupadd –g 403 verkoop
+	groupadd –g 404 ontwerpen
+	groupadd –g 405 info
+
+	useradd –c “Ir. Peter” –d /home/peter –g 401 –G ontwerpen, info 
+	–s /bin/bash –u 451 peter
+	passwd peter
+
+	useradd –c “Ir. Patrick” –d /home/patrick –g 401 –G ontwerpen, info 
+	–s /bin/bash –u 452 patrick
+	passwd patrick
+
+	useradd –c “Tech Wim” –d /home/techniekers –g techniek 
+	–s /bin/bash –u 453 wim
+	passwd wim
+
+	useradd –c “Tech Ward” –d /home/techniekers –g techniek 
+	–s /bin/bash –u 454 ward
+	passwd ward
+
+	useradd –c “Verk Bert” –d /home/bert –g verkoop –G info 
+	–s /bin/bash –u 455 bert
+	passwd bert
+
+	useradd –c “Verk Ilse” –d /home/ilse –g verkoop –G info 
+	–s /bin/bash –u456 ilse
+	passwd ilse
+	
+	mkdir /home/shared
+	mkdir /home/shared/ontwerpen
+	mkdir /home/shared/info
+
+	chown root:ontwerpen /home/shared/ontwerpen
+	chown root:info /home/shared/info
+
+	chmod 770 /home/shared/ontwerpen
+	chmod 770 /home/shared/info

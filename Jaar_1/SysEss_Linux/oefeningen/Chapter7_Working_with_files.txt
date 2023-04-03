@@ -1,0 +1,30 @@
+Chapter 7 - Working with files oplossingen
+
+1.	cd /home
+
+2.	sudo touch oefening.txt
+
+3.	sudo mkdir -p PXL/Vakken/Semester1/SystemsEss
+
+4.	sudo touch PXL/Vakken/Semester1/SystemsEss/oefening.txt
+	sudo touch PXL/Vakken/Semester1/oefening.txt
+	sudo touch PXL/Vakken/oefening.txt
+	sudo touch PXL/oefening.txt
+
+5.	sudo rm -rf PXL
+
+6.	sudo mkdir mijnafbeeldingen 
+	cd /mijnafbeeldingen
+	sudo touch Foto1.JPG foto2.JPG Foto3.jpg foto4.jpg
+
+7.	sudo rename 's/\.JPG/.jpg/' *.JPG
+	sudo rename 's/F/f/' *.jpg
+
+8.	sudo mkdir backup
+	sudo cp -r * backup
+
+
+
+
+
+

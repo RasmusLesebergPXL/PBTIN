@@ -1,0 +1,30 @@
+Chapter 5 – man pages oplossingen
+
+1.	Sudo apt install tree
+
+2.	tree / -L 1
+
+3.	cd /home | ls -a (verborgen items)
+•	ls -laS (geordend op size)
+•	ls -laShR (small to large)
+•	ls -lah (with size name)
+
+4.	whatis
+
+5.	shutdown -P 
+	shutdown -no-wall
+
+6.	man -k unzip .gz
+	bunzip
+	funzip
+	gunzip
+	...
+	
+	whereis whoami
+	nautilus /usr/share/man/man1/
+	dragndrop
+	(in terminal)
+	cd | gunzip whoami.1.gz | cat whoami.1
+
+
+

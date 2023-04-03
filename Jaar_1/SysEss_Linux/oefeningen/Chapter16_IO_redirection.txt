@@ -1,0 +1,21 @@
+Chapter 16 - File redirection oplossingen
+
+1.	echo It is cold today > gebruikersinfo.txt
+
+2.	echo $UID >> gebruikersinfo.txt
+
+3.	cp -R /etc /* /tmp 
+
+4.	cp -R /etc /* /tmp  2> /dev/null
+
+5.	cp -R /etc /* /tmp  2> /backup.errors
+
+6.	ls /tmp/* 2>&1 /inhoudslashtmp.full
+
+7.	ls /tmp/* 2>&1 /inhoudslashtmp.full
+
+8.	>gebruikersinfo
+
+9.	sudo ls /* | grep -rnwe root
+
+10. 	sudo ls /* | grep -rnwe root 2>/root-errors.log

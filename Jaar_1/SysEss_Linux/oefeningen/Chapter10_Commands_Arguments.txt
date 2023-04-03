@@ -1,0 +1,56 @@
+Chapter 10 - Commands and Arguments
+
+1.	type cd
+	cd is a shell builtin
+
+2.	type mkdir
+	mkdir is /usr/bin/mkdir (external command)
+
+3.	type ll
+	ll is aliased to 'ls -alF'
+
+4.	type -a kill
+	kill is a shell builtin
+        kill is /usr/bin/kill
+       	kill is /bin/kill
+
+5.	alias dirs='tree -aL 1'
+
+6.	echo -e "een\ntwee\ndrie"   
+
+7.	echo $PATH
+	/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+	
+	which ls
+	/usr/bin/ls
+
+	which ls2
+	niks te zien
+
+	ls werkt zoals normaal
+	ls2 werkt niet
+
+	PATH="$PATH:/home/student/scripts"
+	echo $PATH
+	/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/student/scripts
+	
+	which ls
+	same
+	which ls2
+	same
+
+	PATH="/home/student/scripts:$PATH"
+	echo $PATH
+	/home/student/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/student/scripts
+
+	which ls
+	same
+	which ls2
+	same
+	ls and ls2 same same
+
+
+
+	
+
+	

@@ -1,0 +1,35 @@
+Chapter 15 - File Globbing
+
+1.	mkdir FileGlobOef | cd FileGlobOef
+	touch script.sh
+	touch scrupt.sh
+	touch scrApt.sh
+
+2.	ls scr[a-z]pt.*
+	ls scr[a-zA-Z]pt.*
+
+	interessant voor 55vijf55 bijv:
+	ls [0-9][0-9]*[0-9][0-9]
+
+3.	touch script.sd | touch script.dh | touch script2.dh | 
+	touch script.ds | touch script2.ds | touch script3.ds 
+
+4.	ls scr[a-zA-Z]pt*.*
+
+5.	ls scr*pt.*[h-s]
+
+6.	ls --ignore /b*
+
+7.	ls *.conf
+
+8.	ls -d *.d
+
+9.	ls *sh*
+
+10.	ls -d ??????????
+
+11.	ls *os*release*
+
+12.	geen idee
+
+13.	ls [0-9][0-9]

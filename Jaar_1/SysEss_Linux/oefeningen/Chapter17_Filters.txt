@@ -1,0 +1,37 @@
+Chapter 17 - Filters oplossingen
+
+1.	cat /etc/passwd | tail -5 | cut -d":" -f1 | tac
+
+2.	grep -i
+
+3.	ip a | grep ens33 | grep inet | tr -s " " | cut -d " " -f3 | cut -d"/" -f1
+	displays ip address by itself
+
+	echo De computer $HOSTNAME heeft momenteel het ip-adres `ip a 
+	| grep ens33 | grep inet | tr -s " " | cut -d " " -f3 | cut -d"/" -f1` 
+	verkregen via zijn mac-adres 000C29DDED7C.
+
+4.	cat linux.txt | grep -i unix
+
+5.	cat Linux.txt | grep 'Linux\|Minix\|Unix'
+
+6.	cat linux.txt | grep 'Unix'
+
+7.	cat Linux.txt | cut -d' ' -f1 | grep [A-Z]
+
+8.	sudo grep -vE "*:\*:*" /etc/shadow | grep -cvE "*:\!:*"
+
+9.	cat /etc/passwd | sort -n -t -k3    
+
+10.	ps aux | sort -n -k5 | tail -1
+
+11.	ls > file1.txt | ls -a > file2.txt
+	comm file1.txt file2.txt -23 
+	comm file1.txt file2.txt -13
+	bij -23 geen enkel, bij -13 enige
+
+12.	geen enkele files staan in beide
+
+13.	ls / | tr '\n' ' ' (?)
+
+14.	ls | tr '\n' ' ' | wc -w (?)

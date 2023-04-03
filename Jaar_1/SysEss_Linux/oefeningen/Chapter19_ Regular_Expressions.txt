@@ -1,0 +1,32 @@
+Chapter 19 - Reguliere expressies
+
+1.	grep a regtest.txt                      all files containing 'a'
+	grep -E 'a|s' regtest.txt		all files containing 'a' or 's'
+	grep @ regtest.txt			all files containing '@'
+	grep -i ^p regtest.txt			all files starting with p
+	grep -ie l regtest.txt			all files ending with 'l'
+	grep -i ^[0-9] regtest.txt		all files starting with a number
+	grep -i '^[0-9]\w*[a-z]\b' regtest.txt	file starting with number, endin with letter
+	grep -E '([a-z])\1' regtest.txt		double letter occurence
+	grep -E [0-9] regtest.txt		files with numbers 
+	grep -x '[a-z]\+' regtest.txt		files with letters no numbers
+	grep -E '([0-9])+([a-z])+' regtest.txt	files with 1 or more numbers, followed by 1 or more characters
+	grep -E '([0-9])+([a-z])+([0-9])+' regtest.txt	^ same thing but ending with a number
+	
+
+2.	cat regtest.txt | sed 's/5/vijf/' > regtest_5.txt
+	cat regtest.txt | sed 's/zeven/7/g' > regtest_7.txt	replace all occurences (global)
+	cat regtest.txt | sed 's/@/_at_/g' > regtest_at.txt
+
+
+3.	grep -oi '5' regtest.txt | wc -l 	counts occurences of number 5 in file
+
+
+4.	man bash | grep -E -- 'REDIRECTION'
+
+
+5.	ls -a | grep .*
+	
+
+
+

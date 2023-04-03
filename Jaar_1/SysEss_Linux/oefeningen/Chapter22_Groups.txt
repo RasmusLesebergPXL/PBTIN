@@ -1,0 +1,42 @@
+Chapter 22 - Groups
+
+1.	root            gid: 0
+        adm     	gid: 4
+        lp   		gid: 7
+        users           gid: 100            
+        student       	gid: 1000
+
+
+2.	-g gid
+	sudo groupadd -g 1200 ict
+
+
+3.	sudo groupmod -n helpdesk ict
+
+
+4.	sudo  usermod -a -G helpdesk student
+
+
+5.	cat /etc/group
+	JA
+
+8.	sudo gpasswd -d student helpdesk
+
+
+9.	sudo  usermod -g helpdesk student
+
+
+10.	in /etc/passwd the gid changes, not in /etc/group
+
+
+11.	sudo mkdir leege_dir | touch leeg_bestand.txt
+
+
+12.	bij leeg_bestand.txt: user is student, group is student
+	bij leege_dir: user is root, group is root
+
+
+13.	sudo usermod -g student student
+
+
+14.	sudo groupdel helpdesk

@@ -1,0 +1,33 @@
+Chapter 8 - Working with file contents
+
+1.	more and less have the option to view multiple files at once. 
+	more allows us to view them as a single file separated by lines, 
+	and less allows us to switch between them.
+
+2.	head -1 proc/meminfo
+
+3.	tail -1 etc/passwd
+
+4.	head -c4 etc/passwd
+	root
+
+5.	echo -e "Dit is mijn tekst over \nmeerdere lijnen" > /home/mijntekstfile.txt  
+	cat mijntekstfile.txt
+
+6.	cat .bashrc > .bashrc.backup
+
+7.	tac /etc/passwd
+
+8.	nano test.c
+	copy paste
+	ctrl X to save and exit
+
+9.	sudo apt install gcc 
+
+10.	cc test.c -o test.out
+
+11.	./test.out
+
+12.	strings test.out
+
+

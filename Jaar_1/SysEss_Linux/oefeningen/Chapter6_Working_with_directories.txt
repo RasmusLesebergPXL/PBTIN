@@ -1,0 +1,31 @@
+Chapter 6 - Working w directories oplossingen
+
+sudo useradd -m piet
+sudo passwd piet
+
+1.	sudo apt install tree
+
+2.	Omdat er 3 verschillende mogelijkheden zijn voor .bash
+
+3.	mkdir -p /home/student/school/aca_2018_2019/trimesters/2/vakken/ubuntuserver/oefeningen/chapter5
+
+4.	cd /home/student/school/aca_2018_2019/trimesters/2/vakken/ubuntuserver/oefeningen/chapter5 | mkdir chapter6
+
+5.	cd /home/student/school/aca_2018_2019/trimesters/2/vakken/ubuntuserver/oefeningen | rm -rf chapter5
+
+6.	cd /home/student/school | rm -rf aca_2018_2019
+
+7.	cd home/piet
+
+8.	cd /home
+
+9.	cd ../piet | cat .bashrc
+
+10.	cd ../piet
+	
+11.	clear
+
+12.	ls /etc/* toont alle bestanden van /etc
+	ls /etc/*.* toont alle bestanden die in het formaat <char>.<char> zijn
+	ls /etc/*a.* toont alle bestanden die in het formaat a.<char> zijn
+	
