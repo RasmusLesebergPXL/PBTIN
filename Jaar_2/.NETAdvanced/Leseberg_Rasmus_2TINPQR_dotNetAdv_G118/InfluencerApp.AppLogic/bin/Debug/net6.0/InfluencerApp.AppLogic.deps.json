@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "InfluencerApp.AppLogic/1.0.0": {
+        "dependencies": {
+          "InfluencerApp.Domain": "1.0.0"
+        },
+        "runtime": {
+          "InfluencerApp.AppLogic.dll": {}
+        }
+      },
+      "InfluencerApp.Domain/1.0.0": {
+        "runtime": {
+          "InfluencerApp.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "InfluencerApp.AppLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InfluencerApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

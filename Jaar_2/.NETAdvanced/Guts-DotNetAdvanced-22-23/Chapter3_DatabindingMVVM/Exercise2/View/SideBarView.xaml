@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Exercise2.View.SideBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="250">
+    <Grid Background="{Binding Source={StaticResource DarkRadialBrush}}">
+        
+        <ListView BorderBrush="White" Padding="4" Margin="8" Background="Transparent"
+                  ItemsSource="{Binding Path=Movies, Mode=OneWay}"
+                  SelectedItem="{Binding Path=SelectedMovie}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Title, Mode=OneWay}" Foreground="{Binding Source={StaticResource FontBrush}}"/>
+                        <TextBlock Text="{Binding Path=Rating, Mode=OneWay, Converter={StaticResource RatingStarsConverter}}"
+                                   Foreground="{Binding Source={StaticResource FontBrush}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>

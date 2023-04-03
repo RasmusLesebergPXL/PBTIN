@@ -1,0 +1,260 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.UI\\InfluencerApp.UI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.AppLogic\\InfluencerApp.AppLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.AppLogic\\InfluencerApp.AppLogic.csproj",
+        "projectName": "InfluencerApp.AppLogic",
+        "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.AppLogic\\InfluencerApp.AppLogic.csproj",
+        "packagesPath": "C:\\Users\\Rasmus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.AppLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Rasmus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Domain\\InfluencerApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Domain\\InfluencerApp.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Domain\\InfluencerApp.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Domain\\InfluencerApp.Domain.csproj",
+        "projectName": "InfluencerApp.Domain",
+        "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Domain\\InfluencerApp.Domain.csproj",
+        "packagesPath": "C:\\Users\\Rasmus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Rasmus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Infrastructure\\InfluencerApp.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Infrastructure\\InfluencerApp.Infrastructure.csproj",
+        "projectName": "InfluencerApp.Infrastructure",
+        "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Infrastructure\\InfluencerApp.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Rasmus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Rasmus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.AppLogic\\InfluencerApp.AppLogic.csproj": {
+                "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.AppLogic\\InfluencerApp.AppLogic.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.UI\\InfluencerApp.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.UI\\InfluencerApp.UI.csproj",
+        "projectName": "InfluencerApp.UI",
+        "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.UI\\InfluencerApp.UI.csproj",
+        "packagesPath": "C:\\Users\\Rasmus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Rasmus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.AppLogic\\InfluencerApp.AppLogic.csproj": {
+                "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.AppLogic\\InfluencerApp.AppLogic.csproj"
+              },
+              "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Infrastructure\\InfluencerApp.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\\InfluencerApp.Infrastructure\\InfluencerApp.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

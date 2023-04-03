@@ -1,0 +1,17 @@
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\bin\Debug\net6.0\InfluencerApp.Infrastructure.deps.json
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\bin\Debug\net6.0\InfluencerApp.Infrastructure.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\bin\Debug\net6.0\InfluencerApp.Infrastructure.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\bin\Debug\net6.0\InfluencerApp.AppLogic.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\bin\Debug\net6.0\InfluencerApp.Domain.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\bin\Debug\net6.0\InfluencerApp.AppLogic.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\bin\Debug\net6.0\InfluencerApp.Domain.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\InfluencerApp.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\InfluencerApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\InfluencerApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\InfluencerApp.Infrastructure.AssemblyInfo.cs
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\InfluencerApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\InfluencerApp.Infrastructure.csproj.CopyComplete
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\InfluencerApp.Infrastructure.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\refint\InfluencerApp.Infrastructure.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\InfluencerApp.Infrastructure.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Infrastructure\obj\Debug\net6.0\ref\InfluencerApp.Infrastructure.dll

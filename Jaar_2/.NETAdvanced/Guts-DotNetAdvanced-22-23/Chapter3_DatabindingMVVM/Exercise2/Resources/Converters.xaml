@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:Exercise2.Converters" 
+                    xmlns:converters1="http://schemas.microsoft.com/netfx/2009/xaml/presentation">
+    <converters:RatingStarsConverter x:Key="RatingStarsConverter"/>
+    <converters1:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+</ResourceDictionary>

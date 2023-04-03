@@ -1,0 +1,12 @@
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\bin\Debug\net6.0\InfluencerApp.Domain.deps.json
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\bin\Debug\net6.0\InfluencerApp.Domain.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\bin\Debug\net6.0\InfluencerApp.Domain.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\InfluencerApp.Domain.csproj.AssemblyReference.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\InfluencerApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\InfluencerApp.Domain.AssemblyInfoInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\InfluencerApp.Domain.AssemblyInfo.cs
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\InfluencerApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\InfluencerApp.Domain.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\refint\InfluencerApp.Domain.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\InfluencerApp.Domain.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.Domain\obj\Debug\net6.0\ref\InfluencerApp.Domain.dll

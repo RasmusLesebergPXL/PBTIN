@@ -1,0 +1,12 @@
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\bin\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.deps.json
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\bin\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\bin\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.csproj.AssemblyReference.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.AssemblyInfoInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.AssemblyInfo.cs
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.csproj.CoreCompileInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\refint\Exercise1.FizzBuzz.AppLogic.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\Exercise1.FizzBuzz.AppLogic.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Oefeningen\Guts-DotNetAdvanced-22-23\Chapter5_UnitTesting\Exercise1.FizzBuzz\Exercise1.FizzBuzz.AppLogic\obj\Debug\net6.0\ref\Exercise1.FizzBuzz.AppLogic.dll

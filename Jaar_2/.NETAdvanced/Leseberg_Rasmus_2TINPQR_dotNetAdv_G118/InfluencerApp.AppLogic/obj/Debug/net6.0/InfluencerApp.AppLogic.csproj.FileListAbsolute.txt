@@ -1,0 +1,15 @@
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\bin\Debug\net6.0\InfluencerApp.AppLogic.deps.json
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\bin\Debug\net6.0\InfluencerApp.AppLogic.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\bin\Debug\net6.0\InfluencerApp.AppLogic.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\bin\Debug\net6.0\InfluencerApp.Domain.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\bin\Debug\net6.0\InfluencerApp.Domain.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\InfluencerApp.AppLogic.csproj.AssemblyReference.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\InfluencerApp.AppLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\InfluencerApp.AppLogic.AssemblyInfoInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\InfluencerApp.AppLogic.AssemblyInfo.cs
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\InfluencerApp.AppLogic.csproj.CoreCompileInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\InfluencerApp.AppLogic.csproj.CopyComplete
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\InfluencerApp.AppLogic.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\refint\InfluencerApp.AppLogic.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\InfluencerApp.AppLogic.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\Leseberg_Rasmus_2TINPQR_dotNetAdv_G118\InfluencerApp.AppLogic\obj\Debug\net6.0\ref\InfluencerApp.AppLogic.dll

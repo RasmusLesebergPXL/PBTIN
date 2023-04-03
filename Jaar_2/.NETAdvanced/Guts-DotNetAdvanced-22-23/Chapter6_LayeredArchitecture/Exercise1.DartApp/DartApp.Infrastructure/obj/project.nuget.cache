@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CKm49vxCfv0qHLav2BNQtPwQ+OtX2e9VltxTBQPvaUM0suyMriYVMIDgoLZgYo9rWyLu+Te7zEuTmthho5dJHw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Oefeningen\\Guts-DotNetAdvanced-22-23\\Chapter6_LayeredArchitecture\\Exercise1.DartApp\\DartApp.Infrastructure\\DartApp.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rasmus\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

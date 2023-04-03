@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Exercise2.View.MovieDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Background="{Binding Source={StaticResource DarkSolidBrush}}">
+            <Grid Margin="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Margin="12" Text="{Binding Path=Movie.Title, Mode=OneWay}" 
+                           Foreground="{Binding Source={StaticResource FontBrush}}"
+                           FontSize="16" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="{Binding Path=Movie.OpeningCrawl,Mode=OneWay}" Grid.Row="1"
+                           Foreground="{Binding Source={StaticResource FontBrush}}"
+                           FontStyle="Italic" HorizontalAlignment="Center"></TextBlock>
+                <StackPanel Grid.Row="2" Margin="20" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding Path=Movie.Rating, Mode=TwoWay}" Margin="0 0 12 0" 
+                               Foreground="{Binding Source={StaticResource FontBrush}}">
+                    </TextBlock>
+                    <Slider Width="250" Foreground="{Binding Source={StaticResource FontBrush}}"
+                            Minimum="1" Maximum="5" TickPlacement="BottomRight" AutoToolTipPlacement="TopLeft"
+                            Value="{Binding Path=Movie.Rating, Mode=TwoWay}">
+                    </Slider>
+                    <Button Margin="12" Padding="4"
+                            Command="{Binding Path=GiveFiveStarRatingCommand, Mode=OneWay}">5 stars</Button>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+
+        <Grid Visibility="{Binding Path=HasNoMovie, Converter={StaticResource BooleanToVisibilityConverter}}" 
+              Background="{Binding Source={StaticResource DarkSolidBrush}}">
+            <TextBlock Text="Please select a movie in the sidebar"
+                       Foreground="{Binding Source = {StaticResource FontBrush}}"/>
+        </Grid>
+    </Grid>
+</UserControl>

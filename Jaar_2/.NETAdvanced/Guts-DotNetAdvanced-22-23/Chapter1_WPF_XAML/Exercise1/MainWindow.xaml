@@ -1,0 +1,62 @@
+﻿<Window x:Class="Exercise1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exercise1"
+        mc:Ignorable="d"
+        Title="Exercise1" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Code breaker" FontWeight="Bold" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Grid.ColumnSpan="3" Grid.Row="0" Margin="5"/>
+        <TextBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Width="100" Height="20" Name="key1Textbox"/>
+        <PasswordBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Width="100" Height="20" Name="key2Passwordbox"/>
+        <CheckBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Width="100" Height="20" Name="key3Checkbox"/>
+        <Label Grid.Row="1" Grid.Column="2" Content="Key3" HorizontalAlignment="Center" 
+               VerticalAlignment="Center" FontSize="15" Margin="0 0 30 5"/>
+        <ComboBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                  Width="Auto" Height="Auto" Name="key4Combobox">
+            <ComboBoxItem>Item 1</ComboBoxItem>
+            <ComboBoxItem>Item 2</ComboBoxItem>
+            <ComboBoxItem>Item 3</ComboBoxItem>
+        </ComboBox>
+        <GroupBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" 
+                  VerticalAlignment="Center" Width="Auto" Height="Auto" 
+                  Header="Key5">
+            <ListBox>
+                <RadioButton IsChecked="True">Item 1</RadioButton>
+                <RadioButton Name="key5RadioButton">Item 2</RadioButton>
+                <RadioButton>Item 3</RadioButton>
+            </ListBox>
+        </GroupBox>
+        <Button Grid.Row="2" Grid.Column="2" Margin="8 8 8 8" Background="LightGray" 
+                Name="breakButton" Click="BreakButton_Click">
+            <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center">
+                <TextBlock Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Text="Fill in the correct values to break the code"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Text="Break it!" FontSize="20" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Border Grid.ColumnSpan="3" Grid.Row="3" Background="LightGray"
+                CornerRadius="20" Margin=" 20 10" Visibility="Collapsed" Name="messageBorder">
+            <TextBlock Text="You cracked the code!!" TextAlignment="Center" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="25" FontWeight="Bold" Name="messageTextBlock"/>
+        </Border>
+    </Grid>
+</Window>

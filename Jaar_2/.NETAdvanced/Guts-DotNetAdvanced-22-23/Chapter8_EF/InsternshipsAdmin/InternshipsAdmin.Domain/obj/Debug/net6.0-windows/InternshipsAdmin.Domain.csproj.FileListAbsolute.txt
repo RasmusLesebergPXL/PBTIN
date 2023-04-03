@@ -1,0 +1,12 @@
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\bin\Debug\net6.0-windows\InternshipsAdmin.Domain.deps.json
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\bin\Debug\net6.0-windows\InternshipsAdmin.Domain.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\bin\Debug\net6.0-windows\InternshipsAdmin.Domain.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\InternshipsAdmin.Domain.csproj.AssemblyReference.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\InternshipsAdmin.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\InternshipsAdmin.Domain.AssemblyInfoInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\InternshipsAdmin.Domain.AssemblyInfo.cs
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\InternshipsAdmin.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\InternshipsAdmin.Domain.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\refint\InternshipsAdmin.Domain.dll
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\InternshipsAdmin.Domain.pdb
+C:\Users\Rasmus\Documents\Jaar_2\.NETAdvanced\oefenrepo\Guts-DotNetAdvanced-22-23\Chapter8_EF\InsternshipsAdmin\InternshipsAdmin.Domain\obj\Debug\net6.0-windows\ref\InternshipsAdmin.Domain.dll

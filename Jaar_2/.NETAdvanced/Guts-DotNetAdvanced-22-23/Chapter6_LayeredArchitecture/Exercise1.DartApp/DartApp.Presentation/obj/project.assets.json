@@ -1,0 +1,176 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DartApp.AppLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DartApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DartApp.AppLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DartApp.AppLogic.dll": {}
+        }
+      },
+      "DartApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DartApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DartApp.Domain.dll": {}
+        }
+      },
+      "DartApp.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DartApp.AppLogic": "1.0.0",
+          "DartApp.Domain": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/DartApp.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DartApp.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "DartApp.AppLogic/1.0.0": {
+      "type": "project",
+      "path": "../DartApp.AppLogic/DartApp.AppLogic.csproj",
+      "msbuildProject": "../DartApp.AppLogic/DartApp.AppLogic.csproj"
+    },
+    "DartApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DartApp.Domain/DartApp.Domain.csproj",
+      "msbuildProject": "../DartApp.Domain/DartApp.Domain.csproj"
+    },
+    "DartApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../DartApp.Infrastructure/DartApp.Infrastructure.csproj",
+      "msbuildProject": "../DartApp.Infrastructure/DartApp.Infrastructure.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "DartApp.AppLogic >= 1.0.0",
+      "DartApp.Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Rasmus\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Oefeningen\\Guts-DotNetAdvanced-22-23\\Chapter6_LayeredArchitecture\\Exercise1.DartApp\\DartApp.Presentation\\DartApp.Presentation.csproj",
+      "projectName": "DartApp.Presentation",
+      "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Oefeningen\\Guts-DotNetAdvanced-22-23\\Chapter6_LayeredArchitecture\\Exercise1.DartApp\\DartApp.Presentation\\DartApp.Presentation.csproj",
+      "packagesPath": "C:\\Users\\Rasmus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Oefeningen\\Guts-DotNetAdvanced-22-23\\Chapter6_LayeredArchitecture\\Exercise1.DartApp\\DartApp.Presentation\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Rasmus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {
+            "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Oefeningen\\Guts-DotNetAdvanced-22-23\\Chapter6_LayeredArchitecture\\Exercise1.DartApp\\DartApp.AppLogic\\DartApp.AppLogic.csproj": {
+              "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Oefeningen\\Guts-DotNetAdvanced-22-23\\Chapter6_LayeredArchitecture\\Exercise1.DartApp\\DartApp.AppLogic\\DartApp.AppLogic.csproj"
+            },
+            "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Oefeningen\\Guts-DotNetAdvanced-22-23\\Chapter6_LayeredArchitecture\\Exercise1.DartApp\\DartApp.Infrastructure\\DartApp.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Rasmus\\Documents\\Jaar_2\\.NETAdvanced\\Oefeningen\\Guts-DotNetAdvanced-22-23\\Chapter6_LayeredArchitecture\\Exercise1.DartApp\\DartApp.Infrastructure\\DartApp.Infrastructure.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
