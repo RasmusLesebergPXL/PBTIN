@@ -1,0 +1,45 @@
+---
+  - name: Install and run app.py
+    hosts: webservers
+    become: true
+    become_user: root
+    tasks:
+
+      - name: Install python
+        yum:
+          name: 
+          - python3
+          - pip
+          state: latest
+          update_cache: yes
+
+      - name: Install psutil
+        pip:
+          name: psutil
+          executable: pip3
+      
+      - name: Install pyramid
+        pip:
+          name: pyramid
+          executable: pip3
+      
+      - name: Install waitress
+        pip:
+          name: waitress
+          executable: pip3
+
+      - name: Create a directory if it does not exist
+        file:
+          path: /opt/pyramid
+          state: directory
+          mode: '0755'
+
+
+      - name: Copy app.py to remote host
+        copy:
+          src: /home/student/Documents/PXL/Automation/aut2223-pe1-RasmusLesebergPXL/app.py
+          dest: /opt/pyramid/app.py
+          mode: '0644'
+
+      - name: Execute app.py
+        command: python3 /opt/pyramid/app.py 
