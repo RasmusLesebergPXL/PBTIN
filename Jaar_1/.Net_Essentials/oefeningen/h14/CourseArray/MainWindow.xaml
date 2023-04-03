@@ -1,0 +1,22 @@
+﻿<Window x:Class="CourseArray.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseArray"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Vaknaam: " HorizontalAlignment="Left" Height="42" Margin="91,98,0,0" 
+               VerticalAlignment="Top" Width="159"/>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="209,98,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="296" Name="vakInput"/>
+        <TextBox HorizontalAlignment="Left" Height="111" Margin="96,217,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="522" Name="vakOutput"/>
+        <Button Content="Zoek Dict" HorizontalAlignment="Left" Height="21" Margin="531,98,0,0" 
+                VerticalAlignment="Top" Width="82" Name="zoekButton" Click="zoekButton_Click"/>
+        <Button Content="Zoek Array" HorizontalAlignment="Left" Height="21" Margin="531,124,0,0" 
+                VerticalAlignment="Top" Width="82" Name="arrayButton" Click="arrayButton_Click"/>
+
+    </Grid>
+</Window>

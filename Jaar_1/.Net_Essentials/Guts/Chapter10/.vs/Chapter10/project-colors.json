@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "184dff70-143a-476e-9e62-253ef687ae22": {
+      "ProjectGuid": "184dff70-143a-476e-9e62-253ef687ae22",
+      "DisplayName": "BeetleGame",
+      "ColorIndex": 0
+    },
+    "74b3c27a-3c75-4a20-8e2d-4aaf42523915": {
+      "ProjectGuid": "74b3c27a-3c75-4a20-8e2d-4aaf42523915",
+      "DisplayName": "BeetleGame.Tests",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

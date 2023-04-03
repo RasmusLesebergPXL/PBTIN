@@ -1,0 +1,17 @@
+﻿<Window x:Class="oef_3._3_huis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_3._3_huis"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas>
+            <Canvas Height="414" Canvas.Left="245" Canvas.Top="10" Width="503"
+                    Name="paperCanvas" Background="LightGray"/>
+            <Button Content="Draw a House" Height="31" Canvas.Left="72" Canvas.Top="116" Width="138" Click="Button_Click"/>
+        </Canvas>
+
+    </Grid>
+</Window>

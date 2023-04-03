@@ -1,0 +1,36 @@
+﻿<Window x:Class="Exercise08.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exercise08"
+        mc:Ignorable="d"
+        Title="Oef 12.8 Oppervlakte driehoek" Height="216" Width="390">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="25,25,0,0"
+                   Text="a:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="25,58,0,0"
+        	Text="b:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="25,90,0,0"
+        	Text="c:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,142,0,0"
+        	Text="Opp:" VerticalAlignment="Top"/>
+
+        <Button Content="Bereken" HorizontalAlignment="Left"
+                Margin="140,24,0,0" VerticalAlignment="Top" Width="75"
+                Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="52,25,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="83" Name="textBoxA"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="52,58,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="83" Name="textBoxB"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="52,90,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="83" Name="textBoxC"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="52,114,0,0" 
+                   TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                   Width="263" Name="errorTextBlock"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="70,142,0,0" 
+                   TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                   Width="114" Name="areaTextBlock"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="MenuTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MenuTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="open_Click" />
+                <MenuItem Header="_Save" Click="save_Click" />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" />
+                <Separator />
+                <MenuItem Header="_F1" />
+            </MenuItem>
+            <MenuItem Header="E_xit" Name="exitMenutem" Click="exitMenutem_Click">
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Bottom">
+                <!--Inhoud-->
+        </Grid>
+    </DockPanel>
+</Window>

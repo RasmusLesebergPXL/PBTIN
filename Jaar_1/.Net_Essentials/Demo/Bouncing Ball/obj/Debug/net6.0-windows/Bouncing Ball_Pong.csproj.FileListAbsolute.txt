@@ -1,0 +1,20 @@
+C:\Users\Rasmus\Desktop\Bouncing Ball\bin\Debug\net6.0-windows\Bouncing Ball_Pong.exe
+C:\Users\Rasmus\Desktop\Bouncing Ball\bin\Debug\net6.0-windows\Bouncing Ball_Pong.deps.json
+C:\Users\Rasmus\Desktop\Bouncing Ball\bin\Debug\net6.0-windows\Bouncing Ball_Pong.runtimeconfig.json
+C:\Users\Rasmus\Desktop\Bouncing Ball\bin\Debug\net6.0-windows\Bouncing Ball_Pong.dll
+C:\Users\Rasmus\Desktop\Bouncing Ball\bin\Debug\net6.0-windows\ref\Bouncing Ball_Pong.dll
+C:\Users\Rasmus\Desktop\Bouncing Ball\bin\Debug\net6.0-windows\Bouncing Ball_Pong.pdb
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.csproj.AssemblyReference.cache
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong_MarkupCompile.cache
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.g.resources
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.AssemblyInfoInputs.cache
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.AssemblyInfo.cs
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.csproj.CoreCompileInputs.cache
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.dll
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\ref\Bouncing Ball_Pong.dll
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.pdb
+C:\Users\Rasmus\Desktop\Bouncing Ball\obj\Debug\net6.0-windows\Bouncing Ball_Pong.genruntimeconfig.cache

@@ -1,0 +1,18 @@
+﻿<Window x:Class="oef_2._5_OverButton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_2._5_OverButton"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" 
+                Margin="71,119,0,0" VerticalAlignment="Top" 
+                Height="76" Width="293"
+                Name="niceButton"
+                Background="LightBlue" MouseEnter="niceButton_MouseEnter"
+                MouseLeave="niceButton_MouseLeave"/>
+
+    </Grid>
+</Window>

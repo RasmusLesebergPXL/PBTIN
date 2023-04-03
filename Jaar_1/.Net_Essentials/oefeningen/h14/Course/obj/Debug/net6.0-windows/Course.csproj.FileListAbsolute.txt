@@ -1,0 +1,5 @@
+C:\Users\Rasmus\Documents\Jaar_1\DOTNet_Essentials\oefeningen\h14\Course\obj\Debug\net6.0-windows\Course.csproj.AssemblyReference.cache
+C:\Users\Rasmus\Documents\Jaar_1\DOTNet_Essentials\oefeningen\h14\Course\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Rasmus\Documents\Jaar_1\DOTNet_Essentials\oefeningen\h14\Course\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Rasmus\Documents\Jaar_1\DOTNet_Essentials\oefeningen\h14\Course\obj\Debug\net6.0-windows\Course_MarkupCompile.cache
+C:\Users\Rasmus\Documents\Jaar_1\DOTNet_Essentials\oefeningen\h14\Course\obj\Debug\net6.0-windows\Course_MarkupCompile.lref

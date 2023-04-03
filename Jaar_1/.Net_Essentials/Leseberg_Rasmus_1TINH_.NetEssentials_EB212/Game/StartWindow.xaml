@@ -1,0 +1,30 @@
+﻿<Window x:Class="Game.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game"
+        mc:Ignorable="d"
+        Title="StartWindow" Height="450" Width="400">
+    <Grid>
+        <GroupBox Header="Kies je spel" HorizontalAlignment="Left" Height="151" Margin="50,14,0,0" VerticalAlignment="Top" Width="229">
+            <Grid>
+                <RadioButton Content="klein spel" Name="smallGameRadioButton" HorizontalAlignment="Left" Margin="32,25,0,0" VerticalAlignment="Top" Checked="GameRadioButton_Checked" />
+                <RadioButton Content="gewoon spel" Name ="gameRadioButton" HorizontalAlignment="Left" Margin="32,56,0,0" VerticalAlignment="Top" Checked="GameRadioButton_Checked"/>
+                <RadioButton Content="groot spel" Name="largeRadioButton" HorizontalAlignment="Left" Margin="32,87,0,0" VerticalAlignment="Top" Checked="GameRadioButton_Checked"/>
+            </Grid>
+        </GroupBox>
+        <TextBlock HorizontalAlignment="Left" Margin="59,264,0,0" TextWrapping="Wrap" Text="Kies het dier waarmee je gaat spelen" VerticalAlignment="Top"/>
+        <ListBox Name="animalListBox"  HorizontalAlignment="Left" Height="75" Margin="125,299,0,0" VerticalAlignment="Top" Width="100" IsEnabled="False" SelectionChanged="AnimalListBox_SelectionChanged">
+            <ListBoxItem>eekhoorn</ListBoxItem>
+            <ListBoxItem>egel</ListBoxItem>
+            <ListBoxItem>konijn</ListBoxItem>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="55,191,0,0" TextWrapping="Wrap" Text="Geef je spelersnaam in" VerticalAlignment="Top" Width="140"/>
+        <TextBox Name="nameTextBox" HorizontalAlignment="Left" Height="23" Margin="205,194,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+
+
+
+
+    </Grid>
+</Window>

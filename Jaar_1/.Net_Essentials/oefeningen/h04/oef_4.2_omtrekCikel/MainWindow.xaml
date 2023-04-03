@@ -1,0 +1,32 @@
+﻿<Window x:Class="oef_4._2_omtrekCikel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_4._2_omtrekCikel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="radius = 17.5" HorizontalAlignment="Left" 
+               Height="35" Margin="78,129,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button Content="Calculate Area" HorizontalAlignment="Left" 
+                Height="40" Margin="78,217,0,0" VerticalAlignment="Top" Width="155" 
+                Name="areaButton" Click="areaButton_Click"/>
+        <Button Content="Calculate Circumference" HorizontalAlignment="Left" 
+                Height="48" Margin="78,292,0,0" VerticalAlignment="Top" Width="155"
+                Name="circumferenceButton" Click="circumferenceButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" 
+                   Margin="318,229,0,0" TextWrapping="Wrap" Text="Area is: " VerticalAlignment="Top" Width="82"/>
+        <TextBlock HorizontalAlignment="Left" Height="24" 
+                   Margin="318,308,0,0" TextWrapping="Wrap" Text="Circumference is: " VerticalAlignment="Top" Width="127"/>
+        <Label HorizontalAlignment="Left" Height="28" 
+               Margin="423,302,0,0" Content="" VerticalAlignment="Top" 
+               Width="90" Name="circumferenceResult"/>
+        <Label HorizontalAlignment="Left" Height="28" 
+               Margin="423,223,0,0" Content="" VerticalAlignment="Top" 
+               Width="90" Name="areaResult"/>
+        <Ellipse HorizontalAlignment="Left" Height="149" Margin="318,45,0,0" Stroke="Black" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="933,332,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="ExampleInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExampleInterface"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="214" VerticalAlignment="Top" Width="414" Margin="57,57,0,0"/>
+        <Button x:Name="flyButton" Content="Fly" HorizontalAlignment="Left" Height="36" Margin="56,16,0,0" VerticalAlignment="Top" Width="116" Click="flyButton_Click"/>
+        <Button x:Name="landButton" Content="Land" HorizontalAlignment="Left" Height="36" Margin="363,16,0,0" VerticalAlignment="Top" Width="108" Click="landButton_Click"/>
+        <Button x:Name="soundButton" Content="Play Sound" HorizontalAlignment="Left" Height="36" Margin="205,16,0,0" VerticalAlignment="Top" Width="120" Click="soundButton_Click"/>
+
+    </Grid>
+</Window>

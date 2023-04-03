@@ -1,0 +1,31 @@
+﻿<Window x:Class="Exercise13.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exercise13"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Content="Nettoprijs: " HorizontalAlignment="Left" Height="29" Margin="99,67,0,0" 
+               VerticalAlignment="Top" Width="96"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="211,67,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="160" Name="priceTextBox"/>
+        <CheckBox Content="Verlaagd tarief" HorizontalAlignment="Left" Height="20" Margin="211,120,0,0"
+                  VerticalAlignment="Top" Width="160" Name="checkBox"/>
+        <Label Content="Btw:" HorizontalAlignment="Left" Height="27" Margin="99,182,0,0" 
+               VerticalAlignment="Top" Width="60"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="211,182,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="160" Name="btwTextBox" 
+                 Background="LightGray" IsEnabled="False"/>
+        <Label Content="Totaal" HorizontalAlignment="Left" Height="25" Margin="99,226,0,0" 
+               VerticalAlignment="Top" Width="76"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="211,238,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="160" Name="totaalTextBox" 
+                 Background="LightGray" IsEnabled="False"/>
+        <Button Content="Bereken" HorizontalAlignment="Left" Height="23" Margin="263,291,0,0" 
+                VerticalAlignment="Top" Width="108" Name="berekenButton" Click="berekenButton_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="oef_5._17_CalculateDifferenceSeconds.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_5._17_CalculateDifferenceSeconds"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Tijd 1: Uur" HorizontalAlignment="Left" Height="29" Margin="86,74,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label Content="Tijd 1: Minuten" HorizontalAlignment="Left" Height="29" Margin="86,108,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Tijd 1: Seconden" HorizontalAlignment="Left" Height="28" Margin="86,142,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Tijd 2: Uur" HorizontalAlignment="Left" Height="27" Margin="86,217,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Content="Tijd 2: Minuten" HorizontalAlignment="Left" Height="34" Margin="86,249,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Content="Tijd 2: Seconden" HorizontalAlignment="Left" Height="35" Margin="86,283,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.494,0.201"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="222,74,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="106" Name="tijd1Uur"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="222,108,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="106" Name="tijd1Minuut"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="222,142,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="106" Name="tijd1Seconden"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="222,217,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="106" Name="tijd2Uur"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="222,249,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="106" Name="tijd2Minuten"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="222,283,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="106" Name="tijd2Seconden"/>
+        <Button Content="Time Difference" HorizontalAlignment="Left" Height="29" 
+                Margin="400,188,0,0" VerticalAlignment="Top" 
+                Width="138" Name="timeButton" Click="timeButton_Click"/>
+
+    </Grid>
+</Window>

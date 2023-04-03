@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ee674d08-19f2-40d4-a2db-c9822bda63a2": {
+      "ProjectGuid": "ee674d08-19f2-40d4-a2db-c9822bda63a2",
+      "DisplayName": "Triangle Method",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

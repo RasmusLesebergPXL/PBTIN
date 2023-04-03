@@ -1,0 +1,32 @@
+﻿<Window x:Class="oef_4._10_bankrekening.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Begin Amount: " HorizontalAlignment="Left" 
+               Height="30" Margin="101,144,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label Content="End Amount: " HorizontalAlignment="Left" Height="33" Margin="101,217,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox HorizontalAlignment="Left" Height="30" 
+                 Margin="225,144,0,0" TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Top" Width="111"
+                 Name="inputAmount"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="225,217,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="111"
+                 Name="endAmount"/>
+        <Button Content="Calculate" HorizontalAlignment="Left" Height="36" 
+                Margin="101,295,0,0" VerticalAlignment="Top" Width="110" Click="calculateButton"/>
+        <Label Content="Interest Rate: " HorizontalAlignment="Left" Height="32" 
+               Margin="101,89,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox HorizontalAlignment="Left" Height="32" Margin="225,89,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="111" Name="interestRate"/>
+        <Label Content="Years: " HorizontalAlignment="Left" Height="42" 
+               Margin="101,42,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="225,42,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="111" Name="amountYears"/>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+SELECT 	cr.subscription_rate_existing "PRIJS",
+	c.clubname "CLUB", 
+	cr.subscriptiontype "TYPE"
+FROM club_rates cr JOIN clubs c
+ON (cr.club_id = c.club_id)
+JOIN members m
+ON (m.club_id = c.club_id)
+WHERE 	UPPER(c.clubname) = 'TC ZEDELGEM'
+	AND m.club_id = &club_id
+/

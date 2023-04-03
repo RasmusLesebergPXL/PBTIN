@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oef_2.6_Formulier", "oef_2.6_Formulier.csproj", "{3B3B29E8-4681-4F15-8549-847CEB5DD614}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B3B29E8-4681-4F15-8549-847CEB5DD614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3B29E8-4681-4F15-8549-847CEB5DD614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3B29E8-4681-4F15-8549-847CEB5DD614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3B29E8-4681-4F15-8549-847CEB5DD614}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C226C958-7DD9-46F8-8439-C737E63673B7}
+	EndGlobalSection
+EndGlobal

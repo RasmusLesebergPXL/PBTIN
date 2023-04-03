@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "464dbcff-1635-4c05-af2a-d5945c176749": {
+      "ProjectGuid": "464dbcff-1635-4c05-af2a-d5945c176749",
+      "DisplayName": "First Drawing",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

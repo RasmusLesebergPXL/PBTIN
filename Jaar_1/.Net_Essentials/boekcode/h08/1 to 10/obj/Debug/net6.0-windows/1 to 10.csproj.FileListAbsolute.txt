@@ -1,0 +1,20 @@
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\bin\Debug\net6.0-windows\1 to 10.exe
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\bin\Debug\net6.0-windows\1 to 10.deps.json
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\bin\Debug\net6.0-windows\1 to 10.runtimeconfig.json
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\bin\Debug\net6.0-windows\1 to 10.dll
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\bin\Debug\net6.0-windows\1 to 10.pdb
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.csproj.AssemblyReference.cache
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10_MarkupCompile.cache
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.g.resources
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.AssemblyInfoInputs.cache
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.AssemblyInfo.cs
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.csproj.CoreCompileInputs.cache
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.dll
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\refint\1 to 10.dll
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.pdb
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\1 to 10.genruntimeconfig.cache
+C:\Users\Rasmus\Documents\Jaar_1\.Net_Essentials\boekcode\h08\1 to 10\obj\Debug\net6.0-windows\ref\1 to 10.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Zoek_en_Vervang/1.0.0": {
+        "runtime": {
+          "Zoek_en_Vervang.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Zoek_en_Vervang/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

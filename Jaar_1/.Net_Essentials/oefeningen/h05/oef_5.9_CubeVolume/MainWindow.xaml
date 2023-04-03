@@ -1,0 +1,20 @@
+﻿<Window x:Class="oef_5._9_CubeVolume.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_5._9_CubeVolume"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Ribbe:" HorizontalAlignment="Left" Height="35" 
+               Margin="87,108,0,0" VerticalAlignment="Top" Width="81"/>
+        <TextBox HorizontalAlignment="Left" Height="35" 
+                 Margin="168,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="112" Name="ribbeInput"/>
+        <Button Content="Bereken" HorizontalAlignment="Left" Height="20" 
+                Margin="168,181,0,0" VerticalAlignment="Top" Width="112"
+                Name="berekenButton" Click="berekenButton_Click"/>
+
+    </Grid>
+</Window>

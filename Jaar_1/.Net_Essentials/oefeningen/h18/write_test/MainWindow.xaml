@@ -1,0 +1,19 @@
+﻿<Window x:Class="write_test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:write_test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Write" HorizontalAlignment="Left" Height="54" Margin="38,140,0,0" 
+                VerticalAlignment="Top" Width="225" Name="writeButton" Click="WriteButton_Click"/>
+        <Button Content="Read" HorizontalAlignment="Left" Height="50" Margin="38,65,0,0" 
+                VerticalAlignment="Top" Width="225" Name="readButton" Click="ReadButton_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="280" Margin="327,65,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="385" Name="fileTextBox"/>
+
+    </Grid>
+</Window>

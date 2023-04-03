@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5207c390-7ac4-4206-89da-33a99f03a192": {
+      "ProjectGuid": "5207c390-7ac4-4206-89da-33a99f03a192",
+      "DisplayName": "Car Park 2",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

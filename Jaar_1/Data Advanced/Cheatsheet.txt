@@ -1,0 +1,350 @@
+	CONTENTS	
+	ALL IMPORTS AT GLANCE
+	LOAD DATASETS
+        ------------------- Titanic Dataset----------
+	GENERAL COMMANDS
+	------------------- Titanic graphic----------
+	PANDAS
+	SEABORN
+	MATPLOTLIB
+ 	------------------- Statistics, Probability--
+	STATS	
+	NORM
+	------------------- Machine Learning --------
+	SKLEARN
+	
+
+ALL IMPORTS AT GLANCE
+import pandas as pd
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+from scipy.stats import norm
+from sklearn import datasets, linear model
+from sklearn import tree
+from sklearn import metrics
+from sklearn import svm
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	   LOAD DATASETS			+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import pandas as pd
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+
+														import file from library
+<variable> 	= 		  ('<name of dataset>')
+	titanic = sns.load_dataset('titanic')
+
+
+
+														import file from local
+<variable> 	= 	     ('<file_name>')
+test_titanic 	= pd.read_csv('titanic.csv') 
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	   TITANIC DATASET       	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	GENERAL COMMANDS
+
+
+														head/tail
+titanic.head(5)
+titanic.tail(5)
+														column overview entire DS
+titanic.dtypes
+														info(rows, datatype, etc.)
+titanic.info()
+														length dataset
+print(len(titanic))
+														select column
+titanic['class']
+														select multiple columns
+titanic[['embark_town', 'alive','alone']]
+														select row 5 - 10
+print(titanic[5:10])
+														select column and row
+print(titanic[5:10] [['survived', 'age']])
+														select row with condition
+mannen = titanic[titanic.sex == 'male']
+print(len(mannen))
+titanic.sex.value_counts()
+														multiple conditions: men & first class
+mannen_1steklas = mannen[mannen.pclass == 1]
+print(len(mannen_1steklas))
+														percentages men vs women
+titanic.sex.value_counts(normalize=True)
+														count column
+print(titanic.embark_town.value_counts())
+														null values
+print(titanic[titanic.embark_town.isnull()])
+														sum of null values
+titanic.isnull().sum()
+														sample of coloum
+titanic.loc[titanic['age'].isnull()].sample(10)
+														where fare == maxfare
+titanic.loc[titanic.fare == titanic.fare.max()]
+														make extra column
+titanic['fare_category'] = pd.qcut(titanic.fare, 4, labels=['zeer laag', 'laag', 'hoog', 'zeer hoog'])
+														
+														general statistics (describe())
+titanic.describe()
+titanic.describe(include = 'all') *includes NaN
+														manual statistics
+print(titanic.fare.mean())
+print(titanic.fare.median())
+print(titanic.fare.min())
+print(titanic.fare.max())
+print(titanic.fare.max() - titanic.fare.min()) 
+print(titanic.fare.var())
+print(titanic.fare.std())
+print(titanic.fare.quantile(.25))
+print(titanic.fare.quantile(.5))
+print(titanic.fare.quantile(.75))
+print(titanic.sex.mode())
+		
+				
+						
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	TITANIC GRAPHIC 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+
+	PANDAS
+
+														pie chart
+pie_data = titanic['survived'].value_counts()
+pie_plot = pie_data.plot.pie(figsize=(5,5), autopct = '%3.0f%%', title = "cirkeldiagram van Survived")
+
+														pie chart w condition
+mannen = titanic[titanic.sex == 'male']
+pie_data_mannen = mannen['survived'].value_counts()
+pie_plot_mannen = pie_data_mannen.plot.pie(title = 'survival mannen', figsize=(5,5), autopct = '%3.0f%%')
+
+														bar chart with condition
+vrouwen = titanic[titanic.sex == 'female']
+bar_data_vrouwen = vrouwen.pclass.value_counts()
+bar_plot_vrouwen = bar_data_vrouwen.plot.bar(title = 'Verdelding klasse - vrouwen', figsize=(5,5))
+
+														crosstab & crosstab.plot	(verbanden)
+pd.crosstab(titanic.survived, titanic.embarked)             OR
+
+pd.crosstab(titanic.sex, titanic.pclass).plot(kind = 'bar', rot = 0, title = '
+aantal passagiers per klasse en geslacht')   OR
+
+pd.crosstab(titanic.pclass, titanic.sex, margins = True, normalize = True)
+														histogram w 20 bins
+titanic.fare.plot(kind = 'hist', title = 'histogram voor prijs', bins = 20)
+														boxplot age/pclass/fare		(verbanden)
+titanic[titanic.pclass.notnull()].boxplot('age', 'pclass')   OR
+titanic.fare.plot(kind='box', title='boxplot voor ticketprijs')
+														pivot table			(verbanden)
+titanic.pivot_table(index = 'sex', columns = 'pclass', values = 'age', aggfunc = 'mean')
+														scatter plot			(verbanden)
+plt.scatter(titanic.age, titanic.fare)
+														heatmap				(verbanden)
+sns.heatmap(titanic.corr(), annot = True, cmap = "coolwarm")		
+														groupby				(missing val + outliers)
+titanic.groupby(['pclass', 'embarked']).fare.median()	
+														fillna				(missing val + outliers)
+titanic.loc[titanic.embarked.isnull(), 'embarked'] = 'C'   OR
+
+pclass_age_median = titanic.groupby('pclass').age.transform('median')
+print(pclass_age_median)
+titanic.age.fillna(pclass_age_median, inplace=True)
+														split fare into 4 categories
+pd.qcut(titanic.fare, 4, labels = ['zeer laag', 'laag', 'hoog', 'zeer hoog'])	
+														check if categories are even
+pd.qcut(titanic.fare, 4, labels = ['zeer laag', 'laag', 'hoog', 'zeer hoog'])
+.value_counts().plot(kind = 'bar', rot=0)
+
+
+
+	SEABORN
+	
+														boxplot
+sns.boxplot(titanic['fare'])
+														scatter with labels
+plt.figure(figsize=(5,5))
+sns.scatterplot(data=heart,x=heart.thalachh,y=heart.chol)
+plt.title('Verband tussen Cholesterol levels en Thalachh') #title
+plt.xlabel('Thalachh') #x label
+plt.ylabel('Chol levels') #y label
+plt.show()
+
+
+
+	MATPLOTLIB
+		
+
+														pie chart
+labels = 'dood' , 'overleefd'
+plt.pie(titanic.survived.value_counts(), labels = labels, autopct='%3.1f%%')     *%3.1 = 1decimal
+plt.title('Cirkeldiagram van Survived')
+plt.show()
+														density curve (dichtheidsfunctie)
+
+titanic.fare.plot(kind = 'kde', title = 'dichtheidsfunctie voor fare') # hier wordt onderliggend van een norm verdeling uitgegaan
+plt.xlabel("fare")
+plt.ylabel("dichtheid")
+ax = plt.gca() #Get the Current Axes
+ax.set_xlim(-30, 250)
+														'scheefheidsparameter'/skewness
+titanic.fare.skew()
+
+		
+		
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	DATA REP STATISTICS	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+	STATS
+
+import scipy.stats as stats
+from scipy.stats import norm
+														P(20 < Z < 30)
+stats.norm.cdf(30, titanic.age.mean(), titanic.age.std())
+ - stats.norm.cdf(20, titanic.age.mean(), titanic.age.std())
+														P(Z<-1.23)
+stats.norm.cdf(-1.23, 0, 1)
+														P(Z > 2.9)
+1 - stats.norm.cdf(2.09, 0, 1)
+														P(Z < a) = 0.9936
+stats.norm.ppf(0.9936, 0, 1)
+														P(Z > a) = 0.9887
+stats.norm.ppf(1 - 0.9887, 0, 1)
+														P(Z <= a) = 0.6
+stats.norm.ppf(0.6, 170.6, 6.75)										170.6 = average, std = 6.75
+														
+			
+														
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	MACHINE LEARNING	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+	SKLEARN (datasets)
+
+IMPORTS
+from sklearn import datasets, linear model
+from sklearn import tree
+from sklearn import metrics
+from sklearn import svm
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+
+														load dataset
+iris = datasets.load_iris()
+														show sample data, 10 rows
+df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+df["target"] = iris.target
+df.sample(n=10)  # show 10 random rows
+														shape of dataset
+iris.data.shape
+														example data
+print(iris.data[0:10, :])
+														look at taregt values
+print(iris.target)
+														split into train and test
+X = iris.data
+y = iris.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
+print(X_train.shape)
+print(y_train.shape)
+print(X_test.shape)
+print(y_test.shape)
+														create Decision tree classifier
+
+model = tree.DecisionTreeClassifier(random_state=0, max_depth = 3)   #set tree levels with max_depth
+model = model.fit(X, y)
+plt.figure(figsize=(12,12))  # set plot size (denoted in inches)
+tree.plot_tree(model, fontsize=10)
+plt.show()
+														fit the train to the model
+
+model = model.fit(X_train, y_train)
+														predict test set
+y_pred = model.predict(X_test)
+														accuracy score
+
+print("Accuracy = ", accuracy_score(y_test, y_pred) * 100, "%")		
+														precision score
+print("Accuracy = ", precision_score(y_test, y_pred) * 100, "%")		
+														recall score
+print("Accuracy = ", recall_score(y_test, y_pred) * 100, "%")
+							
+														delete coloumns
+titanic_df = titanic_df.drop(["PassengerId", "Name", "Ticket", "Cabin"], axis=1)
+														delete entries with null values
+titanic_df = titanic_df.dropna()
+
+														transform male/female to 0/1
+label_encoder = preprocessing.LabelEncoder()
+titanic_df['Sex'] = label_encoder.fit_transform(titanic_df['Sex'])
+														embarked omzetten naar numeriek
+titanic = pd.get_dummies(titanic_df, columns=['Embarked'])
+titanic.head()
+														shuffle dataset
+titanic = titanic.sample(frac=1).reset_index(drop=True) 
+titanic.head()	
+														export dataset to csv
+titanic.to_csv('titanic_train_df_klaar.csv', index = False) 
+#nieuwe read
+titanic_ML = pd.read_csv('titanic_train_df_klaar.csv')		
+														train_test_split
+
+X = titanic_ML.drop('Survived', axis=1)
+y = titanic_ML['Survived']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+print(X_train.shape)
+print(y_train.shape)
+print(X_test.shape)
+print(y_test.shape)
+														Pas het logistic regression algoritme voor classificatie toe
+logistic_model = LogisticRegression(penalty= 'l2', solver='liblinear').fit(X_train, y_train)
+model = LinearRegression().fit(X_train, y_train)						
+														mean squared error 
+mse = mean_squared_error(y_pred, y_test)
+														r2 score
+r2 = r2_score(y_pred, y_test)
+														visualize train/test
+if len(X_test) > 1:
+        X_test = X_test[:, column]
+    
+    plt.scatter(X_test, y_test, color='blue', label='True data')
+    plt.scatter(X_test, y_pred, color='orange', label='Predicted')
+    plt.xlabel("Features")
+    plt.ylabel("Labels")
+    plt.legend(loc='best')
+    plt.show()
+
+												
+
+
+
+
+											
+
+									
+							
+														

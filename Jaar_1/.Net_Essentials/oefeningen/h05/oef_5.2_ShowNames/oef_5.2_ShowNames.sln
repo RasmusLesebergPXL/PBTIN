@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oef_5.2_ShowNames", "oef_5.2_ShowNames.csproj", "{B411BB2E-D55A-44B7-94D7-58460A3587E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B411BB2E-D55A-44B7-94D7-58460A3587E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B411BB2E-D55A-44B7-94D7-58460A3587E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B411BB2E-D55A-44B7-94D7-58460A3587E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B411BB2E-D55A-44B7-94D7-58460A3587E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7197AB98-7D0D-48A8-8713-146A46B0C115}
+	EndGlobalSection
+EndGlobal

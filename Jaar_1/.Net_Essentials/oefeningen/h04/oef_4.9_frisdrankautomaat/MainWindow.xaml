@@ -1,0 +1,50 @@
+﻿<Window x:Class="oef_4._9_frisdrankautomaat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_4._9_frisdrankautomaat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Frisdrankautomaat" HorizontalAlignment="Left" 
+               Height="46" Margin="96,76,0,0" VerticalAlignment="Top" 
+               Width="174"/>
+        <TextBox HorizontalAlignment="Left" Height="32" 
+                 Margin="216,150,0,0" TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Top" Width="87" Name="amountGiven"/>
+        <TextBox HorizontalAlignment="Left" Height="37" 
+                 Margin="216,217,0,0" TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Top" Width="87" Name="itemCost"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" 
+                   Margin="400,173,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="255" Name="amountEuro"/>
+        <TextBlock HorizontalAlignment="Left" Height="27" 
+                   Margin="400,197,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="255" Name="amountFifty"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" 
+                   Margin="400,232,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="255" Name="amountTwenty"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" 
+                   Margin="400,260,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="255" Name="amountTen"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" 
+                   Margin="400,293,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="255" Name="amountFive"/>
+        <TextBlock HorizontalAlignment="Left" Height="24" 
+                   Margin="400,323,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="255" Name="amountTwo"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" 
+                   Margin="400,352,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="255" Name="amountOne"/>
+        <Button Content="Calculate" HorizontalAlignment="Left" Height="41" 
+                Margin="96,306,0,0" VerticalAlignment="Top" Width="153" Name="amountResult" Click="amountResult_Click"/>
+        <Label Content="Amount given: " HorizontalAlignment="Left" 
+               Height="32" Margin="96,150,0,0" VerticalAlignment="Top" 
+               Width="87"/>
+        <Label Content="Item Cost: " HorizontalAlignment="Left" 
+               Height="30" Margin="96,224,0,0" VerticalAlignment="Top" 
+               Width="102"/>
+
+    </Grid>
+</Window>

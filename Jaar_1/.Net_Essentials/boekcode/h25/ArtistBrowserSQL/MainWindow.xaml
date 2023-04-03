@@ -1,0 +1,40 @@
+﻿<Window x:Class="ArtistBrowserSQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArtistBrowserSQL"
+        mc:Ignorable="d"
+        Title="Artist Browser" Height="358" Width="525">
+    <Grid>
+        <ListView HorizontalAlignment="Left" Height="301" Margin="10,10,0,0"
+                  VerticalAlignment="Top" Width="164"
+                  Name="artistListView"
+                  SelectionChanged="artistListView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" FontSize="14" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Content="Artist" HorizontalAlignment="Left" Margin="227,20,0,0"
+               VerticalAlignment="Top" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" FontSize="14" Height="26"
+                 Margin="227,51,0,0" VerticalAlignment="Top" Width="237"
+                 Text="{Binding Name}" />
+        <Label Content="Company" HorizontalAlignment="Left" Margin="227,84,0,0"
+            VerticalAlignment="Top" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" FontSize="14" Height="26"
+            Margin="227,115,0,0" VerticalAlignment="Top" Width="237"
+            Text="{Binding Company}" />
+        <Label Content="Sales" HorizontalAlignment="Left" Margin="227,157,0,0"
+            VerticalAlignment="Top" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" FontSize="14" Height="26"
+            Margin="227,188,0,0" VerticalAlignment="Top" Width="237"
+            Text="{Binding Sales}" />
+        <Button Content="Save" HorizontalAlignment="Left"
+                Margin="384,285,0,0" VerticalAlignment="Top" Width="80"
+                FontSize="14" Height="26"
+                Click="saveButton_Click"/>
+    </Grid>
+</Window>

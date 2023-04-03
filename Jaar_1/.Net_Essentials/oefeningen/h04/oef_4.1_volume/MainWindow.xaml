@@ -1,0 +1,36 @@
+﻿<Window x:Class="oef_4._1_volume.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_4._1_volume"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Input Height" HorizontalAlignment="Left" Height="28" Margin="126,92,0,0" VerticalAlignment="Top" Width="98"/>
+        <Label Content="Input Width" HorizontalAlignment="Left" Height="35" Margin="126,182,0,0" VerticalAlignment="Top" Width="84"/>
+        <Label Content="Input Depth" HorizontalAlignment="Left" Height="32" Margin="126,290,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox HorizontalAlignment="Left" Height="31" 
+                 Margin="126,56,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="84"
+                 Name="amountLength"/>
+        <TextBox HorizontalAlignment="Left" Height="38" 
+                   Margin="126,139,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="84"
+                   Name="amountHeight"/>
+        <TextBox HorizontalAlignment="Left" Height="41" 
+                 Margin="126,244,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="84"
+                 Name="amountDepth"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="308,139,0,0" 
+                   TextWrapping="Wrap" Text="Volume of Block is: " 
+                   VerticalAlignment="Top" Width="130"/>
+        <Button Content="Calculate" HorizontalAlignment="Left" Height="29" 
+                Margin="288,58,0,0" VerticalAlignment="Top" Width="170" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" 
+                   Height="38" Margin="443,139,0,0" 
+                   TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                   Width="150" Name="volumeTextBlock"/>
+
+    </Grid>
+</Window>

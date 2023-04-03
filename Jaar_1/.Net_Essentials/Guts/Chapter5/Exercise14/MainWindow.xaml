@@ -1,0 +1,25 @@
+﻿<Window x:Class="Exercise14.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exercise14"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Decimal Number" HorizontalAlignment="Left" 
+               Height="28" Margin="80,77,0,0" VerticalAlignment="Top" Width="106"/>
+        <TextBox HorizontalAlignment="Left" Height="28" 
+                 Margin="214,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="97" Name="decBoxArea"/>
+        <Label Content="Binary Number" HorizontalAlignment="Left" Height="28" 
+               Margin="80,149,0,0" VerticalAlignment="Top" Width="106"/>
+        <TextBox HorizontalAlignment="Left" Height="28" 
+                 Margin="214,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="97" Name="binaryNumber"/>
+        <Button Content="Convert" HorizontalAlignment="Left" Height="28" 
+                Margin="80,237,0,0" VerticalAlignment="Top" Width="106"
+                Name="convertButton" Click="convertButton_Click"/>
+
+    </Grid>
+</Window>

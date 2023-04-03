@@ -1,0 +1,19 @@
+﻿<Window x:Class="oef_4._3_examen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_4._3_examen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Outcome: " HorizontalAlignment="Left" Height="35" 
+               Margin="123,136,0,0" VerticalAlignment="Top" Width="112"/>
+        <TextBlock HorizontalAlignment="Left" Height="35" 
+                   Margin="259,136,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="117" Name="examResult"/>
+        <Button Content="Calculate Average" HorizontalAlignment="Left" Height="30" 
+                Margin="123,217,0,0" VerticalAlignment="Top" Width="135" Name="averageCalc" Click="averageCalc_Click"/>
+
+    </Grid>
+</Window>

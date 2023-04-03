@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="AskFrasierApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AskFrasierApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="40,40,0,0"
+                   Text="How are you feeling today?" VerticalAlignment="Top"
+                   Style="{ThemeResource TitleTextBlockStyle}"/>
+
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="80,40,0,0"
+                 VerticalAlignment="Top" Width="690" Name="questionTextBox"
+                 Grid.Row="1" FontSize="20"/>
+
+        <Button Content="Ask" HorizontalAlignment="Left" Margin="40,40,20,0"
+                VerticalAlignment="Top" Width="150"
+                Name="askButton" Click="askButton_Click" FontSize="20"
+                Grid.Row="1" Grid.Column="1"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,40,0,0"
+        	Text="Frasier says:" VerticalAlignment="Top"
+        	Style="{ThemeResource TitleTextBlockStyle}"
+            Grid.Row="2" />
+
+        <TextBlock Text="Label" HorizontalAlignment="Left"
+               Margin="80,20,0,0" VerticalAlignment="Top"
+               Name="replyTextBlock" FontSize="40" FontStyle="Italic"
+               Grid.Row="3" Grid.ColumnSpan="2"/>
+    </Grid>
+</Page>

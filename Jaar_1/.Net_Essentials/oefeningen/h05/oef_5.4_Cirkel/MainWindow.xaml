@@ -1,0 +1,33 @@
+﻿<Window x:Class="oef_5._4_Cirkel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_5._4_Cirkel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas HorizontalAlignment="Left" Height="370" Margin="360,38,0,0" 
+                VerticalAlignment="Top" Width="400"
+                Name="paperCanvas" Background="DarkOrange"/>
+        <Label Content="Middelpunt x:" HorizontalAlignment="Left" Height="39" 
+               Margin="46,66,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox HorizontalAlignment="Left" Height="39" Margin="147,66,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="99" Name="middelPuntXTextBox"/>
+        <Label Content="Middelpunt y:" HorizontalAlignment="Left" Height="38" 
+               Margin="46,154,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox HorizontalAlignment="Left" Height="38" Margin="147,154,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="99" Name="middelPuntYTextBox"/>
+        <Label Content="Straal:" HorizontalAlignment="Left" Height="32" 
+               Margin="46,242,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox HorizontalAlignment="Left" Height="38" Margin="147,242,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="99" Name="straalTextBox"/>
+        <Button Content="Teken" HorizontalAlignment="Left" Height="31" 
+                Margin="225,353,0,0" VerticalAlignment="Top" Width="104" 
+                Click="drawButton_Click"/>
+
+    </Grid>
+</Window>

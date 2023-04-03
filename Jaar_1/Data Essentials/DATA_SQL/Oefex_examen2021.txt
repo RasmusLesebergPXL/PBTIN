@@ -1,0 +1,101 @@
+Oefenexamen BB 1 - 6
+
+1. SELECT v.vakantie_id, v.vakantie_type, v.van "Datum vertrek"
+FROM vakanties v JOIN verblijfplaatsen vb
+ON (v.verbl_id = vb.verbl_id)
+WHERE UPPER(vb.verbl_naam) = 'TER HEIDE'
+AND 	(TO_CHAR(v.van, 'MM') >= 07
+OR	TO_CHAR(v.van, 'MM') >= 04);
+
+
+2.SELECT v.vakantie_id, i.boekingsdatum, k.klant_naam, 
+	 k.klant_voornaam, ik.kind_voornaam, ik.cm_lid AS "Lid",
+CASE	ik.cm_lid
+WHEN	'J' THEN 'CM_Lid'
+WHEN	'N' THEN 'Geen Lid'
+	END "Lid"
+FROM 	vakanties v JOIN inschrijvingen i
+	ON (v.vakantie_id = i.vak_id)
+JOIN 	klanten k
+ON (i.klant_id = k.klant_id)
+JOIN inschrijvingen_kindgegevens ik
+ON (ik.inschr_id = i.inschrijving_id)
+WHERE k.klant_id = &klant_id;
+
+
+3. DROP TABLE med_info2017;
+CREATE TABLE med_info2017 (
+  klant_id		VARCHAR2(20)	CONSTRAINT med_info_fk 
+					REFERENCES klanten(klant_id)
+, registratie_datum	DATE		CONSTRAINT med_info_regdate_nn NOT NULL
+, info			VARCHAR2(100)	CONSTRAINT med_info_info_nn NOT NULL
+, datum_attest		DATE		CONSTRAINT med_info_datumatt_ck CHECK
+					(TO_CHAR(datum_attest, 'YYYY') = 2017)
+, CONSTRAINT med_info2017_pk PRIMARY KEY(klant_id, registratie_datum)
+);
+
+4. 
+  UPDATE inschrijvingen
+  SET        vak_id = 2012,
+     boekingsdatum = sysdate,
+     betaald_bedrag = 0
+WHERE inschrijving_id = 45
+/
+
+b) 
+
+
+6.  CREATE OR REPLACE VIEW kla_reizen
+  AS SELECT k.klant_id, k.klant_naam, l.landnaam,
+  SUBSTR(k.klant_email, INSTR(k.klant_email, '@') + 1) "EMAILSERVICE", i.vak_id
+  FROM klanten k JOIN gemeenten g
+  ON (k.klant_gemeente_id = g.gemeente_id)
+  JOIN landen l
+  ON (l.land_id = g.land_id)
+  JOIN inschrijvingen i
+  ON (i.klant_id = k.klant_id)
+
+
+
+EXAMEN JANUARI 2022
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. 
+SELECT m.club_id "CLUBNUMMER", COUNT(r.member_id) "RESERVATIES"
+FROM members m JOIN reservations r
+ON (m.member_id = r.member_id)
+WHERE TO_CHAR(r.reservation_date_starthour, 'YYYY') = 2021
+GROUP BY m.club_id 
+HAVING 	COUNT(r.member_id) > 3000;
+
+
+
+2.
+CREATE OR REPLACE VIEW nov11_training_vu
+AS SELECT 	m.last_name "SPELER", 
+		t.last_name "TEGENSPELER", 
+		r.terrain "TERRAIN",
+		TO_CHAR(r.reservation_date_starthour, 'HH24:MI') "LICHT"
+CASE 		r.reservation_date_starthour
+WHEN 		TO_NUMBER(TO_CHAR(r.reservation_date_starthour, 'HH') < 17 THEN "geen licht"
+ELSE 		"licht" END
+FROM members m JOIN members t
+ON (m.member_id = t.member_id)
+JOIN reservations r
+ON (m.member_id = r.member_id)
+WHERE 	(m.club_id = 5004
+AND	TO_CHAR(r.reservation_date_starthour, 'DD/MM/YYYY') = '11/11/2021'
+AND 	m.member_id <> t.member_id)
+ORDER BY r.terrain;
+
+
+3.
+SELECT 	cr.subscription_rate_existing "PRIJS",
+	c.clubname "CLUB", 
+	cr.subscriptiontype "TYPE"
+FROM club_rates cr JOIN clubs c
+ON (cr.club_id = c.club_id)
+JOIN members m
+ON (m.club_id = c.club_id)
+WHERE 	UPPER(c.clubname) = 'TC ZEDELGEM'
+	AND m.club_id = &club_id
+/

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeetleGame", "BeetleGame\BeetleGame.csproj", "{184DFF70-143A-476E-9E62-253EF687AE22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeetleGame.Tests", "BeetleGame.Tests\BeetleGame.Tests.csproj", "{74B3C27A-3C75-4A20-8E2D-4AAF42523915}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{184DFF70-143A-476E-9E62-253EF687AE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184DFF70-143A-476E-9E62-253EF687AE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184DFF70-143A-476E-9E62-253EF687AE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184DFF70-143A-476E-9E62-253EF687AE22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74B3C27A-3C75-4A20-8E2D-4AAF42523915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B3C27A-3C75-4A20-8E2D-4AAF42523915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B3C27A-3C75-4A20-8E2D-4AAF42523915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B3C27A-3C75-4A20-8E2D-4AAF42523915}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

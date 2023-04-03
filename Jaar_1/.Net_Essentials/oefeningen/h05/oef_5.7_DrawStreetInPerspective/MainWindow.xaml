@@ -1,0 +1,18 @@
+﻿<Window x:Class="oef_5._7_DrawStreetInPerspective.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_5._7_DrawStreetInPerspective"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas>
+            <Canvas Height="343" Canvas.Left="185" Canvas.Top="36" 
+                    Width="561" Background="LightGray" Name="paperCanvas"/>
+            <Button Content="Draw" Height="35" Canvas.Left="44" Canvas.Top="69" 
+                    Width="118" Name="drawButton" Click="drawButton_Click"/>
+        </Canvas>
+
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="oef_11._2_PoolBall.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_11._2_PoolBall"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas HorizontalAlignment="Left" Height="311" Margin="55,75,0,0" VerticalAlignment="Top" 
+                Width="440" Background="LightGreen" Name="paperCanvas"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Height="37" Margin="536,231,0,0" 
+               VerticalAlignment="Top" Width="92" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="38" Margin="652,230,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="121" FontSize="20" Name="amountTextBox"/>
+        <Button Content="Up" HorizontalAlignment="Left" Height="36" Margin="628,55,0,0" VerticalAlignment="Top" 
+                Width="84" Name="buttonUp" Click="buttonUp_Click"/>
+        <Button Content="Down" HorizontalAlignment="Left" Height="35" Margin="628,143,0,0" 
+                VerticalAlignment="Top" Width="84" Name="downButton" Click="downButton_Click"/>
+        <Button Content="Left" HorizontalAlignment="Left" Height="40" Margin="536,91,0,0" 
+                VerticalAlignment="Top" Width="68" Name="leftButton" Click="leftButton_Click"/>
+        <Button Content="Right" HorizontalAlignment="Left" Height="40" Margin="739,91,0,0" 
+                VerticalAlignment="Top" Width="51" Name="rightButton" Click="rightButton_Click"/>
+
+    </Grid>
+</Window>

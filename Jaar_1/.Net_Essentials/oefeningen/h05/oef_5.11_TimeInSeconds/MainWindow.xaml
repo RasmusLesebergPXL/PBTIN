@@ -1,0 +1,26 @@
+﻿<Window x:Class="oef_5._11_TimeInSeconds.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_5._11_TimeInSeconds"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Uren" HorizontalAlignment="Left" Height="29" Margin="104,113,0,0" VerticalAlignment="Top" Width="65"/>
+        <Label Content="Minuten" HorizontalAlignment="Left" Height="31" Margin="104,186,0,0" VerticalAlignment="Top" Width="65"/>
+        <Label Content="Seconden" HorizontalAlignment="Left" Height="40" Margin="104,256,0,0" VerticalAlignment="Top" Width="83"/>
+        <TextBox HorizontalAlignment="Left" Height="29" 
+                 Margin="228,113,0,0" TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Top" Width="86" Name="urenInput"/>
+        <TextBox HorizontalAlignment="Left" Height="31" 
+                 Margin="228,186,0,0" TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Top" Width="86" Name="minutenInput"/>
+        <TextBox HorizontalAlignment="Left" Height="20" 
+                 Margin="228,256,0,0" TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Top" Width="86" Name="secondenInput"/>
+        <Button Content="Aantal Seconden" HorizontalAlignment="Left" Height="25" 
+                Margin="104,326,0,0" VerticalAlignment="Top" Width="129" Name="aantalSeconden" Click="aantalSeconden_Click"/>
+
+    </Grid>
+</Window>

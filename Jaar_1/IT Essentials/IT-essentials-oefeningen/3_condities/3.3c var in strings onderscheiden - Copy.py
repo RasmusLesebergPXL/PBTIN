@@ -1,0 +1,5 @@
+print("a" in "Rasmus")
+print("e" in "Rasmus")
+print("i" in "Rasmus")
+print("o" in "Rasmus")
+print("u" in "Rasmus")

@@ -1,0 +1,18 @@
+﻿<Window x:Class="InvalidEmailException.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InvalidEmailException"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Enter Email: " HorizontalAlignment="Left" Height="37" Margin="107,105,0,0" 
+               VerticalAlignment="Top" Width="136" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="243,105,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="293" FontSize="20" Name="inputTextBox"/>
+        <Button Content="Check" HorizontalAlignment="Left" Height="27" Margin="390,173,0,0" 
+                VerticalAlignment="Top" Width="146" Name="checkButton" Click="CheckButton_Click"/>
+
+    </Grid>
+</Window>

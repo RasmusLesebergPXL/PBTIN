@@ -1,0 +1,22 @@
+﻿<Window x:Class="oef_10._8_Wekker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_10._8_Wekker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Alarmtijd: " HorizontalAlignment="Left" Height="41" Margin="146,309,0,0" 
+               VerticalAlignment="Top" Width="116" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="41" Margin="294,309,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="255" FontSize="20" Name="alarmTimeTextBox"/>
+        <Button Content="Set" HorizontalAlignment="Left" Height="41" Margin="602,309,0,0" 
+                VerticalAlignment="Top" Width="130" Name="setButton" Click="SetButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="196" Margin="126,37,0,0" 
+                VerticalAlignment="Top" Width="590" FontSize="140" TextWrapping="Wrap" 
+                   Text="" Name="displayTimeTextBlock"/>
+
+
+    </Grid>
+</Window>

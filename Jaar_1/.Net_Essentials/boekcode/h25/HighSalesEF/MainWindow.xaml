@@ -1,0 +1,33 @@
+﻿<Window x:Class="HighSalesEF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HighSalesEF"
+        mc:Ignorable="d"
+        Title="High Sales" Height="326.667" Width="450.333">
+    <Grid>
+        <Label Content="Sales above:" HorizontalAlignment="Left"
+               Margin="23,20,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Height="26"
+                 Margin="117,22,0,0" Text="" VerticalAlignment="Top" 
+                 Width="100" FontSize="16" Name="minimumTextBox"/>
+        <Button Content="Show High Sales" HorizontalAlignment="Left"
+                Margin="285,23,0,0" Height="26" Name="salesButton"
+                Click="salesButton_Click"
+                VerticalAlignment="Top" Width="130"/>
+        <ListView HorizontalAlignment="Left" Height="199"
+                  Margin="31,77,0,0" VerticalAlignment="Top" Width="384"
+                  Name="salesListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Artist" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Company" Width="150" DisplayMemberBinding="{Binding Company}"/>
+                    <GridViewColumn Header="Sales" Width="50" DisplayMemberBinding="{Binding Sales}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>

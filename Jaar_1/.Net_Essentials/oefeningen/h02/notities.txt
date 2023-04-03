@@ -1,0 +1,13 @@
+Notities:
+
+IDE
+Integrated Development Environment
+
+Ontwerpfase:
+Een deel van de programmeertaak bestaat eruit geschikte besturingselementen te kiezen, 
+deze op het scherm te positioneren en de gewenste eigenschappen ervan in te stellen.
+Hier creeeren we ook een GUI
+
+Uitvoeringsfase:
+Waar het programma runt (draait, uivoert), en de gebruiker de besturingselementen daadwerkelijk gebruikt.
+

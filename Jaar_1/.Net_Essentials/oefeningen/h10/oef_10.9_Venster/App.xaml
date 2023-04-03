@@ -1,0 +1,9 @@
+﻿<Application x:Class="oef_10._9_Venster.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:oef_10._9_Venster"
+             StartupUri="StartWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

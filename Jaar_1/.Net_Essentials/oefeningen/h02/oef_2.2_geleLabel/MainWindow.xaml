@@ -1,0 +1,24 @@
+﻿<Window x:Class="oef_2._2_geleLabel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_2._2_geleLabel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Button 1" HorizontalAlignment="Left" 
+                Margin="208,115,0,0" VerticalAlignment="Top" 
+                Height="59" Width="192"
+                Name="button_1" Click="button_1_Click"/>
+        <Button Content="Button 2" HorizontalAlignment="Left" 
+                Margin="502,115,0,0" VerticalAlignment="Top" 
+                Height="59" Width="188"
+                Name="button_2" Click="button_2_Click"/>
+        <Label Content="Label" HorizontalAlignment="Left" 
+               Margin="225,280,0,0" VerticalAlignment="Top"
+               Name="yellowLabel"
+               Background="Yellow"/>
+
+    </Grid>
+</Window>

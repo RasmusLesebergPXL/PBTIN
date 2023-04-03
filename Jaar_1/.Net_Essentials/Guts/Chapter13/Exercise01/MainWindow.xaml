@@ -1,0 +1,32 @@
+﻿<Window x:Class="Exercise01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exercise01"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        AutomationProperties.AutomationId="Window_13_1">
+    <Grid>
+        <ListBox HorizontalAlignment="Left" Height="135" Margin="67,66,0,0" 
+                 VerticalAlignment="Top" Width="144" FontSize="20" Name="listboxLeft" SelectionChanged="listboxLeft_SelectionChanged">
+            <ListBoxItem>Hanne</ListBoxItem>
+            <ListBoxItem>Marthe</ListBoxItem>
+            <ListBoxItem>Klaasje</ListBoxItem>
+            <ListBoxItem>Josje</ListBoxItem>
+        </ListBox>
+        <ListBox HorizontalAlignment="Left" Height="135" Margin="307,66,0,0" 
+                 VerticalAlignment="Top" Width="143" FontSize="18" Name="listboxRight">
+            <ListBoxItem>Maja de bij</ListBoxItem>
+            <ListBoxItem>Wicky de Viking</ListBoxItem>
+            <ListBoxItem>Prinsessia</ListBoxItem>
+        </ListBox>
+        <Button Content="Verwijder" HorizontalAlignment="Left" Height="33" Margin="307,248,0,0" 
+                VerticalAlignment="Top" Width="120" Name="verwijderButton" Click="verwijderButton_Click"/>
+        <Label Content="Klik om te verwijderen: " HorizontalAlignment="Left" Height="45" 
+               Margin="67,248,0,0" VerticalAlignment="Top" Width="219" FontSize="18"/>
+
+
+
+    </Grid>
+</Window>

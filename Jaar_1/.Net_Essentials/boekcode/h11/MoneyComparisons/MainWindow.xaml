@@ -1,0 +1,29 @@
+﻿<Window x:Class="MoneyComparisons.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MoneyComparisons"
+        mc:Ignorable="d"
+            Title="Money comparisons" Height="225" Width="370">
+    <Grid>
+        <Button Content="Create money 1" HorizontalAlignment="Left" Margin="40,31,0,0"
+                VerticalAlignment="Top" Width="95"
+                Name="money1Button" Click="money1Button_Click" />
+        <Button Content="Create money 2" HorizontalAlignment="Left" Margin="40,83,0,0"
+                VerticalAlignment="Top" Width="95"
+                Name="money2Button" Click="money2Button_Click" />
+        <Button Content="Compare" HorizontalAlignment="Left" Margin="40,135,0,0"
+                VerticalAlignment="Top" Width="76"
+                Name="compareButton" Click="compareButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,160,0,0"
+                   Name="compareTextBlock" FontSize="12" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,56,0,0"
+                   Name="money1TextBlock" FontSize="12" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,108,0,0"
+                   Name="money2TextBlock" FontSize="12" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>
+    </Grid>
+</Window>

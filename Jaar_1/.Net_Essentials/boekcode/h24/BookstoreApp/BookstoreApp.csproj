@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Covers\9789043018791.jpg" />
+    <None Remove="Covers\9789043032421.jpg" />
+    <None Remove="Covers\9789043033343.jpg" />
+    <None Remove="Covers\9789043033916.jpg" />
+    <None Remove="Covers\9789043034999.jpg" />
+    <None Remove="Covers\9789043035804.jpg" />
+    <None Remove="Covers\9789043035897.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Covers\9789043018791.jpg" />
+    <Resource Include="Covers\9789043032421.jpg" />
+    <Resource Include="Covers\9789043033343.jpg" />
+    <Resource Include="Covers\9789043033916.jpg" />
+    <Resource Include="Covers\9789043034999.jpg" />
+    <Resource Include="Covers\9789043035804.jpg" />
+    <Resource Include="Covers\9789043035897.jpg" />
+  </ItemGroup>
+
+</Project>

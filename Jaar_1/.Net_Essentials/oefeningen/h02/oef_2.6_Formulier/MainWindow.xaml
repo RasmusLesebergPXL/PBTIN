@@ -1,0 +1,25 @@
+﻿<Window x:Class="oef_2._6_Formulier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oef_2._6_Formulier"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="_Naam:" HorizontalAlignment="Left" 
+               Height="32" Margin="144,0,0,0" VerticalAlignment="Center" 
+               Width="48" Name="naam"
+               Target="{Binding ElementName=textbox_1}" RenderTransformOrigin="0.418,0.148" />
+
+        <TextBox HorizontalAlignment="Left" Margin="197,0,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Center" Width="113"
+                 Name="textbox_1" Height="38" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="144,258,0,0" TextWrapping="Wrap" 
+                   Text="Dit is een tekst in een TextBlock" VerticalAlignment="Top"
+                   Background="LightGreen"
+                   Name="textblock_1"/>
+
+    </Grid>
+</Window>

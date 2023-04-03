@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "oef_5.1_ShowName/1.0.0": {
+        "runtime": {
+          "oef_5.1_ShowName.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "oef_5.1_ShowName/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

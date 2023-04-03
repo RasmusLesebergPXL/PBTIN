@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="AskFrasierAppResponsive.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AskFrasierAppResponsive"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="replyTextBlock.FontSize" Value="40" />
+                        <Setter Target="askButton.(Grid.Row)" Value="1" />
+                        <Setter Target="askButton.(Grid.Column)" Value="1" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="replyTextBlock.FontSize" Value="20" />
+                        <Setter Target="askButton.(Grid.Row)" Value="2" />
+                        <Setter Target="askButton.(Grid.Column)" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="40,40,0,0"
+                   Text="How are you feeling today?" VerticalAlignment="Top"
+                   Style="{ThemeResource TitleTextBlockStyle}"/>
+
+        <TextBox HorizontalAlignment="Stretch" Height="40" Margin="40,40,40,0" Grid.Row="1"
+                 VerticalAlignment="Top" Name="questionTextBox"
+                 FontSize="20"/>
+
+        <Button Content="Ask" HorizontalAlignment="Left" Margin="40,40,20,0"
+                VerticalAlignment="Top" Width="150"
+                Name="askButton" Click="askButton_Click" FontSize="20" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,40,0,0"
+        	Text="Frasier says:" VerticalAlignment="Top"
+        	Style="{ThemeResource TitleTextBlockStyle}"
+            Grid.Row="3" />
+
+        <TextBlock Text="Label" HorizontalAlignment="Left"
+               Margin="80,20,0,0" VerticalAlignment="Top"
+               Name="replyTextBlock" FontStyle="Italic"
+               Grid.Row="4" Grid.ColumnSpan="2"/>
+    </Grid>
+</Page>

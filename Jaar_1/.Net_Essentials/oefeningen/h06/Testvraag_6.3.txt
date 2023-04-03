@@ -1,0 +1,23 @@
+Dit gebeurt door een Null Reference Exception. 
+De horizontal _ Value changed moet nog worden geinitialiseerd, voordat een waarde toegekend kan worden.
+Dit kan men doen in de volgende stappen:
+
+in de cs code: bij initialize components, voeg toe:
+
+horizontalSlider.Value_changed += HorizontalSlider_ValueChanged (ook de methode met hoofdletter schrijven)
+
+bij de XAML code: de horizontalSlider_ValueChanged event verwijderen
+
+Dispatcher Time: 
+using System.Windows.Threading
+Een soort wekker, op regelmatige tijdstippen wordt er een event afgevuurd
+
+Belangrijkste faciliteiten:
+Tick - roept de bijhorende event handlingmethode op
+TimeSpan - tijd tussen Tikken
+
+TimeSpan.FromMilliseconds(200)
+Start/Stop - Timer starten/stoppen
+
+Initialisatie in CS code belangrijk, omdat er geen Object is voor de XAML. 
+_timer.Tick += Timer_Tick;
