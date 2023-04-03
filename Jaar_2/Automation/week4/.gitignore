@@ -1,9 +1,0 @@
-# Ansible
-ansible_facts/
-ansible.log
-.ansible/
-
-# Vagrant
-.vagrant/
-*.log
-*.box
