@@ -1,0 +1,100 @@
+						SSH
+
+apt list *ssh*
+apt list *ssh* | grep installed
+apt list openssh*    						- toont installed achteraan de geïnstalleerde packages
+dpkg -l openssh*
+
+dpkg -S `which ssh`         					- geeft als package “openssh-client”
+dpkg -S `which sshd`         					- geeft als package “openssh-server”
+dpkg -S								-S, --search filename-search-pattern...
+
+
+++++++++++++++   Configuratie   ++++++++++++++++
+
+sudo vi /etc/ssh/ssh_config					- main config
+
+ListenAddress							- indien we op een bepaalde NIC willen luisteren
+MaxSessions							- Hoeveel gelijktijdige connecties toegelaten worden
+PermitRootLogin							- op "no" voor security (na login kan je sudo gebruiken)
+DenyUsers							- Deze gebruikers mogen niet inloggen over ssh
+DenyGroups							- De gebruikers van deze groepen mogen niet inloggen
+StrictHostKeyChecking						- yes: only hosts in known_hosts file accepted
+
+grep ssh /etc/services						- toont poort 22 over TCP
+
+ss								- socket statistics
+ss -ln 'sport = ssh'						→ toont dat er enkel geluisterd wordt via TCP op Port 22
+ss -lt4   							→ toont listening Port ssh
+ss -lt4n							→ toont listening Port 22
+
+ss -at4								→ toont zowel de listening, als de established
+
+ss -o state established '( dport = ssh or sport = ssh )'	→ toont alle verbonden connecties van enkel Port 22
+
+-a: all   (listening, established,...)
+-n: numeric ports
+-t: tcp   (anders te grote lijst en poort 22 wordt enkel over tcp geconnecteerd)
+-l: listening sockets
+-4: ipv4 
+-o: options (show timer information)
+
+
+++++++++++++++    SSH Server Authentication     +++++++++++++
+Types of keys:
+-rsa
+-dsa
+-ecdsa 		the -b flag determines the key length by selecting from one of three elliptic curve sizes: 256, 384 or 521 bits.
+-ed25519
+
+sudo ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key 256 SHA256:<key>	- Control fingerprint
+
+ssh-copy-id student@<serverip>						- Copy key from client to server
+
+sudo systemctl reload ssh						- reload sshd-configuratie
+
+ssh-agent bash								- starts new shell with agent running
+ssh-add ~/.ssh/id_ed25519						- no pass required anymore with that key
+
+
+ssh student@192.168.221.129 'echo $HOSTNAME; ip a' 			- Voert meteen commando uit na logon, maar output is lokaal
+
+ssh -t student@<ip> 'vi test.sh'					- to start interactive session
+
+scp <lokaal bestand> student@192.168.221.129:<doelmap> 			- Secure copying, wordt altijd uitgevoerd op de client
+
+scp -r /media/cdrom/ student@192.168.221.129:CDR/			- map recursief kopieren
+
+sftp student@192.168.221.129						- FTP over SSH (slide 20 voor cmds')
+
+
+Oefeningen
+
+
+1.	Vanaf je Windows machine passwordless kan inloggen als gebruiker student op 2 linux servers 
+	
+	ssh-keygen -t ed25519
+	type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh student@192.168.221.129 "cat >> .ssh/authorized_keys"
+	ssh student@<ip>
+
+
+2.	Zorg er voor dat je enkel nog passwordless kan inloggen op 
+	server1	: sudo vi /etc/ssh/ssh_config
+		: Password Authentication op 'no' zetten
+
+3.	Zorg dat je passwordless kan inloggen van server2 naar server1.
+
+	ssh-copy-id -i ~/.ssh/id_ed25519.pub student@<server1>
+
+	ssh-agent bash								
+	ssh-add ~/.ssh/id_ed25519 (with passphrase)
+
+4.	Breng files en folders over van je Windows-machine naar server1
+	
+	Download winscp
+	hostname: IP
+	user: student
+	pass: pxl
+
+5.	FTP Filezilla same procedure
+			

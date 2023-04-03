@@ -1,0 +1,174 @@
+	DISC MANAGEMENT
+
+Een SSD/harddisk is een block device, gegevens worden uitgelezen en/of opgeslagen per blok
+
+list of block devices:			lsblk
+without loops				-e 7(,11)
+
+types of discs:				sda -> sata/scsi
+					nvme0n1 -> eerste non-volatile memory express disc
+					xvd -> Cloud Virtual Disc
+
+	GPT partition table
+
+	* Tot 128 partities
+	* Werkt met UEFI
+	* Partities mogen > 2TB zijn
+	* Partities max 9.44ZB
+
+	UUID
+	
+	* Universally Unique Identifier
+	* om objecten uniek aan te duiden
+	* 128 bit
+
+working with partitions:		gdisk
+					sudo gsidk /dev/sda
+	
+tools for partitions:			sudo parted /dev/sda
+
+discovering disc devices		sudo dmesg 
+					sudo dmesg | grep 'sd[a-z]'
+also for detection of HD's during boot
+
+list of SCSI devices			lsscsi
+
+info about partition sda1		sudo gdisk -l /dev/sda1
+info about all sda partitions		sudo gdisk -l /dev/sda
+
+		PARTITIONING
+
+Stap 1: Maak via VM nieuwe harddisk aan, dan komt die als sd<b> te voorschijn bij lsblk
+
+Stap 2: Die harde schijf openen met sudo gdisk /dev/sdb
+
+Stap 3: Bekijk de huidige partitietable met 'p', er zijn nog geen partities aanwezig
+
+Stap 4: Add new partition met 'n', daarna Enter, Enter, + 40G (bijv), Enter.
+	Just created 40GB partition
+
+Stap 5: 'p' ter bevestiging, 'i' voor info van nieuwe partitietabel
+			   of ls -l /dev/disk/by-partuuid/
+
+Stap 6: Evt. type/label van partitie editen met 'l' (list types), Enter, dan 't' (change), 
+									8300 Enter
+Stap 7: Save met w, y, Enter
+
+Stap 8: overzicht na wijzigingen -> sudo gdisk -l /dev/sdb
+
+		
+		FILE SYSTEMS
+
+	voor meer info: 		man fs
+	huidige versie: 		ext4
+
+		PUT FILE SYSTEM ON PARTITION
+
+list of possible filesystems:		ls /sbin/mkfs* | column
+
+make file system on partition sdb1	sudo mkfs.ext4 /dev/sdb1
+
+
+		MOUNTING
+
+	* wordt gebruikt om een FS beschikbaar te maken via een directory
+	* deze directory noemen we dan mountpoint
+	* mountpoint is een directory ergens onder de root van de boomstructuur
+	* via het mountpoint werken we met het filesysteem
+	* er zijn geen drive letters in Linux
+
+Stap 1:	we maken indien nodig een dir	sudo mkdir /var/ftp
+
+Stap 2:	filesysteem mounten met 	sudo mount -t ext4 /dev/sdb1 /var/ftp/
+	-t is optioneel voor alle FS
+	die teruggevonden in /proc/filesystems
+
+Stap 3: We geven het mountpoint rechten	ls -ls /var/ftp/
+					sudo chmod a+w /var/ftp/
+					ls -ld /var/ftp/
+
+unmount met 			lsblk | grep -e NAME -e sdb
+-e is op PATTERNS (zoals NAME)		sudo umount /var/ftp
+				of	sudo umount /dev/<sdb1> /var/ftp
+					lsblk | grep -e NAME -e sdb
+		DISPLAYING MOUNTED FS
+
+overzicht van alle block devices		mount | grep /dev/sd
+
+disk usage: grootte van dirs of partities  	sudo du -hs 2>/dev/null
+
+
+		PERMANENT MOUNTS
+
+locatie van FStable die aangeeft welke FS auto worden gemount bij boot: cat /etc/fstab
+
+by block id:				blkid | grep sda
+
+
+
+		Oefeningen
+
+1. 	Voeg aan je virtuele machine twee SCSI-harde schijven toe. 
+	De eerste van 100MB en de tweede van 20GB.
+
+	In VM settings toevoegen
+
+2.	lsblk -e 7
+
+
+3.	Maak op de HD van 100MB één ext4 partitie (in een GPT partitietabel) die de 
+	volledige ruimte in beslag neemt, en mount deze op /mnt/smallhd, en geef juiste rechten
+
+	sudo gdisk /dev/sdc
+	p
+	n, Enter, Enter, +100M, Enter, Enter
+	p
+	w, enter
+	lsblk -e 7
+	sudo mkfs.ext4 /dev/sdc1
+	sudo mkdir /mnt/smallhd
+	sudo mount -t ext4 /dev/sdc1 /mnt/smallhd
+	ls -ld /mnt/smallhd/
+	sudo chmod a+w /mnt/smallhd/
+	
+	
+5.	Automatische sdc1 fs mount bij opstarten
+
+	ls -l /dev/disk/by-uuid/ | grep sdc1
+	sudo nano /etc/fstab
+	/dev/disk/by-uuid/<uuid> /mnt/smallhd ext4 defaults 0 0
+	ls -ld /mnt/smallhd
+	
+	
+	(force restart when bootfile is fucked:
+	echo 1 > /proc/sys/kernel/sysrq
+	echo b > /proc/sysrq-trigger)
+
+7.	Combo oefening van 3 en 5	
+
+	same as 3 om partities aan te maken (bij tweede sdb2 +14G bij Last sector want moet < 15G zijn)
+	sudo mkfs.ext4 /dev/sdb1
+	sudo mkfs.ext4 /dev/sdb2
+	sudo mount -t ext4 /dev/sdb1 /var/www
+	sudo mount -t ext4 /dev/sdb2 /var/ftp
+	sudo chmod a+w /var/www
+	sudo chmod a+w /var/ftp
+	ls -l /dev/disk/by-uuid/ | grep sdb
+	sudo nano /etc/fstab
+	/dev/disk/by-uuid/<uuid_b1> /var/www ext4 defaults 0 0
+	/dev/disk/by-uuid/<uuid_b2> /var/ftp ext4 defaults 0 0
+	sudo reboot now
+	lsblk | grep sdb
+	
+	
+8.	#same as 7 tot 
+	#sudo mkfs.ext4 /dev/nvme0n1p1
+	#sudo mount /dev/nvme0n1p1 /mnt
+	#cd /mnt
+	#sudo cp -rp /home/* /mnt
+	
+
+	
+	
+
+	

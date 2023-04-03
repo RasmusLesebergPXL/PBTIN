@@ -1,0 +1,18 @@
+services:
+  drupal:
+    image: drupal
+    ports:
+      - 8080:80
+    volumes:
+      - ./modules:/var/www/html/modules
+      - ./profiles:/var/www/html/profiles
+      - ./themes:/var/www/html/themes
+      - ./sites:/var/www/html/sites
+    restart: always
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    restart: always
