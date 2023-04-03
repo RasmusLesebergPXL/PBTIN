@@ -1,0 +1,29 @@
+*{
+    background: darkred;
+}
+p{
+    font-size: 100px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: white;
+}
+button {
+    color: #f1f1f1;
+    border-radius: 15px ;
+    border: rgba(255,255,255,0);
+    background-color: blue;
+    transition-duration: 0.4s;
+    margin-top: 5%;
+    margin-left: 44%;
+    padding: 15px 15px;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: red;
+    color: white;
+}
+h1{
+    color: white;
+    text-align: center;
+}

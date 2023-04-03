@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    height: 100%;
+    background: rgba(101,95,103,0.41);
+}
+
+.content{
+    width: 500px;
+    margin: auto;
+    background: rgba(101,95,103,0.20);
+    padding: 20px;
+    height: content-box;
+    overflow: auto;
+    border-radius: 30px;
+    margin-top: 50px;
+    color: #4A4A4A;
+
+}
+label{
+    width: 100%;
+    float: left;
+    color: #4A4A4A;
+}
+
+select{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;;
+    float: left;
+    margin-bottom: 10px;
+}
+
+#partdiv{
+    width: 100%;
+}
+
+#player_list{
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 300px ;
+    width: 40%;
+    position: relative;
+    float: left;
+
+}
+#logo{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    margin-top: 0;
+    width: 32%;
+}
+
+button{
+    position: relative;
+    float: bottom;
+    border-radius: 8px;
+    border: rgba(255,255,255,0);
+    background-color: blue;
+    color: #f1f1f1;
+    transition-duration: 0.4s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+}
+
+button:hover {
+    background-color: red;
+    color: white;
+}
+
+form{
+    position: relative;
+    float: right;
+    width: 40%;
+}
+
+#Filter{
+    padding: 5%;
+    border-radius: 4px;
+}
+
+#selector1{
+    padding: 3%;
+    margin-left: 0;
+}
+
+#selector2{
+    padding: 3%;
+    margin-left: 0;
+}
+
+#inputfield1{
+    padding: 2%;
+}
+
+/*#minimumWordLengthtxt{
+    padding: 2%;
+}
+
+#maximumWordLengthtext{
+    padding: 2%;
+}*/
+
+#post{
+    margin-top: 50%;
+    padding: 2% 20%;
+}
+#back {
+    margin-top: 5%;
+    padding: 1% 2%;
+}

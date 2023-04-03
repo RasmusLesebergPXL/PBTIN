@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Game</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/game.css">
+<body>
+<header>
+    <img src="assets/LingoLogo.png" id="logo" alt="logo">
+    <div id="info"></div>
+</header>
+<main>
+    <div id="LingoBoard"></div>
+
+    <section id="output"></section>
+    <input type="text" placeholder="Guess here" name="submit" class="submit" id="submitString">
+    <br>
+    <a>
+        <button class="button" id="submit_button">Submit Answer</button>
+    </a>
+    <a>
+        <button hidden="true" class="button" id="grabBall_button">Grab Ball</button>
+    </a>
+    <section id="errorSection"></section>
+    <section id="ballSection"></section>
+</main>
+</body>
+<script src="js/game.js"></script>
+</html>

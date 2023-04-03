@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+main {
+    width: 812px;
+    height: 812px;
+    margin: 0 auto;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    background-color: #e5e5e5;
+}
+
+article {
+    width: 260px;
+    height: 90px;
+    margin: 5px;
+    padding: 15px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    float: left;
+    border-radius: 4px;
+    position: relative;
+
+}
+
+article h1{
+    color: #1f1f7c;
+    margin: 0 0 10px 0;
+}
+
+article section .type {
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    margin: 10px 0 5px 5px;
+}
+
+
+article section .grass{
+    background-color: #488d45;
+}
+
+article section .fire {
+    background-color: #c5691e;
+}
+
+article section .flying {
+    background-color: #766ea6;
+}
+
+article section .poison{
+    background-color: #af48bb;
+}
+
+article section .bug{
+    background-color: #75a66e;
+}
+article section .water {
+    background-color: #678ff1;
+}
+
+article .pokenumber {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+article img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@media screen and (max-width: 850px){
+    main {
+        width: auto;
+        border: none;
+    }
+    body {
+        margin: 0;
+    }
+    article {
+        width: 48%;
+        margin: 1%;
+    }
+}
+@media screen and (max-width: 600px){
+    main {
+        height: auto;
+    }
+    article {
+        width: 100%;
+        float: none;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        border-bottom: 1px #adacac;
+    }
+}
+@media screen and (max-width: 400px) {
+    main article section {
+        display: none;
+    }
+}
+
+
+
+

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#flex-container {
+    background-color: darkseagreen;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+#flex-item1, #flex-item2, #flex-item3 {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    width: 200px;
+}
+#flex-item3 {
+    order: 2;
+}
+#flex-item2 {
+    order: 1;
+    align-self: flex-start;
+}
+#flex-item1 {
+    order: 3;
+    align-self: flex-end;
+}

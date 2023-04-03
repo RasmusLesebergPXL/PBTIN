@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Arial, sans-serif;
+}
+header, main, footer {
+    width: 1200px;
+    margin: 0 auto;
+    clear: both;
+}
+.element {
+    float: left;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1%;
+}
+.width3 {
+    width: 98%;
+}
+.width2 {
+    width: 64.66%;
+}
+.width1 {
+    width: 31.33%;
+
+}

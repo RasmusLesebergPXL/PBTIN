@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style/register.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+    </head>
+    <body>
+    <div id="bg"></div>
+
+        <div class="container">
+            <h1>Register</h1>
+            <hr>
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+            <label for="psw_repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw_repeat" required>
+            <hr>
+            <button type="submit" class="registerbtn" id="registerbtn">Register</button>
+            <button onclick="history.back()">Go Back</button>
+            <section id="section_output"></section>
+        </div>
+        <script src="js/register.js"></script>
+    </body>
+</html>

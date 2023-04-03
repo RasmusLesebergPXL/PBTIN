@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+h1{
+    color: #4A4A4A;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-image: url("../images/BackgroundProject.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: rgba(101,95,103,0.41);
+}
+body header {
+    border-radius: 10px;
+    width: 100%;
+    height: 140px;
+}
+/*Title van pagina*/
+body header h1 {
+    padding-left: 5%;
+    padding-top: 4%;
+}
+/*Logo*/
+body header div {
+    width: 30%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+section {
+    margin-top: 2%;
+    padding: 2%;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.extra_link_box{
+    background-color: rgba(255,255,255,0.45);
+}
+/*Positionering van elke image en naam*/
+.teamlid {
+    width: calc(100%/3 - 5%);
+    height: 100%;
+    margin: 2%;
+    float: left;
+    position: relative;
+}
+
+body main section article img {
+    border: 3.5px solid black;
+    border-radius: 5px;
+}
+/*Naam per persoon*/
+.teamlid h2 {
+    text-align: center;
+    color: #4A4A4A;
+}
+/*Links onderaan*/
+.extra_link_box h2, .extra_link_box a {
+    padding-left: 5%;
+}
+
+.extra_link_box a {
+    padding-bottom: 5%;
+}
+button {
+    color: #f1f1f1;
+    border-radius: 15px ;
+    border: rgba(255,255,255,0);
+    background-color: blue;
+    transition-duration: 0.4s;
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+button:hover {
+    background-color: red;
+    color: white;
+}
+
+
+h2{
+    color: #4A4A4A;
+}
+

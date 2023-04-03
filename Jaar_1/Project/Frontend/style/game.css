@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+    background-color: lightgray;
+    width: 100%;
+}
+#logo{
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+}
+#output{
+    text-align: center;
+}
+button{
+    color: #f1f1f1;
+    border-radius: 15px ;
+    border: rgba(255,255,255,0);
+    background-color: blue;
+    transition-duration: 0.4s;
+    margin-left: 45%;
+    margin-top: 1%;
+    padding: 5px 10px;
+}
+button:hover {
+    background-color: red;
+    color: white;
+}
+#submitString{
+    margin-top: 10px;
+    margin-left: 25%;
+    width: 50%;
+}
+table{
+    margin-left: 20%;
+    font-size: 80px;
+    border: black solid 2px;
+    border-radius: 4px;
+}
+td{
+    border: black solid 1px;
+    width: 75px;
+}
+
+#info{
+    position: absolute;
+    transform: translate(10% , -105%);
+    background-color: rgba(255,255,255,0.35);
+}
+#LingoBoard{
+    margin-right: 25%;
+    float: right;
+}

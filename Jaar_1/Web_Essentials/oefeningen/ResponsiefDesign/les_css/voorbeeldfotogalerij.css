@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    text-align: center;
+    padding: 40px;
+    font-family: "Segoe UI", Verdana, sans-serif;
+}
+header p {
+    margin-top: 20px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+div.items {
+    flex-basis: 25%;
+}
+div.items img {
+    width: 100%;
+    padding: 3px;
+}
+@media screen and(max-width: 1000px) {
+    div.items {
+        flex-basis: 50%;
+    }
+}
+@media screen and(max-width: 600px) {
+    div.items {
+        flex-basis: 100%;
+    }
+}

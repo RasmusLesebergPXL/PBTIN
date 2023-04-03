@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+body {
+    margin: 0;
+}
+/* HEADER */
+header {
+    padding: 80px;
+    text-align: center;
+    background: #A6DCED;
+    color: #343A40;
+}
+header h1 {
+    color: #000000;
+    font-size: 48px;
+    font-family: 'Schoolbell', cursive;
+}
+header h1 span {
+    color: #3386A7;
+    font-family: 'Schoolbell', cursive;
+}
+header p {
+    font-style: italic;
+}
+/* NAVIGATIE */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #343A40;
+}
+nav a {
+    color: white;
+    padding: 20px 30px;
+    text-decoration: none;
+    text-align: center;
+}
+nav a:hover, nav a.active {
+    background-color: #ddd;
+    color: #343A40;
+}
+/* MAIN CONTAINER */
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* ASIDE BEZOEK INFORMATIE */
+aside {
+    flex: 25%;
+    background-color: #f1f1f1;
+    padding: 50px;
+}
+aside h1 {
+      font-family: 'Schoolbell', cursive;
+      padding-bottom: 15px;
+}
+/* SECTION */
+section {
+    flex: 75%;
+    background-color: white;
+    padding: 50px;
+}
+section a {
+    color: #000000;
+}
+section img {
+     width: 100%;
+ }
+section h1 {
+    font-family: 'Schoolbell', cursive;
+    padding-bottom: 15px;
+}
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #343A40;
+}
+footer h1 {
+    font-size: 12px;
+    color: #ddd;
+}
+/* RESPONSIVE LAYOUT */
+@media screen and (max-width: 700px) {
+    main, nav {
+        flex-direction: column;
+    }
+}

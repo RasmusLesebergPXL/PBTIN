@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+}
+
+/*#1F272A*/
+/*#C19250*/
+/*#CCCCCC*/
+/*#534F4F*/
+/*#000000*/
+
+/* HEADER */
+header {
+    padding: 15px;
+    background-color: #1F272A;
+}
+header h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+/* MAIN */
+main {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* MAIN LINKS */
+main .left {
+    flex-basis: 50%;
+    padding: 25px 50px 25px 25px;
+}
+main .left h1 {
+    font-size: 36px;
+}
+main .left h2 {
+    font-size: 24px;
+    padding: 30px 0;
+}
+main .left p {
+    font-size: 16px;
+    padding: 30px 0;
+}
+main .left section {
+    border: 3px solid #000;
+    padding: 25px;
+}
+main .left section h1 {
+    text-align: center;
+    font-size: 24px;
+}
+main .left section h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #CCCCCC;
+}
+main .left section ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+main .left section ul li {
+    width: 48%;
+    margin: 1%;
+    padding: 15px 0;
+    border-bottom: 1px dotted #ccc;
+}
+main .left section hr {
+    margin: 40px 0;
+    color: #ccc;
+}
+main .left ol li {
+    list-style-position: outside;
+    border-bottom: 1px dotted #ccc;
+    padding: 15px 0 15px 20px;
+}
+/* MAIN RECHTS */
+main .right {
+    flex-basis: 50%;
+    padding: 25px 25px 25px 50px;
+}
+main .right figure img {
+    width: 100%;
+}
+main .right h2 {
+    font-size: 24px;
+    padding: 30px 0;
+}
+main .right ul {
+    list-style-type: none;
+}
+main .right ul li {
+    border: 1px dotted #534F4F;
+    margin-top: 20px;
+    display: flex;
+}
+main .right ul li p {
+    padding: 20px;
+    font-weight: bold;
+}
+main .right ul li:hover {
+    background-color: #C19250;
+}
+/* FOOTER */
+footer {
+    padding: 15px;
+    background-color: #1F272A;
+    text-align: center;
+}
+footer h1 {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+}
+footer a {
+    color: #fff;
+}
+@media screen and (max-width: 1500px) {
+    main .left section ul li {
+        width: 98%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    main {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 960px) {
+    main .left {
+        order: 2;
+        flex-basis: 100%;
+        padding: 20px;
+    }
+    main .right {
+        order: 1;
+        flex-basis: 100%;
+        padding: 20px;
+    }
+    main .right h2, main .right ul {
+        display: none;
+    }
+}

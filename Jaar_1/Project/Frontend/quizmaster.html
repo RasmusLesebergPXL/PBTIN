@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Quizmaster</title>
+<link rel="stylesheet" href="style/quizmaster.css">
+<body>
+<div id="bg"></div>
+<img src="images/Lingo%20Logo.png" id="logo" alt="logo">
+<div class="content">
+    <h2>Player List</h2>
+    <ul id="player_list">
+<!-- opgevult door js   -->
+
+    </ul>
+    <form>
+        <input value="" placeholder="Filter" id="Filter">
+        <br><br>
+        <label for="selector1">Speler 1:</label>
+        <select name="spelerSelector1" id="selector1">
+            <!-- opgevult door js   -->
+        </select>
+        <label for="selector2">Speler 2:</label>
+        <select id="selector2">
+            <!-- opgevult door js   -->
+        </select>
+
+        <label for="numberOfStandardWordPuzzles">number of wordpuzzles</label>
+        <input value="1" id="numberOfStandardWordPuzzles" type="range" name="amountWordRange" min="1" max="20" oninput="this.form.amountWordInput.value=this.value" />
+        <input value="1" id="inputfield1" type="number" name="amountWordInput" min="1" max="20" oninput="this.form.amountWordRange.value=this.value" />
+        <!--<br><br>
+        <label for="minimumWordLength">Min number letters</label>
+        <input value="4" id="minimumWordLength" type="range" name="amountMinRange" min="4" max="10" oninput="this.form.amountMinInput.value=this.value" />
+        <input value="4" id="minimumWordLengthtxt" type="number" name="amountMinInput" min="4" max="10" oninput="this.form.amountMinRange.value=this.value" />
+        <br><br>
+        <label for="maximumWordLength">Max number letters</label>
+        <input value="4" id="maximumWordLength" type="range" name="amountMaxRange" min="4" max="10" oninput="this.form.amountMaxInput.value=this.value" />
+        <input value="4"  id="maximumWordLengthtext" type="number" name="amountMaxInput" min="4" max="10" oninput="this.form.amountMaxRange.value=this.value" />
+
+        <script>
+            let MinValue = document.getElementById('minimumWordLength');
+            let MinValuetxt = document.getElementById('minimumWordLengthtxt');
+
+            function NewMinValue() {
+                let Value = MinValue.value;
+                let MaxValue = document.getElementById('maximumWordLength');
+                let MaxValuetxt = document.getElementById('maximumWordLengthtext');
+                MaxValue.min = Value;
+                MaxValuetxt.min = Value;
+                if(Value >= MaxValuetxt.value){
+                    MaxValue.value = Value;
+                    MaxValuetxt.value = Value;
+                    console.log(MaxValue.value);
+                }
+            }
+            MinValue.addEventListener("change", NewMinValue);
+            MinValuetxt.addEventListener("change", NewMinValue);
+        </script>-->
+    </form>
+    <button id="post">Start Spel</button>
+    <button onclick="history.back()" id="back">Go Back</button>
+
+</div>
+</body>
+<script src="js/quizmaster.js"></script>
+</html>
