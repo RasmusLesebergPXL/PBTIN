@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hXNxsCrrPy7SLRtdNo1o4x9JDr9HRgtSYrvZNkqvfbRjWpoZ07Y+ba+I1Ex3Q4xla/UxIjAjJk8KtirttQfL8w==",
+  "dgSpecHash": "P66GqJZS6LIm62bVd5p387RAVRx+v7uCUwoKHZAiSjhiNdMJko0o3p6rkuzWR0ZfaSgqCSiBWH8UwJjanW7Tdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rasmus\\Documents\\Jaar_1\\.Net_Essentials\\Guts\\Chapter10\\BeetleGame.Tests\\BeetleGame.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Rasmus\\Documents\\PBTIN\\Jaar_1\\.Net_Essentials\\Guts\\Chapter10\\BeetleGame.Tests\\BeetleGame.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rasmus\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Rasmus\\.nuget\\packages\\guts.client.core\\4.0.0\\guts.client.core.4.0.0.nupkg.sha512",
