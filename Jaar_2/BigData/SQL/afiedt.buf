@@ -1,19 +1,29 @@
-CREATE OR REPLACE PROCEDURE asterisk_sal
-	(p_emp_id	IN	employees.employee_id%type)
+CREATE OR REPLACE PROCEDURE countryfunction
+	(p_country_id IN countries.country_id%type)
 AS
-	v_count		number(3) := 0;
-	v_star		VARCHAR2(100) := '';
-	v_salary	employees.salary%type;
+	v_location_id		VARCHAR2(50);
 BEGIN
+	FOR loc IN (SELECT country_name, location_id, city
+		FROM locations
+		JOIN countries
+		USING (country_id)
+		WHERE UPPER(country_id) = UPPER(p_country_id))
 	LOOP
-		v_count:= v_count + 1;
-		SELECT salary
-		INTO v_salary
-		FROM employees
-		WHERE employee_id = p_emp_id;
-		v_star := v_star || '*';
-		EXIT WHEN v_count >= v_salary / 1000;
+		DBMS_OUTPUT.PUT_LINE('==> ' || loc.country_name ||'- '|| loc.location_id ||' ' || loc.city);
+
+		FOR dep IN (SELECT department_name, COUNT(*) AS count
+			FROM employees
+			JOIN departments
+			USING (department_id)
+			JOIN locations
+			USING (location_id)
+			WHERE location_id = loc.location_id
+			GROUP BY location_id, department_name)
+		LOOP
+			IF (dep.count != 0 ) THEN
+				DBMS_OUTPUT.PUT_LINE(dep.department_name ||': '|| dep.count ||' werknemers');
+			END IF;
+		END LOOP;
 	END LOOP;
-	DBMS_OUTPUT.PUT_LINE(v_star);
-END asterisk_sal;
+END countryfunction;
 /
