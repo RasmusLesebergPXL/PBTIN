@@ -1,205 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="52623e79-077c-4902-b124-80b4608f04fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebStormProjecten-main/Formulieren/les_html/formulier.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Cavia/comic_start.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/les_css/flexboxv1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/les_css/flexboxv2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/les_css/flexboxv3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/les_html/flexboxv1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/les_html/flexboxv2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/les_html/flexboxv3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PE/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PE/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PE/ijk_kimberlywillems-RasmusLesebergPXL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PE/ijk_kimberlywillems-RasmusLesebergPXL-master" beforeDir="false" afterPath="$PROJECT_DIR$/PE/ijk_kimberlywillems-RasmusLesebergPXL-master" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PE/ijk_kimberlywillems-RasmusLesebergPXL-master/oefening1/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/PE/ijk_kimberlywillems-RasmusLesebergPXL-master/oefening1/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PE/ijk_kimberlywillems-RasmusLesebergPXL-master/oefening1/ijk_kimberlywillems-RasmusLesebergPXL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/les_css/comic_start.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/les_css/comic_start.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/Pokedex.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/Pokedex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/Pokedex.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/Pokedex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef1/img/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Pokedex/img/image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef2/cavia_start.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Cavia/cavia_start.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef2/cavia_start.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Cavia/cavia_start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef3/img/extra1.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/KokopKot/img/extra1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef3/img/extra2.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/KokopKot/img/extra2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef3/img/extra3.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/KokopKot/img/extra3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef3/img/spaghetti.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/KokopKot/img/spaghetti.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef3/kokopkot.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/KokopKot/kokopkot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef3/kokopkot.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/KokopKot/kokopkot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef4/alpacateddy_oplossing.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Alpaca/alpacateddy_oplossing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/oef4/alpacateddy_oplossing.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/ResponsiefDesign/Alpaca/alpacateddy_oplossing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week1_2/1_hallowereld.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Week1_2/1_hallowereld.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/Muziekpagine.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/Muziekpagine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/Oefening 4.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/Oefening 4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/Puntenlijst.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/Puntenlijst.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/css/id kaart.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/css/id kaart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/css/muziekpagina.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/css/muziekpagina.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/css/oefening4.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/css/oefening4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/css/puntenlijst.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/css/puntenlijst.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/css/schaakbord eerste versie.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/css/schaakbord eerste versie.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/css/schaakbord tweede versie.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/css/schaakbord tweede versie.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/css/voorbeeld.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/css/voorbeeld.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/id kaart.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/id kaart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/Pale_communion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/Pale_communion.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/aphex.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/aphex.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/dameWit.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/dameWit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/dameZwart.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/dameZwart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/hout.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/hout.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/koningWit.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/koningWit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/koningZwart.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/koningZwart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/loperWit.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/loperWit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/loperZwart.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/loperZwart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/paardWit.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/paardWit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/paardZwart.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/paardZwart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/pionWit.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/pionWit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/pionZwart.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/pionZwart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/sand.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/sand.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/torenWit.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/torenWit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/torenZwart.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/torenZwart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/witte-marmer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/witte-marmer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/img/zwarte-marmer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/img/zwarte-marmer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/schaakbord eerste versie.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/schaakbord eerste versie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/schaakbord tweede versie.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/schaakbord tweede versie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week5_6/voorbeld les.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Tabellen/voorbeld les.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/.idea/Week7_8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/.idea/Week7_8.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/absoluut.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/absoluut.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/boxsizing.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/boxsizing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/css/absoluut.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/css/absoluut.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/css/boxsizing.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/css/boxsizing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/css/fixed.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/css/fixed.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/css/minmax.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/css/minmax.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/css/relatief.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/css/relatief.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/css/z-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/css/z-index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/fixed.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/fixed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/float.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/float.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/katten_voorbeeld.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/katten_voorbeeld.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/minmax.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/minmax.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/Pokedex.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/Pokedex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/Pokedex.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/Pokedex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef1/img/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Pokedex/img/image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/MyTechBlog.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/MyTechBlog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/MyTechBlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/MyTechBlog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/bgimage.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/bgimage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/ddr4mem.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/ddr4mem.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/gpu.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/gpu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/gregory.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/gregory.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/icon-fb.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/icon-fb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/icon-pinterest.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/icon-pinterest.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/icon-twitter.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/icon-twitter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/icon-youtube.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/icon-youtube.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef2/assets/uhdtv.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/MyTechBlog/assets/uhdtv.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef3/horizontale nav balk.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/NavBalk/horizontale nav balk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef3/horizontale nav balk.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/NavBalk/horizontale nav balk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef3/nav.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/NavBalk/nav.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/gaming sit.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/gaming sit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/gaming site.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/gaming site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/bio.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/bio.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/elden.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/elden.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/farcry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/farcry.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/fifa.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/fifa.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/nintendo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/nintendo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/playstation.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/playstation.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/resevil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/resevil.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/spiderman.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/spiderman.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/images/xbox.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/images/xbox.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef4/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/Games/screenshot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef5/shadow.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/ZShadow/shadow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/oef5/shadow.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/ZShadow/shadow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/relatief.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/relatief.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week7_8/z-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebStormProjecten-main/Positionering/z-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/.idea/Week9_10.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/foto9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/img/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/img/cavia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/monopoly.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/tekst_alpacateddy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/assets/tekst_kokopkot.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_css/bordspel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_css/comic_start.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_css/grid-layout.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_css/kolommen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_css/voorbeeld media.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_css/voorbeeldfotogalerij.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_html/bordspel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_html/comic_start.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_html/grid-layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_html/kolommen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_html/voorbeeld media.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/les_html/voorbeeldflexbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/Pokedex.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/Pokedex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef1/img/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef2/cavia_start.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef2/cavia_start.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef3/Kokopkot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef3/img/extra1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef3/img/extra2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef3/img/extra3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef3/img/spaghetti.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef3/kokopkot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef4/alpacateddy_oplossing.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebStormProjecten-main/Week9_10/oef4/alpacateddy_oplossing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/WebStormProjecten-main" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="289GvhWF7G1NGxQjnTktqTh6FIw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -215,13 +22,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/student/Documents/PBTIN/Jaar_1/Web_Scripting",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -239,6 +53,7 @@
       <workItem from="1673368304811" duration="608000" />
       <workItem from="1675443693050" duration="660000" />
       <workItem from="1675457711581" duration="599000" />
+      <workItem from="1681456710804" duration="2532000" />
     </task>
     <servers />
   </component>

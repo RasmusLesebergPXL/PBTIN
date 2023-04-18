@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install apache
+      package:
+        name: "{{ apache_service_name }}"
+        state: present
