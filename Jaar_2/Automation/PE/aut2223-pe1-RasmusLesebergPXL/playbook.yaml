@@ -4,7 +4,6 @@
     become: true
     become_user: root
     tasks:
-
       - name: Install python
         yum:
           name: 
@@ -13,33 +12,41 @@
           state: latest
           update_cache: yes
 
-      - name: Install psutil
+      - name: Install dependencies
         pip:
-          name: psutil
-          executable: pip3
-      
-      - name: Install pyramid
-        pip:
-          name: pyramid
-          executable: pip3
-      
-      - name: Install waitress
-        pip:
-          name: waitress
+          name: 
+            - psutil
+            - pyramid
+            - waitress
           executable: pip3
 
-      - name: Create a directory if it does not exist
+      - name: Create a directory 'pyramid'
         file:
           path: /opt/pyramid
           state: directory
           mode: '0755'
-
-
-      - name: Copy app.py to remote host
+        
+      - name: Copy app.py to ec2 host
         copy:
-          src: /home/student/Documents/PXL/Automation/aut2223-pe1-RasmusLesebergPXL/app.py
-          dest: /opt/pyramid/app.py
-          mode: '0644'
+          src: "{{ script_path }}"
+          dest: /opt/pyramid/{{ script_name }}
+          mode: '0755'
 
-      - name: Execute app.py
-        command: python3 /opt/pyramid/app.py 
+
+      - name: Create systemd service file
+        template:
+          src: app.service.j2
+          dest: "{{ service_file_path }}"
+        notify:
+          - Reload systemd
+
+      - name: Enable and start the service
+        service:
+          name: app.service
+          enabled: yes
+          state: started
+
+    handlers:
+      - name: Reload systemd
+        systemd:
+          daemon_reload: yes            
