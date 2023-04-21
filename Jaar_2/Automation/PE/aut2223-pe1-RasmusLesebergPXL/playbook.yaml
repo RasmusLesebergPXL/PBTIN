@@ -45,6 +45,37 @@
           name: app.service
           enabled: yes
           state: started
+      
+      - name: Install iptables package
+        yum:
+          name: iptables-services
+          state: present
+      
+      - name: Ensure iptables service is running
+        service:
+          name: iptables
+          state: started
+          enabled: yes
+
+      - name: Open Port 5000
+        iptables:
+          chain: INPUT
+          protocol: tcp
+          destination_port: 5000
+          jump: ACCEPT        
+          comment: 'Allow 5000'
+
+      - name: Add the user app_user
+        user:
+          name: app_user
+      
+      - name: Recursively change ownership of a directory
+        file:
+          path: /opt/pyramid
+          state: directory
+          recurse: yes
+          owner: app_user
+
 
     handlers:
       - name: Reload systemd
