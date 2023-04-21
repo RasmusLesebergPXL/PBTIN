@@ -65,6 +65,11 @@
           jump: ACCEPT        
           comment: 'Allow 5000'
 
+      - name: Save iptables rules
+        service:
+          name: iptables
+          state: restarted
+
       - name: Add the user app_user
         user:
           name: app_user
