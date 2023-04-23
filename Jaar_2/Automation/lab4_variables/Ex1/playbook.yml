@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  become_user: root
+  tasks:
+    - name: install firewalld
+      yum:
+        name: firewalld
+        state: latest
+
+    - name: Start firewalld service
+      service:
+        name: firewalld
+        state: started
+
+    - name: Set firewall rule for HTTP traffic
+      firewalld:
+        state: enabled
+        immediate: yes
+        port: "{{ port }}"
+        zone: public

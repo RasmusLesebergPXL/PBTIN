@@ -1,0 +1,3 @@
+src_path: /home/student/Documents/PBTIN/Jaar_2/Automation/lab3_playbooks/Flask/hello.py
+dest_path: /opt/fancydir/hello.py
+service_file_path: /etc/systemd/system/flask.service

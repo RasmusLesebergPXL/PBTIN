@@ -1,2 +1,0 @@
-custom_port: 3306
-#naamgeving files en group_vars heel belangrijk! playbook vindt automatisch deze variablen als naamgeving van yml files en directory klopt

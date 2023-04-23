@@ -1,0 +1,12 @@
+[Unit]
+Description=hello.py service
+After=multi-user.target
+
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user
+ExecStart=/usr/bin/python3 /opt/fancydir/hello.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

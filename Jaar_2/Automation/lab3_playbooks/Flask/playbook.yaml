@@ -1,51 +1,56 @@
 ---
-  - name: Install and run app.py
-    hosts: webservers
+  - name: Install Flask and run webapplication
+    hosts: rhel
     become: true
     become_user: root
     tasks:
-      - name: Install python
+      - name: Update & Ugrade
         yum:
-          name: 
-          - python3
-          - pip
+          update_only: true
+
+      - name: Install Python
+        yum:
+          name:
+            - python3
+            - pip
           state: latest
           update_cache: yes
 
-      - name: Install dependencies
+      - name: Install Flask 
         pip:
-          name: 
-            - psutil
-            - pyramid
-            - waitress
-          executable: pip3
-
-      - name: Create a directory 'pyramid'
+          name: flask
+          executable: pip3  
+      
+      - name: Create a directory fancydir
         file:
-          path: /opt/pyramid
+          path: /opt/fancydir
           state: directory
           mode: '0755'
-        
-      - name: Copy app.py to ec2 host
-        copy:
-          src: "{{ script_path }}"
-          dest: /opt/pyramid/{{ script_name }}
-          mode: '0755'
 
+      - name: Copy hello.py to remote host
+        copy:
+          src: "{{ src_path }}"
+          dest: "{{ dest_path }}"
+          mode: '0755'
 
       - name: Create systemd service file
         template:
-          src: app.service.j2
+          src: flask.service.j2
           dest: "{{ service_file_path }}"
         notify:
           - Reload systemd
 
       - name: Enable and start the service
         service:
-          name: app.service
+          name: flask.service
           enabled: yes
           state: started
-      
+
+      #Trouble starting service? logs:
+      #journalctl -u <name>.service
+      #flask.py illegal name because
+      # from flask import Flask
+
       - name: Install iptables package
         yum:
           name: iptables-services
@@ -57,13 +62,14 @@
           state: started
           enabled: yes
 
-      - name: Open Port 5000
+      - name: Open Port 8080
         iptables:
           chain: INPUT
+          action: insert
           protocol: tcp
-          destination_port: 5000
+          destination_port: 8080
           jump: ACCEPT        
-          comment: 'Allow 5000'
+          comment: 'Allow 8080'
 
       - name: Save current state of the firewall in system file
         community.general.iptables_state:
@@ -72,24 +78,16 @@
         notify:
           - restart iptables
 
-      - name: Add the user app_user
-        user:
-          name: app_user
-      
-      - name: Recursively change ownership of a directory
-        file:
-          path: /opt/pyramid
-          state: directory
-          recurse: yes
-          owner: app_user
+      #iptable steps:
+      # install, start, allow, save, restart
 
     handlers:
       - name: Reload systemd
         systemd:
-          daemon_reload: yes     
-
+          name: flask.service
+          daemon_reload: yes   
+          
       - name: restart iptables
         service:
           name: iptables
           state: restarted
-

@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: true
+  become_user: root
+  pre_tasks:
+    - name: Update package repository cache
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+      
+    - include_vars: "{{ item }}"
+      with_first_found: 
+        - "apache_{{ ansible_os_family }}.yml"
+        - "apache_default.yml"
+
+  tasks:
+    - name: Install apache
+      package:
+        name: "{{ apache_service_name }}"
+        state: latest
+    
+    - name: Ensure Apache is running
+      service:
+        name: "{{ apache_service_name }}"
+        state: started
