@@ -1,0 +1,50 @@
+192.168.1.0/24	
+
+	      7.0/30
+	R1----------------------R2 2.0/24
+	|			|
+	|7.16/30		|7.4/30
+	|			|
+	|			|
+	|R5 5.0/24		R3 3.0/24
+	\			|
+	 \			|7.8/30
+	  \   	  7.12/30	|
+	   \--------------------R4 4.0/24
+	
+======== Serial instellingen vanuit R3
+
+	enable
+	conf t
+	int serial 0/1/0 
+	ip address 192.168.7.9 255.255.255.252
+	no shutdown
+	exit
+	int serial 0/1/1 
+	ip address 192.168.7.6 255.255.255.252
+	no shutdown
+	
+======== Loopback for R3
+
+	int loopback 0
+	ip address 192.168.3.1 255.255.255.0
+	no shutdown
+	exit
+
+======== Router Rip 
+	
+	router rip
+	version 2
+	network 192.168.3.0
+	network 192.168.7.0     (classfull)
+	network 192.168.7.4     (niet noodzakelijk, wordt automatisch 7.0)
+	network 192.168.7.8	(niet noodzakelijk, wordt automatisch 7.0)
+	passive-interface
+	redistribute static
+	default-information originate
+
+======= Confirm settings
+
+	do show running config
+	do show ip route
+	show ip protocols
