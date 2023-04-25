@@ -6,7 +6,7 @@ BEGIN
 	IF (:NEW.salary - :OLD.salary > 0.05*:OLD.salary) THEN
 		RAISE_APPLICATION_ERROR(-20000, 'salary te veel verhoogd');
 
-	ELIF (:NEW.salary < :OLD.salary) THEN
+	ELSIF (:NEW.salary < :OLD.salary) THEN
 		RAISE_APPLICATION_ERROR(-20000, 'salary verlaging mag niet');
 	END IF;
 END;
