@@ -1,11 +1,27 @@
 ---
-- hosts: all
+- hosts: webservers
   become: true
   vars_files:
     - secret.yml
   tasks:
+    # - name: Install Python
+    #   yum:
+    #       name:
+    #         - python3
+    #         - pip
+    #       state: latest
+    #       update_cache: yes
+
+    # - name: Install passlib 
+    #   pip:
+    #       name: passlib
+    #       executable: pip3  
+
     - name: create user
-      user: john_doe
-      password: {{"abc|def"}}
-      state: present
+      user: 
+        name: johndoe
+        password: "{{ johndoe_password | password_hash('sha512') }}"
+        state: present
+
+      
 

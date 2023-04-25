@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   vars_files:
-    - ssh_key_vault.yml
+    - secret_key_vault.yml
   tasks:
     - name: create user
       user: 
@@ -11,15 +11,15 @@
 
     
     - name: authorized keys
-      authorized_keys:
+      authorized_key:
         user: "janedoe"
         state: present
         key: "{{ lookup('file', 'janedoe_key.pub')}}"
 
     - name: copy ssh private key
       copy:
-        content: "{{ssh_private_key}}"
-        dest: "/homejanedoe/.ssh/janedoe_key"
+        content: "{{ ssh_private_key }}"
+        dest: "/home/janedoe/.ssh/janedoe_key"
         owner: "janedoe"
         group: "janedoe"
         mode: "0600"

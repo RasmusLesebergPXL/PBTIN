@@ -1,0 +1,5 @@
+ssh_private_key:
+  #indent!
+  #-----BEGIN OPENSSH PRIVATE KEY-----
+  #.......
+  #-----END OPENSSH PRIVATE KEY-----
