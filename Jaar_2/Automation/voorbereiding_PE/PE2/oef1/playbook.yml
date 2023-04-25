@@ -1,0 +1,107 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - secret_key.yml
+  tasks:
+    - name: create user
+      user: 
+        name: "johndoe"
+        state: present
+
+    
+    - name: authorized keys
+      authorized_key:
+        user: "johndoe"
+        state: present
+        key: "{{ lookup('file', 'johndoe.pub')}}"
+
+    - name: copy ssh private key
+      copy:
+        content: "{{ ssh_private_key }}"
+        dest: "/home/johndoe/.ssh/johndoe_key"
+        owner: "johndoe"
+        group: "johndoe"
+        mode: "0600"
+
+    - name: Update & Ugrade
+      yum:
+        update_only: true
+
+    - name: Install Python
+      yum:
+        name:
+            - python3
+            - pip
+        state: latest
+        update_cache: yes
+
+    - name: Install dependencies 
+      pip:
+        name: 
+          - flask
+          - flask_sqlalchemy
+          - flask_login
+        executable: pip3  
+      
+    - name: Create a directory testdir
+      file:
+          path: /tmp/testdir
+          state: directory
+          mode: '0755'
+
+    - name: Copy login.py to remote host
+      copy:
+          src: "{{ src_path }}"
+          dest: "{{ dest_path }}"
+          mode: '0755'
+    
+    - name: Create systemd service file
+      template:
+          src: app.service.j2
+          dest: "{{ service_file_path }}"
+      notify:
+          - Reload systemd
+
+    - name: Enable and start the service
+      service:
+          name: login.service
+          enabled: yes
+          state: started
+    
+    - name: Install iptables package
+      yum:
+          name: iptables-services
+          state: present
+      
+    - name: Ensure iptables service is running
+      service:
+          name: iptables
+          state: started
+          enabled: yes
+
+    - name: Forward port 
+      iptables:
+        table: nat
+        chain: PREROUTING
+        in_interface: eth0
+        protocol: tcp
+        match: tcp
+        destination_port: 8080
+        jump: REDIRECT
+        to_ports: "{{ port }}"
+        comment: Redirect web traffic to correct port
+      become: yes
+
+  handlers:
+      - name: Reload systemd
+        systemd:
+          name: flask.service
+          daemon_reload: yes   
+          
+      - name: restart iptables
+        service:
+          name: iptables
+          state: restarted
+
+

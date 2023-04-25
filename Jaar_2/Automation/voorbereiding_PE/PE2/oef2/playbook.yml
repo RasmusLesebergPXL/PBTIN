@@ -1,0 +1,147 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - secret.yml
+  tasks:
+    - name: create user
+      user: 
+        name: "{{ username }}"
+        password: "{{ password | password_hash('sha512') }}"
+        state: present
+
+- hosts: johns
+  become: true  
+  vars_files:
+    - ./keys/ssh_key_file.yml
+  tasks:
+    - name: authorized keys
+      authorized_key:
+        user: "{{ username }}"
+        state: present
+        key: "{{ lookup('file', './keys/johndoe.pub')}}"
+
+    - name: copy ssh private key
+      copy:
+        content: "{{ ssh_private_key }}"
+        dest: "{{ home_dir }}/.ssh/johndoe_key"
+        owner: "{{ username }}"
+        group: "{{ username }}"
+        mode: "0600"
+
+- hosts: server1
+  become: true
+  tasks:
+    - name: Install Python
+      yum:
+        name:
+            - python3
+            - pip
+        state: latest
+        update_cache: yes
+
+    - name: Install dependencies 
+      pip:
+        name: 
+          - flask
+          - flask_sqlalchemy
+          - flask_login
+        executable: pip3  
+      
+- hosts: server2
+  become: true
+  tasks:
+    - name: Install Node.js and npm
+      yum:
+        name:
+          - nodejs
+          - npm
+        state: latest
+        update_cache: yes
+
+- hosts: server3
+  become: true
+  tasks:
+    - name: Install PHP and Apache
+      yum:
+        name:
+          - httpd
+          - php
+          - php-mysqlnd
+          - php-gd
+          - php-mbstring
+          - php-xml
+        state: latest
+        update_cache: yes
+
+    # - name: Install dependencies for PHP
+    #   command: /usr/bin/composer install --working-dir=/var/www/html
+
+
+- hosts: all
+  become: true
+  become_user: root
+  tasks:
+    - name: Create the right directory
+      file:
+          path: "{{ test_dir }}"
+          state: directory
+          mode: '0755'
+
+    - name: Copy services.py to remote host
+      copy:
+          src: "{{ src_path }}"
+          dest: "{{ dest_path }}"
+          mode: '0755'
+    
+    - name: Create systemd service file
+      template:
+          src: app.service.j2
+          dest: "{{ service_file_path }}"
+      notify:
+          - Reload systemd
+
+    - name: Enable and start the service
+      service:
+          name: "{{ service_name }}"
+          enabled: yes
+          state: started
+    
+    - name: Install iptables package
+      yum:
+          name: iptables-services
+          state: present  
+      
+    - name: Ensure iptables service is running
+      service:
+          name: iptables
+          state: started
+          enabled: yes
+
+    - name: Open correct port
+      iptables:
+          chain: INPUT
+          protocol: tcp
+          destination_port: "{{ port }}"
+          jump: ACCEPT        
+          comment: 'Allow {{ port }}'
+
+    - name: Save current state of the firewall in system file
+      community.general.iptables_state:
+          state: saved
+          path: /etc/sysconfig/iptables
+      notify:
+          - restart iptables
+
+  handlers:
+      - name: Reload systemd
+        systemd:
+          name: flask.service
+          daemon_reload: yes   
+          
+      - name: restart iptables
+        service:
+          name: iptables
+          state: restarted
+
+
