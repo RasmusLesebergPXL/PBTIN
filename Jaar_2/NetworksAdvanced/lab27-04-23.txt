@@ -1,0 +1,126 @@
+DEMO
+
+Multiaccess routing
+
+   192.168.1.0/24		  192.168.2.0/24	
+	R1				R2
+	 \			       /
+	  \	 192.168.3.0/28	      /
+  	   \			     /
+	    \_________S1____________/
+
+
+R1 config
+==========================================================
+	ip address 192.168.3.1 255.255.255.240	
+	no sh
+	int loopback 0
+	ip address 192.168.1.1 255.255.255.0	
+	router ospf 1
+	router-id 1.1.1.1
+	network 192.168.1.0 0.0.0.255 area 0
+	pass loopback 0
+	network 192.168.3.0 0.0.0.15 area 0	
+	show ip protocols
+	show ip ospf neigh
+
+R2 config
+=========================================================
+	ip address 192.168.3.2 255.255.255.240
+	no sh
+	int loopback 0
+	ip address 192.168.2.1 255.255.255.0
+	<(do) ping 192.168.2.1>
+	do show ip route
+	router ospf 1
+	router-id 2.2.2.2
+	network 192.168.2.0 0.0.0.255 area 0
+	pass loopback 0
+	network 192.168.7.0 0.0.0.15 area 0
+	show ip protocols
+	show ip ospf neigh
+
+======================================================
+extra: priority instellen R1
+	
+	int g0/0
+	ip ospf priority 255 	(highest)
+	do clear ip ospf process (yes)
+
+
+extra: priority instellen R2
+	
+	int g0/0
+	ip ospf priority 128 	(lower than R1)
+	do show ip ospf neigh
+	clear ip ospf process (yes)
+	show ip ospf neigh
+
+
+wildcards gebruiken
+======================================
+	255.255.255.255 -
+/28 	255.255.255.240
+_______________________________
+	0.  0.  0.  15
+
+
+=================================================================================================
+
+
+					
+		192.168.1.0/24		     201.201.201.1
+			Voor                     Naast		(ISP)
+		     	    \8.2                 /200.200.200.1
+			     \________S1______  /
+			____/ \	   __/|\__    \/____
+		   ____/       \__/   |   \__ /    \_____
+	    	  /	      _/\     |      /_          \
+	     7.2_/        7.3/	 \    |7.4  /  \_7.5      \7.1p
+	    /		 /  	  \   |	   /	 \           \
+	   R1 		R2	   \  |   /	  R4 	      R5
+	  2.0          3.0          \ |  /        5.0         6.0
+				  8.1\| /200.2
+			DR	      R3	  BDR
+				     4.0
+
+		(designated router)		 (backup-DR)
+
+
+R1 config
+====================================================================
+
+	int g0/0
+	ip address 192.168.7.2 255.255.255.240
+	exit
+	int loopback 0
+	ip address 192.168.2.1 255.255.255.0
+
+	router ospf 1
+	router-id 2.2.2.2
+	network 192.168.2.0 0.0.0.255 area 0
+	pass loopback 0
+	network 192.168.3.0 0.0.0.15 area 0
+	show ip protocols
+	show ip ospf neigh
+	int g0/0
+	ip ospf priority 8 	(low)
+	do show ip ospf neigh
+
+	clear ip ospf process (yes) (reset ospf if troubleshooting)
+
+
+Quad zero route instellen van R5 naar 'Naast'
+
+	ip route 192.168.1.0 255.255.255.0 via 192.168.8.2 255.255.255.0
+	redistribute static 
+
+Van R6 naar ISP Quad zero
+	ip route 0.0.0.0 0.0.0.0 200.200.200.1
+	router ospf 1
+	default-information originate
+	
+	
+	
+
+
