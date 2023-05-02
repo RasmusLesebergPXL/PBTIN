@@ -1,0 +1,99 @@
+---
+- hosts: webserver
+  become: true
+  vars_files:
+    - secret.yml
+    - ssh_key_file.yml
+  tasks:
+    - name: create user
+      user: 
+          name: my_user
+          password: "{{ password | password_hash('sha512') }}"
+          state: present
+
+    - name: copy public to authorized keys
+      authorized_key:
+        user: my_user
+        state: present
+        key: "{{ lookup('file', 'my_user_key.pub')}}"
+
+    - name: copy ssh private key
+      copy:
+        content: "{{ ssh_private_key }}"
+        dest: /home/my_user/.ssh/my_user_key"
+        owner: my_user
+        group: my_user
+        mode: "0600"
+
+    - name: install firewalld
+      yum:
+        name: firewalld
+        state: latest
+
+    - name: Start firewalld service
+      service:
+        name: firewalld
+        state: started
+
+    
+    - name: install sshd
+      yum:
+        name: openssh-server
+        state: latest
+
+    - name: Start sshd service
+      service:
+        name: sshd
+        state: started
+
+    - name: Set firewall rule for HTTP traffic
+      firewalld:
+        state: enabled
+        immediate: yes
+        port: 80/tcp
+        zone: public
+
+    - name: make file
+      ansible.builtin.file:
+        path: /home/my_user/info.txt
+        state: touch
+        mode: 0644
+
+    - name: Copy using inline content
+      ansible.builtin.copy:
+        content: 'Bastion host configured'
+        dest: /home/my_user/info.txt
+    
+
+    - name: install apache
+      package:
+        name: httpd
+        state: present
+    
+    - name: install curl
+      package:
+        name: httpd
+        state: present
+
+    - name: Ensure Apache is running
+      service:
+        name: httpd
+        state: started
+    
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: /home/student/Documents/repos/aut2223-pe2-RasmusLesebergPXL/files/index.html
+        dest: /var/www/html/index.html
+        owner: my_user
+        group: my_user
+        mode: '0644'
+    
+    - name: Get path information
+      become_user: my_user
+      debug:
+        var: PATH
+
+
+
+
+    
