@@ -1,0 +1,130 @@
+ACL/NAT
+Access Control List
+- Standard -> Numbered
+- Extended -> Named
+
+Voorbeeld ACL:
+
+Standard	All
+Access-List	1 	Permit		192.168.1.0
+			DENY
+			DENY ANY
+
+Voorbeeld 2:
+
+Access-List	All	Deny		192.168.1.0
+			PERMIT ANY
+
+IP Access List
+- Standard	.....
+- Extended 	.....
+
+PERMIT 	PROT	SOURCE	DESTINATION	eq	80
+	ICMP					HTTP
+	TCP
+	IP
+	UDP
+DENY		.....	......			.....
+
+
+Attach ACL rule to interface:
+- Set ACL at outward interface towards internet, otherwise permitted VLANS might be denied as well
+
+
+Network Address Translation: NAT
+- Private IP -> Public IP Address
+
+Demo commands
+
+enable
+show access-lists
+sh runn
+
+int g0/0
+ip address 192.168.1.1 255.255.255.0
+ip nat inside
+duplex auto
+speed auto
+
+int vlan1
+no ip address
+shutdown
+
+ip nat inside source list NAT_LIST interface G0/0 overload
+ip nat inside source static 192.168.1.254 201.201.201.3
+ip classless
+ip route 0.0.0.0 0.0.0.0 201.201.201.1
+ip access-list standard NAT_LIST 
+permit 192.168.1.0 0.0.0.255
+ip flow-export version 9
+ip access-list standard NAT_LIST 
+permit 192.168.1.0 0.0.0.255
+show ip nat
+
+
+ip nat pool NAT_POOL 201.201.201.4 201.201.201.10 netmask 255.255.255.240
+ip nat inside source list NAT_LIST pool NAT_POOL
+ip nat inside source static 192.168.1.254 201.201.201.3
+ip classless
+ip route 0.0.0.0 0.0.0.0 201.201.201.1
+ip flow export version 9
+
+
+					ISP
+
+				/	          \
+
+		Serial 200.200.200.0/30		Serial 201.201.201.0/30
+
+		 / 						\
+		/						 \
+		NAT/PAT							NAT/PAT
+		R1							R4
+	  /	       \		    			  /		\
+	3.0		4.0					3.0		4.0	
+	/		\					/		\
+	R2		R3					R5		R6	NAT: 5.1
+192.168.1.0/24		2.0/24					1.0/24		2.0/24
+
+
+
+int g0/0
+ip add 192.168.4.2 255.255.255.0
+no shutdown
+
+int loopback 0
+ip address 192.168.2.1 255.255.255.0
+no shutdown
+
+int loopback 1
+ip address 192.168.5.1 255.255.255.0
+no shutdown
+ip route 0.0.0.0 0.0.0.0 192.168.4.1
+
+
+Ferre router (R4)
+int serial 0/1/1
+ip nat outside
+ip address 201.201.201.2 255.255.255.252
+no shutdown
+int g0/0
+ip nat inside
+ip address 192.168.3.1 255.255.255.0
+no shutdown
+int g0/1
+ip nat inside
+ip address 192.168.4.1 255.255.255.0
+no shutdown
+
+ip access-list standard NAT_LIST 
+permit 192.168.1.0 0.0.0.255
+permit 192.168.2.0 0.0.0.255
+permit 192.168.3.0 0.0.0.255
+permit 192.168.4.0 0.0.0.255
+do show access-list
+ip nat inside source list NAT_LIST interface s0/1/1 overload
+ip nat inside source static 192.168.5.1 201.201.201.3
+ip route 0.0.0.0 0.0.0.0 201.201.201.1
+
+
+
