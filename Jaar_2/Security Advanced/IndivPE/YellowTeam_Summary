@@ -2,20 +2,125 @@
 ' or '1'='1
 wireless charging is overrated -> message
 
-Tried the following already: 
-app.get('/authenticate/:username/:password', async (req, res) => {
-  const { username, password } = req.params;
+SQL sanitization:
+app.get('/authenticate/:username/:password', async (request, response) => {
+    const username = request.params.username;
+    const password = request.params.password;
 
-  const query = 'SELECT * FROM users WHERE user_name=$1 AND password=$2';
-  const values = [username, password];
+    const query = 'SELECT * FROM users WHERE user_name=$1 and password=$2';
+    console.log(query);
+    pool.query(query, [username, password], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)});
+});
 
-  console.log(query, values);
-  pool.query(query, (error, results) => {
+DB Sanitization:
+CREATE DATABASE pxldb;
+\c pxldb;
+
+CREATE USER secadv WITH PASSWORD 'ilovesecurity';
+GRANT ALL PRIVILEGES ON DATABASE pxldb TO secadv;
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    user_name TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL
+);
+
+GRANT ALL PRIVILEGES ON TABLE users TO secadv;
+
+BEGIN;
+
+INSERT INTO users (user_name, password_hash)
+VALUES ('pxl-admin', crypt('insecureandlovinit', gen_salt('bf', 8))),
+       ('george', crypt('iwishihadbetteradmins', gen_salt('bf', 8)));
+
+COMMIT;
+
+Note that the password column has been replaced with a password_hash column, which will store the bcrypt-hashed password. The crypt() function is used to perform the hashing, with a randomly generated salt of length 8 using the gen_salt() function. The number 8 is the cost factor, which determines the computational cost of the hashing process. A higher cost factor makes the hashing process more computationally expensive, making it harder for attackers to crack the passwords.
+
+
+CORS:
+const pg = require('pg');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const cors = require('cors')
+
+const port=3000;
+
+const pool = new pg.Pool({
+    user: 'secadv',
+    host: 'db',
+    database: 'pxldb',
+    password: 'ilovesecurity',
+    port: 5432,
+    connectionTimeoutMillis: 5000
+})
+
+console.log("Connecting...:")
+
+//CORS
+const allowedOrigins = ['http://localhost:8080'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+//CORS
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(
+    bodyParser.urlencoded({
+        extended: true,
+    })
+)
+
+app.get('/authenticate/:username/:password', async (request, response) => {
+  const username = request.params.username;
+  const password = request.params.password;
+
+  const query = 'SELECT * FROM users WHERE user_name=$1 and password=$2';
+  console.log(query);
+  pool.query(query, [username, password], (error, results) => {
     if (error) {
       throw error
     }
     response.status(200).json(results.rows)});
-    
 });
 
-so far: 1h
+// app.get('/authenticate/:username/:password', async (request, response) => {
+//     const username = request.params.username;
+//     const password = request.params.password;
+
+//     const query = `SELECT * FROM users WHERE user_name='${username}' and password='${password}'`;
+//     console.log(query);
+//     pool.query(query, (error, results) => {
+//       if (error) {
+//         throw error
+//       }
+//       response.status(200).json(results.rows)});
+      
+// });
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}.`)
+})
+
+
+so far: 2h
+
+
+OAuth
+
+CORS?
+
