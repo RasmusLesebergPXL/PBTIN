@@ -1,0 +1,168 @@
+---
+- hosts: all
+  become: true
+  tasks: 
+
+# Conditionals
+    - name: Install Apache if it's not already installed
+      ansible.builtin.package:
+        name: apache2
+        state: present
+      when: "'apache2' not in ansible_facts_packages"
+    
+    - name: Shut down CentOS 6 and Debian 7 systems
+      command: /sbin/shutdown -t now
+      when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6") or
+            (ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_major_version'] == "7")
+        # - ansible_facts['distribution'] == "CentOS"
+        # - ansible_facts['distribution_major_version'] == "6"
+
+    - name: Install FTP server when host in ftpserver group
+      yum:
+        name: vsftpd
+        state: latest
+      when: inventory_hostname in groups["ftpserver"]
+
+# Jinja Filters
+    - name: Add the user MY_USER with default filters
+      ansible.builtin.user:
+        name: "{{ some_variable | default('MY_USER') }}"
+        password: "{{ lookup('env', 'MY_PASSWORD') | default('admin', true) }}"
+      when:
+        - some_variable | bool
+        - ansible_facts['lsb']['major_release'] | int >= 6
+
+# Registered Variables
+    - name: Register a variable
+      ansible.builtin.shell: cat /etc/motd
+      register: motd_contents
+    
+    - name: User variable in conditional statement
+      ansible.builtin.shell: echo "motd contains the word hi"
+      when: motd_contents.stdout.find('hi') != -1
+
+    
+#Example 2 with debug
+    - name: List contents of directory and Store in content1
+      ansible.builtin.command: ls /etc/hosts
+      register: contents1
+
+# to list the directory content in '/home/ubuntu/hello'
+    - name: List contents of directory and Store in content2
+      ansible.builtin.command: ls /home/ubuntu/hello
+      register: contents2
+
+# display Directory is empty if the directories '/etc/hosts' or '/home/ubuntu/hello' are empty
+    - name: Check contents for emptiness for content1 or content2
+      ansible.builtin.debug:
+      msg: "Directory is empty"
+      when: contents1.stdout == "" or contents2.stdout == ""
+
+
+# Failed, succeeded, Skipped, Changed
+    - name: Register a variable, ignore errors and continue
+      ansible.builtin.command: /bin/false
+      register: result
+      ignore_errors: true
+
+    - name: Run only if the task that registered the "result" variable has certain characteristic
+      ansible.builtin.command: /bin/something
+      when: result is failed/succeeded/skipped/changed/defined/undefined
+
+# Failed when/changed when
+
+    - name: Check if a file exists in temp and fail task if it does
+      ansible.builtin.command: ls /tmp/this_should_not_be_here
+      register: result
+      failed_when:
+      - result.rc == 0 (and)
+      - '"No such" not in result.stdout'
+      #failed_when: diff_cmd.rc == 0 or diff_cmd.rc >= 2
+
+#multi-line conditionals with >
+
+    - name: example of many failed_when conditions with 'or'
+      ansible.builtin.shell: "./mySuperProgram"
+      register: my_return
+      failed_when: >
+        ("No such file or directory" in ret.stdout) or
+        (ret.stderr != '') or
+        (ret.rc == 10)
+
+#ignoring
+
+    - name: List a non-existent file
+      command: ls non-existent.txt
+      ignore_errors: true
+      #ignore_unreachable: true
+
+# changed when 
+    - name: Report 'changed' when the return code is not equal to 2
+      ansible.builtin.shell: /usr/bin/mybinary --mode="analyze"
+      register: binary_result
+      changed_when: "binary_result.rc != 2"
+      # changed_when: false
+    
+
+
+- hosts: webservers# for vars/RedHat.yml
+  remote_user: root
+  vars_files: 
+    - "vars/common.yml"
+    # - [ "vars/{{ ansible_facts['os_family'] }}.yml", "vars/os_defaults.yml" ]
+  tasks:
+  - name: Make sure apache is started
+    ansible.builtin.service:
+      name: '{{ apache }}'
+      state: started
+
+  #block
+  #tasks:
+  - name: Deploy and configure Nginx
+    block:
+      - name: Copy Nginx configuration
+        ansible.builtin.template:
+          src: nginx.conf.j2
+          dest: "{{ nginx_config_file }}"
+          owner: root
+          group: root
+          mode: 0644
+          
+      - name: Enable site configuration
+        ansible.builtin.file:
+          src: "{{ nginx_config_file }}"
+          dest: /etc/nginx/sites-enabled/{{ app_name }}
+          state: link
+
+      - name: Reload Nginx
+        ansible.builtin.systemd:
+          name: nginx
+          state: reloaded
+    when: "'web_servers' in group_names"
+    rescue:
+      - name: Remove faulty configuration
+        ansible.builtin.file:
+          path: "{{ nginx_config_file }}"
+          state: absent
+
+      - name: Rollback Nginx to default site
+        ansible.builtin.command: ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+        args:
+          removes: /etc/nginx/sites-enabled/{{ app_name }}
+
+      - name: Restart Nginx
+        ansible.builtin.systemd:
+          name: nginx
+          state: restarted
+
+      - name: Fail the playbook
+        ansible.builtin.fail:
+          msg: "Nginx configuration failed. Rolled back to default site."
+
+    always:
+      - name: Check Nginx status
+        ansible.builtin.systemd:
+          name: nginx
+          state: started
+
+    

@@ -1,0 +1,90 @@
+---
+# Loop with different items
+- name: Ensure users
+  hosts: node1
+  become: true
+  tasks:
+    - name: Ensure three users are present
+      user:
+        name: "{{ item.username }}"
+        state: present
+        groups: "{{ item.groups }}"
+      loop:
+        - { username: 'dev_user', groups: 'ftp' }
+        - { username: 'qa_user', groups: 'ftp' }
+        - { username: 'prod_user', groups: 'apache' }
+
+#
+- name: Registered variable usage as a loop list
+  hosts: all
+  tasks:
+  - name: Retrieve the list of home directories
+    ansible.builtin.command: ls /home
+    register: home_dirs
+
+  - name: Add home dirs to the backup spooler
+    ansible.builtin.file:
+      path: /mnt/bkspool/{{ item }}
+      src: /home/{{ item }}
+      state: link
+    loop: "{{ home_dirs.stdout_lines }}"
+    # same as loop: "{{ home_dirs.stdout.split() }}"
+
+#looping with variable file
+- name: Import users file
+  hosts: myserver
+  vars_files:
+    - /path/to/group_vars/prod/users.yml
+  tasks:
+    - name: Create users with properties
+      user:
+        name: "{{ item.name }}"
+        uid: "{{ item.uid }}"
+        group: "{{ item.gid }}"
+        password: "{{ item.password | password_hash('sha512') }}"
+        state: present
+      loop: "{{ users }}"
+
+  #yaml file:
+  users:
+    - name: john
+      uid: 1001
+      gid: 1001
+      password: mypassword
+    - name: jane
+      uid: 1002
+      gid: 1002
+      password: myotherpassword
+
+  #Combining loops and conditionals
+
+  #tasks:
+    - name: run with items greater than 5
+      ansible.builtin.command: echo {{ item }}
+      loop: [ 0, 2, 4, 6, 8, 10 ]
+      when: item > 5
+
+  # loop control
+    - name: Loop example
+      hosts: localhost
+      tasks:
+        - name: Print numbers with custom label
+          debug:
+            msg: "The number is {{ item }}"
+          loop:
+            - 1
+            - 2
+            - 3
+          loop_control:
+            label: "Number {{ item }}"
+  
+  #Error handling with until, retries, and delay
+    - name: Retry until a file is available
+      hosts: localhost
+      tasks:
+        - name: Validate if the file is present
+          shell: ls -lrt /tmp/myprocess.pid
+          register: lsresult
+          until: "lsresult is not failed"
+          retries: 10
+          delay: 10

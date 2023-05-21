@@ -1,5 +1,5 @@
 ---
-- hosts: pe2
+- hosts: webserver1
   become: true
   tasks:
     - name: Install 'httpd', 'firewalld' and 'openssh-server'
@@ -18,20 +18,20 @@
       loop:
           - httpd ## Extra 2 - Ansible: apache (40%)
           - firewalld
-          - openssh-server
+          - sshd
           - iptables
     
     - name: Add the user "{{ user_name }}" with a specific password
       ansible.builtin.user:
         name: "{{ user_name }}"
-        password: "{{ user_password }}"
+        password: "{{ user_password | password_hash('sha512') }}"
         home: "/home/{{ user_name }}"
 
     - name: Set authorized key taken from variable
       ansible.posix.authorized_key:
         user: "{{ user_name }}"
         state: present
-        key: "{{ ssh_public_key }}"
+        key: "{{ lookup('file', 'ssh_key.pub')}}"
 
     - name: Permit traffic to port 22
       ansible.posix.firewalld:

@@ -9,7 +9,6 @@
         name: "janedoe"
         state: present
 
-    
     - name: authorized keys
       authorized_key:
         user: "janedoe"

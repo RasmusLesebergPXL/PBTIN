@@ -1,0 +1,81 @@
+---
+- hosts: webserver1
+  become: true
+  tasks: 
+    - name: Install Apache Web server and run
+      ansible.builtin.package:
+        update_cache: true
+        name: 
+          - apache2
+          - php-mysql
+          - php
+          - mysql-server
+          - libapache2-mod-php
+          - python3-pip
+        state: present
+      retries: 2
+      notify: start mysql
+
+    # - name: Install php and configure to work with Apache and mysql
+    #   ansible.builtin.template:
+    #     src: files/php.conf.j2
+    #     dest: /etc/apache2/apache2.conf
+    #     owner: root
+    #     group: root
+    #     mode: '0644'
+    #   notify: Restart Apache
+    
+    - name: php document at apache root
+      copy:
+        src: files/index.php
+        dest: /var/www/html/index.php
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Configure Apache to listen on port 8080
+      lineinfile:
+        path: /etc/apache2/ports.conf
+        regex: '^Listen 80$'
+        line: 'Listen 8080'
+        state: present
+      notify: Restart Apache
+
+    - name: Install pymysql package
+      pip: 
+        name: pymysql
+    
+    - name: Create a new database with name 'johndoe-db'
+      community.mysql.mysql_db:
+        name: johndoe-db
+        state: present
+        login_user: "{{ mysql_username }}"
+        login_password: "{{ mysql_password }}"
+
+    - name: Configure MySQL user
+      mysql_user:
+        name: "{{ mysql_username }}"
+        password: "{{ mysql_password }}"
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+        priv: "*.*:ALL,GRANT"
+        state: present
+
+    - name: Configure UFW to allow incoming traffic on ports 8080 and 3306
+      ufw:
+        rule: allow
+        port: "{{ item }}"
+      loop:
+        - 8080
+        - 3306
+
+  handlers:
+    - name: Restart Apache
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+    
+    - name: start mysql
+      ansible.builtin.service:
+        name: mysql
+        state: started
+        enabled: true
