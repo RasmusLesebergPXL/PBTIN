@@ -1,0 +1,5 @@
+<div class="carrousel-container">
+    <div class="carrousel-item" *ngFor="let item of images; let i=index">
+        <img [src]="item.url" alt="img" class="fade" [ngClass]="{active: checkIfActive(i)}"/>
+    </div>
+</div>

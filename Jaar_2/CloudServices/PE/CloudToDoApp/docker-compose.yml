@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - APIURL=https://urltoapigateway.com
+    ports:
+      - 80:80

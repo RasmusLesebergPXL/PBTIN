@@ -1,0 +1,54 @@
+:host{
+  display:block;
+  height: 45px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  padding: 4 16px;
+  cursor: default;
+}
+section{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.title{
+  display: inline-block;
+}
+
+label{
+  font-size: small;
+  background-color: #008CBA;
+  padding: 4px 12px;
+  border-radius: 8px;
+  margin-left: 8px;
+  display: block;
+}
+
+input[type="checkbox"]{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+button{
+  position: absolute;
+  right: 0;
+  height: 45px;
+  display: block;
+  padding: 8px 16px;
+}
+
+.destroy{
+  background-color: #f44336;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.destroy:hover{
+  background-color: #fa6b60;
+}

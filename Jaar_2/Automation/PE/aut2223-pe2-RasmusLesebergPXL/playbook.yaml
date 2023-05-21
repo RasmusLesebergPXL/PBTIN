@@ -1,105 +1,76 @@
 ---
-- hosts: webserver
+- hosts: pe2
   become: true
-  vars_files:
-    - secret.yml
-    - ssh_key_file.yml
   tasks:
-    - name: create user
-      user: 
-          name: my_user
-          password: "{{ password | password_hash('sha512') }}"
-          state: present
-
-    - name: copy public to authorized keys
-      authorized_key:
-        user: my_user
+    - name: Install 'httpd', 'firewalld' and 'openssh-server'
+      ansible.builtin.package:
+        name:
+          - httpd ## Extra 2 - Ansible: apache (40%)
+          - firewalld
+          - openssh-server
+          - iptables
         state: present
-        key: "{{ lookup('file', 'my_user_key.pub')}}"
 
-    - name: copy ssh private key
-      copy:
-        content: "{{ ssh_private_key }}"
-        dest: /home/my_user/.ssh/my_user_key"
-        owner: my_user
-        group: my_user
-        mode: "0600"
-
-    - name: install firewalld
-      yum:
-        name: firewalld
-        state: latest
-
-    - name: Start firewalld service
-      service:
-        name: firewalld
+    - name: Start apache service
+      ansible.builtin.service:
+        name: "{{ item }}"
         state: started
-
+      loop:
+          - httpd ## Extra 2 - Ansible: apache (40%)
+          - firewalld
+          - openssh-server
+          - iptables
     
-    - name: install sshd
-      yum:
-        name: openssh-server
-        state: latest
+    - name: Add the user "{{ user_name }}" with a specific password
+      ansible.builtin.user:
+        name: "{{ user_name }}"
+        password: "{{ user_password }}"
+        home: "/home/{{ user_name }}"
 
-    - name: Start sshd service
-      service:
-        name: sshd
-        state: started
+    - name: Set authorized key taken from variable
+      ansible.posix.authorized_key:
+        user: "{{ user_name }}"
+        state: present
+        key: "{{ ssh_public_key }}"
 
-    - name: Set firewall rule for HTTP traffic
-      firewalld:
+    - name: Permit traffic to port 22
+      ansible.posix.firewalld:
+        port: "22/tcp"
+        permanent: true
         state: enabled
-        immediate: yes
-        port: 80/tcp
-        zone: public
 
-    - name: make file
-      ansible.builtin.file:
-        path: /home/my_user/info.txt
-        state: touch
-        mode: 0644
-
-    - name: Copy using inline content
-      ansible.builtin.copy:
-        content: 'Bastion host configured'
-        dest: /home/my_user/info.txt
-    
-
-    - name: install apache
-      package:
-        name: httpd
-        state: present
-    
-    - name: install curl
-      package:
-        name: httpd
-        state: present
-
-    - name: Ensure Apache is running
-      service:
-        name: httpd
-        state: started
-    
     - name: Copy file with owner and permissions
       ansible.builtin.copy:
-        src: /home/student/Documents/repos/aut2223-pe2-RasmusLesebergPXL/files/index.html
-        dest: /var/www/html/index.html
-        owner: my_user
-        group: my_user
-        mode: '0644'
+        src: files/info.txt
+        dest: "/home/{{ user_name }}/info.txt"
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: "0644"
+
+    # Extra 1 - Ansible: $PATH (10%)
+
+    - name: Display '$PATH' variable value
+      ansible.builtin.debug:
+        var: ansible_env.PATH
+
+    ## Extra 2 - Ansible: apache (40%)
+
+    - name: Start apache service
+      ansible.builtin.service:
+        name: httpd
+        state: started 
     
-    - name: Get path information
-      become_user: my_user
-      debug:
-        var: PATH
+    - name: Allow connection to port 80
+      ansible.builtin.iptables:
+        chain: INPUT
+        protocol: tcp
+        destination_port: 80
+        jump: ACCEPT
 
-
-
-#
-#
-#
-#
-#
-#
-#
-#
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: files/index.html
+        dest: "{{ apache_index_src }}"
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: "0644"

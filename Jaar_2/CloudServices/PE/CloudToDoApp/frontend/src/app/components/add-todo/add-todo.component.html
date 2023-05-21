@@ -1,0 +1,5 @@
+<form [formGroup]="myForm" (ngSubmit)="add()">
+  <input type="text" formControlName="title" placeholder="Enter todo title">
+  <input type="text" formControlName="label" placeholder="Enter todo label">
+  <button type="submit">Add new items</button>
+</form>
