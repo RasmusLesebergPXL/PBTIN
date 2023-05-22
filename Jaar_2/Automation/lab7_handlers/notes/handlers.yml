@@ -1,0 +1,115 @@
+# action: flush_handlers can be used at task level to force notified handlers to
+# run at a specific point in the playbook, regardless of whether they were notified or
+# not.
+tasks:
+  - name: Install Nginx configuration file
+    ansible.builtin.template:
+      src: nginx.conf.j2
+      dest: /etc/nginx/nginx.conf
+    notify: 
+      - Restart Nginx
+      - Log Configuration change
+  
+  - name: Flush handlers
+    ansible.builtin.meta:
+      action: flush_handlers
+
+# force handlers:
+  - name: Configure Nginx
+    hosts: web_servers
+    force_handlers: true
+    tasks:
+      - ...
+
+#listen
+handlers:
+  - name: Restart Nginx
+    ansible.builtin.service:
+      name: nginx
+      state: restarted
+    listen: Nginx Configuration Change
+
+  - name: Log Configuration Change
+    ansible.builtin.shell:
+      cmd: echo "Nginx configuration updated" >> /var/log/nginx_config.log
+    listen: Nginx Configuration Change
+
+# J2 templating
+  - name: Restart web service
+    ansible.builtin.service:
+      name: "{{ web_service_name | default('httpd') }}"
+      state: restarted
+
+# Handlers with roles
+  - name: Install custom Nginx configuration
+    ansible.builtin.copy:
+      src: custom_nginx.conf
+      dest: /etc/nginx/nginx.conf
+    #notify: nginx : Restart Nginx
+            #role   handler name
+---
+# conditionals with handlers
+handlers:
+  - name: Restart Nginx
+    ansible.builtin.service:
+      name: nginx
+      state: restarted
+    when: restart_nginx_handler is defined and restart_nginx_handler
+    tags:
+      - nginx
+---
+
+tasks:
+  - name: Install a package only on Debian-based systems
+    ansible.builtin.package:
+      name: some_package
+      state: present
+    when: "'Debian' in ansible_os_family"
+    register: package_install_result
+    notify: Handle Package Skipped
+
+handlers:
+  - name: Handle Package Skipped
+    ansible.builtin.debug:
+      msg: "Package installation was skipped. This task only runs on Debian-based systems."
+    when: package_install_result.skipped
+
+#blocks
+  - block:
+    - name: Restart Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+
+    - name: Log Nginx Restart
+      ansible.builtin.shell:
+        cmd: echo "Nginx restarted" >> /var/log/nginx_restart.log
+
+    when: restart_nginx_block is defined and restart_nginx_block
+    tags:
+      - nginx
+
+#execute on one host at a time:
+
+---
+- name: Rolling update of web servers
+  hosts: webservers
+  serial: 1
+  tasks:
+  - name: Drain connections
+    ansible.builtin.command: /usr/local/bin/drain_connections.sh
+    notify: Update and restart web server
+  
+  handlers:
+    - name: Update and restart web server
+      block:
+        - name: Update web server software
+          ansible.builtin.package:
+            name: my-web-server
+            state: latest
+    
+        - name: Restart web server
+          ansible.builtin.service:
+            name: my-web-server
+            state: restarted
+      listen: Web server update
