@@ -126,3 +126,81 @@
   #- role: yourusername.ssl
    # version: 1.2.3
     #src: https://github.com/yourusername/ansible-ssl.git
+
+# Examples of role based deployments:
+---
+roles/
+├── web_servers/
+│   ├── tasks/
+│   │   ├── main.yml
+│   ├── handlers/
+│   │   ├── main.yml
+│   ├── templates/
+│   │   ├── nginx.conf.j2
+│   ├── files/
+│   │   ├── index.html
+│   ├── vars/
+│   │   ├── main.yaml
+├── app_servers/
+│   ├── tasks/
+│   │   ├── main.yml
+│   ├── handlers/
+│   │   ├── main.yml
+│   ├── templates/
+│   │   ├── app.conf.j2
+│   ├── files/
+│   │   ├── app.jar
+├── database_servers/
+│   ├── tasks/
+│   │   ├── main.yml
+│   ├── handlers/
+│   │   ├── main.yml
+│   ├── templates/
+│   │   ├── my.cnf.j2
+
+
+#or
+
+---
+roles/
+├── web_servers/
+│   ├── tasks/
+│   │   ├── main.yml
+│   ├── handlers/
+│   │   ├── main.yml
+│   ├── templates/
+│   │   ├── nginx.conf.j2
+├── database_servers/
+│   ├── tasks/
+│   │   ├── main.yml
+│   ├── handlers/
+│   │   ├── main.yml
+│   ├── templates/
+│   │   ├── my.cnf.j2
+├── monitoring_agents/
+│   ├── tasks/
+│   │   ├── main.yml
+│   ├── handlers/
+│   │   ├── main.yml
+│   ├── files/
+│   │   ├── agent.jar
+
+#CLI commands for galaxy
+
+# ansible-galaxy search [options] keyword --> This will display a list of roles that match the specified keyword, 
+
+# ansible-galaxy install [options] role_name --> Create new role
+
+# ansible-galaxy install --force [options] role_name --> Overwrie existing role
+
+# ansible-galaxy list --> List roles
+
+# ansible-galaxy remove role_name --> Remove role
+
+# ansible-galaxy init [options] role_name --> generate role and directory structure
+
+# -p, --roles-path: Specify a custom path for the new role directory. By default, the role will be created in the current working directory.
+
+# --offline: Don't query the Ansible Galaxy API when creating a new role.
+
+# Naming conventions: Use lowercase letters and underscores role_name

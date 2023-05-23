@@ -1,0 +1,7 @@
+---
+# handlers file for both_servers
+
+- name: Restart chrony
+  service:
+    name: "{{ chrony_svc }}"
+    state: restarted

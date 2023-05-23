@@ -1,0 +1,5 @@
+---
+# vars file for both_servers
+chrony_svc: chronyd
+chrony_conf: /etc/chrony.conf
+source_config_file: ../files/chrony.conf
