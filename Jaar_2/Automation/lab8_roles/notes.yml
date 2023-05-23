@@ -1,0 +1,128 @@
+#roles/
+  common/
+    tasks/
+      main.yml
+      redhat.yml
+      debian.yml
+    handlers/
+      main.yml
+    templates/
+      ntp.conf.j2
+    files/
+      foo.sh
+      bar.txt
+    vars/
+      main.yml
+    library/
+    mode_utils/
+    lookup_plugins/
+  webtier/
+  monitoring/
+  fooapp/
+
+# roles/example/tasks/main.yml
+---
+- hosts: webservers
+  roles:
+    - common
+    - webservers
+  tasks:
+    - name: Install the correct web server for RHEL
+      import_tasks: redhat.yml
+      when: ansible_facts['os_family']|lower == 'redhat'
+
+    - name: Install the correct web server for Debian
+      import_tasks: debian.yml
+      when: ansible_facts['os_family']|lower == 'debian'
+
+    # roles/example/tasks/redhat.yml
+    - name: Install web server
+      ansible.builtin.yum:
+        name: "httpd"
+        state: present
+
+    # roles/example/tasks/debian.yml
+    - name: Install web server
+      ansible.builtin.apt:
+        name: "apache2"
+        state: present
+
+#Using roles at the play level
+---
+- hosts: webservers
+  roles:
+    - common
+    - role: foo_app_instance
+      vars:
+        dir: '/opt/a'
+        app_port: 5000
+      tags: typeA
+    - role: foo_app_instance
+      vars:
+        dir: '/opt/b'
+        app_port: 5001
+      tags: typeB
+
+
+#Using roles dynamically: include
+---
+- hosts: webservers
+  tasks:
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs before the example role"
+
+    - name: Include the example role
+      include_role: #!!
+        name: example
+      vars:
+        dir: '/opt/a'
+        app_port: 5000
+      tags: typeA
+      when: "ansible_facts['os_family'] == 'RedHat'"
+
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs after the example role"
+
+#Static Reuse: import
+---
+- hosts: webservers
+  tasks:
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs before the example role"
+
+    - name: Include the example role
+      import_role: #!!
+        name: example
+      vars:
+        dir: '/opt/a'
+        app_port: 5000
+      tags: typeA
+      when: "ansible_facts['os_family'] == 'RedHat'"
+
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs after the example role"
+
+#Galaxy metadata store in metal/main.yml
+
+#galaxy_info:
+  #author: The role author's name.
+  #description: A brief description of the role.
+  #company: The company or organization associated with the role (optional).
+  #license: The license under which the role is distributed.
+  #min_ansible_version: The minimum version of Ansible required for the role to function.
+  #platforms: A list of supported platforms for the role (e.g., operating systems, distributions).
+  #galaxy_tags: A list of keywords that help users find your role on Ansible Galaxy.
+
+#Customizing role metadata
+#role: The name of the dependent role.
+#version: The desired version of the dependent role (if applicable).
+#src: The source location of the dependent role, such as a GitHub repository URL.
+#dependencies:
+  #- role: yourusername.common
+  #- role: yourusername.ssl
+   # version: 1.2.3
+    #src: https://github.com/yourusername/ansible-ssl.git
