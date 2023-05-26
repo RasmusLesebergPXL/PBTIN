@@ -1,0 +1,8 @@
+server {
+  listen {{ web_port }};
+  server_name _;
+  location / {
+    root {{ doc_root }};
+    index index.html;
+  }
+}

@@ -1,0 +1,46 @@
+#
+# Vagrantfile to create PXL Labs
+#
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "generic/rocky9"
+  GROUP = "/pxl-lab"
+  MEMORY = 2048
+
+  # set host sync folder /vagrant to current directory
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+
+  # ssh key config - re-use existing key
+  config.ssh.forward_agent = true
+  config.ssh.insert_key = false
+  config.ssh.private_key_path = "~/.vagrant.d/insecure_private_key"
+
+  # make a virtualbox group
+  config.vm.provider :virtualbox do |vb|
+    vb.memory = MEMORY
+    vb.customize ["modifyvm", :id, "--groups", GROUP] unless GROUP.nil?
+  end
+
+  # configure vagrant-hosts so all the /etc/hosts files are updated
+  # on all provisioned machines with the names and ips of all the provisioned hosts
+  config.vagrant.plugins = "vagrant-hosts"
+  if Vagrant.has_plugin?("vagrant-hosts")
+    config.vm.provision :hosts do |provisioner|
+      provisioner.add_localhost_hostnames = false
+      provisioner.sync_hosts = true
+      provisioner.autoconfigure = true
+    end
+  end
+
+  config.vm.define "webserver1" do |server|
+    server.vm.hostname = "webserver1.pxldemo.local"
+    # port forward
+    server.vm.network "forwarded_port", guest: 8080, host: 8080
+    server.vm.network "private_network", ip: "192.168.56.100"
+  end
+
+  config.vm.post_up_message = "PXL Lab build complete."
+end

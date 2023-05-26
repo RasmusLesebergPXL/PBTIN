@@ -1,0 +1,12 @@
+---
+# handlers file for test_role
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted
+  when: /etc/nginx/conf.d/mypage.conf is changed
+
+- name: Start Nginx
+  service: 
+    name: nginx 
+    state: started

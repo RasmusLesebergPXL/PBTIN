@@ -165,4 +165,25 @@
           name: nginx
           state: started
 
-    
+# Slide 13 Example:
+
+---
+- hosts: all
+  vars:
+    - user: angie
+  tasks:
+    - name: Check if file already exists
+      command: ls /home/{{ user }}/myfile
+      register: file_exists
+      ignore_errors: true
+
+    - name: create file for user
+      file:
+        path: /home/{{ user }}/myfile
+        state: touch
+      when: file_exists is failed
+
+    - name: show message if file exists
+      debug:
+        msg: The user file already exists.
+      when: file_exists is succeeded
