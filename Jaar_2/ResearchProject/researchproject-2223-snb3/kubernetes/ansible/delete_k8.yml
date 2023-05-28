@@ -1,0 +1,34 @@
+---
+- hosts: server9
+  become: true
+  tasks:
+    - name: reset kubeadm
+      command: 'kubeadm reset'
+
+- hosts: all
+  become: true
+  vars:
+   packages:
+   - kubeadm
+   - kubectl
+   - kubelet
+  
+  tasks:
+  - name: Uninstalling kubernetes related packages
+    apt:
+     name: "{{ item }}"
+     state: absent
+     force: yes
+    with_items: "{{ packages }}"
+
+  - name: Removing required files
+    file:
+     path: "{{ item }}"
+     state: absent
+    with_items:
+    - /etc/kubernetes
+    - /var/lib/etcd
+    - /etc/cni/net.d
+    - $HOME/.kube
+    - /etc/apt/sources.list.d/kubernetes.list
+

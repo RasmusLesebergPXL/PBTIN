@@ -1,0 +1,12 @@
+---
+- name: Include initial playbook
+  ansible.builtin.import_playbook: initial-playbook.yml
+
+- name: Include Mongo playbook
+  ansible.builtin.import_playbook: MongoDBplaybook.yml
+
+- name: Include MySQL playbook
+  ansible.builtin.import_playbook: mysqlplaybook.yaml
+
+- name: Include containers playbook
+  ansible.builtin.import_playbook: containers-playbook.yml

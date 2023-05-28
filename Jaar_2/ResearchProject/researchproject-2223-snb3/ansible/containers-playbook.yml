@@ -1,0 +1,224 @@
+---
+- name: setup server 1
+  hosts: server1
+  tasks:
+    - name: setup edge router
+      community.docker.docker_container:
+        name: "edge-router"
+        image: "weaveworksdemos/edge-router:0.1.1"
+        cap_drop: "all"
+        capabilities:
+          - "NET_BIND_SERVICE"
+          - "CHOWN"
+          - "SETGID"
+          - "DAC_OVERRIDE"
+        networks:
+          - name: "service_net"
+        tmpfs:
+          - /var/run:rw,noexec,nosuid,size=1g
+        expose:
+          - 80
+          - 8080
+        ports:
+          - "80:80"
+          - "8080:8080"
+        read_only: true
+        restart: true
+        state: started
+
+    - name: setup front-end
+      docker_container:
+        name: "front-end"
+        image: "weaveworksdemos/front-end:0.3.12"
+        cap_drop: "all"
+        networks:
+          - name: "service_net"
+        etc_hosts: catalogue=10.128.102.3, user=10.128.102.6, carts=10.128.102.11, orders=10.128.102.9
+        ports:
+          - "8079:80"
+        read_only: true
+        restart: true
+        state: started
+
+- name: setup server 2
+  hosts: server2
+  tasks:
+    - name: setup catalogue
+      docker_container:
+        name: "catalogue"
+        image: "weaveworksdemos/catalogue:0.3.5"
+        capabilities:
+          - "NET_BIND_SERVICE"
+        networks:
+          - name: "service_net"
+        expose:
+          - 80
+        ports:
+          - "80:80"
+        env: MYSQL_HOST=10.128.102.8:3306, MYSQL_USER=catalogue_user, MYSQL_PASSWORD='default_password', MYSQL_DATABASE=socksdb
+        etc_hosts: catalogue-db=10.128.102.8
+        read_only: true
+        restart: true
+        state: started
+
+- name: setup server 3
+  hosts: server3
+  tasks:
+    - name: setup payment
+      docker_container:
+        name: "payment"
+        image: "weaveworksdemos/payment:0.4.3"
+        cap_drop: "all"
+        capabilities:
+          - "NET_BIND_SERVICE"
+        networks:
+          - name: "service_net"
+        expose:
+          - 80
+        ports:
+          - "80:80"
+        read_only: true
+        restart: true
+        state: started
+
+- name: setup server 4
+  hosts: server4
+  tasks:
+    - name: setup queue-master
+      docker_container:
+        name: "queue-master"
+        image: "weaveworksdemos/queue-master:0.3.1"
+        cap_drop: "all"
+        capabilities:
+          - "NET_BIND_SERVICE"
+        networks:
+          - name: "service_net"
+        tmpfs:
+          - /tmp:rw,noexec,nosuid,size=1g
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+        expose:
+          - 80
+        ports:
+          - "80:80"
+        read_only: true
+        restart: true
+        state: started
+
+    - name: setup rabbitmq
+      docker_container:
+        name: "rabbitmq"
+        image: "rabbitmq:3.6.8"
+        cap_drop: "all"
+        capabilities:
+          - "CHOWN"
+          - "SETGID"
+          - "DAC_OVERRIDE"
+          - "SETUID"
+        networks:
+          - name: "service_net"
+        expose:
+          - 4369
+          - 5671
+          - 5672
+          - 25672
+        ports:
+          - "4369:4369"
+          - "5671:5671"
+          - "5672:5672"
+          - "25672:25672"
+        etc_hosts: rabbitmq=127.0.0.1
+        read_only: true
+        restart: true
+        state: started
+
+- name: setup server 5
+  hosts: server5
+  tasks:
+    - name: setup user
+      docker_container:
+        name: "user"
+        image: "weaveworksdemos/user:0.4.4"
+        cap_drop: "all"
+        capabilities:
+          - "NET_BIND_SERVICE"
+        networks:
+          - name: "service_net"
+        expose:
+          - 80
+        ports:
+          - "80:80"
+        env: MONGO_HOST=10.128.102.7:27017
+        read_only: true
+        restart: true
+        state: started
+
+- name: setup server 8
+  hosts: server8
+  tasks:
+    - name: setup orders
+      docker_container:
+        name: "orders"
+        image: "weaveworksdemos/orders:0.4.7"
+        cap_drop: "all"
+        capabilities:
+          - "NET_BIND_SERVICE"
+        tmpfs:
+          - /tmp:rw,noexec,nosuid,size=1g
+        networks:
+          - name: "service_net"
+        etc_hosts: user=10.128.102.6, carts=10.128.102.11, shipping=10.128.102.12, payment=10.128.102.4
+        expose:
+          - 80
+        ports:
+          - "80:80"
+        env: JAVA_OPTS=-Xms64m, JAVA_OPTS=-Xmx128m, JAVA_OPTS=-XX:+UseG1GC, JAVA_OPTS=-Djava.security.egd=file:/dev/urandom, JAVA_OPTS=-Dspring.zipkin.enabled=false, spring.data.mongodb.host=10.128.102.7
+        read_only: true
+        restart: true
+        state: started
+
+- name: setup server 10
+  hosts: server10
+  tasks:
+    - name: setup carts
+      docker_container:
+        name: "carts"
+        image: "weaveworksdemos/carts:0.4.8"
+        cap_drop: "all"
+        capabilities:
+          - "NET_BIND_SERVICE"
+        tmpfs:
+          - /tmp:rw,noexec,nosuid,size=1g
+        networks:
+          - name: "service_net"
+        expose:
+          - 80
+        ports:
+          - "80:80"
+        env: JAVA_OPTS=-Xms64m, JAVA_OPTS=-Xmx128m, JAVA_OPTS=-XX:+UseG1GC, JAVA_OPTS=-Djava.security.egd=file:/dev/urandom, JAVA_OPTS=-Dspring.zipkin.enabled=false, spring.data.mongodb.host=10.128.102.7
+        read_only: true
+        restart: true
+        state: started
+
+- name: setup server 11
+  hosts: server11
+  tasks:
+    - name: setup shipping
+      docker_container:
+        name: "shipping"
+        image: "weaveworksdemos/shipping:0.4.8"
+        cap_drop: "all"
+        capabilities:
+          - "NET_BIND_SERVICE"
+        tmpfs:
+          - /tmp:rw,noexec,nosuid,size=1g
+        networks:
+          - name: "service_net"
+        expose:
+          - 80
+        ports:
+          - "80:80"
+        env: JAVA_OPTS=-Xms64m, JAVA_OPTS=-Xmx128m, JAVA_OPTS=-XX:+UseG1GC, JAVA_OPTS=-Djava.security.egd=file:/dev/urandom, JAVA_OPTS=-Dspring.zipkin.enabled=false
+        read_only: true
+        restart: true
+        state: started

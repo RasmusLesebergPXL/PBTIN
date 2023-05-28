@@ -1,0 +1,85 @@
+---
+- name: Installing MySQL 5.7
+  hosts: server7
+  become: true
+  become_user: root
+
+  tasks:
+    
+    - name: Add public key mysql from ubuntu server
+      apt_key:
+        keyserver: keyserver.ubuntu.com
+        id: 467B942D3A79BD29
+    
+    - name: add mysql 5.7 apt repository
+      apt_repository:
+        repo: 'deb http://repo.mysql.com/apt/ubuntu bionic mysql-5.7'
+        state: present
+        update_cache: yes
+
+    - name: update
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Install mysql server 5.7
+      apt:
+        name: mysql-server=5.7*
+        state: present
+
+    - name: Install python3 mysql dependency
+      apt:
+        name: python3-mysqldb
+        state: latest
+
+- name: Configure MySQL 5.7 and start and enable it
+  hosts: server7
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Ensure bindIP is set to 0.0.0.0
+      lineinfile:
+        path: /etc/mysql/mysql.conf.d/mysqld.cnf
+        search_string: '127.0.0.1'
+        line: "bind-address\t= 0.0.0.0"
+
+    - name: Open port 3306
+      ufw:
+        rule: allow 
+        port: 3306
+
+    - name: start mysql service
+      service:
+        name: mysql
+        state: started
+        use: service
+        enabled: yes
+
+- name: Filling the MySQL Database
+  hosts: server7
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Git checkout
+      ansible.builtin.git:
+        repo: 'https://github.com/microservices-demo/catalogue'
+        dest: ./git
+        clone: yes
+        update: yes
+        version: bf571e15c98bad25f0e7ca4ae270e1f3b26283c5
+
+    - name: Inserting the dump.sql
+      community.mysql.mysql_db:
+        name: socksdb 
+        state: import
+        target: ./git/docker/catalogue-db/data/dump.sql 
+        login_user: root 
+        login_password: "pxl"
+        force: true
+        
+
+    - name: restart mysql service
+      service:
+        name: mysql
+        state: restarted
+        use: service

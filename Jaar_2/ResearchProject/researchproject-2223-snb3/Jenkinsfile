@@ -1,0 +1,77 @@
+pipeline {
+    agent any
+    triggers {
+        // cron 'H */2 * * *'
+        githubPush()
+    }
+    environment {
+        JENKINS_SERVER_IP = "10.128.102.10"
+    }
+    stages {
+        //cleanup on server 6 from previous run
+        stage('remove dir on server 6') {
+            steps {
+                cleanWs()
+                sshagent(['jenkins-key']) {
+                    sh 'ssh student@10.128.102.7 rm -rf /home/student/userdb_loadtests' 
+                    sh 'ssh student@10.128.102.7 rm -rf /home/student/userdb_loadtests.zip'
+                }
+            }
+        }  
+        // //status test server
+        // stage('status test Server') {
+        //     steps{
+        //         cleanWs()
+        //         sh 'curl --head http://10.128.102.2:30001'
+        //     }      
+        // }     
+        //most recent repo checkout
+        stage('checkout repo') {
+            steps {
+                git branch: 'main', url: 'git@github.com:ResearchProject-SNB-PXLDigital/researchproject-2223-snb3.git', credentialsId: "Research"
+            }
+        }
+        stage('install dependencies'){
+            steps {
+                sh 'pip3 install locust'
+                sh 'pip3 install bzt'
+            }
+        }
+        //zip necessary files for server 6
+        stage('zip for mongo server') {
+            steps {
+                sh 'mkdir userdb_loadtests'
+                sh 'cp ./loadtesting/generateusers/generate_users.js userdb_loadtests'
+                sh 'cp ./loadtesting/generateusers/delete_users.js userdb_loadtests'
+                sh 'cp ./loadtesting/shell/userdb_loadtest.sh userdb_loadtests'
+                sh 'zip -r userdb_loadtests.zip userdb_loadtests/'
+            }
+        }
+        //load testing
+        stage('load testing') {
+            parallel {
+                stage('locust loadtest') {
+                    steps {
+                        sh 'bzt ./Taurus/taurus_config.yml -o modules.blazemeter.report-name="Jenkins Build ${BUILD_NUMBER}"'
+                        // sh 'locust --headless --users 1500 --spawn-rate 30 --run-time 10m --only-summary -f ./loadtesting/run_single_user.py --html run.html'
+                    }
+                }
+                stage('loadtest MongoDB ') {
+                    steps {
+                        sshagent(['jenkins-key']) {
+                          sh 'scp ./userdb_loadtests.zip student@10.128.102.7:/home/student/'
+                          sh 'ssh student@10.128.102.7 unzip /home/student/userdb_loadtests.zip'
+                        //   sh 'ssh student@10.128.102.7 sh /home/student/userdb_loadtests/userdb_loadtest.sh'
+                        }
+                    }
+                }
+            }
+        }
+        //clean workspace
+        stage('clean up') {
+            steps {
+                cleanWs()
+            }
+        }  
+    }  
+}

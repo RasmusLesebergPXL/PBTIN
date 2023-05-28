@@ -1,0 +1,5 @@
+---
+- import_playbook: ./initial_setup.yml
+- import_playbook: ./controller_playbook.yml
+- import_playbook: ./restart_containerd.yml
+- import_playbook: ./node_playbook.yml

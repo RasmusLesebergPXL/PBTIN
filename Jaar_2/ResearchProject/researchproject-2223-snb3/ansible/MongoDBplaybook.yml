@@ -1,0 +1,67 @@
+---
+- name: install MongoDB 3.4 
+  hosts: server6
+  become: true
+  become_user: root 
+  
+  tasks:
+    - name: Install gnpug
+      apt: name=gnupg state=latest update_cache=yes
+
+    - name: Add mongo ppa key
+      shell: wget -qO - https://www.mongodb.org/static/pgp/server-3.4.asc | sudo apt-key add -
+
+    - name: Add mongo sources list
+      lineinfile: >
+        line="deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse"
+        dest=/etc/apt/sources.list.d/mongodb-org-3.4.list
+        state=present
+        create=yes
+    
+    - name: Update
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Upgrade 
+      apt: upgrade=dist force_apt_get=yes
+    
+    - name: Install mongo
+      apt: name=mongodb-org state=latest update_cache=yes
+
+  
+- name: configure MongoDB 3.4 and start and enable it 
+  hosts: server6
+  become: true
+  become_user: root 
+
+  tasks:
+    - name: Ensure bindIP is set to 0.0.0.0
+      lineinfile:
+        path: /etc/mongod.conf
+        regexp: '^  bindIp: 127.0.0.1$'
+        line: '  bindIp: 0.0.0.0'
+
+    - name: start mongo service
+      service:
+        name: mongod
+        state: started
+        use: service
+        enabled: yes
+
+
+
+- name: load scripts of github  
+  hosts: server6
+  become: true
+  become_user: root 
+
+  tasks:
+    - name: Git checkout WeaveWorks filler script
+      ansible.builtin.git:
+        repo: 'https://github.com/microservices-demo/user'
+        dest: scripts
+        clone: yes
+        update: yes 
+    
+    
+    - name: run scripts 
+      shell: scripts/docker/user-db/scripts/mongo_create_insert.sh >> file.txt

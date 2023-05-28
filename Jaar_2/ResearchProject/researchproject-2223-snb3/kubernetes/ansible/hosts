@@ -1,0 +1,30 @@
+[kubernetes_controller]
+server9 ansible_host=10.128.102.10
+
+[kubernetes_nodes]
+server1 ansible_host=10.128.102.2
+server2 ansible_host=10.128.102.3
+server3 ansible_host=10.128.102.4
+server4 ansible_host=10.128.102.5
+server5 ansible_host=10.128.102.6
+server6 ansible_host=10.128.102.7
+server7 ansible_host=10.128.102.8
+server8 ansible_host=10.128.102.9
+server10 ansible_host=10.128.102.11
+server11 ansible_host=10.128.102.12
+
+[all:children]
+kubernetes_controller
+kubernetes_nodes
+
+[all:vars]
+ansible_user=student
+ansible_sudo_pass="pxl"
+
+
+[kubernetes_nodes:vars]
+ansible_connection=ssh
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[kubernetes_controller:vars]
+ansible_connection=local

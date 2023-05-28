@@ -1,0 +1,26 @@
+---
+- name: Install Datadog Agent
+  hosts: allservers
+  become: true
+  become_user: root
+  roles:
+    - { role: datadog.datadog, become: yes}
+
+  vars:
+    datadog_api_key: 50c16a5d11850561b01c381f66476a1a
+    datadog_site: "us5.datadoghq.com"
+    datadog_config:
+      process_config:
+      enabled: "true"
+    datadog_checks:
+      process:
+        init_config:
+        instances:
+          - name: ssh
+            search_string: ['ssh', 'sshd']
+          - name: syslog
+            search_string: ['rsyslog']
+            cpu_check_interval: 0.2
+            exact_match: true
+            ignore_denied_access: true
+    

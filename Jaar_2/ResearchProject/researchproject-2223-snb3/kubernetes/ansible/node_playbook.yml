@@ -1,0 +1,75 @@
+---
+- hosts: kubernetes_nodes
+  become: true
+  vars_files:
+    - ./vars/node_ips.yml
+  tasks:
+    # - name: Disable ufw
+    #   service:
+    #     name: ufw
+    #     state: stopped
+    #     enabled: false
+    
+    - name: Configure node ip
+      lineinfile:
+        path: /etc/default/kubelet
+        line: KUBELET_EXTRA_ARGS=--node-ip={{ vars['node_ip_' + inventory_hostname] }}
+        create: yes
+
+    - name: Restart kubelet
+      service:
+        name: kubelet
+        daemon_reload: yes
+        state: restarted
+    
+    # - name: Allow others to read kubelet.conf
+    #   file:
+    #     path: /etc/kubernetes/kubelet.conf
+    #     mode: "0644"
+    
+    # - name: Setup kubeconfig for student user
+    #   command: "{{ item }}"
+    #   with_items:
+    #   - mkdir -p /home/student/.kube
+    #   - cp -f /etc/kubernetes/kubelet.conf /home/student/.kube/config
+    #   - chown student:student /home/student/.kube/config
+
+    # - name: Install Weave CNI
+    #   become: false
+    #   command: kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+
+    # - name: Reset kubeadm
+    #   command: kubeadm reset
+
+    - name: Enable Docker service
+      service:
+        name: docker
+        enabled: yes
+        state: started
+
+    - name: Enable kubelet service
+      service:
+        name: kubelet
+        enabled: yes
+        state: started
+
+    - name: Reload systemctl daemon
+      command: systemctl daemon-reload
+
+    - name: Restart Docker service
+      service:
+        name: docker
+        state: restarted   
+
+    - name: Copy the join command to server location
+      copy: src=join-command dest=/tmp/join-command.sh mode=0777 
+    
+    - name: Join the node to cluster
+      command: sh /tmp/join-command.sh       
+
+    # - name: Comment out disabled_plugins in containerd config.toml
+    # replace:
+    #   path: /etc/containerd/config.toml
+    #   regexp: '^disabled_plugins'
+    #   replace: '#disabled_plugins'
+    

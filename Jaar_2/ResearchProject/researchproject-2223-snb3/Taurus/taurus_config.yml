@@ -1,0 +1,24 @@
+---
+reporting:
+- module: blazemeter
+
+modules:
+  blazemeter:
+    token: bc1965a302e50d28c4927df1:999bdd4163716c0695bf6409232acfc29ac88626ef3ce69d29e21673e680b9ae04012833
+    upload-artifacts: true 
+    public-report: true
+    browser-open: none
+    send-interval: 5s
+    
+execution:
+- executor: locust
+  concurrency: 5000
+  hold-for: 15m
+  ramp-up: 30m
+  scenario: locust
+
+scenarios:
+  locust:
+    script: "../loadtesting/run_single_user.py"
+    interpreter: python3
+

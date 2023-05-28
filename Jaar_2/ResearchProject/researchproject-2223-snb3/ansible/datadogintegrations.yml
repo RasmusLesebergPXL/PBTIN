@@ -1,0 +1,24 @@
+---
+- name: Configuring Datadog Intergration
+  hosts: dockerhosts
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Add user to docker group
+      user:
+        name: dd-agent
+        append: yes
+        groups:
+          - docker
+    
+    - name: Configure the datadog conf docker file
+      copy:
+        src: /researchproject-2223-snb3/datadog_configfiles/conf.yaml.default 
+        dest: /etc/datadog-agent/conf.d/docker.d/conf.yaml.default
+
+    - name: Restart Datadog Agent
+      service: 
+        name: datadog-agent
+        state: started
+        enabled: yes
