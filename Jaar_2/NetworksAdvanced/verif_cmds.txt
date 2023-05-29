@@ -1,10 +1,22 @@
-Verification Commands
-show dtp interface
-show history
-show ip route
-show ip interface
-show ip interface brief
-show running-config interface <interface-id>
-show interfaces trunk
-show interfaces
-show ?
+Troubleshooting Commands
+==============================
+
+	show dtp interface
+	show history
+	show ip route
+	show ip interface
+	show ip interface brief
+	show ipv6 int brief
+	show running-config interface <interface-id>
+	show interfaces trunk
+	show interfaces
+	show ?
+
+
+Filtering Examples
+==============================
+
+	show ip interface brief | exclude unassigned
+	show ip route | begin Gate
+	show interface | include Desc|conn
+	show run | include ipv6|interface

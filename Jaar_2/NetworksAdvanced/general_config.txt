@@ -1,0 +1,70 @@
+GENERAL CONFIGURATION
+
+
+General Config
+=================================
+
+	hostname <hostname>
+	no ip domain-lookup 
+	enable secret <password>
+	line console 0
+	password <password>
+	login
+	line vty 0 15
+	password <password>
+	login
+	exit
+	service password-encryption
+	banner motd #Authorized Access Only!#
+	copy running-config startup-config		
+
+
+Time Settings
+=================================
+
+	show clock 
+	conf t
+	clock timezone GMT + 1
+	set clock 10:50:00 Oct 6 2006
+
+
+SSH Configuration
+================================
+
+	show ip ssh
+	conf t
+	ip domain-name <name>
+	crypto key generate rsa
+	1024
+	username <name> secret <password>
+	line vty 0 15
+	transport input ssh
+	login local
+
+
+IPv4/IPv6 Configuration Router
+================================
+
+	int g0/0 (for example)
+	ip address 172.16.20.1 255.255.255.128
+	no shutdown
+	(description <description>)
+
+	int g0/1
+	ipv6 address <address>/mask
+	*no ipv6 address <address>/mask 
+	no shutdown
+
+*Note: When changing an IPv6 address it is necessary to remove the incorrect address since an interface is capable of supporting multiple IPv6 networks.
+
+
+IPv4 Configuration Switch
+================================
+
+	int vlan 1
+	ip address <address> <mask>
+	exit
+	ip default-gateway 10.10.10.10 (for example)
+
+
+
