@@ -1,4 +1,0 @@
-src_path: /home/student/Documents/PBTIN/Jaar_2/Automation/voorbereiding_PE/PE2/oef1/login.py
-dest_path: /tmp/testdir/login.py
-service_file_path: /etc/systemd/system/login.service
-port: 80

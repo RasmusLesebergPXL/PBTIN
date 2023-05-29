@@ -1,9 +1,0 @@
-username: johndoe
-home_dir: /home/johndoe
-test_dir: /tmp/server1
-executable: /usr/bin/python3
-dest_path: /tmp/server1/service8000.py
-service_file_path: /etc/systemd/system/service8000.service
-service_name: service8000.service
-src_path: /home/student/Documents/PBTIN/Jaar_2/Automation/voorbereiding_PE/PE2/oef2/services/service8000.py
-port: 8000

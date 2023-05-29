@@ -1,9 +1,0 @@
-username: alicedoe
-home_dir: /home/alicedoe
-test_dir: /tmp/server3
-dest_path: /tmp/server3/php9000.php
-executable: /usr/bin/python3
-service_file_path: /etc/systemd/system/php9000.service
-service_name: php9000.service
-src_path: /home/student/Documents/PBTIN/Jaar_2/Automation/voorbereiding_PE/PE2/oef2/services/php9000.php
-port: 9000

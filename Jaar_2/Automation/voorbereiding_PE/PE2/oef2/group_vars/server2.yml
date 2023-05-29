@@ -1,9 +1,0 @@
-username: janedoe
-home_dir: /home/janedoe
-test_dir: /tmp/server2
-executable: node
-dest_path: /tmp/server2/service8080.js
-service_file_path: /etc/systemd/system/service8080.service
-service_name: server8080.service
-src_path: /home/student/Documents/PBTIN/Jaar_2/Automation/voorbereiding_PE/PE2/oef2/services/service8080.js
-port: 8080

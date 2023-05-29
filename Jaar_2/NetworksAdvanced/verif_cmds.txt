@@ -1,0 +1,10 @@
+Verification Commands
+show dtp interface
+show history
+show ip route
+show ip interface
+show ip interface brief
+show running-config interface <interface-id>
+show interfaces trunk
+show interfaces
+show ?
