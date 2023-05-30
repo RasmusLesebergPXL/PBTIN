@@ -1,0 +1,46 @@
+Reverse Shells {HTTP Proxy}
+
+Wat is een Reverse Shell?
+
+    Een reverse shell is een techniek waarmee een aanvaller externe controle kan krijgen over een compromised systeem. In plaats van een vaakvorkomende methode waarbij de aanvaller verbinding maakt met een 				
+    luisterende poort op een systeem, initieert een reverse shell de verbinding vanaf het compromised systeem.Om een reverse shell tot stand te brengen, moet het gecompromitteerde systeem contact kunnen maken met de aanvaller. Dit kan gebeuren via verschillende protocollen, zoals TCP/IP, HTTP of DNS, afhankelijk van de gebruikte tool of methode. De aanvaller moet een luisterende component hebben die wacht op de verbinding van het gecompromitteerde systeem.
+    
+Remote Shell Execution
+    Door bepaalde kwetsbaarheden kan een aanvaller opdrachten op afstand uitvoeren, waardoor ongeautoriseerde toegang en controle worden verkregen. De reverse shell-		
+    techniek speelt hierbij een belangrijke rol. In het geval van de THM Room VulnNet Active was deze techniek een upload naar een SMB share, waar een Powershell script werd getriggered door een bash script wat 
+    elke 30 seconden werd uitgevoerd.
+
+SMB & Poort 4444
+    Het SMB protocol wordt vaak misbruikt bij reverse shell-aanvallen. Poort 4444 is een poortnummer dat vaak wordt geassocieerd met reverse shell-aanvallen en is vaak het doelwit van potentiële 		
+beveiligingslekken. Het is belangrijk op te merken dat het poortnummer zelf geen inherente kwetsbaarheid heeft, maar eerder de aandacht trekt vanwege het frequente gebruik bij exploits en kwaadaardige activiteiten. Het is wel de default port bij Metasploit experts
+
+HTTP mirror
+    Om de Reverse Shell mogelijkheden te vergroten, is het mogelijk om gebruik te maken van een HTTP-mirrors. Dit is iegnelijk een simpele HTTP server die lokaal opgestraart wordt, waarmee de remote host kan 
+    communiceren. Deze mirror host bijvoorbeeld kwaadaardige bestanden die op afstand kunnen worden gedownload en uitgevoerd op het compromised systeem, waardoor de aanvaller privilege escalation kan doen of 
+    gevoelige informatie kan verzamelen.
+
+Scripts
+    Een reverse shell-script heeft verschillende functionaliteiten, afhankelijk van het specifieke doel en de vereisten van de aanvaller. Enkele veelvoorkomende functionaliteiten van reverse shell-scripts zijn: Verbinding tot stand brengen, Opdrachten p afstand uitvoeren, bestandsbeheer, scherm en toetsenbord interactie, en persistence bij toegang (privilege escalattion)
+
+LLMNR-poisoning:
+
+Wat is LLMNR?
+    Link-Local Multicast Name Resolution (LLMNR) is een protocol dat wordt gebruikt in moderne Windows-besturingssystemen voor naamresolutie in een lokaal netwerk wanneer de DNS geen hostnaam kan oplossen. 
+    LLMNR stelt apparaten in staat DNS-query's uit te zenden naar andere apparaten in hetzelfde subnet om hulp bij naamresolutie te zoeken.
+
+DNS-Failure
+    LLMNR wordt relevant wanneer een DNS-query mislukt om een hostnaam op te lossen. In soortgelijke gevallen helpt LLMNR apparaten in het netwerk het IP-adres te vinden dat is gekoppeld aan de gevraagde hostnaam door een broadcast te verzenden.
+
+MITM (Man-in-the-Middle)
+    LLMNR-poisoning maakt gebruik van het broadcastsysteem van LLMNR. Aanvallers kunnen een Man-in-the-Middle aanval uitvoeren door de LLMNR-broadcastberichten op te vangen en hashes op te pikken.
+
+NTLMv2
+    NTLMv2 (NT LAN Manager versie 2) is een authenticatieprotocol dat wordt gebruikt in Windows-systemen. LLMNR-poisoning kan NTLMv2-hashes exploiteren door ze te capturen en offline te kraken, waardoor 
+    mogelijk toegang wordt verkregen tot user profiles.
+
+Responder-tool
+    De Responder-tool is een veelgebruikt tool dat wordt gebruikt om LLMNR-poisoning attacks te automatiseren. Het luistert naar LLMNR-broadcasts en reageert met spoofed DNS-antwoorden, 
+    waardoor verkeer naar de machine van de aanvaller wordt omgeleid. De remote machine probeert name-resolution te doen, de DNS server geeft een respons van 'Not found', de remote machine van het slachtoffer stuurt een broacast request uit en vraagt naar de locatie van de request, waarna de MITM machine een accept respons teruggeeeft en de hash/username accepteert. Op die manier kan responder een DNS respons spoofen, en een hash opvangen. 
+
+Preventie
+    Om te beschermen tegen LLMNR-vergiftigingsaanvallen, is het cruciaal om LLMNR uit te schakelen op systemen waar het niet nodig is. Daarnaast moeten organisaties beveiligde DNS-protocollen, zoals bijvoorbeeld DNSSEC, implementeren en het gebruik van encrypted communicatiekanalen zoals VPN's bevorderen om de risico's te beperken.
