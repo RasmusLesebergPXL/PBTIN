@@ -47,6 +47,22 @@ Configure DTP
 	show dtp
 
 
+Configure Port Channel
+============================
+
+	int range f0/23-24
+	shutdown
+	channel-group 3 mode ? (passive/active/desirable/auto)
+	no sh
+	int port-channel 3
+	switchport mode trunk
+	
+"Port Channel 2 is not operative because Spanning Tree Protocol placed some ports into blocking mode. Unfortunately, those ports were the Gigabit ports. In this topology, you can restore these ports by configuring S1 to be primary root for VLAN 1. You could also set the priority to 24576."
+
+	spanning-tree vlan 1 root primary
+	
+
+
 Configure IP(v6) Routing + SVI
 =============================
 	

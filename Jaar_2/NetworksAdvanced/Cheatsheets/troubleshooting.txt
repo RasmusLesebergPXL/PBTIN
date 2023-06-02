@@ -12,7 +12,7 @@ Troubleshooting Commands
 	show interfaces trunk
 	show interfaces
 	show ?
-	show spanning-tree
+	show spanning-tree vlan 1
 	show interfaces port-channel
 	show etherchannel summary
 	show etherchannel port-channel

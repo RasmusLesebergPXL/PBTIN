@@ -19,3 +19,27 @@ Configure routed port on Multi-Layer-Switch
 	
 
 
+Configure DHCP (R2)
+================================
+
+	ip dhcp excluded-address 192.168.10.1 192.168.10.10
+	
+	int g0/1
+	ip address dhcp
+
+
+Create DHCP Pool (R2)
+===============================
+
+	ip dhcp pool R1-LAN
+	network 192.168.10.0 255.255.255.0
+	default-router 192.168.10.1
+	dns-server 192.168.20.254
+
+Configure DHCP Relay (R1/R3)
+===============================
+
+	int g0/0
+	ip helper-address 10.1.1.2
+
+
