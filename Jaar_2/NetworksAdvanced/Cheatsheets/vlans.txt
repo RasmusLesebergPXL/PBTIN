@@ -1,0 +1,68 @@
+Configure Simple VLAN
+=============================
+
+	conf t
+	vlan 10
+	name Faculty/Staff
+	
+	
+Configure SVI
+============================
+
+	int vlan 99
+	ip address 192.168.99.252 255.255.255.0
+	no shutdown
+	
+
+Assign Ports
+=============================
+
+	int fa0/11
+	switchport mode access
+	switchport access vlan 10
+	
+	
+Configure Trunking
+=============================
+
+	int range g0/1-2
+	switchport mode trunk
+	switchport trunk allowed vlan 3,4,7 (alle vlans)
+	switchport trunk native vlan 99
+	
+
+Configure DTP
+=============================
+
+"In this step, you will change the trunking mode to dynamic desirable for the link between switches S1 and S2. The link between switches S1 and S3 will be set as a static trunk"
+
+	S1 -> S2: 
+	int g0/1
+	switchport mode dynamic desirable
+	
+	S1 -> S3:
+	int g0/2
+	switchport mode trunk
+	switchport nonegotiate
+	show dtp
+
+
+Configure IP(v6) Routing + SVI
+=============================
+	
+	ip routing
+	*ipv6 unicast-routing
+	int vlan 10
+	ipv6 address 2001:db8:acad:10::1/64
+
+	
+	
+	
+VoIP config
+=============================
+
+"The S3 F0/11 interface must be configured to support user traffic to PC4 using VLAN 10 and voice traffic to the IP phone using VLAN 150. The interface must also enable QoS and trust the Class of Service (CoS) values assigned by the IP phone. IP voice traffic requires a minimum amount of throughput to support acceptable voice communication quality. This command helps the switchport to provide this minimum amount of throughput."
+
+	int fa0/11
+	mls qos trust cos
+	switchport voice vlan 150

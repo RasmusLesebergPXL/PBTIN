@@ -4,6 +4,7 @@ Troubleshooting Commands
 	show dtp interface
 	show history
 	show ip route
+	show ipv6 route
 	show ip interface
 	show ip interface brief
 	show ipv6 int brief
@@ -25,3 +26,20 @@ Filtering Examples
 	show ip route | begin Gate
 	show interface | include Desc|conn
 	show run | include ipv6|interface
+	
+
+Native VLAN Mmismatch
+==============================
+
+	Fix: Set the correct Native VLAn on range with:
+	int range g.../..-...
+	switchport mode trunk
+	switchport trunk native vlan ...
+	
+
+Sub-interface wrong VLAN
+===============================
+
+	int g0/1.***
+	no encapsulation dot1Q <wrong number>
+	encapsulation dot1Q <right number>

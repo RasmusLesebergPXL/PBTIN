@@ -1,0 +1,21 @@
+Configure Subinterfaces
+=================================
+
+	int g0/0.10  (for vlan 10)
+	encapsulation dot1Q 10 (*native)
+	ip address 172.17.0.1 255.255.255.0
+	
+	*add native after VLAN number if necessary
+	*Enable physical interface that sub-ifs are assosciated with
+	*Enable trunking for switch port connecting to router
+	
+
+Configure routed port on Multi-Layer-Switch
+=================================
+
+	int g0/2
+	no switchport
+	ip address 209.165.200.225 255.255.255.252
+	
+
+
