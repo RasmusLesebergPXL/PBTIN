@@ -41,5 +41,12 @@ Configure DHCP Relay (R1/R3)
 
 	int g0/0
 	ip helper-address 10.1.1.2
+	
 
+
+Configure Port Security
+===============================
+
+	
+	
 

@@ -71,7 +71,18 @@ Configure IP(v6) Routing + SVI
 	int vlan 10
 	ipv6 address 2001:db8:acad:10::1/64
 
+
+
+Configure Port Security
+===============================
+
+	int range f0/1-2
+	switchport port-security
+	switchport port-security maximum 1
+	switchport port-security mac-address sticky
+	switchport port-security violation restrict
 	
+	*Disable unused ports
 	
 	
 VoIP config
