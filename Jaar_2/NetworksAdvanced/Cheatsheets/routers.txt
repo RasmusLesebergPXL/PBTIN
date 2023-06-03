@@ -23,7 +23,6 @@ Configure DHCP (R2)
 ================================
 
 	ip dhcp excluded-address 192.168.10.1 192.168.10.10
-	
 	int g0/1
 	ip address dhcp
 
@@ -42,6 +41,44 @@ Configure DHCP Relay (R1/R3)
 	int g0/0
 	ip helper-address 10.1.1.2
 
+
+
+Static Routing
+===============================
+DC = directly connected
+NH = next hop
+FS = fully specified
+	
+	(NH static route)
+	*ip route <dest_ip> <dest_mask> <int_ip>
+	ip route 192.168.10.0 255.255.255.240 10.10.10.2
+	ipv6 unicast-routing
+	ipv6 route 2001:db8:acad:1::/64 2001:db8:acad:2::2
+	
+	(DC static route)
+	*ip route <dest_ip> <dest_mask> <int>
+	ip route 172.16.1.0 255.255.255.0 s0/1/0
+	ipv6 route 2001:db8:acad:1::/64 s0/1/0
+	
+	(FS static route)
+	*ip route <dest_ip> <dest_mask> <int> <int_ip>
+	ip route 172.16.1.0 255.255.255.0 g0/0/1 172.16.2.2
+	ipv6 route 2001:db8:acad:1::/64 s0/1/0 fe80::2 (link-local)
+	
+	(DC default static route)
+	*ip route 0.0.0.0 0.0.0.0 <int_ip> 
+	ip route 0.0.0.0 0.0.0.0 172.16.2.2
+	ipv6 route ::/0 2001:db8:acad:2::2
+	
+	(DC default floating static)
+	*ip route 0.0.0.0 0.0.0.0 <int_ip> <distance>
+	ip route 0.0.0.0 0.0.0.0 10.10.10.2 5
+	ipv6 route ::/0 2001:db8:feed:10::2 5
+
+	(DC static host route)
+	*ip route <dest> 255.255.255.255 <int_ip>
+	ip route 209.165.200.238 255.255.255.255 198.51.100.2
+	ipv6 route 2001:db8:acad:2::238/128 2001:db8:acad:1::2
 
 
 

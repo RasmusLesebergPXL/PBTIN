@@ -13,6 +13,8 @@ General Config
 	line vty 0 15
 	password <password>
 	login
+	logging synchronous
+	exec-timeout 6 0
 	exit
 	service password-encryption
 	banner motd #Authorized Access Only!#
