@@ -11,11 +11,14 @@ Troubleshooting Commands
 	show running-config interface <interface-id>
 	show interfaces trunk
 	show interfaces
-	show ?
 	show spanning-tree vlan 1
 	show interfaces port-channel
 	show etherchannel summary
 	show etherchannel port-channel
+	show port-security interface f0/6
+	show ip dhcp snooping
+	show ip dhcp snooping binding
+	show spanning-tree interface f0/6 detail
 	
 
 
@@ -26,6 +29,7 @@ Filtering Examples
 	show ip route | begin Gate
 	show interface | include Desc|conn
 	show run | include ipv6|interface
+	show run | begin interface
 	
 
 Native VLAN Mmismatch
@@ -43,3 +47,14 @@ Sub-interface wrong VLAN
 	int g0/1.***
 	no encapsulation dot1Q <wrong number>
 	encapsulation dot1Q <right number>
+	
+	
+Error: Interface is a dynamic port (port security)
+===============================
+
+	int ...
+	no channel-group
+	switchport mode access
+	switchport port-security
+
+

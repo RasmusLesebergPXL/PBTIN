@@ -27,7 +27,7 @@ Configure Trunking
 
 	int range g0/1-2
 	switchport mode trunk
-	switchport trunk allowed vlan 3,4,7 (alle vlans)
+	switchport trunk allowed vlan 3,4,7 (/all)
 	switchport trunk native vlan 99
 	
 
@@ -81,10 +81,48 @@ Configure Port Security
 	switchport port-security maximum 1
 	switchport port-security mac-address sticky
 	switchport port-security violation restrict
+	switchport port-security aging time 60
+	switchport port-security agint type inactivity
 	
 	*Disable unused ports
 	
 	
+DHCP Snooping
+===============================
+
+	int range ...
+	ip dhcp snooping trust*
+	ip dhcp snooping limit rate <rate>**
+	
+	ip dhcp snooping
+	ip dhcp snooping vlan <vlan_id>*** (ex: 10,20,99)
+	
+	*for trusted ports
+	**set limit rate for untrusted ports
+	*** enable globally and for certain vlans
+	
+
+
+Configure PortFast, BPDU Guard
+===============================
+
+	int range ...
+	spanning-tree portfast
+	*spanning-tree portfast default (use PF by default)
+	
+	int range ...
+	spanning-tree bpduguard enable
+	
+
+
+Speed/Fuplex config
+==============================
+
+	interface ...
+	speed 100	/auto
+	duplex full	/auto
+
+
 VoIP config
 =============================
 
