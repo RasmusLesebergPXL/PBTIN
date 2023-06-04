@@ -17,6 +17,7 @@ General Config
 	exec-timeout 6 0
 	exit
 	service password-encryption
+	clock rate 64000 (/bandwidth 64)
 	banner motd #Authorized Access Only!#
 	copy running-config startup-config		
 

@@ -56,5 +56,17 @@ Error: Interface is a dynamic port (port security)
 	no channel-group
 	switchport mode access
 	switchport port-security
+	
+	
+OSPF problems
+==============================
+
+	Requirements mismatch?
+	- area id
+	- subnet
+	- hello and dead interval
+	- authentication
+	- stub area flag
+	- unique router id
 
 
