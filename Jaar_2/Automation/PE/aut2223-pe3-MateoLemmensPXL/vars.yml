@@ -1,0 +1,6 @@
+---
+doc_root: "/var/www/mypage"
+server_config_file: "/etc/nginx/conf.d/mypage.conf"
+web_port: 8080
+page_title: "pe 3"
+page_description: "test"

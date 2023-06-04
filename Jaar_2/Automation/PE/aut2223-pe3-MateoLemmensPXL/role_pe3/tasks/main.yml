@@ -1,0 +1,53 @@
+---
+# tasks file for role_pe3
+- name: install dependencies  
+  yum: 
+    name: 
+      - nginx
+      - firewalld
+    state: latest
+    
+- name: start nginx
+  service:
+    name: nginx
+    state: started
+    
+- name: Check if folder exists
+  command: ls "{{doc_root}}"
+  register: folder_exists
+  ignore_errors: true
+
+- name: create folder if it doesn't exists
+  file:
+    path: "{{doc_root}}"
+    state: directory
+    mode: '0755'
+  when: folder_exists.stdout == ""
+     
+- name: Check if index file exists
+  command: ls "{{doc_root}}"
+  register: index_file_exists
+  ignore_errors: true
+
+- name: create index file
+  template:
+    src: ./templates/landing-page.html.j2
+    dest: "{{doc_root}}/index.html"
+  when: index_file_exists.stdout.find('index.html') == -1 
+    
+- name: create server configuration 
+  template:
+    src: ./templates/nginx.conf.j2
+    dest: "{{server_config_file}}"
+  notify: 
+    - Restart nginx
+    
+- name: Set firewall rule for HTTP traffic
+  firewalld:
+    state: enabled
+    immediate: yes
+    permanent: yes
+    port: "{{ web_port }}/tcp"
+    zone: public
+  notify: 
+    - restart firewall 
