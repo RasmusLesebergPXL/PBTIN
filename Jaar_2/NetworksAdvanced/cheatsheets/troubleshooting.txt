@@ -2,8 +2,10 @@ Troubleshooting Commands
 ==============================
 
 	show dtp interface
+	show running-config | include ssh
 	show history
 	show ip route
+	show ip default-gateway
 	show ipv6 route
 	show ip interface
 	show ip interface brief
