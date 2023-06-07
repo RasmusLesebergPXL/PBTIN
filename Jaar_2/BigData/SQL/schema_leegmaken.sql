@@ -5,5 +5,8 @@ begin
 	for i in (select * from user_objects where object_type = 'SEQUENCE') loop
 		execute immediate ('drop sequence ' || i.object_name);
 	end loop;
+	for i in (select * from user_objects where object_type = 'VIEW') loop
+		execute immediate ('drop view ' || i.object_name);
+	end loop;
 end;
 /
