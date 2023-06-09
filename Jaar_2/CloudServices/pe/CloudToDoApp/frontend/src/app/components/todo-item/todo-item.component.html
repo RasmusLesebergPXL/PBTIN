@@ -1,0 +1,6 @@
+<section (mouseenter)="toggleHighlight()" (mouseleave)="toggleHighlight()">
+  <input type="checkbox" class="toggle" [checked]="todo.completed" (change)="toggleTodo()">
+  <span class="title">{{todo.title}}</span>
+  <label>{{todo.label}}</label>
+  <button class="destroy" (click)="deleteTodo()" *ngIf="highlight">Del</button>
+</section>

@@ -1,0 +1,3 @@
+<button [routerLink]="['/add']">add new item</button>
+<app-todo-item *ngFor="let todo of todos$ | async" [todo]="todo" (onDelete)="getTodos()"></app-todo-item>
+
