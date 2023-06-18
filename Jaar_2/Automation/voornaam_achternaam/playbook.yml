@@ -1,0 +1,7 @@
+- name: Test exam
+  hosts: all
+  become: true
+  roles:
+    - role: exam
+      vars:
+        password: "{{ user_password }}"

@@ -1,0 +1,5 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+18:25:03	3581/3581	---M-Z	200	added ('OK')	text/html	etag:%2204451bdcad4bcaf82bd6954828e16125-ssl-df%22	https://vlsm.sadatjubayer.com/	C:/My%20Web%20Sites/VLSM%20Calculator/vlsm.sadatjubayer.com/index.html	(from )
+18:25:03	1449/1449	---MCZ	404	error ('Not%20Found')	text/html	etag:1617795782-ssl-df	https://vlsm.sadatjubayer.com/robots.txt		(from )
+18:25:04	172097/172097	---MCZ	200	added ('OK')	text/css	etag:%22e2c262f91585f89fe3a045de1875bd53-ssl-df%22	https://vlsm.sadatjubayer.com/bootstrap.min.css	C:/My%20Web%20Sites/VLSM%20Calculator/vlsm.sadatjubayer.com/bootstrap.min.css	(from https://vlsm.sadatjubayer.com/)
+18:25:05	7859/7859	---MCZ	200	added ('OK')	application/javascript	etag:%229ab19a5b53d7e93b3426617999380bed-ssl-df%22	https://vlsm.sadatjubayer.com/main.js	C:/My%20Web%20Sites/VLSM%20Calculator/vlsm.sadatjubayer.com/main.js	(from https://vlsm.sadatjubayer.com/)

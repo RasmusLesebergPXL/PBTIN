@@ -1,0 +1,8 @@
+---
+users:
+  - ahmed
+  - musa
+service_user: musa
+web_port: 8080
+doc_root: /home/musa/www
+service_dir: /etc/systemd/system

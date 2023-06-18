@@ -1,0 +1,12 @@
+[Unit]
+Description=Python HTTP Server
+After=network.target
+
+[Service]
+User={{ service_user}}
+WorkingDirectory={{ doc_root }}
+ExecStart=/usr/bin/python3 -m http.server {{ web_port }}
+Restart=Always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from vlsm.sadatjubayer.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 May 2022 16:25:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <title>VLSM Calculator</title>
+</head>
+
+<body>
+  <div class="container text-center p-5">
+    <div class="display-4 m-2">VLSM Calculator</div>
+    <div class="form-group">
+      <form onsubmit="return false;">
+        <p class="alert alert-success ">
+          <label>How many subnets do you need to create?</label>
+          <input type="number" id="input_num_of_subnets" min="2" max="999" maxlength="3" placeholder="No. of Subnets"
+            class="form-control" />
+          <button class="btn btn-primary m-3" onClick="change_subnet_number();">
+            Change</button><span id="nets" style="display:none;">4</span>
+        </p>
+      </form>
+
+    </div>
+    <div class="form-group">
+      <form onsubmit="return false;">
+        <p></p>
+        <div class="alert alert-dark">
+          <form class="form-inline">
+            <div class="form-group mb-3">
+              <label class="">
+                Network IP (example:
+                192.168.1.0/24)</label>
+
+              <input class="form-control" type="text" id="input_network" value="192.168.1.0/24" />
+            </div>
+          </form>
+        </div>
+        <br />
+        <span id="not_valid_ip" style="background-color: yellow;"></span>
+
+        <p id="subnet_pargraph"></p>
+        <div id="haveTohide">
+          <div class="row mb-4">
+            <span class="col text-danger">Subnet Names:</span>
+            <span class="col text-danger">Number of hosts:</span><br />
+          </div>
+          <div class="row">
+            <div class="col">
+              <input class="form-control" type="text" id="name1" value="Host1" />
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" id="hosts1" placeholder="Hosts" tabindex="1" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col">
+              <input class="form-control" type="text" id="name2" value="Host2" />
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" id="hosts2" placeholder="Hosts" tabindex="2" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col">
+              <input class="form-control" type="text" id="name3" value="Host3" />
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" id="hosts3" placeholder="Hosts" tabindex="3" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col">
+              <input class="form-control" type="text" id="name4" value="Host4" />
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" id="hosts4" placeholder="Hosts" tabindex="4" />
+            </div>
+          </div>
+        </div>
+
+        <br />
+
+        <button class="btn btn-success" onClick="vlsm();">Submit</button>
+        <button class="btn btn-danger" onClick="clear_form();">Clear</button>
+      </form>
+    </div>
+
+    <p id="ans"></p>
+    
+     <p class="alert alert-info text-center mt-5">
+      <b>Variable Length Subnet Mask Calculator &rarr; </b>
+
+      Designed by- <a href="http://www.sadatjubayer.com/" target="_blank">SADAT JUBAYER</a>
+    </p>
+
+
+  <script src="main.js"></script>
+</body>
+
+
+<!-- Mirrored from vlsm.sadatjubayer.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 May 2022 16:25:04 GMT -->
+</html>

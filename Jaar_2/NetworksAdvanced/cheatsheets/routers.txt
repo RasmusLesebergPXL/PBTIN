@@ -42,6 +42,16 @@ Configure DHCP Relay (R1/R3)
 	ip helper-address 10.1.1.2
 
 
+Router RIP
+==============================
+
+	router rip
+	version 2
+	passive-interface <int>
+	network 10.0.0.0
+	default-information originate
+	no auto-summary
+
 
 Static Routing
 ===============================
