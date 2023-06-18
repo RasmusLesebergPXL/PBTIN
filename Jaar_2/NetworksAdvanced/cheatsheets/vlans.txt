@@ -47,7 +47,7 @@ Configure DTP
 	show dtp
 
 
-Configure Port Channel
+Configure Ether/Port Channel
 ============================
 
 	int range f0/23-24
