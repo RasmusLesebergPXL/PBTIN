@@ -1,56 +1,52 @@
 # tasks file for test_role
 ---
-    - name: check if doc_root directory exists
-      command: ls "{{ doc_root }}"
-      register: directory_exists
-      ignore_errors: true
-
-    - name: make directory if doc_root doesn't exist
-      file:
-        path: "{{ doc_root }}"
-        state: directory
-        mode: 0755
-      when: directory_exists is failed
-
-    - name: show message if directory does exist
-      debug:
-        msg: The directory already exists.
-      when: directory_exists is succeeded
-    
-    - name: check if index file exists
-      command: ls "{{ index_dest }}"
-      register: index_exists
-      ignore_errors: true
-
-    - name: create index file if it doesnt exist
-      copy:
-        src: "{{ index_src }}"
-        dest: "{{ index_dest }}"
-        owner: root
-        group: root
-        mode: 0644
-      when: index_exists is failed
-    
-    - name: show message if file exists
-      debug:
-        msg: The index file already exists.
-      when: index_exists is succeeded
-    
-    - name: install nginx
-      package: 
-        name: nginx
-        state: present
-
-    - name: use template to make new nginx conf
-      ansible.builtin.template:
-        src: "{{ nginx_src }}"
-        dest: "{{ nginx_dest }}"
-      notify: Restart Nginx
-      ignore_errors: true
-    
-    # - name: start nginx
-    #   service:
-    #     name: nginx
-    #     state: restarted
+  - name: install dependencies  
+    yum: 
+      name: 
+        - nginx
+        - firewalld
+      state: latest
       
-      
+  - name: start nginx
+    service:
+      name: nginx
+      state: started
+
+  - name: check if doc_root directory exists
+    command: ls "{{ doc_root }}"
+    register: directory_exists
+    ignore_errors: true
+
+  - name: make directory if doc_root doesn't exist
+    file:
+      path: "{{ doc_root }}"
+      state: directory
+      mode: 0755
+    when: directory_exists is failed
+  
+  - name: check if index file exists
+    command: ls "{{ index_dest }}"
+    register: index_exists
+    ignore_errors: true
+
+  - name: create index file if it doesnt exist
+    copy:
+      src: "{{ index_src }}"
+      dest: "{{ index_dest }}"
+    when: index_exists is failed
+
+  - name: use template to make new nginx conf
+    ansible.builtin.template:
+      src: "{{ nginx_src }}"
+      dest: "{{ nginx_dest }}"
+    notify: Restart Nginx
+  
+  - name: Set firewall rule for HTTP traffic
+    firewalld:
+      state: enabled
+      immediate: yes
+      permanent: yes
+      port: "{{ web_port }}/tcp"
+      zone: public
+    notify: 
+      - Restart Firewall 

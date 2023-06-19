@@ -1,8 +1,0 @@
----
-- name: oef 1 pe3 role
-  hosts: all 
-  become: yes
-  become_user: root
-
-  roles: 
-    - role_pe3

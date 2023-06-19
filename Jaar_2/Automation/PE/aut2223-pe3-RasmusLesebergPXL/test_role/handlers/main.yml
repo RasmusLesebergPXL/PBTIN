@@ -4,9 +4,8 @@
   service:
     name: nginx
     state: restarted
-  when: /etc/nginx/conf.d/mypage.conf is changed
-
-- name: Start Nginx
-  service: 
-    name: nginx 
-    state: started
+    
+- name: Restart Firewall
+  service:
+    name: firewalld
+    state: restarted
