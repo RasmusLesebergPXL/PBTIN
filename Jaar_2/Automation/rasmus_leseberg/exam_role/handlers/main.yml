@@ -1,5 +1,5 @@
 ---
-- name: Restart http server
+- name: Restart http-server
   service:
     name: http-server
     state: restarted

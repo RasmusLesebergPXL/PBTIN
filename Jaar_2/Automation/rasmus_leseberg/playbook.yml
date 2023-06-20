@@ -2,6 +2,6 @@
   hosts: all
   become: true
   roles:
-    - role: exam
+    - role: exam_role
       vars:
         password: "{{ user_password }}"

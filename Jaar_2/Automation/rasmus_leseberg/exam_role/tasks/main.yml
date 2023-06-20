@@ -1,38 +1,38 @@
 ---
-- name: Create users
-  ansible.builtin.user:
+- name: create all listed users
+  user:
     name: "{{ item }}"
     password: "{{ password | password_hash('sha512') }}"
     state: present
   loop: "{{ users }}"
 
-- name: Create the directory for the web page
-  ansible.builtin.file:
+- name: create web page directory
+  file:
     path: "{{ doc_root }}"
     state: directory
     mode: 0755
 
-- name: Check if the web page already exists
-  ansible.builtin.stat:
+- name: check if web page already exists
+  stat:
     path: "{{ doc_root }}/index.html"
   register: web_page
 
-- name: Copy the web page
-  ansible.builtin.copy:
+- name: copy webpage to destination if nonexistent
+  copy:
     src: index.html
     dest: "{{ doc_root }}"
     mode: 0644
   when: not web_page.stat.exists
 
-- name: Copy HTTP server service
-  ansible.builtin.template:
+- name: create http-server service with template
+  template:
     src: http-server.service.j2
     dest: "{{ service_dir }}/http-server.service"
     mode: 0644
-  notify: Restart http server
+  notify: Restart http-server
 
-- name: Allow incoming http traffic
-  ansible.builtin.firewalld:
+- name: allow incoming http traffic
+  firewalld:
     port: "{{ web_port }}/tcp"
     permanent: true
     immediate: true
