@@ -1,4 +1,4 @@
-- name: Test exam
+- name: Exam
   hosts: all
   become: true
   roles:
