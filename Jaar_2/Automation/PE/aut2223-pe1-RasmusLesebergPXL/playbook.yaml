@@ -1,95 +1,83 @@
----
-  - name: Install and run app.py
-    hosts: webservers
-    become: true
-    become_user: root
-    tasks:
-      - name: Install python
-        yum:
-          name: 
-          - python3
-          - pip
-          state: latest
-          update_cache: yes
+- hosts: all
+  become: true
 
-      - name: Install dependencies
-        pip:
-          name: 
-            - psutil
-            - pyramid
-            - waitress
-          executable: pip3
+  tasks:
+    - name: Install dependencies
+      yum:
+        name: 
+        - python3
+        - python3-pip
+        - iptables-services
+        state: present
 
-      - name: Create a directory 'pyramid'
-        file:
-          path: /opt/pyramid
-          state: directory
-          mode: '0755'
-        
-      - name: Copy app.py to ec2 host
-        copy:
-          src: "{{ script_path }}"
-          dest: /opt/pyramid/{{ script_name }}
-          mode: '0755'
+    - name: Install pip packages
+      pip:
+        name: 
+          - psutil
+          - pyramid
+          - waitress
+          - distro
+        state: present
 
-
-      - name: Create systemd service file
-        template:
-          src: app.service.j2
-          dest: "{{ service_file_path }}"
-        notify:
-          - Reload systemd
-
-      - name: Enable and start the service
-        service:
-          name: app.service
-          enabled: yes
-          state: started
+    - name: Create pyramid dir
+      file:
+        path: /opt/pyramid
+        state: directory
+        mode: 0755
       
-      - name: Install iptables package
-        yum:
-          name: iptables-services
-          state: present
-      
-      - name: Ensure iptables service is running
-        service:
-          name: iptables
-          state: started
-          enabled: yes
+    - name: Copy app.py to server
+      copy:
+        src: app.py
+        dest: /opt/pyramid/
+        mode: 0644
 
-      - name: Open Port 5000
-        iptables:
-          chain: INPUT
-          protocol: tcp
-          destination_port: 5000
-          jump: ACCEPT        
-          comment: 'Allow 5000'
+    - name: Ensure iptables service is running
+      service:
+        name: iptables
+        enabled: true
 
-      - name: Save current state of the firewall in system file
-        community.general.iptables_state:
-          state: saved
-          path: /etc/sysconfig/iptables
-        notify:
-          - restart iptables
+    - name: Open Port 5000
+      iptables:
+        chain: INPUT
+        protocol: tcp
+        destination_port: 5000
+        jump: ACCEPT    
+      notify: 
+        - Restart iptables
 
-      - name: Add the user app_user
-        user:
-          name: app_user
-      
-      - name: Recursively change ownership of a directory
-        file:
-          path: /opt/pyramid
-          state: directory
-          recurse: yes
-          owner: app_user
+    - name: Create systemd service file
+      template:
+        src: app.service.j2
+        dest: /etc/systemd/system/pyramid.service
+      notify:
+        - Reload systemd
 
-    handlers:
-      - name: Reload systemd
-        systemd:
-          daemon_reload: yes     
+    - name: Start pyramid service
+      service:
+        name: pyramid
+        enabled: true
+        state: started
 
-      - name: restart iptables
-        service:
-          name: iptables
-          state: restarted
+    - name: Create user app_user
+      user:
+        name: app_user
+        state: present
+    
+    - name: Change ownership of /opt/pyramid
+      file:
+        path: /opt/pyramid
+        owner: app_user
+        group: app_user
+        recurse: true
+
+
+  handlers:
+    - name: Reload systemd
+      systemd:
+        daemon_reload: yes     
+
+    - name: Restart iptables
+      service:
+        name: iptables
+        state: restarted
 

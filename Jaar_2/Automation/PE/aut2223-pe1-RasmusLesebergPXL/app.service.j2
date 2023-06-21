@@ -1,11 +1,10 @@
 [Unit]
 Description=app.py service
-After=multi-user.target
 
 [Service]
-User=ec2-user
-WorkingDirectory=/home/ec2-user
-ExecStart=/usr/bin/python3 /opt/pyramid/app.py
+User=vagrant
+WorkingDirectory=/opt/pyramid
+ExecStart=/usr/bin/python3 app.py
 Restart=always
 
 [Install]

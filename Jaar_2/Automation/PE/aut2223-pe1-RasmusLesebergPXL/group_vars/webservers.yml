@@ -1,3 +1,0 @@
-script_path: /home/student/Documents/PBTIN/Jaar_2/Automation/PE/aut2223-pe1-RasmusLesebergPXL/app.py
-script_name: app.py      
-service_file_path: /etc/systemd/system/app.service
