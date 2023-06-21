@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: PE 3
+  hosts: all
   become: true
   roles: 
     - test_role

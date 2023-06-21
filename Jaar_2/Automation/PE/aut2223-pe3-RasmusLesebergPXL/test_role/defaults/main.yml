@@ -1,2 +1,11 @@
 ---
 # defaults file for test_role
+site_name: mypage
+doc_root: /var/www/{{ site_name }}
+web_port: 8080
+page_title: PE 3
+page_description: My awesome page
+packages: 
+  - nginx
+  - firewalld
+  

@@ -1,10 +1,2 @@
 ---
 # vars file for test_role
-doc_root: /var/www/mypage
-index_src: ../templates/landing-page.html.j2
-index_dest: /var/www/mypage/index.html
-nginx_src: ../templates/nginx.conf.j2
-nginx_dest: /etc/nginx/conf.d/mypage.conf
-web_port: 8080
-page_title: "PE 3"
-page_description: "My awesome page"

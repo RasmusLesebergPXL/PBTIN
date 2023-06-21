@@ -1,52 +1,53 @@
 # tasks file for test_role
 ---
-  - name: install dependencies  
-    yum: 
-      name: 
-        - nginx
-        - firewalld
-      state: latest
+  - name: Install packages
+    ansible.builtin.package: 
+      name: "{{ item }}"
+      state: present
+    loop: "{{ packages }}"
       
-  - name: start nginx
-    service:
+  - name: Start and enable services
+    ansible.builtin.service:
       name: nginx
       state: started
+      enabled: true
 
-  - name: check if doc_root directory exists
-    command: ls "{{ doc_root }}"
+  - name: Check if doc_root exists
+    ansible.builtin.command: ls "{{ doc_root }}"
     register: directory_exists
     ignore_errors: true
 
-  - name: make directory if doc_root doesn't exist
-    file:
+  - name: Create doc_root dir if nonexistent
+    ansible.builtin.file:
       path: "{{ doc_root }}"
       state: directory
       mode: 0755
     when: directory_exists is failed
   
-  - name: check if index file exists
-    command: ls "{{ index_dest }}"
+  - name: Check if index file exists
+    ansible.builtin.command: ls {{ doc_root }}/index.html
     register: index_exists
     ignore_errors: true
 
-  - name: create index file if it doesnt exist
-    copy:
-      src: "{{ index_src }}"
-      dest: "{{ index_dest }}"
+  - name: Create the index.html file if nonexistent
+    ansible.builtin.template:
+      src: landing-page.html.j2
+      dest: "{{ doc_root }}/index.html"
+      mode: 0644
     when: index_exists is failed
 
-  - name: use template to make new nginx conf
+  - name: Create Nginx conf file from template
     ansible.builtin.template:
-      src: "{{ nginx_src }}"
-      dest: "{{ nginx_dest }}"
+      src: nginx.conf.j2
+      dest: /etc/nginx/conf.d/{{ site_name }}.conf
+      mode: 0644
     notify: Restart Nginx
   
-  - name: Set firewall rule for HTTP traffic
+  - name: Allow incoming HTTP traffic
     firewalld:
-      state: enabled
-      immediate: yes
-      permanent: yes
       port: "{{ web_port }}/tcp"
-      zone: public
+      state: enabled
+      immediate: true
+      permanent: true
     notify: 
-      - Restart Firewall 
+      - Restart firewalld 

@@ -5,7 +5,7 @@
     name: nginx
     state: restarted
     
-- name: Restart Firewall
+- name: Restart firewalld
   service:
     name: firewalld
     state: restarted
