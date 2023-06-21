@@ -1,1 +1,1 @@
-Het werkt!
+Bastion host configured

@@ -1,5 +1,0 @@
-user_name: my_user
-apache_index_src: /var/www/html/index.html
-
-#sensitive data
-user_password: "{{ vault_user_password }}"

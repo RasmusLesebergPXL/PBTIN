@@ -1,0 +1,66 @@
+---
+- name: PE 2
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install dependencies
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ dependencies }}"
+
+    - name: Start required services
+      ansible.builtin.service:
+        name: "{{ item }}"
+        state: started
+        enabled: true
+      loop: "{{ services }}"
+
+    - name: Allow incoming http/ssh traffic
+      ansible.builtin.firewalld:
+        port: "{{ item }}"
+        permanent: true
+        immediate: true
+        state: enabled
+      loop: "{{ ports }}"
+    
+    - name: Create my_user
+      ansible.builtin.user:
+        name: "{{ user }}"
+        state: present
+        password: "{{ user_password | password_hash('sha512') }}"
+
+    - name: Authorized keys
+      ansible.builtin.authorized_key:
+        user: "{{ user }}"
+        state: present
+        key: "{{ lookup('file', 'keys/ssh_key.pub')}}"
+
+    - name: Copy info.txt to server
+      ansible.builtin.copy:
+        src: files/info.txt
+        dest: "/home/{{ user }}/info.txt"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        mode: 0644
+
+    - name: Copy index.html to server
+      ansible.builtin.copy:
+        src: files/index.html
+        dest: "{{ apache_index_src }}"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        mode: 0755
+      notify: 
+        - Restart apache
+
+    - name: Display '$PATH' variable value
+      ansible.builtin.debug:
+        var: ansible_env.PATH
+
+  handlers:
+    - name: Restart apache
+      ansible.builtin.service:
+        name: httpd
+        state: restarted    

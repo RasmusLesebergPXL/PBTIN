@@ -1,0 +1,14 @@
+user: my_user
+user_password: "{{ vault_user_password }}"
+apache_index_src: /var/www/html/index.html
+ports: 
+  - 22/tcp
+  - 80/tcp
+dependencies:
+  - httpd 
+  - firewalld
+  - openssh-server
+services: 
+  - httpd 
+  - sshd
+  - firewalld

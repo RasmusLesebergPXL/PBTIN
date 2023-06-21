@@ -7,7 +7,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.box = "generic/rocky9"
-  GROUP = "/pxl-lab"
+  GROUP = "/pxl-pe2"
   MEMORY = 2048
 
   # set host sync folder /vagrant to current directory
@@ -26,19 +26,18 @@ Vagrant.configure("2") do |config|
 
   # configure vagrant-hosts so all the /etc/hosts files are updated
   # on all provisioned machines with the names and ips of all the provisioned hosts
-  config.vagrant.plugins = "vagrant-hosts"
-  if Vagrant.has_plugin?("vagrant-hosts")
-    config.vm.provision :hosts do |provisioner|
-      provisioner.add_localhost_hostnames = false
-      provisioner.sync_hosts = true
-      provisioner.autoconfigure = true
-    end
-  end
+  #config.vagrant.plugins = "vagrant-hosts"
+  #if Vagrant.has_plugin?("vagrant-hosts")
+  #  config.vm.provision :hosts do |provisioner|
+  #    provisioner.add_localhost_hostnames = false
+  #    provisioner.sync_hosts = true
+  #    provisioner.autoconfigure = true
+  #  end
+  #end
 
   config.vm.define "webserver1" do |server|
     server.vm.hostname = "webserver1.pxldemo.local"
     # port forward
-    server.vm.network "forwarded_port", guest: 8080, host: 8080    #evt dit in commentaar zetten als het niet werkt
     server.vm.network "private_network", ip: "192.168.56.100"
   end
 

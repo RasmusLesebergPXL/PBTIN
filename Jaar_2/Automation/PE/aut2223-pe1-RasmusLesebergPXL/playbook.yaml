@@ -1,4 +1,5 @@
-- hosts: all
+- name: PE 1
+  hosts: all
   become: true
 
   tasks:
