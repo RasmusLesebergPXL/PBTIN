@@ -1,10 +1,15 @@
 ---
-- name: Restart http-server
+- name: Restart and enable http-server
   service:
     name: http-server
     state: restarted
+    enabled: true
 
 - name: Restart firewalld
   service:
     name: firewalld
     state: restarted
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: true 

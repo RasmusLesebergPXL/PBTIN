@@ -1,41 +1,79 @@
 ---
-- name: Create users
-  user:
-    name: "{{ item }}"
-    password: "{{ password | password_hash('sha512') }}"
-    state: present
-  loop: "{{ users }}"
+  #Vraag 1
+  - name: Ensure group "pxlusers" exists
+    group:
+      name: pxlusers
+      state: present
+  
+  - name: Create users
+    user:
+      name: "{{ item }}"
+      password: "{{ password | password_hash('sha512') }}"
+      group: pxlusers
+      state: present
+    loop: "{{ users }}"
 
-- name: Create web page directory
-  file:
-    path: "{{ doc_root }}"
-    state: directory
-    mode: 0755
+  #Vraag 2
+  - name: Create web page directory
+    file:
+      path: "{{ doc_root }}"
+      state: directory
+      mode: 0755
 
-- name: Check if webpage already exists
-  stat:
-    path: "{{ doc_root }}/index.html"
-  register: web_page
+  - name: Create index.html from template 
+    template:
+      src: index.html.j2
+      dest: "{{ doc_root }}/index.html"
 
-- name: Copy webpage to dest if nonexistent
-  copy:
-    src: index.html
-    dest: "{{ doc_root }}"
-    mode: 0644
-  when: not web_page.stat.exists
+  - name: Change file ownership
+    file:
+      path: "{{ doc_root }}/index.html"
+      owner: musa
+      group: pxlusers
+      mode: 0664
 
-- name: Create http-server service
-  template:
-    src: http-server.service.j2
-    dest: "{{ service_dir }}/http-server.service"
-    mode: 0644
-    #group: musa
-  notify: Restart http-server
+  #Vraag 3
+  - name: Create http-server service
+    template:
+      src: http-server.service.j2
+      dest: "{{ service_dir }}/http-server.service"
+    notify: 
+      - Restart and enable http-server
+      - Reload systemd
 
-- name: Allow incoming traffic on 8080
-  firewalld:
-    port: "{{ web_port }}/tcp"
-    permanent: true
-    immediate: true
-    state: enabled
-  notify: Restart firewalld
+  - name: Allow incoming traffic on 8080
+    firewalld:
+      port: "{{ web_port }}/tcp"
+      permanent: true
+      immediate: true
+      state: enabled
+    notify: Restart firewalld
+
+  #Vraag 4
+  - name: Install pxl_package
+    package:
+      name: pxl_package
+    register: installation
+    ignore_errors: true
+  
+  - name: Handle install error
+    debug:
+      msg: "Attempted pxl_package install"
+    when: installation is failed
+
+  #Vraag 5
+  - name: Try to create my_secret file
+    block:
+      - name: Create my_secret file
+        file:
+          path: /mnt/secret/pxl/my_secret
+          state: touch
+    rescue:
+      - name: Catch errors
+        debug:
+          msg: "Unable to create secret file"
+    # always:
+    #   - name: Say thank you
+    #     debug:
+    #       msg: "Thank you for a fun semester!"
+  

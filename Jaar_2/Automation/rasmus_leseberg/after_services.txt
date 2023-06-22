@@ -38,7 +38,7 @@ grub2-systemd-integration.service          static          -
 haveged-once.service                       static          -
 haveged-switch-root.service                disabled        disabled
 haveged.service                            enabled         disabled
-http-server.service                        disabled        disabled
+http-server.service                        enabled         disabled
 initrd-cleanup.service                     static          -
 initrd-parse-etc.service                   static          -
 initrd-switch-root.service                 static          -
