@@ -7,7 +7,7 @@ This directory contains exercises from the .NET Essentials course from PBTIN yea
     * exercises from the course (oefeningen)
     * proef[examen]
 
-`[proef]examens` contains one practice exams as well as the final exam from that year. There is also a *CheatSheet.txt* that contains some handy out-of-the-box JS functions, for quick look-up purposes.
+`[proef]examens` contains one practice exams as well as the final exam from that year. There is also a *CheatSheet.txt* that contains some handy out-of-the-box JS functions, for quick look-up purposes on an exam.
 
 
 #### Directory contents:
