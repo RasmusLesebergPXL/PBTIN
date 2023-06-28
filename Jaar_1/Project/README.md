@@ -1,5 +1,8 @@
-# lingo
-Deze repository bevat de startcode voor het project 1TIN 2021-2022.
-In de **[Wiki](https://github.com/pxlit-projects/lingo/wiki)** vind je de opgave en allerlei technische informatie terug.
+# Project Lingo
 
-Veel succes!
+### Year: 2022
+
+This directory contains the code from the Lingo Project of PBTIN 2021-2022. 
+
+The **[Wiki](https://github.com/pxlit-projects/lingo/wiki)** contains the assignment and other information
+
