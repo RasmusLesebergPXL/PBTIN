@@ -140,8 +140,8 @@ De Matrixvorm is van toepassing als de omgeving in een organisatie heel dynamisc
 
 Iedereen heeft twee chefs: 
 
-    • `Projectleider:` verantwoordelijk voor het niveau en inzet van mensen in zijn afdeling
-    • `functionele chef:` verantwoordelijk voor “big picture”, dat het project volgens planning loopt
+    • Projectleider: verantwoordelijk voor het niveau en inzet van mensen in zijn afdeling
+    • Functionele chef: verantwoordelijk voor “big picture”, dat het project volgens planning loopt
 
 *Voordelen:*
 
@@ -165,11 +165,11 @@ Op aanvraag toegang van gedeelde IT resources, betaalbaar via abbonnementen en m
 
 Vijf belangrijker parameters die bepalen of een computeromgeving cloud based is:
 
-    1. `Universele toegang`: elke soort client (GSM, laptop, tablet, etc. )
-    2. `Schaalbaarheid:` de infrastructuur is eenvoudig uittebreiden. 
-    3. `Self-service op aanvraag:` computer resources zoals servertijd/netwerken/opslagruimte zijn te gebruiken zonder menselijke tussenkomst.
-    4. `Betalen per gebruik:` De gebruiker betaalt geen vast som, maar volgens zijn effectief gebruik
-    5. `Samenwerking:` Cloud maakt samenwerking van verschillende locaties mogelijk
+    1. Universele toegang: elke soort client (GSM, laptop, tablet, etc. )
+    2. Schaalbaarheid: de infrastructuur is eenvoudig uittebreiden. 
+    3. Self-service op aanvraag: computer resources zoals servertijd/netwerken/opslagruimte zijn te gebruiken zonder menselijke tussenkomst.
+    4. Betalen per gebruik: De gebruiker betaalt geen vast som, maar volgens zijn effectief gebruik
+    5. Samenwerking: Cloud maakt samenwerking van verschillende locaties mogelijk
 
 #### Voordelen van Cloud computing 
 
@@ -188,9 +188,9 @@ Situatie2: *cloud computing*: alles i.v.m. IT in de cloud
 
 #### Types van Cloud Computing
 
-    1. `Service modellen` worden geclassificeerd volgens het type services wat voorzien word in de cloud
+    1. Service modellen worden geclassificeerd volgens het type services wat voorzien word in de cloud
 
-    2. `Deployment modellen` worden ingedeeld volgens hoe en door wie de services worden gebruikt
+    2. Deployment modellen worden ingedeeld volgens hoe en door wie de services worden gebruikt
 
 #### Service Modellen
 3 verschillende servicemodellen: 
@@ -198,62 +198,78 @@ Situatie2: *cloud computing*: alles i.v.m. IT in de cloud
     • Infrastructure as a Service (IaaS)
     • Platform as a Service (PaaS)
     • Software as a service (SaaS)
-IaaS
-Levert computer infrastructuur als een dienst door gebruik te maken van virtualisatie technologie. 
-Bij Iaas zal de klant hardware resources delen met anderen. Het hoofddoel is om resources zoals servers/netwerken/opslagruimte toegankelijk te maken via applicaties en besturingssystemen. 
-Biedt: infrastructurele services op aanvraag en gebruikt Application Programming Interface (API) voor interactie met servers, switches en routers. Eennvoudig om nieuwe items toetevoegen. 
-Beheer van gebruiker: besturingssystem, opslagruimte, applicaties
-Service provider is verantwoordelijk voor: huisvesting, onderhoud, werking. 
-Betaling volgens middelend die gebruikt worden
-Paas
-Levert een computerplatform met software als een service zonder software downloads of installatie
-Gebruik: Word gebruikt voor het bouwen en ontwikkelen van webgebaseerde applicaties. Het voorziet voor het ondersteunen van de volleedige software development cycle. Programmeur moet zich geen zorgen maken over de installatie en configuratie van het platform aangezien alles op het internet werkt. Service provider moet problemen oplossen. 
-Gebruikers: vooral software ontwikkelaars en IT managers. 
 
-Saas
+#### IaaS
+*Levert* computer infrastructuur als een dienst door gebruik te maken van virtualisatie technologie. 
+
+Bij Iaas zal de klant hardware resources delen met anderen. Het hoofddoel is om resources zoals servers/netwerken/opslagruimte toegankelijk te maken via applicaties en besturingssystemen. 
+
+*Biedt:* infrastructurele services op aanvraag en gebruikt Application Programming Interface (API) voor interactie met servers, switches en routers. Eennvoudig om nieuwe items toetevoegen. 
+
+*Beheer van gebruiker*: besturingssystem, opslagruimte, applicaties
+
+*Service provider is verantwoordelijk voor*: huisvesting, onderhoud, werking. 
+
+*Betaling* volgens middelend die gebruikt worden
+
+#### Paas
+*Levert* een computerplatform met software als een service zonder software downloads of installatie
+
+*Gebruik:* Word gebruikt voor het bouwen en ontwikkelen van webgebaseerde applicaties. Het voorziet voor het ondersteunen van de volleedige software development cycle. Programmeur moet zich geen zorgen maken over de installatie en configuratie van het platform aangezien alles op het internet werkt. Service provider moet problemen oplossen. 
+
+*Gebruikers:* vooral software ontwikkelaars en IT managers. 
+
+#### Saas
 Het proces waarbij de Application Service Provider (ASP) verschillende softwares voorziet via het internet. De klant moet niets meer installeeren op zijn eigen PC. Cloud provider zorgt voor nodige infrastructuur en de onderhoud daarvan. Ook “software on demand” genoemd, klant sluit een contract per maand af. 
+
 De gebruiker is de eind-gebruiker van de applicatie. 
-2 voorbeelden van Saas:
+
+Twee voorbeelden van Saas:
     1. Google Workspace/Sheets/Docs, etc. 
     2. Dropbox
 
-Verantwoordelijkheden
+#### Verantwoordelijkheden
 Naar mate men meer schuift van Iaas naar Saas nemen de verantwoordelijkheden van de cloud provider toe:
 
-Deployment modellen
-Vier verschillende: 
+![cloud_responsibilities](../../assets/images/cloud_responsibilities.png)
+
+#### Deployment modellen
+
     • Public cloud
     • Private Cloud				
     • Community Cloud
     • Hybrid cloud
 
 
-
-
-
-
-Public Cloud
+#### Public Cloud
 Meerdere bedrijven kunnen tergelijkertijd gebruik maken van voorziene infrastructuur
+
 Cloud infrastructuur bestaat nuiten firewall van de bedrijven en wordt volledig beheerd door cloud provider. 
+
 Klanten betalen enkel voor resources die zij gebruiken
+
 Strenge Security op de cloud die moet voldoen aan bepaalde regelgeving. Klant kan zelf geen security instellingen aanpassen. 
 
-Private Cloud
+#### Private Cloud
 Kan eigendom zijn van bedrijf, maar kan ook geleased worden en beheerd worden door dat bedrijf of derde partij.
+
 Duurder, maar ook veiliger dan public cloud. 
+
 Exclusief gebruik van de cloud door een organisatie. 
+
 Cloud service providers en de klanten beheren de infrastructuur efficient met goede beveiliging. 
 
-Community Cloud
+#### Community Cloud
 De infrastructuur word gedeeld door meerdere organisaties met een gemeenschappelijk doel. Kan beheerd worden door service provider of de organisatie. De organisaties moeten een akkord afsluiten met elkaar, dardoor zijn ze verbonden. Komt minder vaak voor.
 
-Hybrid Cloud
+#### Hybrid Cloud
 Combinatie van twee of meer van de voorgaande clouds. De privacy van het bedrijf word gewaarborgd alsook de beschikbaarheid en connectie tussen meerdere organisaties.
-Voorbeeld: Overheid gebruikt private cloud voor persoonsgegevens, en public cloud voor algemene informatie
 
-2 grote spelers op Cloudmarkt
+`Voorbeeld:` Overheid gebruikt private cloud voor persoonsgegevens, en public cloud voor algemene informatie
+
+#### Twee grote spelers op Cloudmarkt
     1. Amazon Web Services (AWS)
-3 Voordelen: 
+    *Voordelen:* 
     • Makkelijk om meer storage aan te vragen gepast op behoefte
     • Mogelijkheid om OS te kiezen, programmeertaal, en database nar keuze
     • Makkelijkere licentie registratie
@@ -264,9 +280,7 @@ Voorbeeld: Overheid gebruikt private cloud voor persoonsgegevens, en public clou
     • Volledige schaalbaarheid met open access over meerdere talen, frameworks, en tools. 
 
 
-
-
-Hoofdstuk 4 Bedrijfsproces – Inkoop
+### Bedrijfsproces – Inkoop
 Inleiding
 Hoe bedrijven en overheden best omgaan met inkoopfunctie. Efficientie staat voorop, meetbare, kwantificeerbare en objectieve criteria zijn bijgevolg belangrijk. 
 
