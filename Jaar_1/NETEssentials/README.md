@@ -13,6 +13,6 @@ This directory contains exercises from the .NET Essentials course from PBTIN yea
 **Exam Score:** 14
 
 Directory contents:
-![directory_structure][../../assets/images/netessentials_structuur.png]
+![directory_structure](../../assets/images/netessentials_structuur.png)
 
 
