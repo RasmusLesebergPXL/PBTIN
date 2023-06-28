@@ -281,25 +281,25 @@ Combinatie van twee of meer van de voorgaande clouds. De privacy van het bedrijf
 
 
 ### Bedrijfsproces – Inkoop
-Inleiding
+
 Hoe bedrijven en overheden best omgaan met inkoopfunctie. Efficientie staat voorop, meetbare, kwantificeerbare en objectieve criteria zijn bijgevolg belangrijk. 
 
-Definitie
+#### Definitie
 Inkoop is het proces van kopen van producten, goederen, diensten. De inkoopsfunctie voorziet de organisatie met de benodigde goederen en diensten op de daarvoor bedoelde tijdstippen, uitegvoerd op de meest efficiente manier. 
 
 Verlenging van een contract zou ook een “inkoop” kunnen zijn, dus definitie is breed toepasbaar. 
 
-Inkoopsproces
+#### Inkoopsproces
 
-Specificeren  Selecteren  Contracteren  Bestellen  Bewaken  Nazorg en Evaluatie
+Specificeren --> Selecteren --> Contracteren --> Bestellen --> Bewaken --> Nazorg en Evaluatie
 
-Specificeren
+#### Specificeren
 
     • Het uitzoeken wat de wensen zijn en welke goederen/diensten nodig zijn
     • Reactief: een eindgebruike heeft een inkoopbehoefte
     • Proactief: er wordt actief gezocht naar besparingsopportunitiet realiseerbaar via inkoop
 
-Selecteren
+#### Selecteren
     • Aan de hand van onderzoek kijken welke leverancier de beste producten tegen de beste prijs levert
     • Marktonderzoek doen
     • Identificatie van mog. Leveranciers
@@ -308,21 +308,22 @@ Selecteren
     • Offertes beoordelen
     • Leveranciers beoordelen
 
-Contracteren
+#### Contracteren
     • Het onderhandelen van de condities en het contracteren van de juiste leverancier. Met het contract wordt de levering van de benodigde producten zeker gesteld. 
 
-Bestellen
+#### Bestellen
     • Aanvraag tot bestelling (ATB) voor goedkeuring binnen onderneming zelf
     • Opstellen en opsturen van Inkooporder (AO) naar exteren leverancier
 
-Bewaken
+#### Bewaken
     • Kwaliteitscontrole bij ontvangst, levering of prestatie
     • Factuurcontrole
     • Bewaken van de naleving van de contractuele clausules
 
 
-Nazorg en Evaluatie
-Geberut door het afhandelen van eventuele klachten of afwijkingen, periodieke evaluatie vindt plaats op basis van evaluatiecriteria. 
+#### Nazorg en Evaluatie
+
+Gebeurt door het afhandelen van eventuele klachten of afwijkingen, periodieke evaluatie vindt plaats op basis van evaluatiecriteria. 
 
 Nuttige begrippen
 Tactische inkoop
