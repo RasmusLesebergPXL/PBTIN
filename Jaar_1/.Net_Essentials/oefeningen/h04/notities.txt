@@ -1,4 +1,0 @@
-Notities H4
-4.2 afronden 2 cijfers
-4.9 zonder array
-4.11 zonder functie
