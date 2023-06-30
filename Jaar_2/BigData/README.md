@@ -13,6 +13,8 @@ This directory contains exercises from the Big Data course from PBTIN year 2022-
 
 The Basisprincipes pdf contains highlighted text that appears on the theory exam (10% of exam).
 
+`SQL` also contains a practice exam and useful setup files for future SQLplus config.
+
 **Exam Score:** 16
 
 #### Directory contents:
