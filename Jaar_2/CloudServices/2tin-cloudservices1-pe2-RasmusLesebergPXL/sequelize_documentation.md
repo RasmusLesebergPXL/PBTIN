@@ -19,7 +19,7 @@
 
 ![alt_text](./assets/images/architecture.png "network_architecture")
 
-Based on this diagram some key information kan be understood: 
+Based on this diagram some key information can be understood: 
 
 - 1 S3 Bucket for the Static Assets (images)
 - 2x EC2 T2.micro instances for the frontend

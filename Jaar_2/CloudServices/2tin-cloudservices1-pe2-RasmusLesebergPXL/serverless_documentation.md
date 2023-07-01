@@ -251,7 +251,7 @@ After having completed the serverless backend setup, the next step is trying to 
 
 ![alt_text](./assets/images/serverless/dynamic.png "serverless_architecture")
 
-Based on this diagram some key information kan be understood: 
+Based on this diagram some key information can be understood: 
 
 - 1 S3 Bucket for the Static Assets (images)
 - The S3 will host a static website (User requests to and from the S3)
@@ -259,7 +259,7 @@ Based on this diagram some key information kan be understood:
 - Lambda functions will extend the functionality of the API Gateway
 
 ---
-### Step 1: Create a second S3 Bucket
+### Step 5: Create a second S3 Bucket
 
 A second bucket can be created with a unique name, in this case the name is `serverless-bucket-fortodo`. 
 
