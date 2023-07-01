@@ -10,7 +10,7 @@ This directory contains exercises and summaries for the Cloud Services I subject
 
 `2tin-cloudservices-pe1` contains the solution to PE1, but also a summary of the most useful commands for that assignment. The summary was made by **[Tristan Reynders](https://github.com/tristan-reynders)**, all credit goes to him regarding that work. He also co-wrote the summary *samenvatting.pdf* for the course. 
 
-`2tin-cloudservices-pe2` 
+The solution for PE2 is split over two different markdown documents in `2tin-cloudservices-pe2`, *sequelize* and *serverless* each having their own solution.
 
 **PE1 Score:** 18/30
 
