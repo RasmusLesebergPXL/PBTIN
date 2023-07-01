@@ -1,4 +1,4 @@
-# Automation
+# Automation I
 
 ### Year: 2022
 
@@ -9,6 +9,6 @@ This directory contains exercises from the Automation I course from PBTIN year 2
     * exam
     * slides/documentation
 
-`slides` a directory called *documentation* which contains more useful info. The exercises are mostly geared towards use with vagrant but can be adapted for AWS use as well. 
+`slides` contains a directory called *documentation* which contains more useful info. The exercises are mostly geared towards use with vagrant but can be adapted for AWS use as well. 
 
 **Exam Score:** 19
