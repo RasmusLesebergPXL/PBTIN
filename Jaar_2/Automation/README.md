@@ -6,9 +6,9 @@ This directory contains exercises from the Automation I course from PBTIN year 2
 
     * lab 1-8
     * PE 1-3
-    * exam
+    * exam (rasmus_leseberg)
     * slides/documentation
 
-`slides` contains a directory called *documentation* which contains more useful info. The exercises are mostly geared towards use with vagrant but can be adapted for AWS use as well. 
+`slides` contains a directory called *documentation* which contains more useful info. The exercises are mostly geared towards use with vagrant but can be adapted for AWS use as well. The exam and all realted exam files is located in `rasmus_leseberg`.
 
 **Exam Score:** 19
