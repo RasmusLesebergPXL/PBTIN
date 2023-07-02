@@ -64,6 +64,7 @@ This directory contains all course material for the PBTIN DevOps 2021-2022 cours
 *Pipeline maken*
 
 Identificeer de onderdelen die zorgen dat het business idee omgezet wordt in een realiteit, en maak er een pipeline van.
+
 `Sleutelwoorden`: Versiebeheer, automatisch gebouwd, automatisch getest, productie-waardige omgeving
 
 **Second Way: Amplify Feedback Loops**
@@ -234,7 +235,9 @@ A CD pipeline is an automated expression of your process for getting software fr
     • Improving productivity and collaboration while controlling risk
 
 `Build once, deploy anywhere`
+
 `Applicatie dependencies`
+
 `Oplossing voor elke deploy omgeving`
 
 *Voordelen van applicatie in docker te bouwen*
@@ -346,6 +349,7 @@ A CD pipeline is an automated expression of your process for getting software fr
 **Monitoring History**
 
 `Simple Network Monitoring Protocol (SNMB)`
+
 `Management Information Base file (MiB)`
 
 **Monitoring History**
