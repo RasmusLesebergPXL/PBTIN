@@ -1,0 +1,171 @@
+		INODES
+
++++++++++++++++++  Theorie  ++++++++++++++++++++++++
+
+Inode: 	datastructuur die de metadata van een file bevat. Elke inode heeft een
+	uniek nummer (inode nummer)
+
+Content: 	inhoud/data --> datablock
+		naam + inode --> datablock
+		pointer naar data
+		aanmaakdatum, wijzigingsdatum, aanraakdatum
+		permissies
+		owner
+
+		Filename + inode-nummer is opgeslagen in een aparte directory
+
+Hoofdverschil tussen SL en HL:
+
+SL: 	kunnen overal naartoe, ook tussen verschillene partities of over netwerk, permissies van taregt 	worden toegepast
+
+HL:	moeten op dezelfde partitie, inodes zijn uniek
+
+
+File types:	regular file 		-
+		directory		d
+ls -li		character device file	c
+		block device file	b
+		local domain socket	s
+		named pipe		p
+		symbolic link		l (ook 'soft' links genoemd)
+
+
+++++++++++++++++  Configuratie  +++++++++++++++++++++++++++++++
+
+	inode table: 			df -i
+
+	stat:				stat /etc/passwd      
+					(i.p.v. ls -li /etc/passwd)
+
+
+	hard links:			ln <target> <linkname>
+					ln eenBestand eenHardlink
+
+	resultaat: 
+	 - 2 files --> 1 inode
+	 - zelfde permissies, owner, data 
+	 - Je kan een van de 2 wissen, ander blijft bestaan
+	 - Counter bij file (getal) = aantal hard links
+	 - Counter bij dir = aantal subdirs -2 voor . en ..
+
+
+	hard link vinden: 		find /-inum <inodenumber> 2> /dev/null
+
+	soft links:			ln -s <target> <linkname>
+
+	Verwijderen: 			rm eenSymboliLink
+
+	Broken Link
+	 - een link naar een verijderde target
+	  - rood aangeduid
+
+					find./ -type l -exec file {} \; | grep broken
+
+
+
++++++++++++++  Oefeningen  +++++++++++++++++++++
+
+1. [gebruiker@localhost y]$ ls -aiR
+
+2102219 . 2097170 .. 2102294 a 2102396 q
+2102933 w 2102331 z
+
+<<weggeknipt>>:
+2102294 . 2102219 .. 2102971 b
+
+<<weggeknipt>>:
+2102396 . 2102219 .. 2098501 m
+
+<<weggeknipt>>:
+2098501 . 2102396 .. 2102933 d
+
+<<weggeknipt>>:
+2102331 . 2102219 .. 2102933 n 2101489 v
+
+<<weggeknipt>>:
+2101489 . 2102331 ..
+
+Wat is het getal 2102294?   a
+
+Geef de directory structuur onder de directory y (grafisch).
+
+	2097170 ..
+	    |__2102219 .
+		  |__2102294 a
+			|__2102971 b
+		  |__2102396 q
+			|__2098501 m
+				|__ 2102933 d
+		  |__2102331 z
+			|__2102933 n
+			|__2101489 v
+		  |__2102933 w
+
+
+2. Welke zijn bestanden, welke directories? Welke zijn hard links?
+
+	a = directory
+	q = directory
+	w = hard link
+	z = directory
+	b = bestand
+	m = directory
+	d = bestand
+	n = hard link
+	v = bestand
+
+3. Gegeven de output van het commando ls -aiR test
+	test:
+	8420 .  6463 ..  8422 a  8423 b  8427 c
+
+	[weggeknipt]
+	8423 .  8420 ..  8429 d  8432 e
+
+	[weggeknipt]
+	8429 .  8423 ..  8432 f
+
+	[weggeknipt]
+	8427 .  8420 ..  8422 g
+
+Welke zijn zeker directories in dit voorbeeld?
+Er worden in dit voorbeeld een aantal hardlinks gebruikt. Welke?
+Maak de grafische voorstelling van de directorystructuur van test.
+
+
+	6463..
+	    |__8420 .
+		  |__8422 a
+			|__2102971 b
+		  |__8423 b
+			|__8429 d
+			      |__8432 f
+			|__8432 e
+		  |__8427 c
+			|__8422 g
+
+	directories: 	6463 ..
+			8420 .
+			8422 a
+			8423 b
+			8427 c
+			8429 d
+
+	hard links: 	8432 e, f
+			8422 g
+
+
+4. 	Maak in de directory link van dir1 en file1 een symbolic link naar de items uit de directory orig.
+	Maak van file2 een hard link in de directory link.
+
+	ln -s ../orig/file1 ~/oefln/link/file1
+	ln -s ../orig/dir1 ~/oefln/link/dir1
+	ln ~/oefln/orig/file2 ~/oefln/link/file2
+
+5.	ln -s ~/oefln/orig/file1 ~/oefln/abc
+	
+6.	in orig: rm file1
+	de soft links abc en file1 uit link dir zijn broken
+
+7.	er gebeurt verder niks met file2 in link dir, als orig file2 verwijdert wordt. 
+
+

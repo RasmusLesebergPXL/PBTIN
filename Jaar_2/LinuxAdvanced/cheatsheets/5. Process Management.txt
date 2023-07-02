@@ -1,0 +1,137 @@
+	PROCESS MANAGEMENT
+	
+++++++++++++++++++++  Theorie  ++++++++++++++++++++++++++++++++++++++++++
+
+	* process --> prog of cmd dat een bepaalde job uitvoert
+	* PID	 --> process ID tussen 0 en 65535
+	* PPID 	 --> parent proces ID, child wordt gestart door zijn parent process
+
+	* systemd --> systemd proces, PID 1, wordt gestart door de kernel zelf, geen parent
+	  (init)
+	
+	* daemon  --> een proces dat start bij het opstarten van je systeem en continu blijft
+		      draaien
+
+++++++++++++++++++++++  COnfiguratie  ++++++++++++++++++++++++++++++++++++++++
+
+shell param bevat huidig PID:			$$
+en PPID						echo $$ $PPID
+						ps -fx
+
+
+process id's op naam: 				pidof
+						pidof ssh
+
+check man ps for extns.				man ps
+
+user defined format				-o
+						-o pid,cmd,comm
+
+Select by process ID				--pid
+						--pid 1
+
+list processes owned by you
+(same EUID as ps)				ps ax
+
+search process by name				pgrep 
+process name /PID				-l
+select by cmd name				-C
+
+Task manager					top
+						(orders processes by CPU usage)
+help						h
+w/graphics					htop   (Slide 13 voor uitleg)
+ 
+stop proces					kill <id>
+list options					kill -l
+SIGTERM, standard kill (friendly)		kill -15
+SIGKILL, sure kill (unfriendly)			kill -9
+
+with pattern matching				pkill
+SIGTERM all processes				killall
+SIGCONT						kill -18 <id>
+BG proces dat opnieuw te starten
+SIGSTOP						kill -19 <id>
+BG proces stoppen
+
+	BACKGROUND PROCESSES
+
+processes from background of current shell	jobs
+(standard no jobs)
+with PID					jobs -p
+with info					jobs -l
+
+move to background w/ ctrl+Z or & ex:		vim procdemo.txt (&)
+						ctrl+Z
+stopped, use fg to return to foreground		fg
+specify id					fg <jobid>
+
+start with &, put into BG and continue 		sleep 1000 &
+
+Om een background proces dat gepauzeerd is 	bg <jobid>
+terug te starten en op BG houden
+
+last process in BG				+
+second last process in BG			-
+use +/-	with %					fg %-
+
+
+
+++++++++++++++++++++++  Oefeningen  ++++++++++++++++++++++++++++++++++
+
+1/2.	Open de man pages van ‘ls’ en pauzeer dit proces op achtergrond
+
+	man ls &
+
+
+4/5.	Breng proces naar fg en sluit af
+
+	fg %[id of -/+]
+
+
+
+6.	Start het volgende commando “ping 8.8.8.8 > output.log”. 
+	Probeer om het proces te pauzeren op de achtergrond.
+	Zorg dat het proces verder gaat op de achtergrond	
+
+	ping 8.8.8.8 > output.log
+	ctrl + Z (stopped in BG)
+	jobs -l
+	kill -18 <jobid>
+
+7.	htop, P
+
+8.	Beperk de lijst zodat enkel jouw processen worden getoond  
+	en beëindig het ping process van een paar vragen geleden
+
+	htop, u, student
+	kill -9 <id>
+
+9.	Start de opdracht  ls /usr -R1  op als achtergrondproces. 
+	Waarom zie je het resultaat toch op uw beeldscherm verschijnen? 
+	Hoe kan je dit 	voorkomen?	
+
+	Running a program in the background will not affect where it sends its output, 
+	by default. So a background process will still write to the terminal, when it has 
+	output to deliver.
+	
+	fix: redirect output to output.log
+	
+	ls /usr -R1 > output.log &
+	
+			
+10.	Voer de volgende opdracht uit “for i in $(seq 3); do sleep 1000 & done”. 
+	Probeer met één commando alle instanties van sleep ineens af te sluiten
+
+	for i in $(seq 3); do sleep 1000 & done
+	jobs -l
+	pgrep sleep
+	killall sleep
+
+11.	for i in $(seq 3); do nano & done
+	htop -F nano
+	Tag the processes with <Space>
+	F9 or k, select 9 (unfriendly)
+	Ctrl+L to refresh
+	q
+

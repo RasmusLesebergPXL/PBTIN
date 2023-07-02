@@ -1,0 +1,572 @@
+Installatie op VM
+
+	curl -fsSL https://get.docker.com -o get-docker.sh
+	sudo sh get-docker.sh
+	sudo usermod -aG docker $USER
+	docker version
+
+Login
+
+	docker login
+	<username>
+	<password>
+	docker push <dockerhub_username>/testimage:1.0		
+				        (<imagenaam>:<version tag>)
+
+Test if docker is working
+
+	docker version
+
+Rechten
+
+	ls -l /run/docker.sock
+
+Run
+
+	docker run hello-world
+	docker run <username>/imagename:tag
+
+Overzicht
+
+	docker ps -a
+
+Overzicht images
+
+	docker images
+
+Help
+
+	docker --help
+	docker image --help
+	docker image ls --help
+
+
+System info
+
+	docker system info	display system-wide information
+	docker system df	show docker disk usage	
+	docker system events	display real time events from server
+
+
+Search
+
+	docker search <naam> 		(ubuntu bijv.)
+
+Download
+
+	docker pull ubuntu:18.04
+	docker pull ubuntu 		(latest ver)
+
+Remove
+
+	docker container rm <containerID>
+	docker rm --force <name>
+	docker rm -f $(docker ps -aq)
+	(removes all active and passive containers forcefully)
+	
+	docker image rm ubuntu:18.04
+	docker rmi ubuntu
+
+Commit
+
+	docker commit ubuntu_ping myubuntu
+
+
+Leave with stopping	
+
+	ctrl P + Q
+
+Prune
+
+	docker image prune -all		geen associated containers (started/stopped)
+	docker container prune		verwijdert alle gestopte containers
+
+Copy images tussen hosts met scp (and load from tar)
+
+	(docker save --output ubuntu.tar ubuntu:16.04)
+	scp ./ubuntu.tar <username>@<ip>:<file location>
+	docker rmi ubuntu:16.04 --force		(lokaal)
+	docker load --input ./ubuntu.tar	(op host)
+	docker run -it ubcounter		(interactive sessie)
+
+Commando meegeven/EXEC
+
+	docker run ubuntu echo "Hello, World!"
+	docker exec -it my_container sh -c "echo a && echo b"
+
+Detached/Background
+
+	docker run -d ubuntu sleep 7	
+
+Attach from background
+
+	docker attach <container>
+
+Give Name/Rename
+
+	docker run --name <name> <image>
+	docker container rename <container> <new_name>
+
+Pause/Stop/Start/kill
+
+	docker container pause <id>
+	docker unpause <id>
+	docker stop <id>
+	docker start <id>
+	docker kill <id>
+
+Stats/logs/Follow
+
+	docker stats <id>
+	docker stats <name/id> --no-stream
+	docker logs <id>
+	docker logs --follow <name>
+
+Difference
+
+	docker diff <name>
+
+Container Data
+			(ubuntu)
+	sudo bash
+	cat /var/lib/docker/image/overlay2/layerdb/mounts/<containerid>/mount-id
+
+			(Windows WSL)
+	cat \\wsl$\docker-desktop-data\version-pack-data\community\docker\image\overlay2\layerdb\mounts\<id>\mount-id
+
+Layers tonen
+
+	docker history ubuntu
+
+Inspect/Info
+
+	docker inspect <name>
+	docker inspect <image> | grep -A12 Architecture
+	docker info			(hoeveel gestarte en gestopte images we lokaal hebben)
+	
+
+Dockerfile/build
+
+	mkdir dockertest; touch dockertest/Dockerfile; cd dockertest
+	code .
+	
+	Possible entries in file:
+
+	FROM		CMD		COPY		LABEL		STOPSIGNAL (h8sl10)
+	ADD		ENTRYPOINT	USER		ENTRYPOINT
+	RUN		ENV		WORKDIR		EXPOSE
+	(check H6slide9 voor info)
+	
+	docker build -t testimage:0.1 .				(current dir)
+	docker build <dir> -f <dockerfile>
+	docker images
+	docker run -it testimage
+	docker run -it --override /bin/bash testimage 		(override
+
+
+Volumes
+	
+	docker run -v /path/in/container ... (anonymous volume)
+	docker volume create somevolume (named volume)
+	
+	docker run -it -v somevolume:/path/in/container <image>    (of)
+	docker run -it --mount source=myvol,target=/app --name=mounttest
+	docker run -v /path/on/host:/path/in/container <image>
+	
+	docker volume ls
+	docker volume inspect 	
+	Remove
+	docker container rm -v <container>
+	docker volume rm <volumename>
+
+	MULTIPLE V's
+	docker run -it -v /tmp/vancontainer:/test-volume --name=voltainer1 ubuntu /bin/bash echo "hello world" > /test-volume/myfile
+	ctrl P + Q
+	docker run -it -v /tmp/vancontainer:/test-volume --name=voltainer2 ubuntu /bin/bash cat /test-colume/myfile
+
+	of
+	docker run -it --volumes-from=voltainer2 --name=voltainer3 ubuntu /binbash cat /test-volume/myfile
+
+Networking
+
+	brctl show docker0
+	docker run busybox ping -c 5 google.com	(voor busybox)
+	docker run -it --name net1 busybox
+		ip a
+		ip route
+		ctrl P+Q
+		brctl show docker0
+	<repeat for 2 interfaces>
+	docker inspect net1
+	docker attach net1
+	docker run -it --dns 8.8.4.4 --name net3 busybox
+	docker run -it --add-host=<hostname:ip> --add-host=<hostname2:ip2> --name net3 busybox
+	docker run -it --hostname=<hostname> --name=net5 busybox
+	docker inspect net3 | grep -wA2 Dns
+
+	docker network create --subnet 172.25.0.0/24 isolated_nw
+	docker run -itd --name contain1 busybox
+	docker network connect isolated_nw contain1
+	docker run -itd --network isolated_nw --name contain2 busybox
+	docker network disconnect isolated_nw contain2
+	docker network rm isolated_nw
+	
+Port forwarding
+
+	docker run -d -p 5001:80 --name web1 nginx:alpine 	(localhost:5001 in browser)
+	docker run -d -p <host-ip>:5002:80 --name  web2 nginx   (host-ip:5002 in browser)
+	docker run -d -P --name web3 nginx  			(in DockerFile EXPOSE 80 (bijv.) gebruiken)
+	docker inspect web1 | grep -A5 PortBindings
+	docker port web1
+
+Docker compose
+
+	docker compose version
+	docker compose build
+	docker compose up/down (ctrl C)
+	docker compose down --volumes
+	docker compose up -d
+	docker compose ps
+	docker compose run web-1 cat /etc/os-release (exec)
+	docker compose stop
+
+	cmd's h9 slide 14
+	
+	
+
+++++++++++++++++++++++++  Oefeningen  ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Alle oefeningen van slides Docker_01_Docker Introductie -- Docker_10_Compose Secrets
+
+Oefening werken met images
+
+	docker run -it archlinux cat /etc/os-release		(distributie info)
+	docker run -it fedora echo "$SHELL"
+	docker run -it archlinux cat /proc/version
+
+Oefening werken met containers
+
+	docker run --name OLContainer -it oraclelinux:9
+	cat /etc/oracle-release
+	yum install tree
+	ctrl P+Q
+	docker attach <name>
+	docker pause/stop/start <name>
+	docker rm <name>
+
+Oefening 2
+
+	docker run --name OLstopped1 oraclelinux:9 echo "" (3x)
+	docker run --name OLrunning1 -dit oraclelinux:9	   (3x)
+	docker ps -a | awk '{ print $1 }'
+	docker container prune
+	docker rm -f $(docker ps -q)
+	docker run --name OLstopped4 oraclelinux:9 echo ""
+	docker run --name OLrunning4 -dit oraclelinux:9
+	docker rm -f $(docker ps -aq)
+	
+Oefening: nieuwe image maken van een container
+
+	docker run -it --name "ubuntu_ping" ubuntu bash
+	apt update && apt -y install iputils-ping
+	exit
+	docker diff ubuntu_ping
+	docker commit ubuntu_ping myubuntu
+	docker images
+	docker history myubuntu
+	docker run -it myubuntu ping -c 5 8.8.8.8
+
+Oefening: De Writeable Layer
+
+	docker run -it ubuntu bash
+	apt update
+	exit
+	docker diff <name>
+
+	docker run -it myubuntu bash
+	apt install sl
+	exit
+	docker diff <name>
+
+Oefening: OverlayFS
+
+	mkdir layer1 layer2 upperlayer workdir mountedfs
+	echo "content for file1.txt in layer1" > layer1/file1.txt
+	echo "content for file1.txt in layer2" > layer2/file1.txt
+	echo "content for file2.txt in layer1" > layer1/file2.txt
+	echo "content for file2.txt in layer2" > layer2/file2.txt
+	echo "content for file3.txt in layer2" > layer2/file3.txt
+(root)	mount -t overlay -o lowerdir=layer1:layer2,upperdir=upperlayer,workdir=workdir overlay mountedfs
+	cd mountedfs; ls -l
+	
+(union of files created)
+(in mfs) 
+	echo "new content for file4.txt" > file4.txt
+	ls -l ../upperlayer; cat file4.txt
+
+Oefening: NGINX container
+
+	docker run -dit nginx
+	docker exec -it <name> sh
+	apt update && apt upgrade
+	apt install lynx
+	lynx localhost
+
+Prompt oefening
+
+	docker run -it -e PS1="\u@demo:[\W]#" alpine
+
+Oefening: PXL Web service
+
+	docker run -dit pxlsystemsadvanced/simplewebservice:ubuntu
+	docker logs --follow <name>
+	docker exec -it <name> sh
+	cat /usr/src/app/text.log
+
+Oefening pushen naar repo
+
+	Dockerfile aanmaken: 	
+	FROM ubuntu
+	LABEL maintainer = "rasmus.leseberg@pxl.be"
+	RUN apt update && apt install -y python3 nano
+	COPY fib.py /
+	CMD python3 /fib.py
+
+	docker build -t rleseberg/fib-app:0.1 .
+	docker run -it rleseberg/fib-app:0.1
+	docker login
+	docker push rleseberg/fib-app:0.1
+	docker image rm rleseberg/fib-app:0.1 --force
+	docker pull rleseberg/fib-app:0.1
+
+Oefening myping
+
+	DockerFile
+	FROM alpine:latest  
+	LABEL maintainer = "rasmus.leseberg@student.pxl.be"
+	ENTRYPOINT [ "ping"]
+	CMD ["-c", "5", "8.8.8.8"]
+
+	docker build -t myping:0.1 .
+	docker run -it myping:0.1
+
+Oefening container met gewone user
+
+	FROM ubuntu
+	LABEL maintainer = "rasmus.leseberg@student.pxl.be"
+	# root privileges needed for installation during image build process
+	#USER root
+	RUN groupadd student \
+	&& useradd -m -g student -s /bin/bash -c "student user" student \
+	&& echo student:pxl | chpasswd \
+	&& usermod -aG sudo student
+	RUN apt update && apt install -y tree sudo
+	RUN echo root:pxl | chpasswd
+	RUN yes | unminimize && apt -y install man
+	# normal privileges for running the container
+	USER student
+	WORKDIR /home/student
+	RUN touch Welcome.txt
+
+	docker build -t 2tinr:0.1 .
+	docker run --hostname ubuntu -it 2tinr:0.1
+	
+	
+
+Oefening volumes
+
+	docker run -it -v /home/student/dockerfiles/:/containervol/ alpine sh
+	
+	
+Oefening: ApacheOef
+	
+	docker run -dit --name apacheoefening -p 4444:80 -v C:\Users\Rasmus\Documents\Jaar_2\Semester_1\LinuxAdvanced\docker-lessen\ApacheOef\html:/usr/local/apache2/htdocs/ -v C:\Users\Rasmus\Documents\Jaar_2\Semester_1\LinuxAdvanced\docker-lessen\ApacheOef\apachelogs:/usr/local/apache2/logs/  httpd:alpine
+
+
+Oefening: lighttpd
+
+	FROM alpine
+	RUN apk add lighttpd
+	COPY ./html/index.html /var/www/localhost/htdocs
+	EXPOSE 80
+	CMD ["lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
+	# OF ENTRYPOINT ["/usr/sbin/lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
+
+	docker build -t mylighttpd:alpine .
+	docker run -d -p 3000:80 mylighttpd:alpine
+
+Oefening Nextcloud
+
+	docker volume create nextcloud
+	docker volume create apps
+	docker volume create config
+	docker volume create data
+
+	docker run -d -p 80:80                 \
+	-v nextcloud:/var/www/html             \
+	-v apps:/var/www/html/custom_apps      \
+	-v config:/var/www/html/config         \
+	-v data:/var/www/html/data nextcloud
+
+
+Oefening MariaDB H9
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 7654:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+    volumes:
+      - ./wordpress:/var/www/html
+
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+
+volumes:
+  wordpress:
+  db:
+
+docker compose -f compose.yml up -d
+
+
+
+
+Oefening MariaDBSecrets H10
+
+services:
+
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 7654:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_user_password
+      WORDPRESS_DB_NAME: exampledb
+    volumes:
+      - ./wordpress:/var/www/html
+    secrets:
+      - db_user_password
+
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD_FILE: /run/secrets/db_user_password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+    volumes:
+      - db:/var/lib/mysql
+    secrets:
+      - db_root_password
+      - db_user_password
+
+
+volumes:
+  wordpress:
+  db:
+
+
+secrets:
+  db_root_password:
+    file: db_root_password.txt
+  db_user_password:
+    file: db_user_password.txt
+
+
+docker compose -f compose.yml up -d
+
+
+port 3306 for MySQL/Aurora/MariaDB
+port 1433 for SQL Server,
+port 5432 for PostgreSQL
+port 1521 for Oracle
+port 27017 mongodb
+
+
+
+Proefexamen
+
+services:
+ mysql:
+   image: mysql
+   environment:
+      MYSQL_ROOT_PASSWORD: rootpwd
+      MYSQL_DATABASE: demo
+      MYSQL_USER: examen
+      MYSQL_PASSWORD: userpwd
+   ports:
+      - 3306:3306
+   secrets:
+   - rootpwd
+   - userpwd
+   restart: always
+   volumes:
+    - /home/student/mysqldata:/var/lib/mysql
+ phpmyadmin:
+   image: phpmyadmin
+   ports:
+      - 80:80
+   environment:
+     PMA_HOST: 172.26.204.198
+     PMA_USER: examen
+     PMA_PASSWORD: userpwd
+   secrets:
+   - userpwd
+   restart: always
+
+secrets:
+ rootpwd:
+  file: rootpwd.txt
+ userpwd:
+  file: userpwd.txt
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

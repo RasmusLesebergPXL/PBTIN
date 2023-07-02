@@ -1,0 +1,187 @@
+					NETWORK MANAGEMENT
+
+
++++++++++++++++ Configuratie +++++++++++++++++++
+
+	location: 		cd /etc/netplan/00-installer-config.yaml
+	netplan examples:	/usr/share/doc/netplan/examples/
+
+	wijzigingen: 		sudo netplan try
+				sudo netplan apply  (dit schrijft ook nodige DNS instellingen)
+				
+	check:			cat /run/systemd/network/<nr>-netplan-ens33.network
+
+	DNS instelling: 	resolvectl status ens33
+
+	network status: 	networkctl status ens33
+
+
+	IP tonen: 		ip a
+				ip address show	   
+				ip addr	   	
+				ip a s
+
+	IP S NIC:		ip a s ens33
+				ip a s dev ens33
+
+
+	disable/enable NIC:	sudo ip link set ens33 down
+				sudo ip link set ens33 up
+				(verwijdert huidige instelling en leest yaml-file opnieuw uit)
+
+	show active links: 	ip a s up
+
+  restart network service: 	sudo systemctl restart NetworkManager
+				sudo netplan apply
+
+
+   verwijder 1 IP van NIC: 	ip addr del <ip>/<SM> dev ens33
+
+   verwijder alle IP's:	 	ip addr flush dev ens33
+
+   toevoegen 1 IP aan NIC: 	ip addr add <ip>/<SM> dev ens33
+
+  	ijdelijke hostname: 	sudo hostname nieuwenaam; bash
+	location hostname:	/etc/hostname
+
+permanent hostname: 		sudo hostnamectl set-hostname nieuwenaam
+				sudo sed -i 's/server1/server2/' /etc/hostname
+				sudo sed -i 's/server1/server2/' /etc/hosts
+				(belangrijk om dit te doen anders heb je lange timeouts bij sudo cmd)
+
+	ARP table:		ip neighbor
+				ip n
+
+	Routing table:		ip route
+				ip r	
+				ip r show
+
+	delete DG:		sudo ip route del default
+	add new DG:		sudo ip route add default via <ip>
+
+test TCP/IP config:		ping <ip>	
+				ping -c5 	(5 pings)
+
+
++++++++++++++++ Oefeningen +++++++++++++++++++++++
+
+Network Management - Oefeningen
+
+
+   2. IP-adres van beide servers via VMWare DHCP voor ethernet interface ens33?
+      Probeer te pingen tussen beide servers.
+
+	ip a s ens33 (of: ip a | grep ens33)
+	ping <ip>
+
+
+   3. local loopback-interface actief? Werkt ping naar 127.2.3.4 ook? 
+
+	prefix /8
+	ping 127.2.3.4 werkt
+
+
+   4. Op server1: Breng de interface ens33 down mbv het commando ip.
+		  Kan je nu nog pingen van server1 naar server2 of omgekeerd?
+  		  Breng de interface ens33 opnieuw up mbv het commando ip.
+ 		  Kan je nu pingen van server1 naar server2 en omgekeerd?
+
+	server1: sudo ip link set ens33 down
+		 ping <ip2> NEE
+		 sudo ip link set ens33 up
+		 ping <ip2> JA
+
+
+   5. Op server1: Zoek het mac-adres van de server1, server2, alsook dat van de default gateway
+
+		server1: ping <server2>
+		server1: ip n
+		
+
+   6. Op server1: de DHCP-server deelt ip-adressen uit en informatie omtrent de DNS-servers en de DG
+		  IP-adres van de default-gateway en DNS server:
+
+		networkctl status ens33
+		ip n (of: ip route)
+
+
+   7. Op server1: Verander de hostname van je VM.
+
+		sudo hostnamectl set-hostname <nieuwenaam>
+		sudo sed -i 's/server1/<nieuwenaam>/' /etc/hostname
+		sudo sed -i 's/server1/<nieuwenaam>/' /etc/hosts
+		reboot
+
+
+   8. Op server1: Zorg ervoor dat alhoewel DHCP gebruikt wordt, de DNS van Google in de toekomst 
+		blijft gebruikt worden. 
+
+		/etc/netplan/00-installer-config.yaml (sudo nano, indentation!)
+		voeg dan onder 'dhcp: true' het volgende bij
+        
+	  dhcp4-overrides:
+            use-dns: false
+          nameservers:
+            addresses: [8.8.8.8]
+	  
+	  sudo netplan try
+	  sudo netplan apply
+	  networkctl status
+		
+			
+
+   9. Op server1: verwijder de instelling om, bij DHCP, de Google-DNS te gebruiken in de toekomst. 
+
+	network:
+  	   ethernets:
+    	      ens33:
+      		 dhcp4: true		
+  	   version: 2
+
+
+   10. 	Geef zowel server1 als server2 een ander fixed ip-adres in dezelfde range als dewelke 
+       	de DHCP-server van VMware uitgeeft.
+	
+	Disable DHCP
+	network:
+  	   ethernets:
+    	      ens33:
+      		addresses:
+		  - 192.168.221.8/24
+		routes:
+		  - to: default
+		  via: 192.168.221.2
+		nameservers:
+		  search: [localdomain]
+		  addresses: [192.168.221.2]ccle
+  	   version: 2
+
+	try/apply
+	check: resolvectl status ens33
+
+	
+
+   11. 	Geef zowel server1 als server2 een vast ip-adres in het 172.16.0.0/16 netwerk.
+	Kan je nog pingen naar elkaar? Kan je nu nog surfen op het internet?
+
+	zelfde stappen als vorige oefening. 
+	pingen lukt niet, network unreachable
+
+
+   12. 	Verander zowel op server1 als server2 de instellingen, zodanig dat de ip-adressen 
+	opnieuw verkregen worden van de DHCP-server
+
+	Enable DHCP
+	network:
+  	   ethernets:
+    	      ens33:
+      		dhcp4: true
+  	   version: 2
+	
+   13. Op server1: geef de server een tijdelijk nieuw IP-adres. 
+       Kijk of dit IP wordt teruggezet met het commando ip link down en up. En na reboot ?
+
+       Als DHCP op true staat, dan zal het tijdelijke IP adres altijd verdwijnen na reboot
+
+
+	
